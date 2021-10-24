@@ -1,0 +1,14 @@
+#!/bin/zsh
+forgit::checkout::file() {
+    forgit::inside_work_tree || return 1
+    [[ $# -ne 0 ]] && { git checkout -- "$@"; return $?; }
+    local cmd files opts
+    cmd="git diff --color=always -- {} | $forgit_diff_pager"
+    opts="
+        $FORGIT_FZF_DEFAULT_OPTS
+        -m -0
+        $FORGIT_CHECKOUT_FILE_FZF_OPTS
+    "
+    files="$(git ls-files --modified "$(git rev-parse --show-toplevel)"| FZF_DEFAULT_OPTS="$opts" fzf --preview="$cmd")"
+    [[ -n "$files" ]] && echo "$files" | tr '\n' '\0' | xargs -0 -I% git checkout %
+}

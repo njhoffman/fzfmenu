@@ -1,0 +1,21 @@
+---
+envs:
+  - FZF_MENU_LOGFILE: "fzf-menu.log"
+  - CLR_MENU_ID: "\033[38;5;70m"
+
+actions:
+  - id: apt:id
+    desc: search and output apt package information
+    cmd: apt.zsh --mode=id
+
+  - id: apt:install
+    desc: select apt packages to install
+    cmd: apt.zsh --mode=install
+
+  - id: apt:remove
+    desc: remove installed apt packages
+    cmd: apt.zsh --mode=remove
+
+  - id: apt:upgrade
+    desc: upgrade apt packages available for update
+    cmd: apt.zsh --mode=upgrade

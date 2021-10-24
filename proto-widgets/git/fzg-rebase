@@ -1,0 +1,20 @@
+#!/bin/zsh
+
+forgit::rebase() {
+    forgit::inside_work_tree || return 1
+    local cmd preview opts graph files commit
+    graph=--graph
+    [[ $FORGIT_LOG_GRAPH_ENABLE == false ]] && graph=
+    cmd="git log $graph --color=always --format='$forgit_log_format' $* $forgit_emojify"
+    files=$(sed -nE 's/.* -- (.*)/\1/p' <<< "$*") # extract files parameters for `git show` command
+    preview="echo {} |grep -Eo '[a-f0-9]+' |head -1 |xargs -I% git show --color=always % -- $files | $forgit_show_pager"
+    opts="
+        $FORGIT_FZF_DEFAULT_OPTS
+        +s +m --tiebreak=index
+        --bind=\"ctrl-y:execute-silent(echo {} |grep -Eo '[a-f0-9]+' | head -1 | tr -d '[:space:]' |${FORGIT_COPY_CMD:-pbcopy})\"
+        $FORGIT_REBASE_FZF_OPTS
+    "
+    commit=$(eval "$cmd" | FZF_DEFAULT_OPTS="$opts" fzf --preview="$preview" |
+        grep -Eo '[a-f0-9]+' | head -1)
+    [[ -n "$commit" ]] && git rebase -i "$commit"
+}

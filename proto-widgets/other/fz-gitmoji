@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+fzf-gitmoji() {
+  local res=$(gitmoji -l \
+  | FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS}
+    --bind=${ZSH_FZF_PASTE_KEY}:accept
+  " ${=FZF_CMD} \
+  | grep -oP ':.+:')
+  if [[ -n "$res" ]]; then
+    LBUFFER=$LBUFFER$res
+    zle redisplay
+  fi
+}
+
+fzf-gitmoji

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# file has to be sourced directly so don't exit if there's a problem
+[[ "$_" != "$0" ]] && echo "Script needs to be sourced directly $_ " && exit 1
+
+dir=$(dirname "${BASH_SOURCE[0]}")
+
+${IFS+"false"} && unset oldifs || oldifs="$IFS"
+
+groups=$(bindkey -l)
+bindlist=()
+while IFS= read -r mapname; do
+  mapkeys=$(bindkey -M "$mapname")
+  IFS=$'\n'
+  echo "$mapkeys" | while read -r mapkey; do
+  bindlist+="${mapname} ${mapkey}"
+  done
+done <<< "$groups"
+
+IFS=$'\n'
+
+echo "${bindlist[*]}" | "${dir}/process.js" # | fzf
+
+unset maps
+unset bindlist
+
+${oldifs+"false"} && unset IFS || IFS="$oldifs"

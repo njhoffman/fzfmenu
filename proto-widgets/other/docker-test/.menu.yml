@@ -1,0 +1,21 @@
+---
+actions:
+  - id: docker:containers
+    desc: inspect and manage running containers
+    cmd: docker.sh -t containers
+
+  - id: docker:images
+    desc: view and manage docker created images
+    cmd: docker.sh -t images
+
+  - id: docker:networks
+    desc: view and manage docker networks
+    cmd: docker.sh -t networks
+
+  - id: docker:volumes
+    desc: view and manage docker volumes
+    cmd: docker.sh -t volumes
+
+  - id: docker:logs
+    desc: view and manage docker logs
+    cmd: docker.sh -t logs

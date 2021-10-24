@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+# bash: commands, aliases, built-ins, keywords
+# compgen -abck
+# compgen -A function
+# whence -pm '*'
+print -rC1 -- ${(ko)commands}n

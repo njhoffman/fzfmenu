@@ -1,0 +1,152 @@
+#!/usr/bin/env zsh
+
+FZF_HISTDB_FILE="${(%):-%N}"
+
+source "$(dirname $FZF_HISTDB_FILE)/fzhistory.histdb.zsh"
+
+autoload -U colors && colors
+
+function _log() {
+  if [[ ! -z ${HISTDB_FZF_LOGFILE} ]]; then
+    if [[ ! -f ${HISTDB_FZF_LOGFILE} ]]; then
+      touch ${HISTDB_FZF_LOGFILE}
+    fi
+    echo $* >> ${HISTDB_FZF_LOGFILE}
+  fi
+}
+
+function _fzhistory-cmd() {
+  [ -n "$TMUX_PANE" ] && { [ "${FZF_TMUX:-0}" != 0 ] || [ -n "$FZF_TMUX_OPTS" ]; } &&
+    echo "fzf-tmux" || echo "fzf"
+}
+
+function _fzhistory-query() {
+  # A wrapper for histb-query with fzf specific options and query
+  _histdb_init
+  local -a opts
+  zparseopts -E -D -a opts \
+             s d t
+
+  local where=""
+  local everywhere=0
+  for opt ($opts); do
+    case $opt in
+      -s)
+        where="${where:+$where and} session in (${HISTDB_SESSION})"
+        ;;
+      -d)
+        where="${where:+$where and} (places.dir like '$(sql_escape $PWD)%')"
+        ;;
+      -t)
+        everywhere=1
+        ;;
+    esac
+  done
+  if [[ $everywhere -eq 0 ]];then
+    where="${where:+$where and} places.host=${HISTDB_HOST}"
+  fi
+
+  local cols="history.id as id, commands.argv as argv, max(start_time) as max_start, exit_status"
+
+  local mst="datetime(max_start, 'unixepoch')"
+  local dst="datetime('now', 'start of day')"
+  local yst="datetime('now', 'start of year')"
+  local timecol="strftime(case when $mst > $dst then '%H:%M' else (case when $mst > $yst then '%d/%m' else '%d/%m/%Y' end) end, max_start, 'unixepoch', 'localtime') as time"
+
+  local query="
+    select id, ${timecol},
+    CASE exit_status WHEN 0 THEN '' ELSE '${fg[red]}' END || replace(argv, '
+    ', ' ') as cmd,
+    CASE exit_status WHEN 0 THEN '' ELSE '${reset_color}' END
+    from
+    (select
+      ${cols}
+    from
+      history
+      left join commands on history.command_id = commands.id
+      left join places on history.place_id = places.id
+    ${where:+where ${where}}
+    group by history.command_id, history.place_id
+    order by max_start desc)
+    order by max_start desc"
+
+  _log "query for log '${(Q)query}'\n-----"
+
+  # use tab as separator
+  _histdb_query -separator '  ' "$query"
+}
+
+function _fzhistory() {
+  local selected num mode exitkey typ cmd_opts
+  ORIG_FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS
+  query=$*
+  origquery=$*
+  exitkey='ctrl-r'
+
+  _log "================== START ===================\nquery $query"
+  histdb_fzf_modes=('session' 'loc' 'global')
+  if [[ -n ${HISTDB_FZF_DEFAULT_MODE} ]]; then
+    mode=${HISTDB_SESSION}
+  elif [[ -z ${HISTDB_SESSION} ]];then
+    mode=2
+  else
+    mode=1
+  fi
+  _log "Start mode ${histdb_fzf_modes[$mode]} ($mode)"
+
+  setopt localoptions noglobsubst noposixbuiltins pipefail 2> /dev/null
+  while [[ "$exitkey" != "" && "$exitkey" != "esc" ]]; do
+    _log "------------------- TURN -------------------\nExitkey $exitkey"
+    # the f keys are a shortcut to select a certain mode
+    if [[ $exitkey =~ "f." ]]; then
+      mode=${exitkey[$(($MBEGIN+1)),$MEND]}
+      _log "mode changed to ${histdb_fzf_modes[$mode]} ($mode)"
+    fi
+
+    # based on the mode, we use the options for histdb options
+    case "$histdb_fzf_modes[$mode]" in
+      'session')
+        cmd_opts="-s"
+        typ="Session local history ${fg[blue]}${HISTDB_SESSION}${reset_color}"
+        switchhints="${fg_bold[blue]}F1: session${reset_color} ${bold_color}F2: directory${reset_color} ${bold_color}F3: global${reset_color}"
+        ;;
+      'loc')
+        cmd_opts="-d"
+        typ="Directory local history ${fg[blue]}$(pwd)${reset_color}"
+        switchhints="${bold_color}F1: session${reset_color} ${fg_bold[blue]}F2: directory${reset_color} ${bold_color}F3: global${reset_color}"
+        ;;
+      'global')
+        cmd_opts=""
+        typ='global history'
+        switchhints="${bold_color}F1: session${reset_color} ${bold_color}F2: directory${reset_color} ${fg[blue]}F3: global${reset_color}"
+        ;;
+    esac
+
+    mode=$((($mode % $#histdb_fzf_modes) + 1))
+    _log "mode changed to ${histdb_fzf_modes[$mode]} ($mode)"
+
+    fzhist_options="-n2.. --ansi --with-nth=2.. --tiebreak=index --expect='esc,ctrl-r,f1,f2,f3,ctrl-]' --bind 'ctrl-d:page-down,ctrl-u:page-up' --print-query --no-hscroll --preview-window=right:50%:wrap "
+    fzhist_preview="--preview='source ${FZF_HISTDB_FILE}.preview.zsh; _fzhistory-preview ${HISTDB_FILE} {1}'"
+
+    _log "--height ${FZF_TMUX_HEIGHT:-40%} $ORIG_FZF_DEFAULT_OPTS --header='$typ
+$switchhints' ${fzhist_options} ${fzhist_preview} --query='${query}' +m"
+
+    result=( "${(f@)$( _fzhistory-query ${cmd_opts} |
+      FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} $ORIG_FZF_DEFAULT_OPTS --ansi --header='$typ
+$switchhints' ${fzhist_options} ${fzhist_preview} --query='${query}' +m" $(_fzhistory-cmd))}" )
+
+    # here we got a result from fzf, containing all the information, now we must handle it, split it and use the correct elements
+    _log "result was $result\nreturncode was $?"
+    query=$result[1]
+    exitkey=${result[2]}
+    fzf_selected="${(j: :)${(@z)result[3]}[@]:2}"
+    _log "Query was\t$query\nExitkey was\t$exitkey\nselected = $fzf_selected $#fzf_selected"
+    selected="${fzf_selected}"
+  done
+
+  echo "$selected"
+  _log "new selected: $selected\n"
+  _log "=================== DONE ==================="
+}
+
+_fzhistory "$*"

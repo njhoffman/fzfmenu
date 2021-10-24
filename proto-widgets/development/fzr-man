@@ -1,0 +1,2 @@
+#!/bin/bash
+echo '' | fzf --preview 'man {q}'

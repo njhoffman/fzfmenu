@@ -1,0 +1,17 @@
+---
+envs:
+  - FZF_MENU_LOGFILE: "fzf-menu.log"
+  - CLR_MENU_ID: "\033[38;5;90m"
+
+actions:
+  - id: web:github
+    desc: search and explore github repositories
+    cmd: web.sh -t gh
+
+  - id: web:stackoverflow
+    desc: search stack overflow questions and answers
+    cmd: web.sh -t so
+
+  - id: web:thepiratebay
+    desc: search for torrents from thepiratebay
+    cmd: web.sh -t tpb

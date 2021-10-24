@@ -1,0 +1,8 @@
+
+| web:github | search and explore github repositories
+| web:stackoverflow | search stack overflow questions and answers
+| web:thepiratebay | search for torrents from thepiratebay
+| apt:id | search and output apt package information
+| apt:install | select apt packages to install
+| apt:remove | remove installed apt packages
+| apt:upgrade | upgrade apt packages available for update

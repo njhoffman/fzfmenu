@@ -1,0 +1,8 @@
+    web:github         search and explore github repositories
+    web:stackoverflow  search stack overflow questions and answers
+    web:thepiratebay   search for torrents from thepiratebay
+    docker:containers  inspect and manage running containers
+    docker:images      view and manage docker created images
+    docker:networks    view and manage docker networks
+    docker:volumes     view and manage docker volumes
+    docker:logs        view and manage docker logs
