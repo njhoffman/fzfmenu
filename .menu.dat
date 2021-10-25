@@ -1,8 +1,15 @@
 
-| web:github | search and explore github repositories
-| web:stackoverflow | search stack overflow questions and answers
-| web:thepiratebay | search for torrents from thepiratebay
-| apt:id | search and output apt package information
-| apt:install | select apt packages to install
-| apt:remove | remove installed apt packages
-| apt:upgrade | upgrade apt packages available for update
+|web:github|search and explore github repositories|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/web.sh
+|web:stackoverflow|search stack overflow questions and answers|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/web.sh
+|web:thepiratebay|search for torrents from thepiratebay|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/web.sh
+|web:github|search and explore github repositories|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/web.sh
+|web:stackoverflow|search stack overflow questions and answers|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/web.sh
+|web:thepiratebay|search for torrents from thepiratebay|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/web.sh
+|docker:containers|inspect and manage running containers|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/docker-test/docker.sh
+|docker:images|view and manage docker created images|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/docker-test/docker.sh
+|docker:networks|view and manage docker networks|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/docker-test/docker.sh
+|docker:volumes|view and manage docker volumes|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/docker-test/docker.sh
+|docker:logs|view and manage docker logs|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/docker-test/docker.sh
+|apt:install|Select available apt packages for installation|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/widgets/packages/apt.zsh
+|apt:remove|***|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/widgets/packages/apt.zsh
+|apt:upgrade|Select apt packages available for update|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/widgets/packages/apt.zsh

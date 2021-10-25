@@ -11,6 +11,11 @@ _fzf-source() {
   case "$mode" in esac
 }
 
+# optional - line by line parsing to facilitate buffering
+_fzf-source-line() {
+  line="$1"
+}
+
 # required - what to do with the selection
 _fzf-result() {
   mode="$1" && shift

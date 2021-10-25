@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SOURCE=$(readlink "${BASH_SOURCE[0]}")
-cwd="$(cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd)"
+cwd="$(cd -P "$( dirname "$SOURCE")"  > /dev/null 2>&1 && pwd)"
 cache_file="$cwd/.menu.dat"
 
 declare -A _clr
@@ -13,77 +13,77 @@ if [[ ! -z ${FZF_MENU_LOGFILE} ]]; then
 fi
 
 _fzf-menu-log() {
-if [[ ! -z ${FZF_MENU_LOGFILE} ]]; then
-  printf "\n--------------------\n\n" >> ${FZF_MENU_LOGFILE}
-  printf "  %s\n" $* >> ${FZF_MENU_LOGFILE}
-fi
+  if [[ ! -z ${FZF_MENU_LOGFILE} ]]; then
+    printf "\n--------------------\n\n" >> ${FZF_MENU_LOGFILE}
+    printf "  %s\n" $* >> ${FZF_MENU_LOGFILE}
+  fi
 }
 
-_fzf-menu-msg () {
-if [[ ! -z ${FZF_MENU_LOGFILE} ]]; then
-  echo -e "\n$*" >> ${FZF_MENU_LOGFILE}
-fi
+_fzf-menu-msg()  {
+  if [[ ! -z ${FZF_MENU_LOGFILE} ]]; then
+    echo -e "\n$*" >> ${FZF_MENU_LOGFILE}
+  fi
 }
 
 _fzf-menu-parse-env() {
-while read env_item; do
-  env_export="export \"${env_item/: /=}\""
-  _fzf-menu-msg "setting for $1: \n $env_export"
-  eval "$env_export"
-done< <(yq eval '.envs.[]' "$1")
+  while read env_item; do
+    env_export="export \"${env_item/: /=}\""
+    _fzf-menu-msg "setting for $1: \n $env_export"
+    eval "$env_export"
+  done < <(yq eval '.envs.[]' "$1")
 }
 
 _fzf-menu-build-cache() {
-fd_menu="fd --hidden -L -c never --no-ignore --type f \".menu.yml\" $cwd"
-menu_lines=""
-while read menu_file; do
-  menu_len=$(yq eval '.actions | length' "$menu_file")
-  echo -e "Processing $menu_len items from $menu_file"
-  for ((i=0; i<=$menu_len - 1; i++)); do
-    id=$(yq eval ".actions.[$i].id" "$menu_file")
-    desc=$(yq eval ".actions.[$i].desc" "$menu_file")
-    menu_lines="$menu_lines\n| $id | $desc"
-  done
-done < <(eval "$fd_menu")
-echo -e "$menu_lines" > "$cache_file"
-echo -e "Wrote $(cat ${cache_file} | wc -l) items to $cache_file"
+  fd_menu="fd --hidden -L -c never --no-ignore --type f \".menu.yml\" $cwd"
+  menu_lines=""
+  while read menu_file; do
+    menu_len=$(yq eval '.actions | length' "$menu_file")
+    echo -e "Processing $menu_len items from $menu_file"
+    for ((i = 0; i <= $menu_len - 1; i++)); do
+      id=$(yq eval ".actions.[$i].id" "$menu_file")
+      desc=$(yq eval ".actions.[$i].desc" "$menu_file")
+      menu_lines="$menu_lines\n| $id | $desc"
+    done
+  done < <(eval "$fd_menu")
+  echo -e "$menu_lines" > "$cache_file"
+  echo -e "Wrote $(cat ${cache_file} | wc -l) items to $cache_file"
 }
 
 _fzf-menu-handler() {
-echo -e "fzf menu handler! \n $*"
+  echo -e "fzf menu handler! \n $*"
 }
 
 _fzf-menu-assign-vars() {
-local lc=$'\e[' rc=m
-_clr[id]="${lc}${CLR_ID:-38;5;30}${rc}"
-_clr[desc]="${lc}${CLR_DESC:-38;5;59}${rc}"
-_clr[mode_active]="${lc}${CLR_MODE_ACTIVE:-38;5;117}${rc}"
-_clr[mode_inactive]="${lc}${CLR_MODE_INACTIVE:-38;5;68}${rc}"
-_clr[selected]="${lc}${CLR_MODE_SELECTED:-38;5;8;3}${rc}"
-_clr[rst]="${lc}0${rc}"
+  local lc=$'\e[' rc=m
+  _clr[id]="${lc}${CLR_ID:-38;5;30}${rc}"
+  _clr[desc]="${lc}${CLR_DESC:-38;5;59}${rc}"
+  _clr[mode_active]="${lc}${CLR_MODE_ACTIVE:-38;5;117}${rc}"
+  _clr[mode_inactive]="${lc}${CLR_MODE_INACTIVE:-38;5;68}${rc}"
+  _clr[selected]="${lc}${CLR_MODE_SELECTED:-38;5;8;3}${rc}"
+  _clr[rst]="${lc}0${rc}"
 }
 
 _fzf-menu-display() {
-local selected num mode exitkey typ cmd_opts fzf_cmd_args
-ORIG_FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS
-query="$*"
+  local selected num mode exitkey typ cmd_opts fzf_cmd_args
+  ORIG_FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS
+  query="$*"
 
-_fzf-menu-assign-vars
+  _fzf-menu-assign-vars
 
-fzf_cmd="fzf"
-# if [ -n "$TMUX_PANE" ] && { [ "${FZF_TMUX:-0}" != 0 ] || [ -n "$FZF_TMUX_OPTS" ] }; then
-if [ -n "$TMUX_PANE" ] && ( [ "${FZF_TMUX:-0}" != 0 ] || [ -n "$FZF_TMUX_OPTS" ] ); then
-  fzf_cmd="fzf-tmux"
-  fzf_cmd_args="${FZF_TMUX_OPTS:--p40%}"
-fi
+  fzf_cmd="fzf"
+  # if [ -n "$TMUX_PANE" ] && { [ "${FZF_TMUX:-0}" != 0 ] || [ -n "$FZF_TMUX_OPTS" ] }; then
+  if [ -n "$TMUX_PANE" ] && ([ "${FZF_TMUX:-0}" != 0 ] || [ -n "$FZF_TMUX_OPTS" ]); then
+    fzf_cmd="fzf-tmux"
+    fzf_cmd_args="${FZF_TMUX_OPTS:--p40%}"
+  fi
 
-lines=()
+  lines=()
 
-while read -r line; do
-  lineout=$(echo "$line" | awk -F'|'  \
-    '{print "'${_clr[rst]}'"$1"'${_clr[id]}'"$2"'${_clr[desc]}'"$3 "'${_clr[rst]}'"}')
-      lines+=( "$lineout" )
-    done < <(cat $cache_file \
+  while read -r line; do
+    lineout=$(echo "$line" | awk -F'|' \
+      '{print "'${_clr[rst]}'"$1"'${_clr[id]}'"$2"'${_clr[desc]}'"$3 "'${_clr[rst]}'"}')
+      lines+=("$lineout")
+  done   < <(cat $cache_file \
       | sort \
       | column -s '|' -o '|' -t)
 
@@ -91,9 +91,9 @@ while read -r line; do
 
     if [[ -n ${FZF_MENU_DEFAULT_MODE} ]]; then
       mode=${FZF_MENU_DEFAULT_MODE}
-    else
+  else
       mode=2
-    fi
+  fi
 
     exitkey='ctrl-r'
     while [[ "$exitkey" != "" && "$exitkey" != "esc" ]]; do
@@ -103,14 +103,14 @@ while read -r line; do
         if [[ $fzf_cmd == "fzf-tmux" ]]; then
           fzf_cmd="fzf"
           fzf_cmd_args=""
-        else
+      else
           fzf_cmd="fzf-tmux"
           fzf_cmd_args="${FZF_TMUX_OPTS:--p40%}"
-        fi
       fi
+    fi
       if [[ $exitkey =~ "f." ]]; then
-        mode=${exitkey[$(($MBEGIN+1)),$MEND]}
-      fi
+        mode=${exitkey[$(($MBEGIN + 1)), $MEND]}
+    fi
       case "$modes[$mode]" in
         'session')
           cmd_opts="-s"
@@ -133,7 +133,7 @@ while read -r line; do
           hints="${hints} ${_clr[mode_inactive]}F2: directory${_clr[rst]}"
           hints="${hints} ${_clr[mode_active]}F3: global${_clr[rst]}"
           ;;
-      esac
+    esac
 
       mode=$((($mode % ${#modes[@]}) + 1))
 
@@ -151,7 +151,7 @@ while read -r line; do
       _fzf-menu-msg "mode: $mode\nfzf options: $fzf_opts"
       FZF_DEFAULT_OPTS="${ORIG_FZF_DEFAULT_OPTS} ${fzf_opts}"
       # IFS=$'\n' result=($(printf '%s\n' "${lines[@]}" | $fzf_cmd $fzf_cmd_args ))
-      IFS=$'\n' result=($(printf '%s\n' "${lines[@]}" | $fzf_cmd $fzf_cmd_args ))
+      IFS=$'\n' result=($(printf '%s\n' "${lines[@]}" | $fzf_cmd $fzf_cmd_args))
       # _fzf-menu-msg "${result}\n${exitkey}"
       query=""
       exitkey="${result[1]}"
@@ -160,17 +160,17 @@ while read -r line; do
         query="${result[1]}"
         exitkey="${result[2]}"
         selected="${result[3]}"
-      fi
+    fi
       # selected="${(j: :)${(@z)result[3]}[@]:2}"
       _fzf-menu-msg "QUERY: $query\nEXIT: $exitkey\nSELECTED: $selected\n"
-    done
-  }
+  done
+}
 
 _fzf-menu-build-cache
 _fzf-menu-display $@
 
 SOURCE=$(readlink "${BASH_SOURCE[0]}")
-cwd="$(cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd)"
+cwd="$(cd -P "$( dirname "$SOURCE")"  > /dev/null 2>&1 && pwd)"
 cache_file="$cwd/.menu.dat"
 
 declare -A _clr
@@ -188,7 +188,7 @@ _fzf-menu-log() {
   fi
 }
 
-_fzf-menu-msg () {
+_fzf-menu-msg()  {
   if [[ ! -z ${FZF_MENU_LOGFILE} ]]; then
     echo -e "\n$*" >> ${FZF_MENU_LOGFILE}
   fi
@@ -199,7 +199,7 @@ _fzf-menu-parse-env() {
     env_export="export \"${env_item/: /=}\""
     _fzf-menu-msg "setting for $1: \n $env_export"
     eval "$env_export"
-  done< <(yq eval '.envs.[]' "$1")
+  done < <(yq eval '.envs.[]' "$1")
 }
 
 _fzf-menu-build-cache() {
@@ -208,7 +208,7 @@ _fzf-menu-build-cache() {
   while read menu_file; do
     menu_len=$(yq eval '.actions | length' "$menu_file")
     echo -e "Processing $menu_len items from $menu_file"
-    for ((i=0; i<=$menu_len - 1; i++)); do
+    for ((i = 0; i <= $menu_len - 1; i++)); do
       id=$(yq eval ".actions.[$i].id" "$menu_file")
       desc=$(yq eval ".actions.[$i].desc" "$menu_file")
       menu_lines="$menu_lines\n| $id | $desc"
@@ -248,9 +248,9 @@ _fzf-menu-display() {
   lines=()
 
   while read -r line; do
-    lineout=$(echo "$line" | awk -F'|'  \
+    lineout=$(echo "$line" | awk -F'|' \
       '{print "'${_clr[rst]}'"$1"'${_clr[id]}'"$2"'${_clr[desc]}'"$3 "'${_clr[rst]}'"}')
-    lines+=( "$lineout" )
+    lines+=("$lineout")
   done < <(cat $cache_file | sort | column -s '|' -o '|' -t)
 
   modes=('session' 'loc' 'global')
@@ -275,7 +275,7 @@ _fzf-menu-display() {
       fi
     fi
     if [[ $exitkey =~ "f." ]]; then
-      mode=${exitkey[$(($MBEGIN+1)),$MEND]}
+      mode=${exitkey[$(($MBEGIN + 1)), $MEND]}
     fi
     case "$modes[$mode]" in
       'session')
@@ -315,7 +315,7 @@ $hints'"
     _fzf-menu-log "${lines[@]}"
     _fzf-menu-msg "mode: $mode\nfzf options: $fzf_opts"
     FZF_DEFAULT_OPTS="${ORIG_FZF_DEFAULT_OPTS} ${fzf_opts}"
-    IFS=$'\n' result=($(printf '%s\n' "${lines[@]}" | $fzf_cmd $fzf_cmd_args ))
+    IFS=$'\n' result=($(printf '%s\n' "${lines[@]}" | $fzf_cmd $fzf_cmd_args))
     query=""
     exitkey="${result[1]}"
     selected="${result[2]}"

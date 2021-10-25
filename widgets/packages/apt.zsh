@@ -1,8 +1,13 @@
 #!/bin/zsh
 
 SOURCE="${(%):-%N}"
-cwd="$(cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd)"
-fzf_lib="$cwd/../fzf-lib.zsh"
+CWD="$(cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd)"
+FZF_LIB="$CWD/../../fzf-lib.zsh"
+
+FZF_DIVIDER_SHOW=1
+FZF_DIVIDER_LINE="―――――――――――――――――――――――――――――――――――――――――――――"
+
+FZF_MODES=('available' 'installed' 'upgradeable')
 
 _fzf-assign-vars() {
   local lc=$'\e[' rc=m
@@ -20,8 +25,8 @@ _fzf-source() {
   mode="$1" && shift
   selection="$*"
   case "$mode" in
-    'remove')
-      apt list --installed \
+    'installed')
+      apt list --installed 2>/dev/null \
         | sort  \
         | sed -u -r "s/^([^ ]+)(.*)/${_clr[name]}\1${_clr[desc]}\2${_clr[rst]}/"
       ;;
@@ -35,11 +40,11 @@ _fzf-source() {
 
 _fzf-result() {
   mode="$1" && shift
-  selection="echo $* | cut -d' ' -f1"
+  selection="$(echo $* | cut -d' ' -f1)"
 
-  _fzf-log "result $mode: $selection"
+  # _fzf-log "result $mode: $selection"
   case "$mode" in
-    'install')
+    'available')
       sudo apt-get install "$selection"
       ;;
     *)
@@ -53,25 +58,24 @@ _fzf-prompt() {
 }
 
 _fzf-header() {
+  header=""
   mode="$1"
-  case "$mode" in
-    'id')
-      echo "${_clr[selected]}Echo package id${_clr[rst]}"
+  mode_name="${FZF_MODES[$mode]}"
+  case "$mode_name" in
+    'available')
+      header="${_clr[selected]}Available apt packages to install${_clr[rst]} - ^t: install"
       ;;
-    'install')
-      echo "${_clr[selected]}Install package with apt${_clr[rst]}"
+    'installed')
+      header="${_clr[selected]}Installed apt packages${_clr[rst]} - ^t: remove"
       ;;
-    'upgrade')
-      echo "${_clr[selected]}Upgrade available apt packages${_clr[rst]}"
+    'upgradeable')
+      header="${_clr[selected]}Upgradeable apt packages${_clr[rst]} - ^t: upgrade"
       ;;
-    'remove')
-      echo "${_clr[selected]}Remove installed apt package${_clr[rst]}"
-      ;;
-    'info')
-      echo "${_clr[selected]}Echo package id${_clr[rst]}"
-      ;;
-
   esac
+  hints=$(_fzf-mode-hints $mode)
+  header="$header
+$hints"
+  echo "$header"
 }
 
 _fzf-preview() {
@@ -79,7 +83,7 @@ _fzf-preview() {
   shift
   selection="$*"
   case "$mode" in
-    info|install|upgrade|remove)
+    available|installed|upgradeable)
     yq eval '.Description-en' <(apt-cache show "$selection") 2>/dev/null \
       | bat --color always --plain
     apt-cache show $selection \
@@ -88,6 +92,10 @@ _fzf-preview() {
   esac
 }
 
-FZF_MODES=('info' 'install' 'upgrade' 'remove')
+_fzf-description() {
+  id="$1"
+  echo "fuck you $id"
+  exit 0
+}
 
-source "$fzf_lib"
+source "$FZF_LIB"
