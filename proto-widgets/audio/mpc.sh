@@ -10,7 +10,7 @@ function Mpc::get_raw_song_info {
 
 function Mpc::get_song_progress {
   Mpc::get_raw_song_info \
-                         | grep --only-matching --perl-regexp '(?<=\()[0-9]+(?=%)'
+    | grep --only-matching --perl-regexp '(?<=\()[0-9]+(?=%)'
 }
 
 function Mpc::get_song_name {
@@ -33,7 +33,7 @@ function Mpc::update-queue {
   # adds every song to the queue if it's not already part of it
   diff --unchanged-group-format="" --new-group-format="%>" \
     <(mpc playlist --format '%file%' | sort) <(mpc ls --format '%file%' | sort) \
-                                                                                | mpc add &> /dev/null
+    | mpc add &> /dev/null
 }
 
 function Mpc::clear-queue {
@@ -41,9 +41,14 @@ function Mpc::clear-queue {
 }
 
 function Mpc::get_song_duration {
-  local duration=$(mpc current --format "%time%")
+  local duration="$(mpc current --format "%time%")"
   local seconds=$((\
-    $((10#$(grep --only-matching --perl-regexp '([0-9]+)(?=:)' <<< "$duration") * 60)) + \
-    10#$(grep --only-matching --perl-regexp '(?<=:)([0-9]+)' <<< "$duration")))
+    $((10#$(grep --only-matching \
+    --perl-regexp '([0-9]+)(?=:)' \
+    <<< "$duration") * 60)) + \
+    10#$(grep --only-matching \
+    --perl-regexp '(?<=:)([0-9]+)' \
+    <<< "$duration")))
+
   echo -n "${seconds:-1}"
 }

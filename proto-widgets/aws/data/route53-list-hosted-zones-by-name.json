@@ -1,0 +1,16 @@
+{
+    "HostedZones": [
+        {
+            "Id": "/hostedzone/Z1PKQ5K4GVO1GB",
+            "Name": "spadash.com.",
+            "CallerReference": "94CBE41C-9E79-28EA-A519-2175A7AB60A2",
+            "Config": {
+                "Comment": "Primary spadash hosted zone",
+                "PrivateZone": false
+            },
+            "ResourceRecordSetCount": 30
+        }
+    ],
+    "IsTruncated": false,
+    "MaxItems": "100"
+}

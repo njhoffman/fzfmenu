@@ -1,0 +1,72 @@
+#!/bin/bash
+
+source "rds.sh"
+source "ec2.sh"
+source "ec.sh"
+source "eks.sh"
+
+function usage {
+  echo "You are using it wrong"
+  echo "Available commands: all, ec2, rds, sg, vpc, subnet"
+}
+
+# function ecr_repositories {
+# }
+
+ecsfuncs=( ec2_volumes ec2_subnets ec2_vpc ec2_security_groups ec2_instances )
+rdsfuncs=( rds_clusters rds_db_security_groups rds_db_instances rds_db_subnets )
+ecfuncs=( ec_clusters ec_subnet_groups )
+eksfuncs=( eks_list_clusters eks_describe_cluster eks_list_nodegroups eks_describe_nodegroup )
+#iamfuncs=()
+
+if [[ $# -gt 0 ]]; then
+  case $1 in
+    ec2|instance|instances)
+    ## ec2
+      ec2_instances $2
+      ;;
+    vol|volume|volumes)
+      ec2_volumes $2
+      ;;
+    subnet|subnets)
+      ec2_subnets $2
+      ;;
+    sg|security-group|security-groups)
+      ec2_security_groups $2
+      ;;
+    vpc)
+      ec2_vpcs $2
+      ;;
+    ## rds
+    rds|rds-instance|rds-instances)
+      rds_db_instances $2
+      ;;
+    rds-sg|rds-security-group|rds-security-groups)
+      rds_db_security_groups $2
+      ;;
+    rds-subnet|rds-subnets)
+      rds_db_subnets $2
+      ;;
+    ## eks
+    eks-clusters|eks-list|eks-list-clusters)
+      eks_list_clusters $2
+      ;;
+    eks-describe|eks-describe-cluster)
+      eks_describe_cluster $2
+      ;;
+    all)
+      for func in "$ecsfuncs"; do
+        $func
+      done
+      for func in "$rdsfuncs"; do
+        $func
+      done
+      ;;
+    *)
+      usage
+      ;;
+  esac
+else
+  usage
+fi
+

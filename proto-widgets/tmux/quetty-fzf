@@ -1,0 +1,91 @@
+#!/usr/bin/env bash
+ROOTDIR="$(cd "$(dirname "$0")" > /dev/null 2>&1 && pwd -P)"
+if [[ -f "$ROOTDIR/.env" ]]; then
+  source "$ROOTDIR/.env"
+fi
+
+printhelp() {
+       echo >&2 '
+Usage: quetty-fzf
+A helper script that combines different tokenizers of quetty with fzf.
+quetty-fzf sends the input to fzf. In addition, it also enables
+a few keybindings inside fzf to easily switch the quetty tokenizers.
+Currently supported tokenizers are -word, -nospace, -hash, -num, -path, -ip, -line
+
+ENVIRONMENT VARIABLES
+   QUETTYFZF_START         Specify the starting mode for quetty-fzf. Default is "word"
+
+Options
+  -start STARTMODE
+        If specified overrides the QUETTYFZF_START variable to specify the starting mode.
+
+Example:
+        While in the fzf selecter, press M-p to switch to path mode
+    '
+}
+
+startmode="${QUETTYFZF_START:-url}"
+
+while (("$#")); do
+  case $1 in
+    -h | --help)
+      printhelp
+      exit 0
+      ;;
+    -start)
+      if [ -n "$2" ] && [ ${2:0:1} != "-" ]; then
+        startmode=$2
+        shift 2
+      else
+        echo "Error: Argument for $1 is missing" >&2
+        exit 1
+      fi
+      ;;
+    *)
+      # quetty-fzf does not support any other arguments
+      echo "Invalid Option: $1" 1>&2
+      printhelp
+      exit 1
+      ;;
+  esac
+done
+
+inpfile="$BUTLERTMPDIR/quetty-fzf-input-file"
+cleanup() {
+  rm -f $inpfile
+}
+[[ -z $BUTLERDEBUG ]] && trap 'cleanup' EXIT
+
+# save stdin to tmp file
+cat > $inpfile
+
+# setup key bindings for fzf
+# each binding would switch quetty to a different tokenizer/filter
+declare -A keymap
+# keymap['alt-w']='word'
+# keymap['alt-e']='nospace'
+# keymap['alt-n']='num'
+# keymap['alt-l']='line'
+keymap['F4']='hash'
+keymap['F3']='ip'
+keymap['F2']='path'
+keymap['F1']='url'
+bindings="--bind="
+firstmap=true
+header+="$FZFHEADER"
+for key in "${!keymap[@]}"; do
+  header="$key:${keymap[$key]} ${header}"
+  if [ "$firstmap" = false ]; then
+    bindings+=","
+  fi
+  bindings+="$key:reload(cat $inpfile \
+    | $ROOTDIR/quetty -${keymap[$key]})"
+  firstmap=false
+done
+
+if [[ -n "$FZFBINDING" ]]; then
+  bindings+=",$FZFBINDING"
+fi
+
+cat $inpfile | $ROOTDIR/quetty -$startmode | \
+  fzf --header="$header" "$bindings"

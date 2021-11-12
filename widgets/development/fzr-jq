@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+
+if [[ -z $1 ]] || [[ $1 == "-" ]]; then
+  input=$(mktemp)
+  trap "rm -f $input" EXIT
+  cat /dev/stdin > $input
+else
+  input=$1
+fi
+
+path_logic1='[
+path(..) |
+  map(select(type=="string") // "[]") |
+  join(".") | split(".[]") | join("[]")
+  ] | map("." + .) | unique | .[]'
+
+path_logic2='
+def path2text($value):
+  def tos: if type == "number" then . else tojson end;
+  reduce .[] as $segment ("";  .
+    + ($segment
+       | if type == "string" then "." + . else "[\(.)]" end))
+  + " = \($value | tos)";
+
+paths(scalars) as $p
+  | getpath($p) as $v
+  | $p | path2text($v)
+'
+
+path_logic3='
+[
+  path(..)
+  | map(
+      if type == "number" then
+          "[]"
+      else
+          tostring
+      end
+  )
+  | join(".")
+  | split(".[]")
+  | join("[]")
+]
+| unique
+| map("." + .)
+| .[]'
+
+lc=$"\x1b" rc=m
+clr_gray="${lc}[0;30${rc}"
+clr_rst="${lc}[0${rc}"
+
+JQ_PREVIEW="jq -r --color-output $JQ_REPL_ARGS"
+
+<"$input" jq -r "$path_logic3" | sort | uniq  | \
+  sed 's/^ \+//g' | fzf \
+  --preview "$JQ_PREVIEW {q} $input 2>/dev/null" \
+  --delimiter=" " \
+  --preview-window="down:80%:nohidden" \
+  --height="95%" \
+  --query="." \
+  --bind "tab:replace-query,return:print-query"
+  # --bind "ctrl-n:down+replace-query"
+
+# <"$input" jq -r "$path_logic3" | sort | uniq -c | \
+#   sed 's/^ \+//g' | sed "s/\([0-9]\+\)./${clr_gray}\1${clr_rst} /" |
+#     fzf \
+#       --preview "$JQ_PREVIEW {q} $input 2>/dev/null" \
+#       --delimiter=" " \
+#       --nth=2 \
+#       --preview-window="down:80%:nohidden" \
+#       --height="95%" \
+#       --query="." \
+#       --bind "tab:replace-query,return:print-query"
+
+# ./widgets/development/fzr-jq
+
+# <"$input" jq -r '[
+#     path(..) |
+#     map(select(type=="string") // "[]") |
+#     join(".") | split(".[]") | join("[]")
+#   ] | map("." + .) | unique | .[]' |
+# fzf \
+#     --preview "jq --color-output $JQ_REPL_ARGS {q} $input 2>/dev/null" \
+#     --preview-window="down:90%" \
+#     --height="99%" \
+#     --query="." \
+#     --bind "tab:replace-query,return:print-query" \
+#     --bind "alt-up:preview-page-up,alt-down:preview-page-down"

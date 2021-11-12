@@ -73,38 +73,6 @@ bindkey '^I' fzf-tab-partial-and-complete
 bindkey '^I' expand-or-complete
 bindkey '^I^I' fzf-tab-complete
 ```
-```
-```
-
-- If you're on a tmux session, you can start fzf in a tmux split-pane or in a tmux popup window by setting FZF_TMUX_OPTS (e.g. -d 40%). See fzf-tmux --help for available options.
-
-* fzf-tab paths use "/" for dividing instead of fzf which shows everything
-  * switch to colorls, figure out how to go backwards in fzf-tab
-  * map keybinding to switch between different views
-  * add preview to either fzf or fzf-tab for export, unset, alias
-  - compare docker versions
-  * debug fzf-tmux in fzf-tab
-
-* fall back to chitoku for:
-  - systemctl
-- test:
-  * cf.zsh
-  * composer.zsh
-  * docker.zsh
-  * env.zsh
-  * gh.zsh
-  * git.zsh
-  * kubectl.zsh
-  * make.zsh
-  * npm.zsh
-  * sudo.zsh
-  * systemctl.zsh
-  * vault.zsh
-  * yarn.zsh
-
-
-
-
 
 
 ## ZAW
@@ -155,6 +123,9 @@ for example, execute bindkey '^R' zaw-history and press ^R to access history sou
 you can get all available shortcut widgets' name using zaw-print-src:
 
 $ zaw-print-src
+
+
+```
 source name      shortcut widget name
 ----------------------------------------
 ack              zaw-ack
@@ -226,6 +197,8 @@ example:
   zstyle ':filter-select' escape-descriptions no # display literal newlines, not \n, etc
   zstyle ':zaw:git-files' default zaw-callback-append-to-buffer # set default action for git-files
   zstyle ':zaw:git-files' alt zaw-callback-edit-file # set the alt action for git-files
+
+```
 
 extended-search:
     If this style set to be true value, the searching bahavior will be

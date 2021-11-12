@@ -1,0 +1,1073 @@
+{
+    "SecurityGroups": [
+        {
+            "Description": "Security group for all nodes in the nodeGroup to allow SSH access",
+            "GroupName": "eks-remoteAccess-9ab93bfe-5e00-ff0d-73b2-7f88fe8cd972",
+            "IpPermissions": [
+                {
+                    "FromPort": 22,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 22,
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "OwnerId": "414719454744",
+            "GroupId": "sg-0009da0caac30774d",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "eks",
+                    "Value": "spadash-prod0-eks-ng0-cheerful-unicorn"
+                },
+                {
+                    "Key": "eks:nodegroup-name",
+                    "Value": "spadash-prod0-eks-ng0-cheerful-unicorn"
+                }
+            ],
+            "VpcId": "vpc-f9907792"
+        },
+        {
+            "Description": "EKS created security group applied to ENI that is attached to EKS Control Plane master nodes, as well as any managed workloads.",
+            "GroupName": "eks-cluster-sg-spadash-prod0-eks-848515746",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": [
+                        {
+                            "GroupId": "sg-00846dd42e056cb8e",
+                            "UserId": "414719454744"
+                        },
+                        {
+                            "GroupId": "sg-08837e4141257cdf9",
+                            "UserId": "414719454744"
+                        }
+                    ]
+                }
+            ],
+            "OwnerId": "414719454744",
+            "GroupId": "sg-00846dd42e056cb8e",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/cluster/spadash-prod0-eks",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "aws:eks:cluster-name",
+                    "Value": "spadash-prod0-eks"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "eks-cluster-sg-spadash-prod0-eks-848515746"
+                }
+            ],
+            "VpcId": "vpc-f9907792"
+        },
+        {
+            "Description": "Managed by Terraform",
+            "GroupName": "spadash-dev-rds",
+            "IpPermissions": [
+                {
+                    "FromPort": 5432,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 5432,
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "OwnerId": "414719454744",
+            "GroupId": "sg-01ad476a9eb82fda4",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "env/name",
+                    "Value": "dev"
+                },
+                {
+                    "Key": "env/type",
+                    "Value": "development"
+                },
+                {
+                    "Key": "env/desc",
+                    "Value": "Managed by Terraform with the https://bitbucket.org/spadash/spadash-system/envs/dev/infra module."
+                }
+            ],
+            "VpcId": "vpc-f9907792"
+        },
+        {
+            "Description": "Security group for all nodes in the cluster.",
+            "GroupName": "spadash-prod0-eks2020060302130951770000000b",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Allow node to communicate with each other.",
+                            "GroupId": "sg-033681d99bddec1f2",
+                            "UserId": "414719454744"
+                        }
+                    ]
+                },
+                {
+                    "FromPort": 1025,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 65535,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Allow workers pods to receive communication from the cluster control plane.",
+                            "GroupId": "sg-0914a3a1bcc33c491",
+                            "UserId": "414719454744"
+                        }
+                    ]
+                },
+                {
+                    "FromPort": 443,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 443,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Allow pods running extension API servers on port 443 to receive communication from cluster control plane.",
+                            "GroupId": "sg-0914a3a1bcc33c491",
+                            "UserId": "414719454744"
+                        }
+                    ]
+                }
+            ],
+            "OwnerId": "414719454744",
+            "GroupId": "sg-033681d99bddec1f2",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0",
+                            "Description": "Allow nodes all egress to the Internet."
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "spadash-prod0-eks-eks_worker_sg"
+                },
+                {
+                    "Key": "env/type",
+                    "Value": "production"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/spadash-prod0-eks",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "env/desc",
+                    "Value": "Managed by Terraform with the https://bitbucket.org/spadash/spadash-system/envs/prod0/infra module."
+                },
+                {
+                    "Key": "env/name",
+                    "Value": "prod0"
+                }
+            ],
+            "VpcId": "vpc-f9907792"
+        },
+        {
+            "Description": "Security group for all nodes in the cluster.",
+            "GroupName": "spadash-dev0-eks20200616044943589200000006",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Allow node to communicate with each other.",
+                            "GroupId": "sg-037900a54e832a52b",
+                            "UserId": "414719454744"
+                        }
+                    ]
+                },
+                {
+                    "FromPort": 1025,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 65535,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Allow workers pods to receive communication from the cluster control plane.",
+                            "GroupId": "sg-0a5d8384b9db75006",
+                            "UserId": "414719454744"
+                        }
+                    ]
+                },
+                {
+                    "FromPort": 443,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 443,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Allow pods running extension API servers on port 443 to receive communication from cluster control plane.",
+                            "GroupId": "sg-0a5d8384b9db75006",
+                            "UserId": "414719454744"
+                        }
+                    ]
+                }
+            ],
+            "OwnerId": "414719454744",
+            "GroupId": "sg-037900a54e832a52b",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0",
+                            "Description": "Allow nodes all egress to the Internet."
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "env/desc",
+                    "Value": "Managed by Terraform with the https://bitbucket.org/spadash/spadash-system/envs/dev0/infra module."
+                },
+                {
+                    "Key": "kubernetes.io/cluster/spadash-dev0-eks",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "spadash-dev0-eks-eks_worker_sg"
+                },
+                {
+                    "Key": "env/name",
+                    "Value": "dev0"
+                },
+                {
+                    "Key": "env/type",
+                    "Value": "development"
+                }
+            ],
+            "VpcId": "vpc-f9907792"
+        },
+        {
+            "Description": "Security group for Kubernetes ELB adc6a79c56d4a4d0f96c1fb198054e0c (traefik/traefik)",
+            "GroupName": "k8s-elb-adc6a79c56d4a4d0f96c1fb198054e0c",
+            "IpPermissions": [
+                {
+                    "FromPort": 80,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 80,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 3,
+                    "IpProtocol": "icmp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 4,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 443,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 443,
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "OwnerId": "414719454744",
+            "GroupId": "sg-03c8474ee54d844ad",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/cluster/spadash-dev0-eks",
+                    "Value": "owned"
+                }
+            ],
+            "VpcId": "vpc-f9907792"
+        },
+        {
+            "Description": "Security group for Kubernetes ELB ae4a385fd3fef4d9db555efadb811d3f (traefik/traefik)",
+            "GroupName": "k8s-elb-ae4a385fd3fef4d9db555efadb811d3f",
+            "IpPermissions": [
+                {
+                    "FromPort": 80,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 80,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 3,
+                    "IpProtocol": "icmp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 4,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 443,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 443,
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "OwnerId": "414719454744",
+            "GroupId": "sg-08837e4141257cdf9",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/cluster/spadash-prod0-eks",
+                    "Value": "owned"
+                }
+            ],
+            "VpcId": "vpc-f9907792"
+        },
+        {
+            "Description": "EKS cluster security group.",
+            "GroupName": "spadash-prod0-eks20200603020331001200000002",
+            "IpPermissions": [
+                {
+                    "FromPort": 443,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 443,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Allow pods to communicate with the EKS cluster API.",
+                            "GroupId": "sg-033681d99bddec1f2",
+                            "UserId": "414719454744"
+                        }
+                    ]
+                }
+            ],
+            "OwnerId": "414719454744",
+            "GroupId": "sg-0914a3a1bcc33c491",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0",
+                            "Description": "Allow cluster egress access to the Internet."
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "env/type",
+                    "Value": "production"
+                },
+                {
+                    "Key": "env/desc",
+                    "Value": "Managed by Terraform with the https://bitbucket.org/spadash/spadash-system/envs/prod0/infra module."
+                },
+                {
+                    "Key": "Name",
+                    "Value": "spadash-prod0-eks-eks_cluster_sg"
+                },
+                {
+                    "Key": "env/name",
+                    "Value": "prod0"
+                }
+            ],
+            "VpcId": "vpc-f9907792"
+        },
+        {
+            "Description": "Security group for all nodes in the nodeGroup to allow SSH access",
+            "GroupName": "eks-remoteAccess-6eb95dbb-7e19-307b-459b-f561310ebcb5",
+            "IpPermissions": [
+                {
+                    "FromPort": 22,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 22,
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "OwnerId": "414719454744",
+            "GroupId": "sg-09d874c026e6b0899",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "eks:nodegroup-name",
+                    "Value": "spadash-dev0-eks-ng0-workable-bobcat"
+                },
+                {
+                    "Key": "eks",
+                    "Value": "spadash-dev0-eks-ng0-workable-bobcat"
+                }
+            ],
+            "VpcId": "vpc-f9907792"
+        },
+        {
+            "Description": "EKS cluster security group.",
+            "GroupName": "spadash-dev0-eks20200616044024712200000002",
+            "IpPermissions": [
+                {
+                    "FromPort": 443,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 443,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Allow pods to communicate with the EKS cluster API.",
+                            "GroupId": "sg-037900a54e832a52b",
+                            "UserId": "414719454744"
+                        }
+                    ]
+                }
+            ],
+            "OwnerId": "414719454744",
+            "GroupId": "sg-0a5d8384b9db75006",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0",
+                            "Description": "Allow cluster egress access to the Internet."
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "spadash-dev0-eks-eks_cluster_sg"
+                },
+                {
+                    "Key": "env/desc",
+                    "Value": "Managed by Terraform with the https://bitbucket.org/spadash/spadash-system/envs/dev0/infra module."
+                },
+                {
+                    "Key": "env/name",
+                    "Value": "dev0"
+                },
+                {
+                    "Key": "env/type",
+                    "Value": "development"
+                }
+            ],
+            "VpcId": "vpc-f9907792"
+        },
+        {
+            "Description": "EKS created security group applied to ENI that is attached to EKS Control Plane master nodes, as well as any managed workloads.",
+            "GroupName": "eks-cluster-sg-spadash-dev0-eks-1098405070",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": [
+                        {
+                            "GroupId": "sg-03c8474ee54d844ad",
+                            "UserId": "414719454744"
+                        },
+                        {
+                            "GroupId": "sg-0a78f6bb59c135fa9",
+                            "UserId": "414719454744"
+                        }
+                    ]
+                }
+            ],
+            "OwnerId": "414719454744",
+            "GroupId": "sg-0a78f6bb59c135fa9",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "aws:eks:cluster-name",
+                    "Value": "spadash-dev0-eks"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "eks-cluster-sg-spadash-dev0-eks-1098405070"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/spadash-dev0-eks",
+                    "Value": "owned"
+                }
+            ],
+            "VpcId": "vpc-f9907792"
+        },
+        {
+            "Description": "Security group for Kubernetes ELB a89a7a227952811e9a6b5029e5f57416 (istio-system/istio-ingressgateway)",
+            "GroupName": "k8s-elb-a89a7a227952811e9a6b5029e5f57416",
+            "IpPermissions": [
+                {
+                    "FromPort": 80,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 80,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 15032,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 15032,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 15031,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 15031,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 15443,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 15443,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 15029,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 15029,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 15030,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 15030,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 15020,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 15020,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 3,
+                    "IpProtocol": "icmp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 4,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 31400,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 31400,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 443,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 443,
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "OwnerId": "414719454744",
+            "GroupId": "sg-0b098c262f59f18ff",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/cluster/spadash-dev-eks",
+                    "Value": "owned"
+                }
+            ],
+            "VpcId": "vpc-f9907792"
+        },
+        {
+            "Description": "Managed by Terraform",
+            "GroupName": "spadash-prod-rds",
+            "IpPermissions": [
+                {
+                    "FromPort": 5432,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 5432,
+                    "UserIdGroupPairs": [
+                        {
+                            "GroupId": "sg-033681d99bddec1f2",
+                            "UserId": "414719454744"
+                        }
+                    ]
+                }
+            ],
+            "OwnerId": "414719454744",
+            "GroupId": "sg-0dd025ec26e148b20",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "env/desc",
+                    "Value": "Managed by Terraform with the https://bitbucket.org/spadash/spadash-system/envs/prod/infra module."
+                },
+                {
+                    "Key": "env/name",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "env/type",
+                    "Value": "production"
+                }
+            ],
+            "VpcId": "vpc-f9907792"
+        },
+        {
+            "Description": "Security group for Kubernetes ELB a1ae802179ade11e999c106a6f982f6d (istio-system/istio-ingressgateway)",
+            "GroupName": "k8s-elb-a1ae802179ade11e999c106a6f982f6d",
+            "IpPermissions": [
+                {
+                    "FromPort": 80,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 80,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 15032,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 15032,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 15031,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 15031,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 15443,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 15443,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 15029,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 15029,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 15030,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 15030,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 15020,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 15020,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 3,
+                    "IpProtocol": "icmp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 4,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 31400,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 31400,
+                    "UserIdGroupPairs": []
+                },
+                {
+                    "FromPort": 443,
+                    "IpProtocol": "tcp",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "ToPort": 443,
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "OwnerId": "414719454744",
+            "GroupId": "sg-0f192ee8b2e0d365c",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/cluster/spadash-dev-eks",
+                    "Value": "owned"
+                }
+            ],
+            "VpcId": "vpc-f9907792"
+        },
+        {
+            "Description": "default VPC security group",
+            "GroupName": "default",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": [
+                        {
+                            "GroupId": "sg-b4e314d4",
+                            "UserId": "414719454744"
+                        }
+                    ]
+                }
+            ],
+            "OwnerId": "414719454744",
+            "GroupId": "sg-b4e314d4",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": [],
+                    "UserIdGroupPairs": []
+                }
+            ],
+            "VpcId": "vpc-f9907792"
+        }
+    ]
+}

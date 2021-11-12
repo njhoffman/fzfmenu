@@ -1,0 +1,309 @@
+{
+    "ResourceRecordSets": [
+        {
+            "Name": "spadash.com.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z3AADJGX6KTTL2",
+                "DNSName": "dualstack.ae4a385fd3fef4d9db555efadb811d3f-40241209.us-east-2.elb.amazonaws.com.",
+                "EvaluateTargetHealth": false
+            }
+        },
+        {
+            "Name": "spadash.com.",
+            "Type": "MX",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "0 spadash-com.mail.protection.outlook.com"
+                }
+            ]
+        },
+        {
+            "Name": "spadash.com.",
+            "Type": "NS",
+            "TTL": 172800,
+            "ResourceRecords": [
+                {
+                    "Value": "ns-1560.awsdns-03.co.uk."
+                },
+                {
+                    "Value": "ns-1212.awsdns-23.org."
+                },
+                {
+                    "Value": "ns-706.awsdns-24.net."
+                },
+                {
+                    "Value": "ns-197.awsdns-24.com."
+                }
+            ]
+        },
+        {
+            "Name": "spadash.com.",
+            "Type": "SOA",
+            "TTL": 900,
+            "ResourceRecords": [
+                {
+                    "Value": "ns-1560.awsdns-03.co.uk. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+                }
+            ]
+        },
+        {
+            "Name": "spadash.com.",
+            "Type": "SPF",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "\"@spadash.com. v=spf1 include:zcsend.net ~all\""
+                }
+            ]
+        },
+        {
+            "Name": "spadash.com.",
+            "Type": "TXT",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "\"include:zcsend.net\""
+                },
+                {
+                    "Value": "\"k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDb75u9BVb7KbVBL8JHLED9rqPaYiaq4zFYmzPhuBtobnQq2E4gvXOT9tf3BD8IiqXlyg3Ubj1wH6JqNsHYDRbIJ9QlrjAMu4QOy3O7dI2zsD1Sx6R5U9mKHoLjoWQ7OsdKf7Fikjlw3lcfgNdtN/6qkCokvR4kcmlMjOmyEHvg3wIDAQAB\""
+                },
+                {
+                    "Value": "\"google-site-verification=YAQ-GfIbw-bqnF3vusT9bNm52AjXAckP3GMVxAz7Dnc\""
+                }
+            ]
+        },
+        {
+            "Name": "54bseyc6gkzc89jkzted.spadash.com.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "verify.squarespace.com"
+                }
+            ]
+        },
+        {
+            "Name": "_amazonses.spadash.com.",
+            "Type": "TXT",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "\"Cyrk08DXAo0jsGIH3H0lkNG1WClfHU9cw5XJmsot6vc=\""
+                }
+            ]
+        },
+        {
+            "Name": "ghnwmvsp5l7ynfruplnfh5jswg6sbqlm._domainkey.spadash.com.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "ghnwmvsp5l7ynfruplnfh5jswg6sbqlm.dkim.amazonses.com"
+                }
+            ]
+        },
+        {
+            "Name": "ripe6evevc54eut3ufksfrmeezgso7p3._domainkey.spadash.com.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "ripe6evevc54eut3ufksfrmeezgso7p3.dkim.amazonses.com"
+                }
+            ]
+        },
+        {
+            "Name": "z66ijciy5ec3eci3xf4hwqipy53dvefx._domainkey.spadash.com.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "z66ijciy5ec3eci3xf4hwqipy53dvefx.dkim.amazonses.com"
+                }
+            ]
+        },
+        {
+            "Name": "dev.admin.spadash.com.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z3AADJGX6KTTL2",
+                "DNSName": "dualstack.aa9e4e3f0f6214b22b267f0a44759a6d-856744943.us-east-2.elb.amazonaws.com.",
+                "EvaluateTargetHealth": false
+            }
+        },
+        {
+            "Name": "prod.admin.spadash.com.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z3AADJGX6KTTL2",
+                "DNSName": "dualstack.ae4a385fd3fef4d9db555efadb811d3f-40241209.us-east-2.elb.amazonaws.com.",
+                "EvaluateTargetHealth": false
+            }
+        },
+        {
+            "Name": "dev.api.spadash.com.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z3AADJGX6KTTL2",
+                "DNSName": "dualstack.adc6a79c56d4a4d0f96c1fb198054e0c-184880113.us-east-2.elb.amazonaws.com.",
+                "EvaluateTargetHealth": false
+            }
+        },
+        {
+            "Name": "_372d478bb2f5f05221ce8bd4351f5929.dev.api.spadash.com.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "_fc1ae471b5c52be420e84e9d291a22df.ymrbdtpxcr.acm-validations.aws."
+                }
+            ]
+        },
+        {
+            "Name": "_amazonses.dev.api.spadash.com.",
+            "Type": "TXT",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "\"TXXZXnXyTF1AeE3ESha5H9hq0/Nc9dTL1aQBS2Xtw+o=\""
+                }
+            ]
+        },
+        {
+            "Name": "2ln75xfzbjd3r43565zux5jwq6suyomv._domainkey.dev.api.spadash.com.",
+            "Type": "CNAME",
+            "TTL": 1800,
+            "ResourceRecords": [
+                {
+                    "Value": "2ln75xfzbjd3r43565zux5jwq6suyomv.dkim.amazonses.com"
+                }
+            ]
+        },
+        {
+            "Name": "ss7xvqya4v6lilsp5hdn57vsdy2gqtz2._domainkey.dev.api.spadash.com.",
+            "Type": "CNAME",
+            "TTL": 1800,
+            "ResourceRecords": [
+                {
+                    "Value": "ss7xvqya4v6lilsp5hdn57vsdy2gqtz2.dkim.amazonses.com"
+                }
+            ]
+        },
+        {
+            "Name": "yfzozj4w3dqs43b22zbbeltrky2qbzvs._domainkey.dev.api.spadash.com.",
+            "Type": "CNAME",
+            "TTL": 1800,
+            "ResourceRecords": [
+                {
+                    "Value": "yfzozj4w3dqs43b22zbbeltrky2qbzvs.dkim.amazonses.com"
+                }
+            ]
+        },
+        {
+            "Name": "prod.api.spadash.com.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z3AADJGX6KTTL2",
+                "DNSName": "dualstack.ae4a385fd3fef4d9db555efadb811d3f-40241209.us-east-2.elb.amazonaws.com.",
+                "EvaluateTargetHealth": false
+            }
+        },
+        {
+            "Name": "_amazonses.prod.api.spadash.com.",
+            "Type": "TXT",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "\"xcCKZBvzI78OCZ63wOTZxGBqcXfxWDAOFSEIjci6IXA=\""
+                }
+            ]
+        },
+        {
+            "Name": "novne6xoinlxqiuhb3s4rqfyclyj3yya._domainkey.prod.api.spadash.com.",
+            "Type": "CNAME",
+            "TTL": 1800,
+            "ResourceRecords": [
+                {
+                    "Value": "novne6xoinlxqiuhb3s4rqfyclyj3yya.dkim.amazonses.com"
+                }
+            ]
+        },
+        {
+            "Name": "ot2zdra3jgqgeosoh6t6vfhbkoulhbnp._domainkey.prod.api.spadash.com.",
+            "Type": "CNAME",
+            "TTL": 1800,
+            "ResourceRecords": [
+                {
+                    "Value": "ot2zdra3jgqgeosoh6t6vfhbkoulhbnp.dkim.amazonses.com"
+                }
+            ]
+        },
+        {
+            "Name": "s5lte3ctnkhzxq7ze7k7tdwj3wuvy4d3._domainkey.prod.api.spadash.com.",
+            "Type": "CNAME",
+            "TTL": 1800,
+            "ResourceRecords": [
+                {
+                    "Value": "s5lte3ctnkhzxq7ze7k7tdwj3wuvy4d3.dkim.amazonses.com"
+                }
+            ]
+        },
+        {
+            "Name": "dev.spadash.com.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z3AADJGX6KTTL2",
+                "DNSName": "dualstack.aa9e4e3f0f6214b22b267f0a44759a6d-856744943.us-east-2.elb.amazonaws.com.",
+                "EvaluateTargetHealth": false
+            }
+        },
+        {
+            "Name": "dev.grafana.spadash.com.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z3AADJGX6KTTL2",
+                "DNSName": "dualstack.aa9e4e3f0f6214b22b267f0a44759a6d-856744943.us-east-2.elb.amazonaws.com.",
+                "EvaluateTargetHealth": true
+            }
+        },
+        {
+            "Name": "prod.grafana.spadash.com.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z3AADJGX6KTTL2",
+                "DNSName": "dualstack.ae4a385fd3fef4d9db555efadb811d3f-40241209.us-east-2.elb.amazonaws.com.",
+                "EvaluateTargetHealth": true
+            }
+        },
+        {
+            "Name": "nginx.dev.platform.spadash.com.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z3AADJGX6KTTL2",
+                "DNSName": "dualstack.a3b587a793b4545c5858e074c8d300dc-1542569116.us-east-2.elb.amazonaws.com.",
+                "EvaluateTargetHealth": false
+            }
+        },
+        {
+            "Name": "shop.spadash.com.",
+            "Type": "CNAME",
+            "TTL": 300,
+            "ResourceRecords": [
+                {
+                    "Value": "ext-cust.squarespace.com"
+                }
+            ]
+        },
+        {
+            "Name": "www.spadash.com.",
+            "Type": "A",
+            "AliasTarget": {
+                "HostedZoneId": "Z3AADJGX6KTTL2",
+                "DNSName": "dualstack.ae4a385fd3fef4d9db555efadb811d3f-40241209.us-east-2.elb.amazonaws.com.",
+                "EvaluateTargetHealth": false
+            }
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+printhelp() {
+      echo >&2 '
+  Usage: capture_panes
+
+  Collects the text from all panes of the current window and dumps it to stdout
+  If any of the pane is in copy mode, it collects only the currently visible text in the pane'
+}
+
+while (("$#")); do
+  case $1 in
+    -h | --help)
+      printhelp
+      exit 0
+      ;;
+    *)
+      echo "Invalid Option: $1" 1>&2
+      printhelp
+      exit 1
+      ;;
+  esac
+done
+
+function capture_pane_visible() {
+  # Calculating the scroll positions to capture only the visible contents in the panes.
+  pane_vals=$(tmux display-message -p -t $1 '#{scroll_region_lower}-#{scroll_position}')
+  scroll_height=$(echo $pane_vals | cut -f1 -d-)
+  scroll_pos=$(echo $pane_vals | cut -f2 -d-)
+  tmuxcmd="tmux capture-pane -p -J -t $1 "
+  # scoll_pos implies pane in copy mode
+  if [[ -n $scroll_pos ]]; then
+    bottom=$((scroll_height - scroll_pos))
+    copyargs="-S -$scroll_pos  -E $bottom"
+    tmuxcmd="$tmuxcmd $copyargs"
+  fi
+  $tmuxcmd
+}
+
+function capture_pane() {
+  tmuxcmd="tmux capture-pane -S - -p -J -t $1"
+  $tmuxcmd | tac
+}
+
+cur_window=$(tmux display-message -p '#I')
+pane_list=$(tmux list-panes -F '#D' -t $cur_window)
+for i in $pane_list; do
+  capture_pane $window.$i
+done

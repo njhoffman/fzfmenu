@@ -10,6 +10,6 @@
 |docker:networks|view and manage docker networks|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/docker-test/docker.sh
 |docker:volumes|view and manage docker volumes|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/docker-test/docker.sh
 |docker:logs|view and manage docker logs|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/docker-test/docker.sh
-|apt:install|Select available apt packages for installation|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/widgets/packages/apt.zsh
-|apt:remove|***|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/widgets/packages/apt.zsh
-|apt:upgrade|Select apt packages available for update|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/widgets/packages/apt.zsh
+|apt:install|null|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/widgets/packages/apt.zsh
+|apt:remove|null|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/widgets/packages/apt.zsh
+|apt:upgrade|null|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/widgets/packages/apt.zsh

@@ -1,58 +1,29 @@
-#!/usr/bin/env bash
-# vim: set filetype=ruby:
-# b - browse Chrome bookmarks with fzf
-# .roots.bookmark_bar.children[].children[].{data_added, guid, id, meta_info, name, type, url }
+#!/bin/bash
 
-[ $(uname) = Darwin ] || exit 1
-which fzf > /dev/null 2>&1 || brew reinstall --HEAD fzf || exit 1
+# shorten folders
+# "duplicates" mode
+# cache time of last update
+# find time of last visit
+# C-d, C-e, *move*, enter opens
 
-/usr/bin/ruby -x "$0"                                          |
-  fzf-tmux -u 30% --ansi --multi --no-hscroll --tiebreak=begin |
-  awk 'BEGIN { FS = "\t" } { print $2 }'                       |
-  xargs open
+function chrome_bookmarks() {
+  bookmarks_path="$HOME/.config/chrome/Profiles/Nick/Default/Bookmarks"
 
-exit $?
+  jq_script='
+  def ancestors: while(. | length >= 2; del(.[-1,-2]));
+  . as $in | paths(.url?) as $key | $in | getpath($key) | {name,url, path: [$key[0:-2] | ancestors as $a | $in | getpath($a) | .name?] | reverse | join("/") } | .path + "/" + .name + "\t" + .url'
 
-#!ruby
-# encoding: utf-8
+  jq -r "$jq_script" < "$bookmarks_path" \
+    | sed -E $'s/(.*)\t(.*)/\\1\t\x1b[36m\\2\x1b[m/g' \
+    | fzf --ansi \
+    | cut -d$'\t' -f2 \
+    | xargs open
+}
 
-require 'json'
-SRC_FILE = '/home/nicholas/.config/chrome/Profiles/Nick/Default/Bookmarks'
-FILE = '/tmp/buku.json'
-CJK  = /\p{Han}|\p{Katakana}|\p{Hiragana}|\p{Hangul}/
+function surfraw_bookmarks() {
+  selected="$(grep -E '^([[:alnum:]])' ~/.config/surfraw/bookmarks | sort -n | fzf -e -i -m --reverse | awk '{print $1}')"
+  [ -z "$selected" ] && exit
+  echo "$selected" | while read -r line; do  surfraw -browser="$BROWSER" "$line";  done
+}
 
-def build parent, json
-  name = [parent, json['name']].compact.join('/')
-  if json['type'] == 'folder'
-    json['children'].map { |child| build name, child }
-  else
-    { name: name, url: json['url'] }
-  end
-end
-
-def just str, width
-  str.ljust(width - str.scan(CJK).length)
-end
-
-def trim str, width
-  len = 0
-  str.each_char.each_with_index do |char, idx|
-    len += char =~ CJK ? 2 : 1
-    return str[0, idx] if len > width
-  end
-  str
-end
-
-width = `tput cols`.strip.to_i / 2
-json  = JSON.load File.read File.expand_path FILE
-items = json['roots']
-        .values_at(*%w(bookmark_bar synced other))
-        .compact
-        .map { |e| build nil, e }
-        .flatten
-
-items.each do |item|
-  name = trim item[:name], width
-  puts [just(name, width),
-    item[:url]].join("\t\x1b[36m") + "\x1b[m"
-end
+chrome_bookmarks

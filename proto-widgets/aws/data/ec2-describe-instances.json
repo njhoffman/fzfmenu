@@ -1,0 +1,886 @@
+{
+    "Reservations": [
+        {
+            "Groups": [],
+            "Instances": [
+                {
+                    "AmiLaunchIndex": 0,
+                    "ImageId": "ami-0edc51bc2f03c9dc2",
+                    "InstanceId": "i-01a9fcad36e97a39e",
+                    "InstanceType": "t3.large",
+                    "KeyName": "spadash@cloudserver",
+                    "LaunchTime": "2020-06-03T02:23:29+00:00",
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "Placement": {
+                        "AvailabilityZone": "us-east-2a",
+                        "GroupName": "",
+                        "Tenancy": "default"
+                    },
+                    "PrivateDnsName": "ip-172-31-11-191.us-east-2.compute.internal",
+                    "PrivateIpAddress": "172.31.11.191",
+                    "ProductCodes": [],
+                    "PublicDnsName": "ec2-3-22-250-213.us-east-2.compute.amazonaws.com",
+                    "PublicIpAddress": "3.22.250.213",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "StateTransitionReason": "",
+                    "SubnetId": "subnet-18262970",
+                    "VpcId": "vpc-f9907792",
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/xvda",
+                            "Ebs": {
+                                "AttachTime": "2020-06-03T02:23:30+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-0ba8924a0b1d44039"
+                            }
+                        },
+                        {
+                            "DeviceName": "/dev/xvdca",
+                            "Ebs": {
+                                "AttachTime": "2020-06-12T02:19:49+00:00",
+                                "DeleteOnTermination": false,
+                                "Status": "attached",
+                                "VolumeId": "vol-097f31338320eec68"
+                            }
+                        },
+                        {
+                            "DeviceName": "/dev/xvdce",
+                            "Ebs": {
+                                "AttachTime": "2020-09-20T22:27:39+00:00",
+                                "DeleteOnTermination": false,
+                                "Status": "attached",
+                                "VolumeId": "vol-0b0d2a5e2101b0fab"
+                            }
+                        },
+                        {
+                            "DeviceName": "/dev/xvdbr",
+                            "Ebs": {
+                                "AttachTime": "2020-09-20T22:34:46+00:00",
+                                "DeleteOnTermination": false,
+                                "Status": "attached",
+                                "VolumeId": "vol-04cdc7c25684d4832"
+                            }
+                        }
+                    ],
+                    "ClientToken": "4985c9df-f662-b11b-be61-c94055b6c6bb",
+                    "EbsOptimized": false,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "IamInstanceProfile": {
+                        "Arn": "arn:aws:iam::414719454744:instance-profile/eks-9ab93bfe-5e00-ff0d-73b2-7f88fe8cd972",
+                        "Id": "AIPAWBDZUVYMNQJ5X4J7K"
+                    },
+                    "NetworkInterfaces": [
+                        {
+                            "Association": {
+                                "IpOwnerId": "amazon",
+                                "PublicDnsName": "ec2-3-22-250-213.us-east-2.compute.amazonaws.com",
+                                "PublicIp": "3.22.250.213"
+                            },
+                            "Attachment": {
+                                "AttachTime": "2020-06-03T02:23:29+00:00",
+                                "AttachmentId": "eni-attach-02668ddf31de8bdb8",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupName": "eks-cluster-sg-spadash-prod0-eks-848515746",
+                                    "GroupId": "sg-00846dd42e056cb8e"
+                                },
+                                {
+                                    "GroupName": "eks-remoteAccess-9ab93bfe-5e00-ff0d-73b2-7f88fe8cd972",
+                                    "GroupId": "sg-0009da0caac30774d"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "02:69:2c:8b:e4:d0",
+                            "NetworkInterfaceId": "eni-03a1f5134dfbe4f54",
+                            "OwnerId": "414719454744",
+                            "PrivateDnsName": "ip-172-31-11-191.us-east-2.compute.internal",
+                            "PrivateIpAddress": "172.31.11.191",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Association": {
+                                        "IpOwnerId": "amazon",
+                                        "PublicDnsName": "ec2-3-22-250-213.us-east-2.compute.amazonaws.com",
+                                        "PublicIp": "3.22.250.213"
+                                    },
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-172-31-11-191.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.11.191"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-3-239.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.3.239"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-6-202.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.6.202"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-11-216.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.11.216"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-10-135.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.10.135"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-4-230.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.4.230"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-6-21.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.6.21"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-10-68.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.10.68"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-14-212.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.14.212"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-9-196.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.9.196"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-11-178.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.11.178"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-13-18.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.13.18"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-18262970",
+                            "VpcId": "vpc-f9907792",
+                            "InterfaceType": "interface"
+                        },
+                        {
+                            "Attachment": {
+                                "AttachTime": "2020-06-03T02:24:29+00:00",
+                                "AttachmentId": "eni-attach-0a6e91bf93bc2193b",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 1,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "aws-K8S-i-01a9fcad36e97a39e",
+                            "Groups": [
+                                {
+                                    "GroupName": "eks-cluster-sg-spadash-prod0-eks-848515746",
+                                    "GroupId": "sg-00846dd42e056cb8e"
+                                },
+                                {
+                                    "GroupName": "eks-remoteAccess-9ab93bfe-5e00-ff0d-73b2-7f88fe8cd972",
+                                    "GroupId": "sg-0009da0caac30774d"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "02:d0:31:cc:70:fa",
+                            "NetworkInterfaceId": "eni-007c4d7edfe09274e",
+                            "OwnerId": "414719454744",
+                            "PrivateDnsName": "ip-172-31-0-203.us-east-2.compute.internal",
+                            "PrivateIpAddress": "172.31.0.203",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-172-31-0-203.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.0.203"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-13-207.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.13.207"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-0-221.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.0.221"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-1-252.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.1.252"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-8-172.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.8.172"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-12-139.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.12.139"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-0-25.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.0.25"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-5-137.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.5.137"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-15-184.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.15.184"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-14-148.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.14.148"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-0-147.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.0.147"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-6-192.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.6.192"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-18262970",
+                            "VpcId": "vpc-f9907792",
+                            "InterfaceType": "interface"
+                        },
+                        {
+                            "Attachment": {
+                                "AttachTime": "2020-09-20T22:27:19+00:00",
+                                "AttachmentId": "eni-attach-06999d86828fe117a",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 2,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "aws-K8S-i-01a9fcad36e97a39e",
+                            "Groups": [
+                                {
+                                    "GroupName": "eks-cluster-sg-spadash-prod0-eks-848515746",
+                                    "GroupId": "sg-00846dd42e056cb8e"
+                                },
+                                {
+                                    "GroupName": "eks-remoteAccess-9ab93bfe-5e00-ff0d-73b2-7f88fe8cd972",
+                                    "GroupId": "sg-0009da0caac30774d"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "02:56:0e:bc:71:0e",
+                            "NetworkInterfaceId": "eni-066b99064db1d4043",
+                            "OwnerId": "414719454744",
+                            "PrivateDnsName": "ip-172-31-6-30.us-east-2.compute.internal",
+                            "PrivateIpAddress": "172.31.6.30",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-172-31-6-30.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.6.30"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-12-111.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.12.111"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-2-174.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.2.174"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-4-186.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.4.186"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-12-90.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.12.90"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-9-122.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.9.122"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-15-246.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.15.246"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-0-21.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.0.21"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-13-52.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.13.52"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-1-50.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.1.50"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-7-177.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.7.177"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-3-96.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.3.96"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-18262970",
+                            "VpcId": "vpc-f9907792",
+                            "InterfaceType": "interface"
+                        }
+                    ],
+                    "RootDeviceName": "/dev/xvda",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupName": "eks-cluster-sg-spadash-prod0-eks-848515746",
+                            "GroupId": "sg-00846dd42e056cb8e"
+                        },
+                        {
+                            "GroupName": "eks-remoteAccess-9ab93bfe-5e00-ff0d-73b2-7f88fe8cd972",
+                            "GroupId": "sg-0009da0caac30774d"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Tags": [
+                        {
+                            "Key": "eks:cluster-name",
+                            "Value": "spadash-prod0-eks"
+                        },
+                        {
+                            "Key": "aws:ec2launchtemplate:id",
+                            "Value": "lt-06598fe725fac3218"
+                        },
+                        {
+                            "Key": "aws:ec2launchtemplate:version",
+                            "Value": "1"
+                        },
+                        {
+                            "Key": "eks:nodegroup-name",
+                            "Value": "spadash-prod0-eks-ng0-cheerful-unicorn"
+                        },
+                        {
+                            "Key": "k8s.io/cluster-autoscaler/spadash-prod0-eks",
+                            "Value": "owned"
+                        },
+                        {
+                            "Key": "aws:autoscaling:groupName",
+                            "Value": "eks-9ab93bfe-5e00-ff0d-73b2-7f88fe8cd972"
+                        },
+                        {
+                            "Key": "kubernetes.io/cluster/spadash-prod0-eks",
+                            "Value": "owned"
+                        },
+                        {
+                            "Key": "k8s.io/cluster-autoscaler/enabled",
+                            "Value": "true"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 2
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "optional",
+                        "HttpPutResponseHopLimit": 1,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2020-06-03T02:23:29+00:00"
+                }
+            ],
+            "OwnerId": "414719454744",
+            "RequesterId": "764594785452",
+            "ReservationId": "r-066113f4abb588497"
+        },
+        {
+            "Groups": [],
+            "Instances": [
+                {
+                    "AmiLaunchIndex": 0,
+                    "ImageId": "ami-0ac8d261d0df2fa04",
+                    "InstanceId": "i-006c52fa2414bbebc",
+                    "InstanceType": "t3.large",
+                    "KeyName": "spadash@cloudserver",
+                    "LaunchTime": "2021-08-27T05:02:27+00:00",
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "Placement": {
+                        "AvailabilityZone": "us-east-2b",
+                        "GroupName": "",
+                        "Tenancy": "default"
+                    },
+                    "PrivateDnsName": "ip-172-31-20-30.us-east-2.compute.internal",
+                    "PrivateIpAddress": "172.31.20.30",
+                    "ProductCodes": [],
+                    "PublicDnsName": "ec2-3-17-58-61.us-east-2.compute.amazonaws.com",
+                    "PublicIpAddress": "3.17.58.61",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "StateTransitionReason": "",
+                    "SubnetId": "subnet-9b8fcae1",
+                    "VpcId": "vpc-f9907792",
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/xvda",
+                            "Ebs": {
+                                "AttachTime": "2021-08-27T05:02:28+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-0af031e828bf6fbb3"
+                            }
+                        },
+                        {
+                            "DeviceName": "/dev/xvdbf",
+                            "Ebs": {
+                                "AttachTime": "2021-08-27T06:27:11+00:00",
+                                "DeleteOnTermination": false,
+                                "Status": "attached",
+                                "VolumeId": "vol-076c82a84959dae4c"
+                            }
+                        }
+                    ],
+                    "ClientToken": "fleet-e65f2bf7-7c20-c6fe-8cb8-0988f6841eee-0",
+                    "EbsOptimized": false,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "IamInstanceProfile": {
+                        "Arn": "arn:aws:iam::414719454744:instance-profile/eks-6eb95dbb-7e19-307b-459b-f561310ebcb5",
+                        "Id": "AIPAWBDZUVYMGLCXGVUVF"
+                    },
+                    "NetworkInterfaces": [
+                        {
+                            "Attachment": {
+                                "AttachTime": "2021-08-27T05:03:26+00:00",
+                                "AttachmentId": "eni-attach-07fb20d29c39bd09f",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 1,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "aws-K8S-i-006c52fa2414bbebc",
+                            "Groups": [
+                                {
+                                    "GroupName": "eks-cluster-sg-spadash-dev0-eks-1098405070",
+                                    "GroupId": "sg-0a78f6bb59c135fa9"
+                                },
+                                {
+                                    "GroupName": "eks-remoteAccess-6eb95dbb-7e19-307b-459b-f561310ebcb5",
+                                    "GroupId": "sg-09d874c026e6b0899"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "06:97:af:71:f4:9e",
+                            "NetworkInterfaceId": "eni-0e677ed8310435b17",
+                            "OwnerId": "414719454744",
+                            "PrivateDnsName": "ip-172-31-24-68.us-east-2.compute.internal",
+                            "PrivateIpAddress": "172.31.24.68",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-172-31-24-68.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.24.68"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-22-31.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.22.31"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-19-95.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.19.95"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-28-125.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.28.125"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-29-203.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.29.203"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-29-27.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.29.27"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-31-38.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.31.38"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-16-150.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.16.150"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-31-198.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.31.198"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-28-4.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.28.4"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-18-162.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.18.162"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-22-208.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.22.208"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-9b8fcae1",
+                            "VpcId": "vpc-f9907792",
+                            "InterfaceType": "interface"
+                        },
+                        {
+                            "Association": {
+                                "IpOwnerId": "amazon",
+                                "PublicDnsName": "ec2-3-17-58-61.us-east-2.compute.amazonaws.com",
+                                "PublicIp": "3.17.58.61"
+                            },
+                            "Attachment": {
+                                "AttachTime": "2021-08-27T05:02:27+00:00",
+                                "AttachmentId": "eni-attach-0307ad3fcec7bc932",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupName": "eks-cluster-sg-spadash-dev0-eks-1098405070",
+                                    "GroupId": "sg-0a78f6bb59c135fa9"
+                                },
+                                {
+                                    "GroupName": "eks-remoteAccess-6eb95dbb-7e19-307b-459b-f561310ebcb5",
+                                    "GroupId": "sg-09d874c026e6b0899"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "06:21:e7:ac:f4:4c",
+                            "NetworkInterfaceId": "eni-0d73257b0f1de3d35",
+                            "OwnerId": "414719454744",
+                            "PrivateDnsName": "ip-172-31-20-30.us-east-2.compute.internal",
+                            "PrivateIpAddress": "172.31.20.30",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Association": {
+                                        "IpOwnerId": "amazon",
+                                        "PublicDnsName": "ec2-3-17-58-61.us-east-2.compute.amazonaws.com",
+                                        "PublicIp": "3.17.58.61"
+                                    },
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-172-31-20-30.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.20.30"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-28-221.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.28.221"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-24-89.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.24.89"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-22-185.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.22.185"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-28-249.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.28.249"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-20-88.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.20.88"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-22-119.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.22.119"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-19-213.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.19.213"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-21-69.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.21.69"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-31-52.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.31.52"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-25-19.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.25.19"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-24-131.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.24.131"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-9b8fcae1",
+                            "VpcId": "vpc-f9907792",
+                            "InterfaceType": "interface"
+                        },
+                        {
+                            "Attachment": {
+                                "AttachTime": "2021-08-27T07:42:28+00:00",
+                                "AttachmentId": "eni-attach-01635890c5d3250ae",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 2,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "aws-K8S-i-006c52fa2414bbebc",
+                            "Groups": [
+                                {
+                                    "GroupName": "eks-cluster-sg-spadash-dev0-eks-1098405070",
+                                    "GroupId": "sg-0a78f6bb59c135fa9"
+                                },
+                                {
+                                    "GroupName": "eks-remoteAccess-6eb95dbb-7e19-307b-459b-f561310ebcb5",
+                                    "GroupId": "sg-09d874c026e6b0899"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "06:d8:d3:d7:27:54",
+                            "NetworkInterfaceId": "eni-0efab2e7a9bdecd8c",
+                            "OwnerId": "414719454744",
+                            "PrivateDnsName": "ip-172-31-27-217.us-east-2.compute.internal",
+                            "PrivateIpAddress": "172.31.27.217",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-172-31-27-217.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.27.217"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-24-47.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.24.47"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-31-126.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.31.126"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-17-125.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.17.125"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-30-60.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.30.60"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-31-249.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.31.249"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-21-8.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.21.8"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-22-231.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.22.231"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-26-163.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.26.163"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-16-65.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.16.65"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-25-1.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.25.1"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-28-65.us-east-2.compute.internal",
+                                    "PrivateIpAddress": "172.31.28.65"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-9b8fcae1",
+                            "VpcId": "vpc-f9907792",
+                            "InterfaceType": "interface"
+                        }
+                    ],
+                    "RootDeviceName": "/dev/xvda",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupName": "eks-cluster-sg-spadash-dev0-eks-1098405070",
+                            "GroupId": "sg-0a78f6bb59c135fa9"
+                        },
+                        {
+                            "GroupName": "eks-remoteAccess-6eb95dbb-7e19-307b-459b-f561310ebcb5",
+                            "GroupId": "sg-09d874c026e6b0899"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Tags": [
+                        {
+                            "Key": "aws:ec2launchtemplate:id",
+                            "Value": "lt-06593e822957fb80a"
+                        },
+                        {
+                            "Key": "aws:ec2:fleet-id",
+                            "Value": "fleet-e65f2bf7-7c20-c6fe-8cb8-0988f6841eee"
+                        },
+                        {
+                            "Key": "eks:cluster-name",
+                            "Value": "spadash-dev0-eks"
+                        },
+                        {
+                            "Key": "aws:autoscaling:groupName",
+                            "Value": "eks-6eb95dbb-7e19-307b-459b-f561310ebcb5"
+                        },
+                        {
+                            "Key": "eks:nodegroup-name",
+                            "Value": "spadash-dev0-eks-ng0-workable-bobcat"
+                        },
+                        {
+                            "Key": "k8s.io/cluster-autoscaler/enabled",
+                            "Value": "true"
+                        },
+                        {
+                            "Key": "k8s.io/cluster-autoscaler/spadash-dev0-eks",
+                            "Value": "owned"
+                        },
+                        {
+                            "Key": "aws:ec2launchtemplate:version",
+                            "Value": "2"
+                        },
+                        {
+                            "Key": "kubernetes.io/cluster/spadash-dev0-eks",
+                            "Value": "owned"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 2
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "optional",
+                        "HttpPutResponseHopLimit": 2,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2021-08-27T05:02:27+00:00"
+                }
+            ],
+            "OwnerId": "414719454744",
+            "RequesterId": "932383652115",
+            "ReservationId": "r-08a4a25fc1d812241"
+        }
+    ]
+}

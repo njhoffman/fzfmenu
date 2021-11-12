@@ -1,15 +1,19 @@
 #!/bin/bash
 
 declare -p FMUI_ESSENTIALS_SH &> /dev/null && return
-readonly FMUI_ESSENTIALS_SH
 
+readonly FMUI_ESSENTIALS_SH
 readonly GLOBAL='-g'
 readonly ARRAY='-a'
 readonly MAP='-A'
-readonly IS_DIRECTORY='-d'
-readonly IS_FILE='-f'
 readonly IS_FIFO='-p'
-readonly EXISTS='-e'
+
+function fm-log {
+  echo "$*" >> "$FMUI_LOG"
+}
+
+
+
 
 function lazy_declare {
   # declares a variable name if it does not exists
@@ -19,10 +23,10 @@ function lazy_declare {
   declare -p "$@" &> /dev/null
   local name_exists=$?
 
-  (($name_exists != 0))   && {
+  (($name_exists != 0)) && {
     readonly "$@"
       return 0
-  }
+    }
 
   return 1
 }

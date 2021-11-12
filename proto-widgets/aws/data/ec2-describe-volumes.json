@@ -1,0 +1,749 @@
+{
+    "Volumes": [
+        {
+            "Attachments": [],
+            "AvailabilityZone": "us-east-2b",
+            "CreateTime": "2020-05-07T01:48:59.998000+00:00",
+            "Encrypted": false,
+            "Size": 8,
+            "SnapshotId": "",
+            "State": "available",
+            "VolumeId": "vol-07e5ba39b0b08c0ac",
+            "Iops": 100,
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "api"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "influxdb-data-influxdb-0"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-ebae850b-9004-11ea-81dc-06d77a0f7c48"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/spadash-dev-eks",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-ebae850b-9004-11ea-81dc-06d77a0f7c48"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [],
+            "AvailabilityZone": "us-east-2b",
+            "CreateTime": "2020-05-07T02:07:18.124000+00:00",
+            "Encrypted": false,
+            "Size": 8,
+            "SnapshotId": "",
+            "State": "available",
+            "VolumeId": "vol-067b1a0d15d150c40",
+            "Iops": 100,
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-7a453101-9007-11ea-81dc-06d77a0f7c48"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "influxdb-data-influxdb-0"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/spadash-dev-eks",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "monitoring"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-7a453101-9007-11ea-81dc-06d77a0f7c48"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [
+                {
+                    "AttachTime": "2021-08-27T05:02:28+00:00",
+                    "Device": "/dev/xvda",
+                    "InstanceId": "i-006c52fa2414bbebc",
+                    "State": "attached",
+                    "VolumeId": "vol-0af031e828bf6fbb3",
+                    "DeleteOnTermination": true
+                }
+            ],
+            "AvailabilityZone": "us-east-2b",
+            "CreateTime": "2021-08-27T05:02:28.767000+00:00",
+            "Encrypted": false,
+            "Size": 10,
+            "SnapshotId": "snap-022ffa1efeefafbf3",
+            "State": "in-use",
+            "VolumeId": "vol-0af031e828bf6fbb3",
+            "Iops": 100,
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [
+                {
+                    "AttachTime": "2021-08-27T06:27:11+00:00",
+                    "Device": "/dev/xvdbf",
+                    "InstanceId": "i-006c52fa2414bbebc",
+                    "State": "attached",
+                    "VolumeId": "vol-076c82a84959dae4c",
+                    "DeleteOnTermination": false
+                }
+            ],
+            "AvailabilityZone": "us-east-2b",
+            "CreateTime": "2021-08-27T06:27:05.139000+00:00",
+            "Encrypted": false,
+            "Size": 1,
+            "SnapshotId": "",
+            "State": "in-use",
+            "VolumeId": "vol-076c82a84959dae4c",
+            "Iops": 100,
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-f58d428c-4f2b-4876-a3e4-bb89717d309f"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "traefik"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/spadash-dev0-eks",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "traefik"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-f58d428c-4f2b-4876-a3e4-bb89717d309f"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [],
+            "AvailabilityZone": "us-east-2b",
+            "CreateTime": "2021-09-26T20:23:36.922000+00:00",
+            "Encrypted": false,
+            "Size": 50,
+            "SnapshotId": "",
+            "State": "available",
+            "VolumeId": "vol-0748ae9f572eb6355",
+            "Iops": 150,
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-2eb2a2be-638e-4503-973f-87acd106976b"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-2eb2a2be-638e-4503-973f-87acd106976b"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "prometheus-kube-prometheus-stack-prometheus-db-prometheus-kube-prometheus-stack-prometheus-0"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/platform-dev",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "monitoring"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [],
+            "AvailabilityZone": "us-east-2b",
+            "CreateTime": "2021-09-27T02:31:57.410000+00:00",
+            "Encrypted": false,
+            "Size": 50,
+            "SnapshotId": "",
+            "State": "available",
+            "VolumeId": "vol-0790837ed94e650ec",
+            "Iops": 150,
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-5322e24e-eb3e-49b3-94cd-decd9b0960f8"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "monitoring"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "prometheus-kube-prometheus-stack-prometheus-db-prometheus-kube-prometheus-stack-prometheus-0"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/platform-dev",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-5322e24e-eb3e-49b3-94cd-decd9b0960f8"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [],
+            "AvailabilityZone": "us-east-2b",
+            "CreateTime": "2021-09-27T03:29:03.362000+00:00",
+            "Encrypted": false,
+            "Size": 1,
+            "SnapshotId": "",
+            "State": "available",
+            "VolumeId": "vol-09fe72d2ba2be9c7d",
+            "Iops": 100,
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "traefik"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/platform-dev",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-afaf4ee0-c186-4b65-8d10-ab4825b45bbc"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "traefik"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-afaf4ee0-c186-4b65-8d10-ab4825b45bbc"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [],
+            "AvailabilityZone": "us-east-2b",
+            "CreateTime": "2021-09-27T04:28:58.582000+00:00",
+            "Encrypted": false,
+            "Size": 1,
+            "SnapshotId": "",
+            "State": "available",
+            "VolumeId": "vol-08af74cc0c72603bc",
+            "Iops": 100,
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-fd7779f0-63a4-4872-bdd3-c3cac5aac0fc"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/platform-dev",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "traefik"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-fd7779f0-63a4-4872-bdd3-c3cac5aac0fc"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "traefik"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [],
+            "AvailabilityZone": "us-east-2b",
+            "CreateTime": "2021-10-05T05:03:04.509000+00:00",
+            "Encrypted": false,
+            "Size": 50,
+            "SnapshotId": "",
+            "State": "available",
+            "VolumeId": "vol-08cabf087720f901a",
+            "Iops": 150,
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-cb9a4467-ae82-46b0-a7cd-0aa8abb9f6a3"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-cb9a4467-ae82-46b0-a7cd-0aa8abb9f6a3"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "prometheus-kube-prometheus-stack-prometheus-db-prometheus-kube-prometheus-stack-prometheus-0"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/platform-dev",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "monitoring"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [
+                {
+                    "AttachTime": "2020-06-03T02:23:30+00:00",
+                    "Device": "/dev/xvda",
+                    "InstanceId": "i-01a9fcad36e97a39e",
+                    "State": "attached",
+                    "VolumeId": "vol-0ba8924a0b1d44039",
+                    "DeleteOnTermination": true
+                }
+            ],
+            "AvailabilityZone": "us-east-2a",
+            "CreateTime": "2020-06-03T02:23:30.145000+00:00",
+            "Encrypted": false,
+            "Size": 10,
+            "SnapshotId": "snap-0367082c7613d70ba",
+            "State": "in-use",
+            "VolumeId": "vol-0ba8924a0b1d44039",
+            "Iops": 100,
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [
+                {
+                    "AttachTime": "2020-06-12T02:19:49+00:00",
+                    "Device": "/dev/xvdca",
+                    "InstanceId": "i-01a9fcad36e97a39e",
+                    "State": "attached",
+                    "VolumeId": "vol-097f31338320eec68",
+                    "DeleteOnTermination": false
+                }
+            ],
+            "AvailabilityZone": "us-east-2a",
+            "CreateTime": "2020-06-12T02:19:43.060000+00:00",
+            "Encrypted": false,
+            "Size": 1,
+            "SnapshotId": "",
+            "State": "in-use",
+            "VolumeId": "vol-097f31338320eec68",
+            "Iops": 100,
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-1b4d0c91-664a-4447-a13f-b3322b5fce81"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/spadash-prod0-eks",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "traefik"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-1b4d0c91-664a-4447-a13f-b3322b5fce81"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "traefik"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [],
+            "AvailabilityZone": "us-east-2a",
+            "CreateTime": "2020-09-18T05:01:36.948000+00:00",
+            "Encrypted": false,
+            "Size": 10,
+            "SnapshotId": "",
+            "State": "available",
+            "VolumeId": "vol-0cc3960d5371734b0",
+            "Iops": 100,
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "prometheus-kube-prometheus-stack-prometheus-db-prometheus-kube-prometheus-stack-prometheus-0"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-2da02c4e-624a-4821-9c60-e76311f19a0e"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-2da02c4e-624a-4821-9c60-e76311f19a0e"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "monitoring"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/spadash-dev0-eks",
+                    "Value": "owned"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [],
+            "AvailabilityZone": "us-east-2a",
+            "CreateTime": "2020-09-20T04:46:01.519000+00:00",
+            "Encrypted": false,
+            "Size": 10,
+            "SnapshotId": "",
+            "State": "available",
+            "VolumeId": "vol-0b4f0fb4ac6cb4bf9",
+            "Iops": 100,
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "storage-loki-stack-0"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-f871a0b2-19c1-4d02-a490-2a5a4b74dc7f"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "monitoring"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-f871a0b2-19c1-4d02-a490-2a5a4b74dc7f"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/spadash-dev0-eks",
+                    "Value": "owned"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [
+                {
+                    "AttachTime": "2020-09-20T22:27:39+00:00",
+                    "Device": "/dev/xvdce",
+                    "InstanceId": "i-01a9fcad36e97a39e",
+                    "State": "attached",
+                    "VolumeId": "vol-0b0d2a5e2101b0fab",
+                    "DeleteOnTermination": false
+                }
+            ],
+            "AvailabilityZone": "us-east-2a",
+            "CreateTime": "2020-09-20T22:27:32.852000+00:00",
+            "Encrypted": false,
+            "Size": 10,
+            "SnapshotId": "",
+            "State": "in-use",
+            "VolumeId": "vol-0b0d2a5e2101b0fab",
+            "Iops": 100,
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-f96b3404-74c3-4c2e-8adb-541623fd5f9c"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-f96b3404-74c3-4c2e-8adb-541623fd5f9c"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/spadash-prod0-eks",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "prometheus-kube-prometheus-stack-prometheus-db-prometheus-kube-prometheus-stack-prometheus-0"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "monitoring"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [
+                {
+                    "AttachTime": "2020-09-20T22:34:46+00:00",
+                    "Device": "/dev/xvdbr",
+                    "InstanceId": "i-01a9fcad36e97a39e",
+                    "State": "attached",
+                    "VolumeId": "vol-04cdc7c25684d4832",
+                    "DeleteOnTermination": false
+                }
+            ],
+            "AvailabilityZone": "us-east-2a",
+            "CreateTime": "2020-09-20T22:34:40.021000+00:00",
+            "Encrypted": false,
+            "Size": 10,
+            "SnapshotId": "",
+            "State": "in-use",
+            "VolumeId": "vol-04cdc7c25684d4832",
+            "Iops": 100,
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-69546903-960e-496f-a4ab-80715a691c58"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "storage-loki-stack-0"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-69546903-960e-496f-a4ab-80715a691c58"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/spadash-prod0-eks",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "monitoring"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [],
+            "AvailabilityZone": "us-east-2a",
+            "CreateTime": "2021-09-25T05:37:59.966000+00:00",
+            "Encrypted": false,
+            "Size": 50,
+            "SnapshotId": "",
+            "State": "available",
+            "VolumeId": "vol-03fbfca1c13cc3cd9",
+            "Iops": 150,
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/cluster/platform-dev",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "monitoring"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-859f841f-4d25-4130-af7c-9041d7633b99"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-859f841f-4d25-4130-af7c-9041d7633b99"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "prometheus-kube-prometheus-stack-prometheus-db-prometheus-kube-prometheus-stack-prometheus-0"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [],
+            "AvailabilityZone": "us-east-2a",
+            "CreateTime": "2021-09-27T04:28:18.029000+00:00",
+            "Encrypted": false,
+            "Size": 50,
+            "SnapshotId": "",
+            "State": "available",
+            "VolumeId": "vol-056fc8d9b2a3513bf",
+            "Iops": 150,
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-b29183fa-c527-4e66-92c1-a4ce31e702bd"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "monitoring"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "prometheus-kube-prometheus-stack-prometheus-db-prometheus-kube-prometheus-stack-prometheus-0"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/platform-dev",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-b29183fa-c527-4e66-92c1-a4ce31e702bd"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [],
+            "AvailabilityZone": "us-east-2a",
+            "CreateTime": "2021-09-30T02:54:05.688000+00:00",
+            "Encrypted": false,
+            "Size": 50,
+            "SnapshotId": "",
+            "State": "available",
+            "VolumeId": "vol-0eab9fbc63bd0e07e",
+            "Iops": 150,
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/cluster/platform-dev",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-f45e821e-d26a-49fb-8afd-c288dcef80a9"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-f45e821e-d26a-49fb-8afd-c288dcef80a9"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "prometheus-kube-prometheus-stack-prometheus-db-prometheus-kube-prometheus-stack-prometheus-0"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "monitoring"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [],
+            "AvailabilityZone": "us-east-2a",
+            "CreateTime": "2021-10-02T02:35:08.095000+00:00",
+            "Encrypted": false,
+            "Size": 50,
+            "SnapshotId": "",
+            "State": "available",
+            "VolumeId": "vol-020341c2ba8caf16e",
+            "Iops": 150,
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "prometheus-kube-prometheus-stack-prometheus-db-prometheus-kube-prometheus-stack-prometheus-0"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-c8caef20-b0d8-46c4-89a2-d7c77f9cbbd5"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/platform-dev",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-c8caef20-b0d8-46c4-89a2-d7c77f9cbbd5"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "monitoring"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [],
+            "AvailabilityZone": "us-east-2a",
+            "CreateTime": "2021-10-04T04:42:33.222000+00:00",
+            "Encrypted": false,
+            "Size": 50,
+            "SnapshotId": "",
+            "State": "available",
+            "VolumeId": "vol-0ef50a576cfe531f0",
+            "Iops": 150,
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-8cfbe9e8-c270-4b0b-9a3f-148ac7bb6075"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "monitoring"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/platform-dev",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-8cfbe9e8-c270-4b0b-9a3f-148ac7bb6075"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "prometheus-kube-prometheus-stack-prometheus-db-prometheus-kube-prometheus-stack-prometheus-0"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        },
+        {
+            "Attachments": [],
+            "AvailabilityZone": "us-east-2a",
+            "CreateTime": "2021-10-10T19:18:27.404000+00:00",
+            "Encrypted": false,
+            "Size": 50,
+            "SnapshotId": "",
+            "State": "available",
+            "VolumeId": "vol-058ab4db4703b55c6",
+            "Iops": 150,
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/cluster/platform-dev",
+                    "Value": "owned"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/namespace",
+                    "Value": "monitoring"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pvc/name",
+                    "Value": "prometheus-kube-prometheus-stack-prometheus-db-prometheus-kube-prometheus-stack-prometheus-0"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "kubernetes-dynamic-pvc-cd219913-7ee4-4a01-89d6-f87f60fdb62a"
+                },
+                {
+                    "Key": "kubernetes.io/created-for/pv/name",
+                    "Value": "pvc-cd219913-7ee4-4a01-89d6-f87f60fdb62a"
+                }
+            ],
+            "VolumeType": "gp2",
+            "MultiAttachEnabled": false
+        }
+    ]
+}

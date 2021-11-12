@@ -1,0 +1,230 @@
+
+
+PID USER        PPID %CPU %MEM   RSS     TIME TT       COMMAND         COMMAND
+622311 nicholas    7507  1.9  0.4 74240 00:01:15 pts/4    zsh             -zsh
+626586 nicholas  622311  0.0  0.0  4124 00:00:00 pts/4     \_ sqlite3      \_ sqlite3 -batch -noheader /home/nicholas/.
+872715 nicholas  622311  0.0  0.0  3908 00:00:00 pts/4     \_ ps           \_ ps af -o pid,user,ppid,%cpu,%mem,rss,time
+328618 nicholas    7507  0.1  0.4 72640 00:00:14 pts/22   zsh             -zsh
+479598 nicholas  328618  0.0  0.0  4056 00:00:00 pts/22    \_ sqlite3      \_ sqlite3 -batch -noheader /home/nicholas/.
+552960 nicholas  328618  0.1  0.4 73276 00:00:09 pts/22    \_ nvim         \_ nvim --startuptime /tmp/nvim-startuptime
+554176 nicholas  552960  0.0  0.4 74308 00:00:01 pts/22        \_ node         \_ /home/nicholas/.asdf/installs/nodejs/
+280507 nicholas    7507  0.0  0.4 73900 00:00:07 pts/5    zsh             -zsh
+346721 nicholas  280507  0.0  0.0  3724 00:00:00 pts/5     \_ sqlite3      \_ sqlite3 -batch -noheader /home/nicholas/.
+367457 nicholas  280507  0.6  0.5 85584 00:01:02 pts/5     \_ nvim         \_ nvim --startuptime /tmp/nvim-startuptime
+369190 nicholas  367457  0.0  0.4 71620 00:00:02 pts/5         \_ node         \_ /home/nicholas/.asdf/installs/nodejs/
+47373 nicholas    7507  0.2  0.4 72860 00:00:36 pts/15   zsh             -zsh
+54171 nicholas   47373  0.0  0.0  4052 00:00:00 pts/15    \_ sqlite3      \_ sqlite3 -batch -noheader /home/nicholas/.
+42627 nicholas    7507  0.1  0.4 70560 00:00:33 pts/20   zsh             -zsh
+42571 nicholas    7507  0.0  0.4 67604 00:00:02 pts/19   zsh             -zsh
+45576 nicholas   42571  0.0  0.0  2316 00:00:00 pts/19    \_ logs         \_ /bin/bash /home/nicholas/bin/logs syslog
+45762 nicholas   45576  0.0  0.0   692 00:00:00 pts/19        \_ tail         \_ tail -n 500 -f /var/log/syslog
+45763 nicholas   45576  0.0  0.0   772 00:00:00 pts/19        \_ cut          \_ cut -c -138
+45764 nicholas   45576  0.2  0.0  3380 00:00:34 pts/19        \_ ccze         \_ ccze -A
+42544 nicholas    7507  0.0  0.4 67512 00:00:02 pts/18   zsh             -zsh
+46184 nicholas   42544  6.3  0.1 25832 00:17:40 pts/18    \_ bpytop       \_ /home/nicholas/.asdf/installs/python/3.9.
+42533 nicholas    7507  0.0  0.4 67416 00:00:02 pts/16   zsh             -zsh
+46595 nicholas   42533  0.0  0.0 10376 00:00:00 pts/16    \_ python3      \_ python3 /usr/local/bin/grc -es --colour=o
+46596 nicholas   46595  0.0  0.0  4912 00:00:09 pts/16        \_ ergo         \_ ergo run -config /home/nicholas/.ergo
+46597 nicholas   46595  0.0  0.0 10396 00:00:00 pts/16        \_ python3      \_ python3 /usr/local/bin/grcat conf.who
+46598 nicholas   46595  0.0  0.0 10396 00:00:00 pts/16        \_ python3      \_ python3 /usr/local/bin/grcat conf.who
+42462 nicholas    7507  0.0  0.4 67588 00:00:02 pts/17   zsh             -zsh
+45276 nicholas   42462  1.4  0.6 109300 00:04:03 pts/17   \_ node         \_ node /home/nicholas/.asdf/installs/nodejs
+23317 nicholas    7507  0.1  0.4 70560 00:00:33 pts/14   zsh             -zsh
+23259 nicholas    7507  0.0  0.4 67416 00:00:02 pts/13   zsh             -zsh
+27192 nicholas   23259  1.5  0.5 89280 00:04:23 pts/13    \_ nvim         \_ nvim --startuptime /tmp/nvim-startuptime
+27933 nicholas   27192  0.3  0.3 50112 00:00:51 pts/13        \_ lua-lan      \_ /home/nicholas/.local/share/nvim/lsp_
+23248 nicholas    7507  0.0  0.4 67524 00:00:02 pts/11   zsh             -zsh
+26626 nicholas   23248  0.0  0.0 14732 00:00:00 pts/11    \_ python3      \_ python3 /home/nicholas/bin/asynctask.py n
+26689 nicholas   26626  0.0  0.0   764 00:00:00 pts/11        \_ sh           \_ sh -c tail -f ~/.cache/nvim/*log | cc
+                                                                                                              26690 nicholas   26689  0.0  0.0   688 00:00:00 pts/11            \_ tai          \_ tail -f /home/nicholas/.cache/nvi
+                                                                                                              26691 nicholas   26689  0.0  0.0  3264 00:00:00 pts/11            \_ ccz          \_ ccze -A
+                                                                                                              23186 nicholas    7507  0.0  0.4 67432 00:00:02 pts/12   zsh             -zsh
+                                                                                                              26252 nicholas   23186  0.0  0.0 10416 00:00:00 pts/12    \_ python3      \_ python3 /usr/local/bin/grc -es --colour=o
+                                                                                                              26253 nicholas   26252  0.0  0.0  6548 00:00:00 pts/12        \_ journal      \_ journalctl -x --identifier=nvim --ide
+                                                                                                              26254 nicholas   26252  0.0  0.0 10372 00:00:00 pts/12        \_ python3      \_ python3 /usr/local/bin/grcat conf.log
+                                                                                                              26255 nicholas   26252  0.0  0.0 10544 00:00:00 pts/12        \_ python3      \_ python3 /usr/local/bin/grcat conf.log
+                                                                                                              14143 nicholas    7507  0.1  0.4 70548 00:00:34 pts/10   zsh             -zsh
+                                                                                                              14090 nicholas    7507  0.0  0.4 67312 00:00:02 pts/9    zsh             -zsh
+                                                                                                              19999 nicholas   14090  0.3  0.4 80528 00:00:58 pts/9     \_ nvim         \_ nvim --startuptime /tmp/nvim-startuptime
+                                                                                                              14064 nicholas    7507  0.0  0.4 67536 00:00:02 pts/8    zsh             -zsh
+                                                                                                              869561 nicholas   14064  0.0  0.0  4268 00:00:00 pts/8     \_ menu.zsh     \_ /bin/zsh ./menu.zsh
+                                                                                                              869569 nicholas  869561  0.0  0.0  1720 00:00:00 pts/8         \_ menu.zs      \_ /bin/zsh ./menu.zsh
+                                                                                                              869571 nicholas  869569  0.2  0.0  3996 00:00:00 pts/8             \_ fzf          \_ /home/nicholas/.asdf/installs/fzf
+                                                                                                              14053 nicholas    7507  0.0  0.4 67500 00:00:02 pts/6    zsh             -zsh
+                                                                                                              869819 nicholas   14053  0.0  0.0  1632 00:00:00 pts/6     \_ inotifywait  \_ inotifywait --recursive -e close_write ./
+                                                                                                              13992 nicholas    7507  0.3  0.4 70592 00:00:57 pts/7    zsh             -zsh
+                                                                                                              9899 nicholas    7507  0.0  0.4 72540 00:00:15 pts/3    zsh             -zsh
+                                                                                                              40375 nicholas    9899  0.0  0.0  4188 00:00:00 pts/3     \_ sqlite3      \_ sqlite3 -batch -noheader /home/nicholas/.
+                                                                                                              240883 nicholas    9899  2.0  0.6 105968 00:04:15 pts/3    \_ nvim         \_ nvim --startuptime /tmp/nvim-startuptime
+                                                                                                              359667 nicholas  240883  0.0  0.4 72960 00:00:02 pts/3         \_ node         \_ /home/nicholas/.asdf/installs/nodejs/
+                                                                                                              856925 nicholas  240883  0.6  0.4 73184 00:00:01 pts/3         \_ node         \_ /home/nicholas/.asdf/installs/nodejs/
+                                                                                                              868932 nicholas  240883  2.7  0.4 69104 00:00:01 pts/3         \_ node         \_ /home/nicholas/.asdf/installs/nodejs/
+                                                                                                              3252 nicholas    3230  0.0  0.4 71184 00:00:03 pts/1    zsh             /usr/bin/zsh
+                                                                                                              7097 nicholas    3252  0.0  0.0  3564 00:00:00 pts/1     \_ sqlite3      \_ sqlite3 -batch -noheader /home/nicholas/.
+                                                                                                              7504 nicholas    3252  0.0  0.0  2368 00:00:00 pts/1     \_ tmux-attach  \_ /bin/bash /home/nicholas/bin/tmux/tmux-at
+                                                                                                              7505 nicholas    7504  0.0  0.0  4068 00:00:00 pts/1         \_ tmux: c      \_ tmux new-session -As main -e TMUX_PRE
+                                                                                                              3253 nicholas    3229  0.0  0.4 70376 00:00:03 pts/0    zsh             /usr/bin/zsh
+                                                                                                              11324 nicholas    3253  0.0  0.0  3556 00:00:00 pts/0     \_ sqlite3      \_ sqlite3 -batch -noheader /home/nicholas/.
+                                                                                                              11747 nicholas    3253  0.0  0.0  2336 00:00:00 pts/0     \_ tmux-attach  \_ /bin/bash /home/nicholas/bin/tmux/tmux-at
+                                                                                                              11748 nicholas   11747  0.0  0.0  3680 00:00:00 pts/0         \_ tmux: c      \_ tmux new-session -As float -e TMUX_PR
+                                                                                                              1347 root        1308 21.2  0.4 68524 01:01:13 tty7     Xorg            /usr/lib/xorg/Xorg -core :0 -seat seat0 -auth
+                                                                                                              671618 nicholas       1  0.1  0.0  3860 00:00:04 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              623051 nicholas       1  0.0  0.3 62472 00:00:00 pts/4    zsh             -zsh
+                                                                                                              623050 nicholas       1  0.0  0.3 63820 00:00:00 pts/4    zsh             -zsh
+                                                                                                              622436 nicholas       1  0.0  0.0  4944 00:00:00 pts/4    zsh             -zsh
+                                                                                                              623053 nicholas  622436  0.0  0.0  1456 00:00:00 pts/4     \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+                                                                                                              566775 nicholas       1  0.1  0.0  3636 00:00:07 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              566100 nicholas       1  0.1  0.0  4056 00:00:07 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              565360 nicholas       1  0.1  0.0  3800 00:00:07 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              562798 nicholas       1  0.1  0.0  3744 00:00:07 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              561997 nicholas       1  0.1  0.0  3540 00:00:06 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              554248 nicholas       1  0.1  0.0  3784 00:00:07 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              543225 nicholas       1  0.1  0.0  3532 00:00:07 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              542910 nicholas       1  0.1  0.0  3776 00:00:08 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              451669 nicholas       1  0.1  0.0  3012 00:00:11 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              451166 nicholas       1  0.1  0.0  2764 00:00:11 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              416292 nicholas       1  0.1  0.0  2780 00:00:13 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              414087 nicholas       1  0.1  0.0  3028 00:00:12 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              373692 nicholas       1  0.1  0.0  2964 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              372708 nicholas       1  0.1  0.0  3024 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              372215 nicholas       1  0.1  0.0  2964 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              371842 nicholas       1  0.1  0.0  2252 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              370867 nicholas       1  0.1  0.0  2756 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              370319 nicholas       1  0.1  0.0  2864 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              369863 nicholas       1  0.1  0.0  2260 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              369116 nicholas       1  0.1  0.0  2772 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              368490 nicholas       1  0.1  0.0  2456 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              362197 nicholas       1  0.1  0.0  2776 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              361620 nicholas       1  0.1  0.0  2964 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              360873 nicholas       1  0.1  0.0  3024 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              360313 nicholas       1  0.1  0.0  2960 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              359588 nicholas       1  0.1  0.0  2764 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              353473 nicholas       1  0.1  0.0  3368 00:00:15 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              352991 nicholas       1  0.1  0.0  2252 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              351841 nicholas       1  0.1  0.0  2780 00:00:15 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              351071 nicholas       1  0.1  0.0  2980 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              348201 nicholas       1  0.1  0.0  3224 00:00:14 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+                                                                                                              329269 nicholas       1  0.0  0.3 62460 00:00:00 pts/22   zsh             -zsh
+                                                                                                              329267 nicholas       1  0.0  0.3 63680 00:00:00 pts/22   zsh             -zsh
+328725 nicholas       1  0.0  0.0  4828 00:00:00 pts/22   zsh             -zsh
+329270 nicholas  328725  0.0  0.0  2040 00:00:00 pts/22    \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+325026 nicholas       1  0.1  0.0  2708 00:00:16 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+323525 nicholas       1  0.1  0.0  2972 00:00:15 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+323181 nicholas       1  0.1  0.0  2004 00:00:15 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+313681 nicholas       1  0.1  0.0  3120 00:00:16 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+312988 nicholas       1  0.1  0.0  2764 00:00:15 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+312214 nicholas       1  0.1  0.0  2768 00:00:15 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+311028 nicholas       1  0.1  0.0  2496 00:00:16 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+299098 nicholas       1  0.1  0.0  2964 00:00:16 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+297250 nicholas       1  0.1  0.0  2956 00:00:16 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+288887 nicholas       1  0.1  0.0  2752 00:00:16 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+288239 nicholas       1  0.1  0.0  2776 00:00:16 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+281498 nicholas       1  0.0  0.3 62584 00:00:00 pts/5    zsh             -zsh
+281496 nicholas       1  0.0  0.3 63800 00:00:00 pts/5    zsh             -zsh
+280636 nicholas       1  0.0  0.0  4888 00:00:00 pts/5    zsh             -zsh
+281499 nicholas  280636  0.0  0.0  2048 00:00:00 pts/5     \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+276452 nicholas       1  0.1  0.0  2956 00:00:17 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+245017 nicholas       1  0.1  0.0  2964 00:00:18 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+241930 nicholas       1  0.1  0.0  3376 00:00:18 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+227171 nicholas       1  0.1  0.0  2956 00:00:19 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+226689 nicholas       1  0.1  0.0  2960 00:00:20 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+225791 nicholas       1  0.1  0.0  2508 00:00:18 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+225254 nicholas       1  0.1  0.0  2972 00:00:19 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+224482 nicholas       1  0.1  0.0  2516 00:00:19 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+221827 nicholas       1  0.1  0.0  2756 00:00:19 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+220163 nicholas       1  0.1  0.0  2968 00:00:19 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+218291 nicholas       1  0.1  0.0  2956 00:00:19 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+216787 nicholas       1  0.1  0.0  2768 00:00:20 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+214363 nicholas       1  0.1  0.0  2972 00:00:19 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+208009 nicholas       1  0.1  0.0  3024 00:00:19 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+207305 nicholas       1  0.1  0.0  2504 00:00:20 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+206844 nicholas       1  0.1  0.0  2968 00:00:19 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+205755 nicholas       1  0.1  0.0  2520 00:00:20 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+155113 nicholas       1  0.1  0.0  2948 00:00:22 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+154610 nicholas       1  0.1  0.0  2752 00:00:22 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+152980 nicholas       1  0.1  0.0  3024 00:00:22 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+151163 nicholas       1  0.1  0.0  3004 00:00:22 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+150618 nicholas       1  0.1  0.0  3020 00:00:22 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+149523 nicholas       1  0.1  0.0  3020 00:00:22 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+148509 nicholas       1  0.1  0.0  2708 00:00:21 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+147509 nicholas       1  0.1  0.0  2516 00:00:23 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+146884 nicholas       1  0.1  0.0  2596 00:00:22 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+125414 nicholas       1  0.1  0.0  2956 00:00:23 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+124180 nicholas       1  0.1  0.0  2500 00:00:23 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+73340 nicholas       1  0.1  0.0  3024 00:00:26 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+53427 nicholas       1  0.0  0.3 62452 00:00:00 pts/15   zsh             -zsh
+53425 nicholas       1  0.0  0.3 63668 00:00:00 pts/15   zsh             -zsh
+47942 nicholas       1  0.0  0.0  5044 00:00:00 pts/15   zsh             -zsh
+53428 nicholas   47942  0.0  0.0  1580 00:00:00 pts/15    \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+46484 nicholas       1  0.0  0.3 62448 00:00:00 pts/16   zsh             -zsh
+46481 nicholas       1  0.0  0.3 63668 00:00:00 pts/16   zsh             -zsh
+46055 nicholas       1  0.0  0.3 62452 00:00:00 pts/18   zsh             -zsh
+46052 nicholas       1  0.0  0.3 63836 00:00:00 pts/18   zsh             -zsh
+45770 nicholas       1  0.0  0.3 62300 00:00:00 pts/20   zsh             -zsh
+45769 nicholas       1  0.0  0.3 63568 00:00:00 pts/20   zsh             -zsh
+45524 nicholas       1  0.0  0.3 62444 00:00:00 pts/19   zsh             -zsh
+45523 nicholas       1  0.0  0.3 63788 00:00:00 pts/19   zsh             -zsh
+45168 nicholas       1  0.0  0.3 62444 00:00:00 pts/17   zsh             -zsh
+45167 nicholas       1  0.0  0.3 63712 00:00:00 pts/17   zsh             -zsh
+43811 nicholas       1  0.0  0.0  5068 00:00:00 pts/20   zsh             -zsh
+45772 nicholas   43811  0.0  0.0  1520 00:00:00 pts/20    \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+43760 nicholas       1  0.0  0.0  5136 00:00:00 pts/18   zsh             -zsh
+46067 nicholas   43760  0.0  0.0  1580 00:00:00 pts/18    \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+43457 nicholas       1  0.0  0.0  5232 00:00:00 pts/19   zsh             -zsh
+45526 nicholas   43457  0.0  0.0  1572 00:00:00 pts/19    \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+43356 nicholas       1  0.0  0.0  5064 00:00:00 pts/16   zsh             -zsh
+46485 nicholas   43356  0.0  0.0  1580 00:00:00 pts/16    \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+43314 nicholas       1  0.0  0.0  5180 00:00:00 pts/17   zsh             -zsh
+45170 nicholas   43314  0.0  0.0  1640 00:00:00 pts/17    \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+26487 nicholas       1  0.0  0.3 62456 00:00:00 pts/13   zsh             -zsh
+26486 nicholas       1  0.0  0.3 63700 00:00:00 pts/13   zsh             -zsh
+26267 nicholas       1  0.0  0.3 62460 00:00:00 pts/14   zsh             -zsh
+26264 nicholas       1  0.0  0.3 63768 00:00:00 pts/14   zsh             -zsh
+25948 nicholas       1  0.0  0.3 62452 00:00:00 pts/11   zsh             -zsh
+25946 nicholas       1  0.0  0.3 63696 00:00:00 pts/11   zsh             -zsh
+25670 nicholas       1  0.0  0.3 62460 00:00:00 pts/12   zsh             -zsh
+25668 nicholas       1  0.0  0.3 63684 00:00:00 pts/12   zsh             -zsh
+23787 nicholas       1  0.0  0.0  4900 00:00:00 pts/14   zsh             -zsh
+26272 nicholas   23787  0.0  0.0  2040 00:00:00 pts/14    \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+23707 nicholas       1  0.0  0.0  4888 00:00:00 pts/13   zsh             -zsh
+26508 nicholas   23707  0.0  0.0  2076 00:00:00 pts/13    \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+23572 nicholas       1  0.0  0.0  4892 00:00:00 pts/11   zsh             -zsh
+25949 nicholas   23572  0.0  0.0  2080 00:00:00 pts/11    \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+23463 nicholas       1  0.0  0.0  4868 00:00:00 pts/12   zsh             -zsh
+25671 nicholas   23463  0.0  0.0  2056 00:00:00 pts/12    \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+20798 nicholas       1  0.1  0.0  2768 00:00:28 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+19748 nicholas       1  0.1  0.0  2452 00:00:28 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+19107 nicholas       1  0.0  0.3 61772 00:00:00 pts/9    zsh             -zsh
+19104 nicholas       1  0.0  0.3 62988 00:00:00 pts/9    zsh             -zsh
+18583 nicholas       1  0.1  0.0  2576 00:00:28 pts/8    fzf             /home/nicholas/.asdf/installs/fzf/0.28.0/bin/
+17966 nicholas       1  0.0  0.3 60016 00:00:00 pts/10   zsh             -zsh
+17964 nicholas       1  0.0  0.3 61312 00:00:00 pts/10   zsh             -zsh
+17635 nicholas       1  0.0  0.3 61728 00:00:00 pts/8    zsh             -zsh
+17633 nicholas       1  0.0  0.3 62960 00:00:00 pts/8    zsh             -zsh
+17388 nicholas       1  0.0  0.3 61792 00:00:00 pts/6    zsh             -zsh
+17387 nicholas       1  0.0  0.3 63048 00:00:00 pts/6    zsh             -zsh
+17165 nicholas       1  0.0  0.3 59548 00:00:00 pts/7    zsh             -zsh
+17163 nicholas       1  0.0  0.3 60972 00:00:00 pts/7    zsh             -zsh
+14801 nicholas       1  0.0  0.0  3364 00:00:00 pts/6    zsh             -zsh
+17390 nicholas   14801  0.0  0.0  2060 00:00:00 pts/6     \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+14676 nicholas       1  0.0  0.0  3264 00:00:00 pts/10   zsh             -zsh
+17970 nicholas   14676  0.0  0.0  2092 00:00:00 pts/10    \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+14583 nicholas       1  0.0  0.0  3356 00:00:00 pts/9    zsh             -zsh
+19112 nicholas   14583  0.0  0.0  2036 00:00:00 pts/9     \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+14483 nicholas       1  0.0  0.0  3292 00:00:00 pts/8    zsh             -zsh
+17636 nicholas   14483  0.0  0.0  2052 00:00:00 pts/8     \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+14333 nicholas       1  0.0  0.0  3392 00:00:00 pts/7    zsh             -zsh
+17166 nicholas   14333  0.0  0.0  2064 00:00:00 pts/7     \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+10520 nicholas       1  0.0  0.3 59324 00:00:00 pts/3    zsh             -zsh
+10518 nicholas       1  0.0  0.3 60604 00:00:00 pts/3    zsh             -zsh
+10006 nicholas       1  0.0  0.0  3328 00:00:00 pts/3    zsh             -zsh
+10521 nicholas   10006  0.0  0.0  2060 00:00:00 pts/3     \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+4420 nicholas       1  0.0  0.3 59176 00:00:00 pts/0    zsh             /usr/bin/zsh
+4417 nicholas       1  0.0  0.3 60512 00:00:00 pts/0    zsh             /usr/bin/zsh
+4101 nicholas       1  0.0  0.3 59020 00:00:00 pts/1    zsh             /usr/bin/zsh
+4099 nicholas       1  0.0  0.3 60308 00:00:00 pts/1    zsh             /usr/bin/zsh
+3685 nicholas       1  0.0  0.0  3116 00:00:00 pts/1    zsh             /usr/bin/zsh
+4103 nicholas    3685  0.0  0.0  2008 00:00:00 pts/1     \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+3659 nicholas       1  0.0  0.0  3180 00:00:00 pts/0    zsh             /usr/bin/zsh
+4421 nicholas    3659  0.0  0.0  2032 00:00:00 pts/0     \_ gitstatusd-  \_ /home/nicholas/.cache/gitstatus/gitstatus
+1394 root           1  0.0  0.0  1584 00:00:00 tty1     agetty          /sbin/agetty -o -p -- \u --noclear tty1 linux

@@ -1,0 +1,80 @@
+{
+    "Subnets": [
+        {
+            "AvailabilityZone": "us-east-2c",
+            "AvailabilityZoneId": "use2-az3",
+            "AvailableIpAddressCount": 4091,
+            "CidrBlock": "172.31.32.0/20",
+            "DefaultForAz": true,
+            "MapPublicIpOnLaunch": true,
+            "MapCustomerOwnedIpOnLaunch": false,
+            "State": "available",
+            "SubnetId": "subnet-641db028",
+            "VpcId": "vpc-f9907792",
+            "OwnerId": "414719454744",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "SubnetArn": "arn:aws:ec2:us-east-2:414719454744:subnet/subnet-641db028"
+        },
+        {
+            "AvailabilityZone": "us-east-2b",
+            "AvailabilityZoneId": "use2-az2",
+            "AvailableIpAddressCount": 4050,
+            "CidrBlock": "172.31.16.0/20",
+            "DefaultForAz": true,
+            "MapPublicIpOnLaunch": true,
+            "MapCustomerOwnedIpOnLaunch": false,
+            "State": "available",
+            "SubnetId": "subnet-9b8fcae1",
+            "VpcId": "vpc-f9907792",
+            "OwnerId": "414719454744",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/cluster/platform-dev",
+                    "Value": "shared"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/spadash-dev0-eks",
+                    "Value": "shared"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/spadash-prod0-eks",
+                    "Value": "shared"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-2:414719454744:subnet/subnet-9b8fcae1"
+        },
+        {
+            "AvailabilityZone": "us-east-2a",
+            "AvailabilityZoneId": "use2-az1",
+            "AvailableIpAddressCount": 4050,
+            "CidrBlock": "172.31.0.0/20",
+            "DefaultForAz": true,
+            "MapPublicIpOnLaunch": true,
+            "MapCustomerOwnedIpOnLaunch": false,
+            "State": "available",
+            "SubnetId": "subnet-18262970",
+            "VpcId": "vpc-f9907792",
+            "OwnerId": "414719454744",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/cluster/spadash-dev0-eks",
+                    "Value": "shared"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/spadash-prod0-eks",
+                    "Value": "shared"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/platform-dev",
+                    "Value": "shared"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-2:414719454744:subnet/subnet-18262970"
+        }
+    ]
+}

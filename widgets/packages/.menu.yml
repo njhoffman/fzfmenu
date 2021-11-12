@@ -1,15 +1,9 @@
 ---
-envs:
-  - CLR_MENU_ID: "\033[38;5;70m"
 
 actions:
   - id: apt:install
-    desc: Select available apt packages for installation
     cmd: apt.zsh --mode=available
   - id: apt:remove
     cmd: apt.zsh --mode=installed
-    desc: "***"
-    # desc: Select installed apt packages for removal
   - id: apt:upgrade
-    desc: Select apt packages available for update
     cmd: apt.zsh --mode=upgradeable

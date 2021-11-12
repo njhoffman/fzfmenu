@@ -30,14 +30,14 @@ function File::get_mime_type {
 }
 
 function Video::extract_random_frame {
-  local max_width="$1" path_video="$2" path_image="$3"
-  local duration="$(ffmpeg -i "$path_video" 2>&1 | grep 'Duration: ' \
-                                                                    | grep --only-matching --perl-regexp '(\d+):(\d+):(\d+)')"
+local max_width="$1" path_video="$2" path_image="$3"
+local duration="$(ffmpeg -i "$path_video" 2>&1 | grep 'Duration: ' \
+  | grep --only-matching --perl-regexp '(\d+):(\d+):(\d+)')"
   local hour="${duration:0:2}" minute="${duration:3:2}" second="${duration:6:2}"
   local seconds=$((second + minute * 60 + hour * 60 * 60))
   ffmpeg -y -ss $((((RANDOM << 15) | RANDOM) % seconds + 0)) \
-      -i "$path_video" -vframes 1 -vf "scale=${max_width}:-1" \
-      "$path_image" &> /dev/null
+    -i "$path_video" -vframes 1 -vf "scale=${max_width}:-1" \
+    "$path_image" &> /dev/null
 }
 
 function Music::contains_album_cover {
@@ -57,16 +57,16 @@ function Cover::create_image {
       Video::extract_random_frame "$max_width" "$path_file" "$path_output"
       ;;
     audio/*)
-      Music::contains_album_cover "$path_file" \
-                                               && Music::extract_album_cover "$max_width" "$path_file" "$path_output"
+      Music::contains_album_cover "$path_file" && \
+        Music::extract_album_cover "$max_width" "$path_file" "$path_output"
       ;;
-  esac
-}
+    esac
+  }
 
 function Cover::set_image {
   ImageLayer::add [identifier]="$Cover_ID" [x]="0" [y]="0" \
-          [max_width]="${cover_max_columns:-$DEFAULT_COVER_MAX_COLUMNS}" \
-          [path]="$@" \
+    [max_width]="${cover_max_columns:-$DEFAULT_COVER_MAX_COLUMNS}" \
+    [path]="$*" \
     > "$Cover_FIFO"
 }
 
@@ -76,7 +76,7 @@ function Cover::remove_image {
 }
 
 function Cover::if_running {
-  [ $EXISTS "$Cover_FIFO" ] && {
+  [ -f "$Cover_FIFO" ] && {
     cmd="$1"
     shift
     "Cover::$cmd" "$@"
@@ -89,12 +89,12 @@ function Cover::on_selection_changed {
   local width="${cover_max_width:-$DEFAULT_COVER_MAX_WIDTH}"
   local path_output="${DIR_CACHE}/${1}-${width}-${filename//[^0-9a-zA-Z]/}.jpg"
 
-  [ ! $IS_FILE "$path_output" ] && {
+  [ ! -f "$path_output" ] && {
     mkdir --parents "$DIR_CACHE"
     Cover::create_image "$width" "$path_file" "$path_output"
   }
 
-  if [ $IS_FILE "$path_output" ]; then
+  if [ -f "$path_output" ]; then
     Cover::set_image "$path_output"
   else
     Cover::remove_image

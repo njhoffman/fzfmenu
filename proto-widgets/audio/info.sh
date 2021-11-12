@@ -92,9 +92,7 @@ function Info::main {
   Screen::disable_echo
 
   while
-    # do
     current_song="$(Mpc::get_song_name)"
-
     if [[ ! -z "$current_song" ]]; then
       if [[ "$current_song" != "$last_song" ]]; then
         last_song="$current_song"
@@ -108,7 +106,6 @@ function Info::main {
         timeout_seconds=$((timeout_millisecs / MILLISECS_PER_SECOND))
         timeout_millisecs=$((timeout_millisecs % MILLISECS_PER_SECOND))
         timeout="${timeout_seconds}.${timeout_millisecs}"
-
         clear
       fi
 
@@ -129,10 +126,10 @@ function Info::main {
       echo "$current_song"
     fi
 
-    # while
     read -rsn 1 -t $timeout input_char
     [[ "$input_char" != "q" ]]
-  do continue;  done
+  do continue
+  done
 
   Info::cleanup
 }

@@ -31,8 +31,8 @@ function key_hook {
         # another key after pressing q so we need to kill
         # the created input shell to avoid this bug.
         [[ "$INPUT_SHELL_PID" != "" ]] \
-                                       && kill $INPUT_SHELL_PID &> /dev/null
-                  break
+          && kill $INPUT_SHELL_PID &> /dev/null
+        break
       fi
     fi
   done

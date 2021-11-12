@@ -1,0 +1,234 @@
+{
+    "DBInstances": [
+        {
+            "DBInstanceIdentifier": "spadash-dev-rds",
+            "DBInstanceClass": "db.t2.small",
+            "Engine": "postgres",
+            "DBInstanceStatus": "available",
+            "MasterUsername": "spadash",
+            "DBName": "apidb",
+            "Endpoint": {
+                "Address": "spadash-dev-rds.cwlxeioqofrq.us-east-2.rds.amazonaws.com",
+                "Port": 5432,
+                "HostedZoneId": "Z2XHWR1WZ565X2"
+            },
+            "AllocatedStorage": 5,
+            "InstanceCreateTime": "2020-02-06T05:04:52.809000+00:00",
+            "PreferredBackupWindow": "03:00-06:00",
+            "BackupRetentionPeriod": 1,
+            "DBSecurityGroups": [],
+            "VpcSecurityGroups": [
+                {
+                    "VpcSecurityGroupId": "sg-01ad476a9eb82fda4",
+                    "Status": "active"
+                }
+            ],
+            "DBParameterGroups": [
+                {
+                    "DBParameterGroupName": "spadash-dev-rds-20200206045919820300000002",
+                    "ParameterApplyStatus": "in-sync"
+                }
+            ],
+            "AvailabilityZone": "us-east-2b",
+            "DBSubnetGroup": {
+                "DBSubnetGroupName": "default",
+                "DBSubnetGroupDescription": "default",
+                "VpcId": "vpc-f9907792",
+                "SubnetGroupStatus": "Complete",
+                "Subnets": [
+                    {
+                        "SubnetIdentifier": "subnet-18262970",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-2a"
+                        },
+                        "SubnetOutpost": {},
+                        "SubnetStatus": "Active"
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-9b8fcae1",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-2b"
+                        },
+                        "SubnetOutpost": {},
+                        "SubnetStatus": "Active"
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-641db028",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-2c"
+                        },
+                        "SubnetOutpost": {},
+                        "SubnetStatus": "Active"
+                    }
+                ]
+            },
+            "PreferredMaintenanceWindow": "mon:00:00-mon:03:00",
+            "PendingModifiedValues": {},
+            "LatestRestorableTime": "2021-11-01T03:29:36+00:00",
+            "MultiAZ": false,
+            "EngineVersion": "11.12",
+            "AutoMinorVersionUpgrade": true,
+            "ReadReplicaDBInstanceIdentifiers": [],
+            "LicenseModel": "postgresql-license",
+            "OptionGroupMemberships": [
+                {
+                    "OptionGroupName": "spadash-dev-rds-20200206045919820300000003",
+                    "Status": "in-sync"
+                }
+            ],
+            "PubliclyAccessible": true,
+            "StorageType": "gp2",
+            "DbInstancePort": 0,
+            "StorageEncrypted": false,
+            "DbiResourceId": "db-WXGMJWLFTP2J3DRUXVNYARMHZE",
+            "CACertificateIdentifier": "rds-ca-2019",
+            "DomainMemberships": [],
+            "CopyTagsToSnapshot": false,
+            "MonitoringInterval": 30,
+            "EnhancedMonitoringResourceArn": "arn:aws:logs:us-east-2:414719454744:log-group:RDSOSMetrics:log-stream:db-WXGMJWLFTP2J3DRUXVNYARMHZE",
+            "MonitoringRoleArn": "arn:aws:iam::414719454744:role/spadash-dev-rds-monitor-20200206045919820200000001",
+            "DBInstanceArn": "arn:aws:rds:us-east-2:414719454744:db:spadash-dev-rds",
+            "IAMDatabaseAuthenticationEnabled": false,
+            "PerformanceInsightsEnabled": true,
+            "PerformanceInsightsKMSKeyId": "arn:aws:kms:us-east-2:414719454744:key/d8df2e5f-5c5e-47f6-9ba5-d0551593ee1e",
+            "PerformanceInsightsRetentionPeriod": 7,
+            "DeletionProtection": false,
+            "AssociatedRoles": [],
+            "TagList": [
+                {
+                    "Key": "env/type",
+                    "Value": "development"
+                },
+                {
+                    "Key": "env/name",
+                    "Value": "dev"
+                },
+                {
+                    "Key": "env/desc",
+                    "Value": "Managed by Terraform with the https://bitbucket.org/spadash/spadash-system/envs/dev/infra module."
+                },
+                {
+                    "Key": "Name",
+                    "Value": "spadash-dev-rds"
+                }
+            ],
+            "CustomerOwnedIpEnabled": false,
+            "ActivityStreamStatus": "stopped"
+        },
+        {
+            "DBInstanceIdentifier": "spadash-prod-rds",
+            "DBInstanceClass": "db.t2.small",
+            "Engine": "postgres",
+            "DBInstanceStatus": "available",
+            "MasterUsername": "spadash",
+            "DBName": "apidb",
+            "Endpoint": {
+                "Address": "spadash-prod-rds.cwlxeioqofrq.us-east-2.rds.amazonaws.com",
+                "Port": 5432,
+                "HostedZoneId": "Z2XHWR1WZ565X2"
+            },
+            "AllocatedStorage": 5,
+            "InstanceCreateTime": "2020-02-10T06:47:16.510000+00:00",
+            "PreferredBackupWindow": "03:00-06:00",
+            "BackupRetentionPeriod": 1,
+            "DBSecurityGroups": [],
+            "VpcSecurityGroups": [
+                {
+                    "VpcSecurityGroupId": "sg-0dd025ec26e148b20",
+                    "Status": "active"
+                }
+            ],
+            "DBParameterGroups": [
+                {
+                    "DBParameterGroupName": "spadash-prod-rds-20200210064315551400000001",
+                    "ParameterApplyStatus": "in-sync"
+                }
+            ],
+            "AvailabilityZone": "us-east-2a",
+            "DBSubnetGroup": {
+                "DBSubnetGroupName": "default",
+                "DBSubnetGroupDescription": "default",
+                "VpcId": "vpc-f9907792",
+                "SubnetGroupStatus": "Complete",
+                "Subnets": [
+                    {
+                        "SubnetIdentifier": "subnet-18262970",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-2a"
+                        },
+                        "SubnetOutpost": {},
+                        "SubnetStatus": "Active"
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-9b8fcae1",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-2b"
+                        },
+                        "SubnetOutpost": {},
+                        "SubnetStatus": "Active"
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-641db028",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-2c"
+                        },
+                        "SubnetOutpost": {},
+                        "SubnetStatus": "Active"
+                    }
+                ]
+            },
+            "PreferredMaintenanceWindow": "mon:00:00-mon:03:00",
+            "PendingModifiedValues": {},
+            "LatestRestorableTime": "2021-11-01T03:29:39+00:00",
+            "MultiAZ": false,
+            "EngineVersion": "11.12",
+            "AutoMinorVersionUpgrade": true,
+            "ReadReplicaDBInstanceIdentifiers": [],
+            "LicenseModel": "postgresql-license",
+            "OptionGroupMemberships": [
+                {
+                    "OptionGroupName": "spadash-prod-rds-20200210064315552700000003",
+                    "Status": "in-sync"
+                }
+            ],
+            "PubliclyAccessible": true,
+            "StorageType": "gp2",
+            "DbInstancePort": 0,
+            "StorageEncrypted": false,
+            "DbiResourceId": "db-IODNMMT7SMK27NPUUNKCD6U6RA",
+            "CACertificateIdentifier": "rds-ca-2019",
+            "DomainMemberships": [],
+            "CopyTagsToSnapshot": false,
+            "MonitoringInterval": 30,
+            "EnhancedMonitoringResourceArn": "arn:aws:logs:us-east-2:414719454744:log-group:RDSOSMetrics:log-stream:db-IODNMMT7SMK27NPUUNKCD6U6RA",
+            "MonitoringRoleArn": "arn:aws:iam::414719454744:role/spadash-prod-rds-monitor-20200210064315552000000002",
+            "DBInstanceArn": "arn:aws:rds:us-east-2:414719454744:db:spadash-prod-rds",
+            "IAMDatabaseAuthenticationEnabled": false,
+            "PerformanceInsightsEnabled": true,
+            "PerformanceInsightsKMSKeyId": "arn:aws:kms:us-east-2:414719454744:key/d8df2e5f-5c5e-47f6-9ba5-d0551593ee1e",
+            "PerformanceInsightsRetentionPeriod": 7,
+            "DeletionProtection": false,
+            "AssociatedRoles": [],
+            "TagList": [
+                {
+                    "Key": "env/type",
+                    "Value": "production"
+                },
+                {
+                    "Key": "env/name",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "env/desc",
+                    "Value": "Managed by Terraform with the https://bitbucket.org/spadash/spadash-system/envs/prod/infra module."
+                },
+                {
+                    "Key": "Name",
+                    "Value": "spadash-prod-rds"
+                }
+            ],
+            "CustomerOwnedIpEnabled": false,
+            "ActivityStreamStatus": "stopped"
+        }
+    ]
+}
