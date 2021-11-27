@@ -5,11 +5,10 @@
 |web:github|search and explore github repositories|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/web.sh
 |web:stackoverflow|search stack overflow questions and answers|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/web.sh
 |web:thepiratebay|search for torrents from thepiratebay|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/web.sh
-|docker:containers|inspect and manage running containers|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/docker-test/docker.sh
-|docker:images|view and manage docker created images|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/docker-test/docker.sh
-|docker:networks|view and manage docker networks|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/docker-test/docker.sh
-|docker:volumes|view and manage docker volumes|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/docker-test/docker.sh
-|docker:logs|view and manage docker logs|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/proto-widgets/other/docker-test/docker.sh
+|docker:containers|inspect and manage running containers|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/widgets/docker/docker.sh
+|docker:images|view and manage docker created images|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/widgets/docker/docker.sh
+|docker:networks|view and manage docker networks|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/widgets/docker/docker.sh
+|docker:volumes|view and manage docker volumes|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/widgets/docker/docker.sh
 |apt:install|null|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/widgets/packages/apt.zsh
 |apt:remove|null|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/widgets/packages/apt.zsh
 |apt:upgrade|null|/home/nicholas/ghq/github.com/njhoffman/fzfmenu/widgets/packages/apt.zsh

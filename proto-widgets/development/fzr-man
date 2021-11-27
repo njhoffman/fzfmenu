@@ -1,2 +1,61 @@
 #!/bin/bash
+
+# Loud Hound I hate California
+# The Lost and Foudn Workshop - Just What you Need
+
 echo '' | fzf --preview 'man {q}'
+# MANPAGER=cat MANWIDTH='.(&columns/2-4).
+
+# global brute search (apropos)
+man -KWwa --regex 'foo'
+# search page names and descriptions (whatis)
+man -ka --regex 'foo'
+# search only names
+man -ka --names-only --regex 'foo'
+# list all existing sections
+man -ka ''
+# list only primary (1) sections
+man -ka '' -s "1"
+
+# list env variables
+list_env() {
+  var=$(printenv | cut -d= -f1 | fzf) \
+    && echo "$var=$(printenv "$var")" \
+    && unset var
+}
+
+list_man() {
+	awk_recipe='BEGIN {FS=OFS="- "} /\([1|4]\)/ {gsub(/\([0-9]\)/, "", $1); if (!seen[$0]++) { print }}'
+	manlist=$(man -k . 2>/dev/null | awk $awk_recipe | fzf) \
+		&& man "$(echo "$manlist" | awk -F' |,' '{print $1}')" \
+		&& unset manlist
+}
+
+fman() {
+	man -k . | fzf -q "$1" --prompt='man> '  --preview $'echo {} | tr -d \'()\' | awk \'{printf "%s ", $2} {print $1}\' | xargs -r man | col -bx | bat -l man -p --color always' | tr -d '()' | awk '{printf "%s ", $2} {print $1}' | xargs -r man
+}
+
+# I just wrote an Apropos command for Vim which I'm pretty happy with. It uses man -k to search the title and description of man pages (equivalent to the apropos command),
+#  lets you fuzzily pick from the results, and opens the result in a new tab in Vim for you to view.
+# command! -nargs=? Apropos call fzf#run({'source': 'man -k -s 1 '.shellescape(<q-args>).' | cut -d " " -f 1', 'sink': 'tab Man'})
+# Requirements:- fzf.vim- man.vim for the :Man command (built into recent versions of vim, sourced by default in Neovim, and you can just add runtime ftplugin/man.vim to your vimrc to have it in Vim too)
+# EDIT: better version of the command respecting g:fzf_layout, and featuring a preview of the man pages:
+# command! -nargs=? Apropos call fzf#run(fzf#wrap({'source': 'man -k -s 1 '.shellescape(<q-args>).' | cut -d " " -f 1', 'sink': 'tab Man', 'options': ['--preview', 'MANPAGER=cat MANWIDTH='.(&columns/2-4).' man {}']}))
+
+
+#alternative version
+# man-find() {
+# 		f=$(fd . $MANPATH/man${1:-1} -t f -x echo {/.} | fzf) && man $f
+# }
+
+# fman() {
+# 		man -k . | fzf --prompt='Man> ' | awk '{print $1}' | xargs -r man
+# }
+
+# # Same as above, but with previews and works correctly with man pages in different sections.
+# function fman() {
+# 		man -k . | fzf -q "$1" --prompt='man> '  --preview $'echo {} | tr -d \'()\' | awk \'{printf "%s ", $2} {print $1}\' | xargs -r man' | tr -d '()' | awk '{printf "%s ", $2} {print $1}' | xargs -r man
+# }
+
+# # Get the colors in the opened man page itself
+# export MANPAGER="sh -c 'col -bx | bat -l man -p --paging always'"

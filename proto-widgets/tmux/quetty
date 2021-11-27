@@ -107,6 +107,10 @@ while (("$#")); do
         exit 1
       fi
       ;;
+    -hash)
+      REGEXLIST+=($HASHREGEX)
+      shift
+      ;;
     -word)
       REGEXLIST+=($WORDREGEX)
       REGEXLIST+=($IDENTREGEX)
@@ -131,17 +135,13 @@ while (("$#")); do
       REGEXLIST+=($PREFIXCOMBINED)
       shift
       ;;
-    -hash)
-      REGEXLIST+=($HASHREGEX)
-      shift
-      ;;
     -h | --help)
       printhelp
       exit 0
       ;;
     -*)
       filter=${1#"-"}
-      filter_file=$ROOTDIR/filters/"$filter"
+      filter_file=$ROOTDIR/tmux/filters/"$filter"
       if [[ ! -x $filter_file ]]; then
         echo "Error: No filter $filter_file"
         exit 1

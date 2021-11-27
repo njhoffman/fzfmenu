@@ -1,0 +1,13 @@
+CWD="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+export BUTLERTMPDIR="${BUTLERTMPDIR:-/tmp}"
+export QUETTYFZF_START="${QUETTYFZF_START:-word}"
+
+DEFAULTPASTER="${DEFAULTPASTER:-$CWD/paste-to-tmux}"
+DEFAULTVIEWER="${DEFAULTVIEWER:-$CWD/tmux-split}"
+DEFAULTREADER="${DEFAULTREADER:-$CWD/capture_panes}"
+DEFAULTSELECTOR="${DEFAULTSELECTOR:-$CWD/quetty-fzf}"
+DEFAULTFILTER="${DEFAULTFILTER:-cat}"
+FZFHEADER="${FZFHEADER:-alt-x:EDIT} "
+FZFBINDING="${FZFBINDING:-alt-x:execute(touch $BUTLERTMPDIR/editorf)+accept}"
+
+# vim:ft=bash
