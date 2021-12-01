@@ -1,0 +1,1851 @@
+Assuming --all is passed
+Report for[0m [1;4m[38;5;207mzdharma-continuum[0m/[1;4m[38;5;39mz-a-as-monitor[0m plugin
+[38;5;82m--------------------------------------------------[0m
+[32mSource[0m z-a-readurl.plugin.zsh (no reporting)
+[32mAutoload[0m za-readurl-preinit-handler with options -U -z
+
+Report for[0m [1;4m[38;5;207mzdharma-continuum[0m/[1;4m[38;5;39mz-a-patch-dl[0m plugin
+[38;5;82m------------------------------------------------[0m
+[32mSource[0m z-a-patch-dl.plugin.zsh (no reporting)
+[32mAutoload[0m za-patch-dl-handler with options -U -z
+
+Report for[0m [1;4m[38;5;207mzdharma-continuum[0m/[1;4m[38;5;39mz-a-bin-gem-node[0m plugin
+[38;5;82m----------------------------------------------------[0m
+[32mSource[0m z-a-bin-gem-node.plugin.zsh (no reporting)
+[32mAutoload[0m .za-bgn-bin-or-src-function-body
+[32mAutoload[0m .za-bgn-bin-or-src-function-body-cygwin
+[32mAutoload[0m .za-bgn-mod-function-body
+[32mAutoload[0m za-bgn-atload-handler
+[32mAutoload[0m za-bgn-atclone-handler
+[32mAutoload[0m za-bgn-atpull-handler
+[32mAutoload[0m za-bgn-help-handler
+[32mAutoload[0m za-bgn-atdelete-handler
+[32mAutoload[0m za-bgn-shim-list
+
+Report for[0m [1;4m[38;5;207msharkdp[0m/[1;4m[38;5;39mbat[0m plugin
+[38;5;82m-----------------------------[0m
+
+Report for[0m [1;4m[38;5;207msharkdp[0m/[1;4m[38;5;39mfd[0m plugin
+[38;5;82m----------------------------[0m
+
+[38;5;81mCompletions:[0m
+_fd [38;5;82m[enabled][0m
+
+Report for[0m [1;4m[38;5;207mjhawthorn[0m/[1;4m[38;5;39mfzy[0m plugin
+[38;5;82m-------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mzdharma-continuum[0m/[1;4m[38;5;39mzsh-diff-so-fancy[0m plugin
+[38;5;82m-----------------------------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mranger[0m/[1;4m[38;5;39mranger[0m plugin
+[38;5;82m-------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mBurntSushi[0m/[1;4m[38;5;39mripgrep[0m plugin
+[38;5;82m------------------------------------[0m
+
+[38;5;81mCompletions:[0m
+_rg [38;5;82m[enabled][0m
+
+Report for[0m [1;4m[38;5;207mtree-sitter[0m/[1;4m[38;5;39mtree-sitter[0m plugin
+[38;5;82m-----------------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mmvdan[0m/[1;4m[38;5;39mxurls[0m plugin
+[38;5;82m-----------------------------[0m
+
+Report for[0m [1;4m[38;5;39mpowerlevel10k[0m plugin
+[38;5;82m-------------------------------[0m
+[32mSource[0m powerlevel10k.zsh-theme (no reporting)
+[32mAutoload[0m is-at-least with options -U -z
+[32mAutoload[0m add-zsh-hook with options -U -z
+
+Report for[0m [1;4m[38;5;39mlast-working-dir[0m plugin
+[38;5;82m----------------------------------[0m
+[32mSource[0m last-working-dir.zsh (no reporting)
+[32mAutoload[0m add-zsh-hook with options -U
+[32mAutoload[0m chpwd_last_working_dir
+
+Report for[0m [1;4m[38;5;39mzsh-reentry-hook[0m plugin
+[38;5;82m----------------------------------[0m
+[32mSource[0m zsh-reentry-hook.plugin.zsh (no reporting)
+[32mAutoload[0m add-zsh-hook with options -U -z
+[32mAutoload[0m reentry_hook
+
+Report for[0m [1;4m[38;5;207mzsh-users[0m/[1;4m[38;5;39mzsh-history-substring-search[0m plugin
+[38;5;82m--------------------------------------------------------[0m
+[32mSource[0m zsh-history-substring-search.plugin.zsh [38;5;227m(reporting enabled)[0m
+[32mZle[0m -N history-substring-search-up
+[38;5;148mNote:[0m a new widget created via zle -N: `history-substring-search-up'
+[32mZle[0m -N history-substring-search-down
+[38;5;148mNote:[0m a new widget created via zle -N: `history-substring-search-down'
+[32mZle[0m -N accept-and-hold _zsh_highlight_widget_accept-and-hold
+[32mZle[0m -N accept-and-infer-next-history _zsh_highlight_widget_accept-and-infer-next-history
+[32mZle[0m -N accept-and-menu-complete _zsh_highlight_widget_accept-and-menu-complete
+[32mZle[0m -N accept-line _zsh_highlight_widget_accept-line
+[32mZle[0m -N accept-line-and-down-history _zsh_highlight_widget_accept-line-and-down-history
+[32mZle[0m -N accept-search _zsh_highlight_widget_accept-search
+[32mZle[0m -N argument-base _zsh_highlight_widget_argument-base
+[32mZle[0m -N auto-suffix-remove _zsh_highlight_widget_auto-suffix-remove
+[32mZle[0m -N auto-suffix-retain _zsh_highlight_widget_auto-suffix-retain
+[32mZle[0m -N backward-char _zsh_highlight_widget_backward-char
+[32mZle[0m -N backward-delete-char _zsh_highlight_widget_backward-delete-char
+[32mZle[0m -N backward-delete-word _zsh_highlight_widget_backward-delete-word
+[32mZle[0m -N backward-kill-line _zsh_highlight_widget_backward-kill-line
+[32mZle[0m -N backward-kill-word _zsh_highlight_widget_backward-kill-word
+[32mZle[0m -N backward-word _zsh_highlight_widget_backward-word
+[32mZle[0m -N beginning-of-buffer-or-history _zsh_highlight_widget_beginning-of-buffer-or-history
+[32mZle[0m -N beginning-of-history _zsh_highlight_widget_beginning-of-history
+[32mZle[0m -N beginning-of-line _zsh_highlight_widget_beginning-of-line
+[32mZle[0m -N beginning-of-line-hist _zsh_highlight_widget_beginning-of-line-hist
+[32mZle[0m -N bracketed-paste _zsh_highlight_widget_bracketed-paste
+[32mZle[0m -N capitalize-word _zsh_highlight_widget_capitalize-word
+[32mZle[0m -N clear-screen _zsh_highlight_widget_clear-screen
+[32mZle[0m -C orig-complete-word .complete-word _main_complete
+[38;5;148mNote:[0m a new widget created via zle -N: `orig-complete-word'
+[32mZle[0m -N complete-word _zsh_highlight_widget_complete-word
+[32mZle[0m -N copy-prev-shell-word _zsh_highlight_widget_copy-prev-shell-word
+[32mZle[0m -N copy-prev-word _zsh_highlight_widget_copy-prev-word
+[32mZle[0m -N copy-region-as-kill _zsh_highlight_widget_copy-region-as-kill
+[32mZle[0m -N deactivate-region _zsh_highlight_widget_deactivate-region
+[32mZle[0m -N delete-char _zsh_highlight_widget_delete-char
+[32mZle[0m -C orig-delete-char-or-list .delete-char-or-list _main_complete
+[38;5;148mNote:[0m a new widget created via zle -N: `orig-delete-char-or-list'
+[32mZle[0m -N delete-char-or-list _zsh_highlight_widget_delete-char-or-list
+[32mZle[0m -N delete-word _zsh_highlight_widget_delete-word
+[32mZle[0m -N describe-key-briefly _zsh_highlight_widget_describe-key-briefly
+[32mZle[0m -N digit-argument _zsh_highlight_widget_digit-argument
+[32mZle[0m -N down-case-word _zsh_highlight_widget_down-case-word
+[32mZle[0m -N down-history _zsh_highlight_widget_down-history
+[32mZle[0m -N down-line _zsh_highlight_widget_down-line
+[32mZle[0m -N down-line-or-history _zsh_highlight_widget_down-line-or-history
+[32mZle[0m -N down-line-or-search _zsh_highlight_widget_down-line-or-search
+[32mZle[0m -N emacs-backward-word _zsh_highlight_widget_emacs-backward-word
+[32mZle[0m -N emacs-forward-word _zsh_highlight_widget_emacs-forward-word
+[32mZle[0m -N end-of-buffer-or-history _zsh_highlight_widget_end-of-buffer-or-history
+[32mZle[0m -N end-of-history _zsh_highlight_widget_end-of-history
+[32mZle[0m -N end-of-line _zsh_highlight_widget_end-of-line
+[32mZle[0m -N end-of-line-hist _zsh_highlight_widget_end-of-line-hist
+[32mZle[0m -N end-of-list _zsh_highlight_widget_end-of-list
+[32mZle[0m -N exchange-point-and-mark _zsh_highlight_widget_exchange-point-and-mark
+[32mZle[0m -N execute-last-named-cmd _zsh_highlight_widget_execute-last-named-cmd
+[32mZle[0m -N execute-named-cmd _zsh_highlight_widget_execute-named-cmd
+[32mZle[0m -N expand-cmd-path _zsh_highlight_widget_expand-cmd-path
+[32mZle[0m -N expand-history _zsh_highlight_widget_expand-history
+[32mZle[0m -C orig-expand-or-complete .expand-or-complete _main_complete
+[38;5;148mNote:[0m a new widget created via zle -N: `orig-expand-or-complete'
+[32mZle[0m -N expand-or-complete _zsh_highlight_widget_expand-or-complete
+[32mZle[0m -C orig-expand-or-complete-prefix .expand-or-complete-prefix _main_complete
+[38;5;148mNote:[0m a new widget created via zle -N: `orig-expand-or-complete-prefix'
+[32mZle[0m -N expand-or-complete-prefix _zsh_highlight_widget_expand-or-complete-prefix
+[32mZle[0m -N expand-word _zsh_highlight_widget_expand-word
+[32mZle[0m -N forward-char _zsh_highlight_widget_forward-char
+[32mZle[0m -N forward-word _zsh_highlight_widget_forward-word
+[32mZle[0m -N get-line _zsh_highlight_widget_get-line
+[32mZle[0m -N gosmacs-transpose-chars _zsh_highlight_widget_gosmacs-transpose-chars
+[32mZle[0m -N history-beginning-search-backward _zsh_highlight_widget_history-beginning-search-backward
+[32mZle[0m -N history-beginning-search-forward _zsh_highlight_widget_history-beginning-search-forward
+[32mZle[0m -N history-incremental-pattern-search-backward _zsh_highlight_widget_history-incremental-pattern-search-backward
+[32mZle[0m -N history-incremental-pattern-search-forward _zsh_highlight_widget_history-incremental-pattern-search-forward
+[32mZle[0m -N history-incremental-search-backward _zsh_highlight_widget_history-incremental-search-backward
+[32mZle[0m -N history-incremental-search-forward _zsh_highlight_widget_history-incremental-search-forward
+[32mZle[0m -N history-search-backward _zsh_highlight_widget_history-search-backward
+[32mZle[0m -N history-search-forward _zsh_highlight_widget_history-search-forward
+[32mZle[0m -N infer-next-history _zsh_highlight_widget_infer-next-history
+[32mZle[0m -N insert-last-word _zsh_highlight_widget_insert-last-word
+[32mZle[0m -N kill-buffer _zsh_highlight_widget_kill-buffer
+[32mZle[0m -N kill-line _zsh_highlight_widget_kill-line
+[32mZle[0m -N kill-region _zsh_highlight_widget_kill-region
+[32mZle[0m -N kill-whole-line _zsh_highlight_widget_kill-whole-line
+[32mZle[0m -N kill-word _zsh_highlight_widget_kill-word
+[32mZle[0m -C orig-list-choices .list-choices _main_complete
+[38;5;148mNote:[0m a new widget created via zle -N: `orig-list-choices'
+[32mZle[0m -N list-choices _zsh_highlight_widget_list-choices
+[32mZle[0m -N list-expand _zsh_highlight_widget_list-expand
+[32mZle[0m -N magic-space _zsh_highlight_widget_magic-space
+[32mZle[0m -C orig-menu-complete .menu-complete _main_complete
+[38;5;148mNote:[0m a new widget created via zle -N: `orig-menu-complete'
+[32mZle[0m -N menu-complete _zsh_highlight_widget_menu-complete
+[32mZle[0m -C orig-menu-expand-or-complete .menu-expand-or-complete _main_complete
+[38;5;148mNote:[0m a new widget created via zle -N: `orig-menu-expand-or-complete'
+[32mZle[0m -N menu-expand-or-complete _zsh_highlight_widget_menu-expand-or-complete
+[32mZle[0m -N neg-argument _zsh_highlight_widget_neg-argument
+[32mZle[0m -N overwrite-mode _zsh_highlight_widget_overwrite-mode
+[32mZle[0m -N pound-insert _zsh_highlight_widget_pound-insert
+[32mZle[0m -N push-input _zsh_highlight_widget_push-input
+[32mZle[0m -N push-line _zsh_highlight_widget_push-line
+[32mZle[0m -N push-line-or-edit _zsh_highlight_widget_push-line-or-edit
+[32mZle[0m -N put-replace-selection _zsh_highlight_widget_put-replace-selection
+[32mZle[0m -N quote-line _zsh_highlight_widget_quote-line
+[32mZle[0m -N quote-region _zsh_highlight_widget_quote-region
+[32mZle[0m -N quoted-insert _zsh_highlight_widget_quoted-insert
+[32mZle[0m -N read-command _zsh_highlight_widget_read-command
+[32mZle[0m -N recursive-edit _zsh_highlight_widget_recursive-edit
+[32mZle[0m -N redisplay _zsh_highlight_widget_redisplay
+[32mZle[0m -N redo _zsh_highlight_widget_redo
+[32mZle[0m -N reset-prompt _zsh_highlight_widget_reset-prompt
+[32mZle[0m -C orig-reverse-menu-complete .reverse-menu-complete _main_complete
+[38;5;148mNote:[0m a new widget created via zle -N: `orig-reverse-menu-complete'
+[32mZle[0m -N reverse-menu-complete _zsh_highlight_widget_reverse-menu-complete
+[32mZle[0m -N select-a-blank-word _zsh_highlight_widget_select-a-blank-word
+[32mZle[0m -N select-a-shell-word _zsh_highlight_widget_select-a-shell-word
+[32mZle[0m -N select-a-word _zsh_highlight_widget_select-a-word
+[32mZle[0m -N select-in-blank-word _zsh_highlight_widget_select-in-blank-word
+[32mZle[0m -N select-in-shell-word _zsh_highlight_widget_select-in-shell-word
+[32mZle[0m -N select-in-word _zsh_highlight_widget_select-in-word
+[32mZle[0m -N self-insert _zsh_highlight_widget_self-insert
+[32mZle[0m -N self-insert-unmeta _zsh_highlight_widget_self-insert-unmeta
+[32mZle[0m -N send-break _zsh_highlight_widget_send-break
+[32mZle[0m -N set-local-history _zsh_highlight_widget_set-local-history
+[32mZle[0m -N set-mark-command _zsh_highlight_widget_set-mark-command
+[32mZle[0m -N spell-word _zsh_highlight_widget_spell-word
+[32mZle[0m -N split-undo _zsh_highlight_widget_split-undo
+[32mZle[0m -N transpose-chars _zsh_highlight_widget_transpose-chars
+[32mZle[0m -N transpose-words _zsh_highlight_widget_transpose-words
+[32mZle[0m -N undefined-key _zsh_highlight_widget_undefined-key
+[32mZle[0m -N undo _zsh_highlight_widget_undo
+[32mZle[0m -N universal-argument _zsh_highlight_widget_universal-argument
+[32mZle[0m -N up-case-word _zsh_highlight_widget_up-case-word
+[32mZle[0m -N up-history _zsh_highlight_widget_up-history
+[32mZle[0m -N up-line _zsh_highlight_widget_up-line
+[32mZle[0m -N up-line-or-history _zsh_highlight_widget_up-line-or-history
+[32mZle[0m -N up-line-or-search _zsh_highlight_widget_up-line-or-search
+[32mZle[0m -N vi-add-eol _zsh_highlight_widget_vi-add-eol
+[32mZle[0m -N vi-add-next _zsh_highlight_widget_vi-add-next
+[32mZle[0m -N vi-backward-blank-word _zsh_highlight_widget_vi-backward-blank-word
+[32mZle[0m -N vi-backward-blank-word-end _zsh_highlight_widget_vi-backward-blank-word-end
+[32mZle[0m -N vi-backward-char _zsh_highlight_widget_vi-backward-char
+[32mZle[0m -N vi-backward-delete-char _zsh_highlight_widget_vi-backward-delete-char
+[32mZle[0m -N vi-backward-kill-word _zsh_highlight_widget_vi-backward-kill-word
+[32mZle[0m -N vi-backward-word _zsh_highlight_widget_vi-backward-word
+[32mZle[0m -N vi-backward-word-end _zsh_highlight_widget_vi-backward-word-end
+[32mZle[0m -N vi-beginning-of-line _zsh_highlight_widget_vi-beginning-of-line
+[32mZle[0m -N vi-caps-lock-panic _zsh_highlight_widget_vi-caps-lock-panic
+[32mZle[0m -N vi-change _zsh_highlight_widget_vi-change
+[32mZle[0m -N vi-change-eol _zsh_highlight_widget_vi-change-eol
+[32mZle[0m -N vi-change-whole-line _zsh_highlight_widget_vi-change-whole-line
+[32mZle[0m -N vi-cmd-mode _zsh_highlight_widget_vi-cmd-mode
+[32mZle[0m -N vi-delete _zsh_highlight_widget_vi-delete
+[32mZle[0m -N vi-delete-char _zsh_highlight_widget_vi-delete-char
+[32mZle[0m -N vi-digit-or-beginning-of-line _zsh_highlight_widget_vi-digit-or-beginning-of-line
+[32mZle[0m -N vi-down-case _zsh_highlight_widget_vi-down-case
+[32mZle[0m -N vi-down-line-or-history _zsh_highlight_widget_vi-down-line-or-history
+[32mZle[0m -N vi-end-of-line _zsh_highlight_widget_vi-end-of-line
+[32mZle[0m -N vi-fetch-history _zsh_highlight_widget_vi-fetch-history
+[32mZle[0m -N vi-find-next-char _zsh_highlight_widget_vi-find-next-char
+[32mZle[0m -N vi-find-next-char-skip _zsh_highlight_widget_vi-find-next-char-skip
+[32mZle[0m -N vi-find-prev-char _zsh_highlight_widget_vi-find-prev-char
+[32mZle[0m -N vi-find-prev-char-skip _zsh_highlight_widget_vi-find-prev-char-skip
+[32mZle[0m -N vi-first-non-blank _zsh_highlight_widget_vi-first-non-blank
+[32mZle[0m -N vi-forward-blank-word _zsh_highlight_widget_vi-forward-blank-word
+[32mZle[0m -N vi-forward-blank-word-end _zsh_highlight_widget_vi-forward-blank-word-end
+[32mZle[0m -N vi-forward-char _zsh_highlight_widget_vi-forward-char
+[32mZle[0m -N vi-forward-word _zsh_highlight_widget_vi-forward-word
+[32mZle[0m -N vi-forward-word-end _zsh_highlight_widget_vi-forward-word-end
+[32mZle[0m -N vi-goto-column _zsh_highlight_widget_vi-goto-column
+[32mZle[0m -N vi-goto-mark _zsh_highlight_widget_vi-goto-mark
+[32mZle[0m -N vi-goto-mark-line _zsh_highlight_widget_vi-goto-mark-line
+[32mZle[0m -N vi-history-search-backward _zsh_highlight_widget_vi-history-search-backward
+[32mZle[0m -N vi-history-search-forward _zsh_highlight_widget_vi-history-search-forward
+[32mZle[0m -N vi-indent _zsh_highlight_widget_vi-indent
+[32mZle[0m -N vi-insert _zsh_highlight_widget_vi-insert
+[32mZle[0m -N vi-insert-bol _zsh_highlight_widget_vi-insert-bol
+[32mZle[0m -N vi-join _zsh_highlight_widget_vi-join
+[32mZle[0m -N vi-kill-eol _zsh_highlight_widget_vi-kill-eol
+[32mZle[0m -N vi-kill-line _zsh_highlight_widget_vi-kill-line
+[32mZle[0m -N vi-match-bracket _zsh_highlight_widget_vi-match-bracket
+[32mZle[0m -N vi-open-line-above _zsh_highlight_widget_vi-open-line-above
+[32mZle[0m -N vi-open-line-below _zsh_highlight_widget_vi-open-line-below
+[32mZle[0m -N vi-oper-swap-case _zsh_highlight_widget_vi-oper-swap-case
+[32mZle[0m -N vi-pound-insert _zsh_highlight_widget_vi-pound-insert
+[32mZle[0m -N vi-put-after _zsh_highlight_widget_vi-put-after
+[32mZle[0m -N vi-put-before _zsh_highlight_widget_vi-put-before
+[32mZle[0m -N vi-quoted-insert _zsh_highlight_widget_vi-quoted-insert
+[32mZle[0m -N vi-repeat-change _zsh_highlight_widget_vi-repeat-change
+[32mZle[0m -N vi-repeat-find _zsh_highlight_widget_vi-repeat-find
+[32mZle[0m -N vi-repeat-search _zsh_highlight_widget_vi-repeat-search
+[32mZle[0m -N vi-replace _zsh_highlight_widget_vi-replace
+[32mZle[0m -N vi-replace-chars _zsh_highlight_widget_vi-replace-chars
+[32mZle[0m -N vi-rev-repeat-find _zsh_highlight_widget_vi-rev-repeat-find
+[32mZle[0m -N vi-rev-repeat-search _zsh_highlight_widget_vi-rev-repeat-search
+[32mZle[0m -N vi-set-buffer _zsh_highlight_widget_vi-set-buffer
+[32mZle[0m -N vi-set-mark _zsh_highlight_widget_vi-set-mark
+[32mZle[0m -N vi-substitute _zsh_highlight_widget_vi-substitute
+[32mZle[0m -N vi-swap-case _zsh_highlight_widget_vi-swap-case
+[32mZle[0m -N vi-undo-change _zsh_highlight_widget_vi-undo-change
+[32mZle[0m -N vi-unindent _zsh_highlight_widget_vi-unindent
+[32mZle[0m -N vi-up-case _zsh_highlight_widget_vi-up-case
+[32mZle[0m -N vi-up-line-or-history _zsh_highlight_widget_vi-up-line-or-history
+[32mZle[0m -N vi-yank _zsh_highlight_widget_vi-yank
+[32mZle[0m -N vi-yank-eol _zsh_highlight_widget_vi-yank-eol
+[32mZle[0m -N vi-yank-whole-line _zsh_highlight_widget_vi-yank-whole-line
+[32mZle[0m -N visual-line-mode _zsh_highlight_widget_visual-line-mode
+[32mZle[0m -N visual-mode _zsh_highlight_widget_visual-mode
+[32mZle[0m -N what-cursor-position _zsh_highlight_widget_what-cursor-position
+[32mZle[0m -N where-is _zsh_highlight_widget_where-is
+
+[38;5;81mFunctions created:[0m
+_history-substring-search-begin                                  history-substring-search-down
+_history-substring-search-down-buffer                            _history-substring-search-down-history
+_history-substring-search-down-search                            _history-substring-search-end
+_history-substring-search-found                                  _history-substring-search-has-next
+_history-substring-search-has-prev                               _history-substring-search-not-found
+_history_substring_search_process_raw_matches                    history-substring-search-up
+_history-substring-search-up-buffer                              _history-substring-search-up-history
+_history-substring-search-up-search                              _zsh_highlight
+_zsh_highlight_bind_widgets                                      _zsh_highlight_widget_accept-and-hold
+_zsh_highlight_widget_accept-and-infer-next-history              _zsh_highlight_widget_accept-and-menu-complete
+_zsh_highlight_widget_accept-line                                _zsh_highlight_widget_accept-line-and-down-history
+_zsh_highlight_widget_accept-search                              _zsh_highlight_widget_argument-base
+_zsh_highlight_widget_auto-suffix-remove                         _zsh_highlight_widget_auto-suffix-retain
+_zsh_highlight_widget_backward-char                              _zsh_highlight_widget_backward-delete-char
+_zsh_highlight_widget_backward-delete-word                       _zsh_highlight_widget_backward-kill-line
+_zsh_highlight_widget_backward-kill-word                         _zsh_highlight_widget_backward-word
+_zsh_highlight_widget_beginning-of-buffer-or-history             _zsh_highlight_widget_beginning-of-history
+_zsh_highlight_widget_beginning-of-line                          _zsh_highlight_widget_beginning-of-line-hist
+_zsh_highlight_widget_bracketed-paste                            _zsh_highlight_widget_capitalize-word
+_zsh_highlight_widget_clear-screen                               _zsh_highlight_widget_complete-word
+_zsh_highlight_widget_copy-prev-shell-word                       _zsh_highlight_widget_copy-prev-word
+_zsh_highlight_widget_copy-region-as-kill                        _zsh_highlight_widget_deactivate-region
+_zsh_highlight_widget_delete-char                                _zsh_highlight_widget_delete-char-or-list
+_zsh_highlight_widget_delete-word                                _zsh_highlight_widget_describe-key-briefly
+_zsh_highlight_widget_digit-argument                             _zsh_highlight_widget_down-case-word
+_zsh_highlight_widget_down-history                               _zsh_highlight_widget_down-line
+_zsh_highlight_widget_down-line-or-history                       _zsh_highlight_widget_down-line-or-search
+_zsh_highlight_widget_emacs-backward-word                        _zsh_highlight_widget_emacs-forward-word
+_zsh_highlight_widget_end-of-buffer-or-history                   _zsh_highlight_widget_end-of-history
+_zsh_highlight_widget_end-of-line                                _zsh_highlight_widget_end-of-line-hist
+_zsh_highlight_widget_end-of-list                                _zsh_highlight_widget_exchange-point-and-mark
+_zsh_highlight_widget_execute-last-named-cmd                     _zsh_highlight_widget_execute-named-cmd
+_zsh_highlight_widget_expand-cmd-path                            _zsh_highlight_widget_expand-history
+_zsh_highlight_widget_expand-or-complete                         _zsh_highlight_widget_expand-or-complete-prefix
+_zsh_highlight_widget_expand-word                                _zsh_highlight_widget_forward-char
+_zsh_highlight_widget_forward-word                               _zsh_highlight_widget_get-line
+_zsh_highlight_widget_gosmacs-transpose-chars                    _zsh_highlight_widget_history-beginning-search-backward
+_zsh_highlight_widget_history-beginning-search-forward           _zsh_highlight_widget_history-incremental-pattern-search-backward
+_zsh_highlight_widget_history-incremental-pattern-search-forward _zsh_highlight_widget_history-incremental-search-backward
+_zsh_highlight_widget_history-incremental-search-forward         _zsh_highlight_widget_history-search-backward
+_zsh_highlight_widget_history-search-forward                     _zsh_highlight_widget_infer-next-history
+_zsh_highlight_widget_insert-last-word                           _zsh_highlight_widget_kill-buffer
+_zsh_highlight_widget_kill-line                                  _zsh_highlight_widget_kill-region
+_zsh_highlight_widget_kill-whole-line                            _zsh_highlight_widget_kill-word
+_zsh_highlight_widget_list-choices                               _zsh_highlight_widget_list-expand
+_zsh_highlight_widget_magic-space                                _zsh_highlight_widget_menu-complete
+_zsh_highlight_widget_menu-expand-or-complete                    _zsh_highlight_widget_neg-argument
+_zsh_highlight_widget_overwrite-mode                             _zsh_highlight_widget_pound-insert
+_zsh_highlight_widget_push-input                                 _zsh_highlight_widget_push-line
+_zsh_highlight_widget_push-line-or-edit                          _zsh_highlight_widget_put-replace-selection
+_zsh_highlight_widget_quoted-insert                              _zsh_highlight_widget_quote-line
+_zsh_highlight_widget_quote-region                               _zsh_highlight_widget_read-command
+_zsh_highlight_widget_recursive-edit                             _zsh_highlight_widget_redisplay
+_zsh_highlight_widget_redo                                       _zsh_highlight_widget_reset-prompt
+_zsh_highlight_widget_reverse-menu-complete                      _zsh_highlight_widget_select-a-blank-word
+_zsh_highlight_widget_select-a-shell-word                        _zsh_highlight_widget_select-a-word
+_zsh_highlight_widget_select-in-blank-word                       _zsh_highlight_widget_select-in-shell-word
+_zsh_highlight_widget_select-in-word                             _zsh_highlight_widget_self-insert
+_zsh_highlight_widget_self-insert-unmeta                         _zsh_highlight_widget_send-break
+_zsh_highlight_widget_set-local-history                          _zsh_highlight_widget_set-mark-command
+_zsh_highlight_widget_spell-word                                 _zsh_highlight_widget_split-undo
+_zsh_highlight_widget_transpose-chars                            _zsh_highlight_widget_transpose-words
+_zsh_highlight_widget_undefined-key                              _zsh_highlight_widget_undo
+_zsh_highlight_widget_universal-argument                         _zsh_highlight_widget_up-case-word
+_zsh_highlight_widget_up-history                                 _zsh_highlight_widget_up-line
+_zsh_highlight_widget_up-line-or-history                         _zsh_highlight_widget_up-line-or-search
+_zsh_highlight_widget_vi-add-eol                                 _zsh_highlight_widget_vi-add-next
+_zsh_highlight_widget_vi-backward-blank-word                     _zsh_highlight_widget_vi-backward-blank-word-end
+_zsh_highlight_widget_vi-backward-char                           _zsh_highlight_widget_vi-backward-delete-char
+_zsh_highlight_widget_vi-backward-kill-word                      _zsh_highlight_widget_vi-backward-word
+_zsh_highlight_widget_vi-backward-word-end                       _zsh_highlight_widget_vi-beginning-of-line
+_zsh_highlight_widget_vi-caps-lock-panic                         _zsh_highlight_widget_vi-change
+_zsh_highlight_widget_vi-change-eol                              _zsh_highlight_widget_vi-change-whole-line
+_zsh_highlight_widget_vi-cmd-mode                                _zsh_highlight_widget_vi-delete
+_zsh_highlight_widget_vi-delete-char                             _zsh_highlight_widget_vi-digit-or-beginning-of-line
+_zsh_highlight_widget_vi-down-case                               _zsh_highlight_widget_vi-down-line-or-history
+_zsh_highlight_widget_vi-end-of-line                             _zsh_highlight_widget_vi-fetch-history
+_zsh_highlight_widget_vi-find-next-char                          _zsh_highlight_widget_vi-find-next-char-skip
+_zsh_highlight_widget_vi-find-prev-char                          _zsh_highlight_widget_vi-find-prev-char-skip
+_zsh_highlight_widget_vi-first-non-blank                         _zsh_highlight_widget_vi-forward-blank-word
+_zsh_highlight_widget_vi-forward-blank-word-end                  _zsh_highlight_widget_vi-forward-char
+_zsh_highlight_widget_vi-forward-word                            _zsh_highlight_widget_vi-forward-word-end
+_zsh_highlight_widget_vi-goto-column                             _zsh_highlight_widget_vi-goto-mark
+_zsh_highlight_widget_vi-goto-mark-line                          _zsh_highlight_widget_vi-history-search-backward
+_zsh_highlight_widget_vi-history-search-forward                  _zsh_highlight_widget_vi-indent
+_zsh_highlight_widget_vi-insert                                  _zsh_highlight_widget_vi-insert-bol
+_zsh_highlight_widget_vi-join                                    _zsh_highlight_widget_vi-kill-eol
+_zsh_highlight_widget_vi-kill-line                               _zsh_highlight_widget_vi-match-bracket
+_zsh_highlight_widget_vi-open-line-above                         _zsh_highlight_widget_vi-open-line-below
+_zsh_highlight_widget_vi-oper-swap-case                          _zsh_highlight_widget_vi-pound-insert
+_zsh_highlight_widget_vi-put-after                               _zsh_highlight_widget_vi-put-before
+_zsh_highlight_widget_vi-quoted-insert                           _zsh_highlight_widget_vi-repeat-change
+_zsh_highlight_widget_vi-repeat-find                             _zsh_highlight_widget_vi-repeat-search
+_zsh_highlight_widget_vi-replace                                 _zsh_highlight_widget_vi-replace-chars
+_zsh_highlight_widget_vi-rev-repeat-find                         _zsh_highlight_widget_vi-rev-repeat-search
+_zsh_highlight_widget_vi-set-buffer                              _zsh_highlight_widget_vi-set-mark
+_zsh_highlight_widget_visual-line-mode                           _zsh_highlight_widget_visual-mode
+_zsh_highlight_widget_vi-substitute                              _zsh_highlight_widget_vi-swap-case
+_zsh_highlight_widget_vi-undo-change                             _zsh_highlight_widget_vi-unindent
+_zsh_highlight_widget_vi-up-case                                 _zsh_highlight_widget_vi-up-line-or-history
+_zsh_highlight_widget_vi-yank                                    _zsh_highlight_widget_vi-yank-eol
+_zsh_highlight_widget_vi-yank-whole-line                         _zsh_highlight_widget_what-cursor-position
+_zsh_highlight_widget_where-is                                   
+
+[38;5;81mVariables added or redefined:[0m
+_history_substring_search_query            [38;5;82m[ "" -> scalar      ][0m
+_history_substring_search_matches          [38;5;82m[ "" -> array       ][0m
+_history_substring_search_result           [38;5;82m[ "" -> scalar      ][0m
+HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS    [38;5;82m[ "" -> scalar      ][0m
+CURSOR                                     [38;5;82m[ "" -> scalar      ][0m
+_history_substring_search_raw_match_index  [38;5;82m[ "" -> integer     ][0m
+HISTORY_SUBSTRING_SEARCH_PREFIXED          [38;5;82m[ "" -> scalar      ][0m
+_history_substring_search_query_parts      [38;5;82m[ "" -> array       ][0m
+HISTORY_SUBSTRING_SEARCH_FUZZY             [38;5;82m[ "" -> scalar      ][0m
+_history_substring_search_refresh_display  [38;5;82m[ "" -> scalar      ][0m
+_history_substring_search_raw_matches      [38;5;82m[ "" -> array       ][0m
+_history_substring_search_unique_filter    [38;5;82m[ "" -> association ][0m
+_history_substring_search_query_highlight  [38;5;82m[ "" -> scalar      ][0m
+BUFFER                                     [38;5;82m[ "" -> scalar      ][0m
+_history_substring_search_match_index      [38;5;82m[ "" -> integer     ][0m
+
+Report for[0m [1;4m[38;5;207meth-p[0m/[1;4m[38;5;39mbat-extras[0m plugin
+[38;5;82m----------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mchriswalz[0m/[1;4m[38;5;39mbit[0m plugin
+[38;5;82m-------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mjarun[0m/[1;4m[38;5;39mbuku[0m plugin
+[38;5;82m----------------------------[0m
+
+Report for[0m [1;4m[38;5;207mwfxr[0m/[1;4m[38;5;39memoji-cli[0m plugin
+[38;5;82m--------------------------------[0m
+[32mSource[0m fuzzy-emoji-zle.zsh [38;5;227m(reporting enabled)[0m
+[32mZle[0m -N wfxr::zle::fuzzy-emoji
+[38;5;148mNote:[0m a new widget created via zle -N: `wfxr::zle::fuzzy-emoji'
+[32mBindkey[0m '^[m' wfxr::zle::fuzzy-emoji
+
+[38;5;81mFunctions created:[0m
+wfxr::zle::fuzzy-emoji 
+
+[38;5;81mVariables added or redefined:[0m
+EMOJI_CLI_KEYBIND  [38;5;82m[ "" -> scalar ][0m
+
+Report for[0m [1;4m[38;5;207mogham[0m/[1;4m[38;5;39mexa[0m plugin
+[38;5;82m---------------------------[0m
+
+Report for[0m [1;4m[38;5;207mexiftool[0m/[1;4m[38;5;39mexiftool[0m plugin
+[38;5;82m-----------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mdandavison[0m/[1;4m[38;5;39mdelta[0m plugin
+[38;5;82m----------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mwfxr[0m/[1;4m[38;5;39mforgit[0m plugin
+[38;5;82m-----------------------------[0m
+[32mSource[0m forgit.plugin.zsh [38;5;227m(reporting enabled)[0m
+[32mAlias[0m fga=forgit::add
+[32mAlias[0m fgrh=forgit::reset::head
+[32mAlias[0m fglo=forgit::log
+[32mAlias[0m fgd=forgit::diff
+[32mAlias[0m fgi=forgit::ignore
+[32mAlias[0m gcf=forgit::checkout::file
+[32mAlias[0m gcb=forgit::checkout::branch
+[32mAlias[0m gco=forgit::checkout::commit
+[32mAlias[0m fgclean=forgit::clean
+[32mAlias[0m fgss=forgit::stash::show
+[32mAlias[0m fgcp=forgit::cherry::pick
+[32mAlias[0m grb=forgit::rebase
+[32mAlias[0m gfu=forgit::fixup
+
+[38;5;81mFunctions created:[0m
+forgit::add              forgit::checkout::branch
+forgit::checkout::commit forgit::checkout::file
+forgit::cherry::pick     forgit::clean
+forgit::diff             forgit::fixup
+forgit::ignore           forgit::ignore::clean
+forgit::ignore::get      forgit::ignore::list
+forgit::ignore::update   forgit::info
+forgit::inside_work_tree forgit::log
+forgit::rebase           forgit::reset::head
+forgit::stash::show      forgit::warn
+
+[38;5;81mVariables added or redefined:[0m
+forgit_emojify       [38;5;82m[ "" -> scalar ][0m
+forgit_ignore_pager  [38;5;82m[ "" -> scalar ][0m
+forgit_log_format    [38;5;82m[ "" -> scalar ][0m
+forgit_show_pager    [38;5;82m[ "" -> scalar ][0m
+forgit_pager         [38;5;82m[ "" -> scalar ][0m
+forgit_diff_pager    [38;5;82m[ "" -> scalar ][0m
+
+Report for[0m [1;4m[38;5;207maperezdc[0m/[1;4m[38;5;39mzsh-fzy[0m plugin
+[38;5;82m----------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mpaulirish[0m/[1;4m[38;5;39mgit-open[0m plugin
+[38;5;82m------------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mtj[0m/[1;4m[38;5;39mgit-extras[0m plugin
+[38;5;82m-------------------------------[0m
+[32mSource[0m check_dependencies.sh [38;5;227m(reporting enabled)[0m
+
+[38;5;81mFunctions created:[0m
+err 
+
+Report for[0m [1;4m[38;5;207mcharmbracelet[0m/[1;4m[38;5;39mglow[0m plugin
+[38;5;82m------------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mLuRsT[0m/[1;4m[38;5;39mhr[0m plugin
+[38;5;82m--------------------------[0m
+
+Report for[0m [1;4m[38;5;207mfnord0[0m/[1;4m[38;5;39mhURL[0m plugin
+[38;5;82m-----------------------------[0m
+
+Report for[0m [1;4m[38;5;207malexgisby[0m/[1;4m[38;5;39mimgur-album-downloader[0m plugin
+[38;5;82m--------------------------------------------------[0m
+
+Report for[0m [1;4m[38;5;207msmxi[0m/[1;4m[38;5;39minxi[0m plugin
+[38;5;82m---------------------------[0m
+
+Report for[0m [1;4m[38;5;207mjesseduffield[0m/[1;4m[38;5;39mlazygit[0m plugin
+[38;5;82m---------------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mjesseduffield[0m/[1;4m[38;5;39mlazydocker[0m plugin
+[38;5;82m------------------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mdenisidoro[0m/[1;4m[38;5;39mnavi[0m plugin
+[38;5;82m---------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mdylanaraps[0m/[1;4m[38;5;39mneofetch[0m plugin
+[38;5;82m-------------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mdylanaraps[0m/[1;4m[38;5;39mpash[0m plugin
+[38;5;82m---------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mdenilsonsa[0m/[1;4m[38;5;39mprettyping[0m plugin
+[38;5;82m---------------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mSeirdy[0m/[1;4m[38;5;39mstpv[0m plugin
+[38;5;82m-----------------------------[0m
+
+Report for[0m [1;4m[38;5;207mkevinhwang91[0m/[1;4m[38;5;39mfzf-tmux-script[0m plugin
+[38;5;82m----------------------------------------------[0m
+
+Report for[0m [1;4m[38;5;207mgreymd[0m/[1;4m[38;5;39mtmux-xpanes[0m plugin
+[38;5;82m------------------------------------[0m
+
+[38;5;81mCompletions:[0m
+_tmux-xpanes [38;5;82m[enabled][0m
+_xpanes [38;5;82m[enabled][0m
+
+Report for[0m [1;4m[38;5;207mTheLocehiliosan[0m/[1;4m[38;5;39myadm[0m plugin
+[38;5;82m--------------------------------------[0m
+
+[38;5;81mCompletions:[0m
+_yadm [38;5;82m[enabled][0m
+
+Report for[0m [1;4m[38;5;207mxPMo[0m/[1;4m[38;5;39mzsh-toggle-command-prefix[0m plugin
+[38;5;82m------------------------------------------------[0m
+[32mSource[0m toggle-command-prefix.plugin.zsh (no reporting)
+[32mAutoload[0m .toggle-command-prefix with options -U -z
+[32mAutoload[0m split-shell-arguments with options -U -z
+
+Report for[0m [1;4m[38;5;207mhlissner[0m/[1;4m[38;5;39mzsh-autopair[0m plugin
+[38;5;82m---------------------------------------[0m
+[32mSource[0m zsh-autopair.plugin.zsh (no reporting)
+
+[38;5;81mCompletions:[0m
+_support [38;5;118m[not installed][0m
+
+Report for[0m [1;4m[38;5;207murbainvaes[0m/[1;4m[38;5;39mfzf-marks[0m plugin
+[38;5;82m--------------------------------------[0m
+[32mSource[0m fzf-marks.plugin.zsh [38;5;227m(reporting enabled)[0m
+[32mZle[0m -N redraw-prompt
+[32mZle[0m -N dmark
+[32mZle[0m -N fzm
+[32mBindkey[0m '^g' fzm
+[32mSaving[0m `compdef _fzm fzm' for replay
+
+Report for[0m [1;4m[38;5;207mpabloariasal[0m/[1;4m[38;5;39mzfm[0m plugin
+[38;5;82m----------------------------------[0m
+[32mSource[0m zfm.plugin.zsh (no reporting)
+
+Report for[0m [1;4m[38;5;207mkazhala[0m/[1;4m[38;5;39mdotbare[0m plugin
+[38;5;82m---------------------------------[0m
+[32mSource[0m dotbare.plugin.zsh [38;5;227m(reporting enabled)[0m
+[32mZle[0m -N dotbare-fadd _widget_dotbare_fadd
+[38;5;148mNote:[0m a new widget created via zle -N: `dotbare-fadd'
+[32mZle[0m -N dotbare-fedit _widget_dotbare_fedit
+[38;5;148mNote:[0m a new widget created via zle -N: `dotbare-fedit'
+[32mZle[0m -N dotbare-fcheckout _widget_dotbare_fcheckout
+[38;5;148mNote:[0m a new widget created via zle -N: `dotbare-fcheckout'
+[32mZle[0m -N dotbare-freset _widget_dotbare_reset
+[38;5;148mNote:[0m a new widget created via zle -N: `dotbare-freset'
+[32mZle[0m -N dotbare-flog _widget_dotbare_flog
+[38;5;148mNote:[0m a new widget created via zle -N: `dotbare-flog'
+[32mZle[0m -N dotbare-fgrep _widget_dotbare_fgrep
+[38;5;148mNote:[0m a new widget created via zle -N: `dotbare-fgrep'
+[32mZle[0m -N dotbare-fstat _widget_dotbare_fstat
+[38;5;148mNote:[0m a new widget created via zle -N: `dotbare-fstat'
+[32mZle[0m -N dotbare-transform _widget_git_transform_dotbare
+[38;5;148mNote:[0m a new widget created via zle -N: `dotbare-transform'
+
+[38;5;81mFunctions created:[0m
+__dotbare_completion          _dotbare_completion_cmd
+_dotbare_completion_git       _widget_dotbare_fadd
+_widget_dotbare_fcheckout     _widget_dotbare_fedit
+_widget_dotbare_fgrep         _widget_dotbare_flog
+_widget_dotbare_freset        _widget_dotbare_fstat
+_widget_git_transform_dotbare 
+
+[38;5;81mVariables added or redefined:[0m
+_path  [38;5;82m[ "" -> scalar ][0m
+
+[38;5;81mCompletions:[0m
+_dotbare [38;5;82m[enabled][0m
+
+Report for[0m [1;4m[38;5;207mlarkery[0m/[1;4m[38;5;39mzsh-histdb[0m plugin
+[38;5;82m------------------------------------[0m
+[32mSource[0m zsh-histdb.plugin.zsh [38;5;227m(reporting enabled)[0m
+[32mAutoload[0m add-zsh-hook with options -U
+[32mAutoload[0m _histdb_stop_sqlite_pipe
+[32mAutoload[0m _histdb_addhistory
+[32mAutoload[0m _histdb_update_outcome
+
+[38;5;81mFunctions created:[0m
+histdb                   _histdb_addhistory
+_histdb_init             _histdb_query
+_histdb_query_batch      _histdb_start_sqlite_pipe
+_histdb_stop_sqlite_pipe histdb-sync
+histdb-top               _histdb_update_outcome
+sql_escape               
+
+[38;5;81mVariables added or redefined:[0m
+HISTDB_HOST              [38;5;82m[ "" -> scalar ][0m
+HISTDB_INSTALLED_IN      [38;5;82m[ "" -> scalar ][0m
+zshaddhistory_functions  [38;5;82m[ "" -> array  ][0m
+_BORING_COMMANDS         [38;5;82m[ "" -> array  ][0m
+HISTDB_TABULATE_CMD      [38;5;82m[ "" -> array  ][0m
+HISTDB_FILE              [38;5;82m[ "" -> scalar ][0m
+HISTDB_QUERY             [38;5;82m[ "" -> scalar ][0m
+HISTDB_INODE             [38;5;82m[ "" -> scalar ][0m
+HISTDB_SESSION           [38;5;82m[ "" -> scalar ][0m
+
+Report for[0m [1;4m[38;5;207mm42e[0m/[1;4m[38;5;39mzsh-histdb-fzf[0m plugin
+[38;5;82m-------------------------------------[0m
+[32mSource[0m fzf-histdb.zsh [38;5;227m(reporting enabled)[0m
+[32mAutoload[0m colors with options -U
+[32mZle[0m -N histdb-fzf-widget
+[38;5;148mNote:[0m a new widget created via zle -N: `histdb-fzf-widget'
+[32mBindkey[0m '^R' histdb-fzf-widget
+
+[38;5;81mFunctions created:[0m
+get_date_format   histdb-detail
+histdb-fzf-log    histdb-fzf-query
+histdb-fzf-widget histdb-get-command
+
+[38;5;81mVariables added or redefined:[0m
+NLT              [38;5;82m[ "" -> scalar ][0m
+FZF_HISTDB_FILE  [38;5;82m[ "" -> scalar ][0m
+datecmd          [38;5;82m[ "" -> scalar ][0m
+NL               [38;5;82m[ "" -> scalar ][0m
+HISTDB_FZF_CMD   [38;5;82m[ "" -> scalar ][0m
+
+Report for[0m [1;4m[38;5;207mTarrasch[0m/[1;4m[38;5;39mzsh-autoenv[0m plugin
+[38;5;82m--------------------------------------[0m
+[32mSource[0m init.zsh [38;5;227m(reporting enabled)[0m
+[32mAutoload[0m add-zsh-hook with options -U
+[32mAutoload[0m _autoenv_chpwd_handler
+
+[38;5;81mFunctions created:[0m
+autoenv_append_path                _autoenv_ask_for_yes
+_autoenv_authorize                 _autoenv_authorized_env_file
+_autoenv_check_authorized_env_file _autoenv_chpwd_handler
+_autoenv_deauthorize               _autoenv_debug
+autoenv-edit                       _autoenv_get_file_mtime
+_autoenv_get_file_upwards          _autoenv_hash_pair
+autoenv_prepend_path               autoenv_remove_path
+_autoenv_source                    autoenv_source_parent
+_autoenv_stack_entered_add         _autoenv_stack_entered_contains
+_autoenv_stack_entered_remove      
+
+[38;5;81mVariables added or redefined:[0m
+AUTOENV_DISABLED              [38;5;82m[ "" -> scalar      ][0m
+_autoenv_stack_entered_mtime  [38;5;82m[ "" -> association ][0m
+AUTOENV_AUTH_FILE             [38;5;82m[ "" -> scalar      ][0m
+AUTOENV_FILE_ENTER            [38;5;82m[ "" -> scalar      ][0m
+AUTOENV_LOOK_UPWARDS          [38;5;82m[ "" -> scalar      ][0m
+AUTOENV_FILE_LEAVE            [38;5;82m[ "" -> scalar      ][0m
+AUTOENV_DEBUG                 [38;5;82m[ "" -> scalar      ][0m
+AUTOENV_HANDLE_LEAVE          [38;5;82m[ "" -> scalar      ][0m
+_autoenv_stack_entered        [38;5;82m[ "" -> array       ][0m
+
+[38;5;81mCompletions:[0m
+_autoenv_stack.t [38;5;82m[enabled][0m
+_autoenv_utils.t [38;5;82m[enabled][0m
+
+Report for[0m [1;4m[38;5;207mchangyuheng[0m/[1;4m[38;5;39mfz[0m plugin
+[38;5;82m--------------------------------[0m
+[32mSource[0m fz.plugin.zsh [38;5;227m(reporting enabled)[0m
+[32mAlias[0m z=_fz
+[32mAlias[0m zz=_fzz
+[1m[38;5;204mWarning:[0m redefining alias `zz', previous value: _z -I
+[32mZle[0m -N __fz_zsh_completion
+[38;5;148mNote:[0m a new widget created via zle -N: `__fz_zsh_completion'
+[32mBindkey[0m '^I' __fz_zsh_completion
+
+[38;5;81mFunctions created:[0m
+_fz                                __fz_bash_completion
+__fz_filter                        __fz_fzf_prog
+__fz_generate_matched_history_list __fz_generate_matched_subdir_history_list
+__fz_generate_matched_subdir_list  __fz_generate_matches
+__fz_init_bash_completion          __fz_init_zsh_completion
+_fzz                               __fz_zsh_completion
+
+[38;5;81mVariables added or redefined:[0m
+FZ_CMD                            [38;5;82m[ "" -> scalar ][0m
+FZ_HISTORY_LIST_GENERATOR         [38;5;82m[ "" -> scalar ][0m
+FZ_CASE_INSENSITIVE               [38;5;82m[ "" -> scalar ][0m
+FZ_SUBDIR_HISTORY_CD_CMD          [38;5;82m[ "" -> scalar ][0m
+FZ_SUBDIR_TRAVERSAL               [38;5;82m[ "" -> scalar ][0m
+FZ_SUBDIR_HISTORY_LIST_GENERATOR  [38;5;82m[ "" -> scalar ][0m
+FZ_ABBREVIATE_HOME                [38;5;82m[ "" -> scalar ][0m
+FZ_SUBDIR_CMD                     [38;5;82m[ "" -> scalar ][0m
+__fz_zsh_default_completion       [38;5;82m[ "" -> scalar ][0m
+
+Report for[0m [1;4m[38;5;207mMichaelAquilina[0m/[1;4m[38;5;39mzsh-auto-notify[0m plugin
+[38;5;82m-------------------------------------------------[0m
+[32mSource[0m auto-notify.plugin.zsh [38;5;227m(reporting enabled)[0m
+[32mAutoload[0m add-zsh-hook with options -U -z
+[32mAutoload[0m _auto_notify_track
+[32mAutoload[0m _auto_notify_send
+
+[38;5;81mFunctions created:[0m
+_auto_notify_format         _auto_notify_message
+_auto_notify_reset_tracking _auto_notify_send
+_auto_notify_track          disable_auto_notify
+enable_auto_notify          _is_auto_notify_ignored
+
+[38;5;81mVariables added or redefined:[0m
+platform  [38;5;82m[ "" -> scalar ][0m
+
+Report for[0m [1;4m[38;5;207mskywind3000[0m/[1;4m[38;5;39mz.lua[0m plugin
+[38;5;82m-----------------------------------[0m
+[32mSource[0m z.lua.plugin.zsh [38;5;227m(reporting enabled)[0m
+[32mAlias[0m z=_zlua
+[1m[38;5;204mWarning:[0m redefining alias `z', previous value: _fz
+[32mSaving[0m `compdef _zlua_zsh_tab_completion _zlua' for replay
+[32mAlias[0m zz=z -i
+[1m[38;5;204mWarning:[0m redefining alias `zz', previous value: _fzz
+[32mAlias[0m zc=z -c
+[32mAlias[0m zf=z -I
+[32mAlias[0m zb=z -b
+[1m[38;5;204mWarning:[0m redefining alias `zb', previous value: _z -b -I
+[32mAlias[0m zbi=z -b -i
+[32mAlias[0m zbf=z -b -I
+[32mAlias[0m zh=z -I -t .
+[32mAlias[0m zzc=zz -c
+
+[38;5;81mFunctions created:[0m
+_zlua                    _zlua_precmd
+_zlua_zsh_tab_completion 
+
+[38;5;81mVariables added or redefined:[0m
+ZLUA_EXEC    [38;5;82m[ "" -> scalar ][0m
+lua          [38;5;82m[ "" -> scalar ][0m
+ZLUA_LUAEXE  [38;5;82m[ "" -> scalar ][0m
+ZLUA_SCRIPT  [38;5;82m[ "" -> scalar ][0m
+
+Report for[0m [1;4m[38;5;207mvictorbrca[0m/[1;4m[38;5;39msystemd-fzf[0m plugin
+[38;5;82m----------------------------------------[0m
+[32mSource[0m  [38;5;227m(reporting enabled)[0m
+
+Report for[0m [1;4m[38;5;207masdf-vm[0m/[1;4m[38;5;39masdf[0m plugin
+[38;5;82m------------------------------[0m
+[32mSource[0m asdf.sh [38;5;227m(reporting enabled)[0m
+
+[38;5;81mFunctions created:[0m
+asdf 
+
+[38;5;81mCompletions:[0m
+_asdf [38;5;82m[enabled][0m
+
+Report for[0m [1;4m[38;5;207mzsh-users[0m/[1;4m[38;5;39mzsh-completions[0m plugin
+[38;5;82m-------------------------------------------[0m
+[32mSource[0m zsh-completions.plugin.zsh [38;5;227m(reporting enabled)[0m
+
+[38;5;81mFPATH elements added:[0m
+/home/nicholas/.zinit/plugins/zsh-users---zsh-completions/src
+
+[38;5;81mCompletions:[0m
+_afew [38;5;82m[enabled][0m
+_android [38;5;82m[enabled][0m
+_archlinux-java [38;5;82m[enabled][0m
+_artisan [38;5;82m[enabled][0m
+_atach [38;5;82m[enabled][0m
+_bitcoin-cli [38;5;82m[enabled][0m
+_bower [38;5;82m[enabled][0m
+_bundle [38;5;82m[enabled][0m
+_caffeinate [38;5;82m[enabled][0m
+_cap [38;5;82m[enabled][0m
+_cask [38;5;82m[enabled][0m
+_ccache [38;5;82m[enabled][0m
+_cf [38;5;82m[enabled][0m
+_cheat [38;5;82m[enabled][0m
+_choc [38;5;82m[enabled][0m
+_chromium [38;5;82m[enabled][0m
+_cmake [38;5;82m[enabled][0m
+_coffee [38;5;82m[enabled][0m
+_composer [38;5;82m[enabled][0m
+_conan [38;5;82m[enabled][0m
+_concourse [38;5;82m[enabled][0m
+_console [38;5;82m[enabled][0m
+_cppcheck [38;5;82m[enabled][0m
+_dad [38;5;82m[enabled][0m
+_debuild [38;5;82m[enabled][0m
+_dget [38;5;82m[enabled][0m
+_dhcpcd [38;5;82m[enabled][0m
+_diana [38;5;82m[enabled][0m
+_docpad [38;5;82m[enabled][0m
+_drush [38;5;82m[enabled][0m
+_ecdsautil [38;5;82m[enabled][0m
+_emulator [38;5;82m[enabled][0m
+_envdir [38;5;82m[enabled][0m
+_exportfs [38;5;82m[enabled][0m
+_fab [38;5;82m[enabled][0m
+_fail2ban-client [38;5;82m[enabled][0m
+_ffind [38;5;82m[enabled][0m
+_fleetctl [38;5;82m[enabled][0m
+_flutter [38;5;82m[enabled][0m
+_force [38;5;82m[enabled][0m
+_fwupdmgr [38;5;82m[enabled][0m
+_gas [38;5;82m[enabled][0m
+_ghc [38;5;82m[enabled][0m
+_gist [38;5;82m[enabled][0m
+_git-flow [38;5;82m[enabled][0m
+_git-journal [38;5;82m[enabled][0m
+_git-pulls [38;5;82m[enabled][0m
+_git-revise [38;5;82m[enabled][0m
+_git-wtf [38;5;82m[enabled][0m
+_glances [38;5;82m[enabled][0m
+_golang [38;5;82m[enabled][0m
+_google [38;5;82m[enabled][0m
+_gpgconf [38;5;82m[enabled][0m
+_gtk-launch [38;5;82m[enabled][0m
+_hledger [38;5;82m[enabled][0m
+_homestead [38;5;82m[enabled][0m
+_httpie [38;5;82m[enabled][0m
+_ibus [38;5;82m[enabled][0m
+_include-what-you-use [38;5;82m[enabled][0m
+_inxi [38;5;82m[enabled][0m
+_jmeter [38;5;82m[enabled][0m
+_jmeter-plugins [38;5;82m[enabled][0m
+_jonas [38;5;82m[enabled][0m
+_jrnl [38;5;82m[enabled][0m
+_kak [38;5;82m[enabled][0m
+_kitchen [38;5;82m[enabled][0m
+_knife [38;5;82m[enabled][0m
+_language_codes [38;5;82m[enabled][0m
+_lilypond [38;5;82m[enabled][0m
+_lunchy [38;5;82m[enabled][0m
+_mc [38;5;82m[enabled][0m
+_middleman [38;5;82m[enabled][0m
+_mina [38;5;82m[enabled][0m
+_mix [38;5;82m[enabled][0m
+_mssh [38;5;82m[enabled][0m
+_mussh [38;5;82m[enabled][0m
+_mvn [38;5;82m[enabled][0m
+_nano [38;5;82m[enabled][0m
+_nanoc [38;5;82m[enabled][0m
+_nftables [38;5;82m[enabled][0m
+_node [38;5;82m[enabled][0m
+_nvm [38;5;82m[enabled][0m
+_openssl [38;5;82m[enabled][0m
+_openvpn3 [38;5;82m[enabled][0m
+_optirun [38;5;82m[enabled][0m
+_opustools [38;5;82m[enabled][0m
+_patool [38;5;82m[enabled][0m
+_perf [38;5;82m[enabled][0m
+_periscope [38;5;82m[enabled][0m
+_pgsql_utils [38;5;82m[enabled][0m
+_phing [38;5;82m[enabled][0m
+_pixz [38;5;82m[enabled][0m
+_pkcon [38;5;82m[enabled][0m
+_play [38;5;82m[enabled][0m
+_pm2 [38;5;82m[enabled][0m
+_port [38;5;82m[enabled][0m
+_protoc [38;5;82m[enabled][0m
+_pygmentize [38;5;82m[enabled][0m
+_qmk [38;5;82m[enabled][0m
+_rails [38;5;82m[enabled][0m
+_ralio [38;5;82m[enabled][0m
+_redis-cli [38;5;82m[enabled][0m
+_rfkill [38;5;82m[enabled][0m
+_rkt [38;5;82m[enabled][0m
+_rmlint [38;5;82m[enabled][0m
+_rslsync [38;5;82m[enabled][0m
+_rspec [38;5;82m[enabled][0m
+_rsvm [38;5;82m[enabled][0m
+_rubocop [38;5;82m[enabled][0m
+_sbt [38;5;82m[enabled][0m
+_scala [38;5;82m[enabled][0m
+_scrub [38;5;82m[enabled][0m
+_sdd [38;5;82m[enabled][0m
+_setcap [38;5;82m[enabled][0m
+_setup.py [38;5;82m[enabled][0m
+_sfdx [38;5;82m[enabled][0m
+_shellcheck [38;5;82m[enabled][0m
+_showoff [38;5;82m[enabled][0m
+_srm [38;5;82m[enabled][0m
+_stack [38;5;82m[enabled][0m
+_subl [38;5;82m[enabled][0m
+_subliminal [38;5;82m[enabled][0m
+_supervisorctl [38;5;82m[enabled][0m
+_svm [38;5;82m[enabled][0m
+_tarsnap [38;5;82m[enabled][0m
+_teamocil [38;5;82m[enabled][0m
+_thor [38;5;82m[enabled][0m
+_tmuxinator [38;5;82m[enabled][0m
+_tmuxp [38;5;82m[enabled][0m
+_tox [38;5;82m[enabled][0m
+_trash-empty [38;5;82m[enabled][0m
+_trash-list [38;5;82m[enabled][0m
+_trash-put [38;5;82m[enabled][0m
+_trash-restore [38;5;82m[enabled][0m
+_udisksctl [38;5;82m[enabled][0m
+_ufw [38;5;82m[enabled][0m
+_vagrant [38;5;82m[enabled][0m
+_virtualbox [38;5;82m[enabled][0m
+_vnstat [38;5;82m[enabled][0m
+_wemux [38;5;82m[enabled][0m
+_wg-quick [38;5;82m[enabled][0m
+_xinput [38;5;82m[enabled][0m
+_xsel [38;5;82m[enabled][0m
+_yaourt [38;5;82m[enabled][0m
+_yarn [38;5;82m[enabled][0m
+_zcash-cli [38;5;82m[enabled][0m
+
+Report for[0m [1;4m[38;5;207mpetervanderdoes[0m/[1;4m[38;5;39mgit-flow-completion[0m plugin
+[38;5;82m-----------------------------------------------------[0m
+
+Report for[0m [1;4m[38;5;207msrijanshetty[0m/[1;4m[38;5;39mzsh-pandoc-completion[0m plugin
+[38;5;82m----------------------------------------------------[0m
+
+[38;5;81mCompletions:[0m
+_pandoc [38;5;82m[enabled][0m
+
+Report for[0m [1;4m[38;5;207myuki-yano[0m/[1;4m[38;5;39mfzf-preview.zsh[0m plugin
+[38;5;82m-------------------------------------------[0m
+[32mSource[0m fzf-preview.plugin.zsh [38;5;227m(reporting enabled)[0m
+[32mAutoload[0m fzf-completion-selector with options -U -z
+[32mZle[0m -N -- fzf-completion-selector
+[38;5;148mNote:[0m a new widget created via zle -N: `fzf-completion-selector'
+[32mAutoload[0m fzf-or-normal-completion with options -U -z
+[32mZle[0m -N -- fzf-or-normal-completion
+[38;5;148mNote:[0m a new widget created via zle -N: `fzf-or-normal-completion'
+[32mAutoload[0m fzf-preview-complete with options -U -z
+[32mZle[0m -N -- fzf-preview-complete
+[38;5;148mNote:[0m a new widget created via zle -N: `fzf-preview-complete'
+[32mAutoload[0m fzf-cd with options -U -z
+[32mZle[0m -N -- fzf-cd
+[38;5;148mNote:[0m a new widget created via zle -N: `fzf-cd'
+[32mAutoload[0m fzf-ghq with options -U -z
+[32mZle[0m -N -- fzf-ghq
+[38;5;148mNote:[0m a new widget created via zle -N: `fzf-ghq'
+[32mAutoload[0m fzf-grep-vscode with options -U -z
+[32mZle[0m -N -- fzf-grep-vscode
+[38;5;148mNote:[0m a new widget created via zle -N: `fzf-grep-vscode'
+[32mAutoload[0m fzf-history-selection with options -U -z
+[32mZle[0m -N -- fzf-history-selection
+[38;5;148mNote:[0m a new widget created via zle -N: `fzf-history-selection'
+[32mAutoload[0m expand-snippet with options -U -z
+[32mAutoload[0m fzf-auto-snippet with options -U -z
+[32mZle[0m -N -- fzf-auto-snippet
+[38;5;148mNote:[0m a new widget created via zle -N: `fzf-auto-snippet'
+[32mAutoload[0m fzf-auto-snippet-and-accept-line with options -U -z
+[32mZle[0m -N -- fzf-auto-snippet-and-accept-line
+[38;5;148mNote:[0m a new widget created via zle -N: `fzf-auto-snippet-and-accept-line'
+[32mAutoload[0m fzf-auto-snippet-and-space with options -U -z
+[32mZle[0m -N -- fzf-auto-snippet-and-space
+[38;5;148mNote:[0m a new widget created via zle -N: `fzf-auto-snippet-and-space'
+[32mAutoload[0m fzf-snippet-next-placeholder with options -U -z
+[32mZle[0m -N -- fzf-snippet-next-placeholder
+[38;5;148mNote:[0m a new widget created via zle -N: `fzf-snippet-next-placeholder'
+[32mAutoload[0m fzf-snippet-selection with options -U -z
+[32mZle[0m -N -- fzf-snippet-selection
+[38;5;148mNote:[0m a new widget created via zle -N: `fzf-snippet-selection'
+[32mAutoload[0m fzf-preview-command-gh_issue with options -U -z
+[32mAutoload[0m fzf-preview-command-gh_pr with options -U -z
+[32mAutoload[0m fzf-preview-command-git_add with options -U -z
+[32mAutoload[0m fzf-preview-command-git_branch_commit_tag with options -U -z
+[32mAutoload[0m fzf-preview-command-git_cherry_pick with options -U -z
+[32mAutoload[0m fzf-preview-command-git_commit with options -U -z
+[32mAutoload[0m fzf-preview-command-git_diff_branch_commit_tag with options -U -z
+[32mAutoload[0m fzf-preview-command-git_diff_cached_branch with options -U -z
+[32mAutoload[0m fzf-preview-command-git_diff_file with options -U -z
+[32mAutoload[0m fzf-preview-command-git_log with options -U -z
+[32mAutoload[0m fzf-preview-command_git_log_file with options -U -z
+[32mAutoload[0m fzf-preview-command-git_ls_files with options -U -z
+[32mAutoload[0m fzf-preview-command-git_restore with options -U -z
+[32mAutoload[0m fzf-preview-command-git_stash with options -U -z
+[32mAutoload[0m fzf-preview-command-kill_process with options -U -z
+[32mAutoload[0m fzf-preview-command-npm_script with options -U -z
+[32mAutoload[0m fzf-preview-symbol-gh with options -U -z
+[32mAutoload[0m fzf-preview-symbol-git with options -U -z
+[32mAutoload[0m fzf-preview-symbol-kill with options -U -z
+[32mAutoload[0m fzf-preview-symbol-npm with options -U -z
+[32mAutoload[0m fzf-preview-symbol-yarn with options -U -z
+[32mBindkey[0m '^r' fzf-history-selection
+[32mBindkey[0m '^x^v' fzf-grep-vscode
+[32mBindkey[0m '^x^c' fzf-cd
+[32mBindkey[0m '^x^g' fzf-ghq
+[32mBindkey[0m '^x^s' fzf-snippet-selection
+
+[38;5;81mFunctions created:[0m
+expand-snippet                             fzf-auto-snippet
+fzf-auto-snippet-and-accept-line           fzf-auto-snippet-and-space
+fzf-cd                                     fzf-completion-selector
+fzf-ghq                                    fzf-grep-vscode
+fzf-history-selection                      fzf-or-normal-completion
+fzf-preview                                fzf-preview-command-gh_issue
+fzf-preview-command-gh_pr                  fzf-preview-command-git_add
+fzf-preview-command-git_branch_commit_tag  fzf-preview-command-git_cherry_pick
+fzf-preview-command-git_commit             fzf-preview-command-git_diff_branch_commit_tag
+fzf-preview-command-git_diff_cached_branch fzf-preview-command-git_diff_file
+fzf-preview-command-git_log                fzf-preview-command_git_log_file
+fzf-preview-command-git_ls_files           fzf-preview-command-git_restore
+fzf-preview-command-git_stash              fzf-preview-command-kill_process
+fzf-preview-command-npm_script             fzf-preview-complete
+fzf-preview-symbol-gh                      fzf-preview-symbol-git
+fzf-preview-symbol-kill                    fzf-preview-symbol-npm
+fzf-preview-symbol-yarn                    fzf-snippet-next-placeholder
+fzf-snippet-selection                      
+
+[38;5;81mFPATH elements added:[0m
+/home/nicholas/.config/fzf-preview.zsh/completion
+/home/nicholas/.zinit/plugins/yuki-yano---fzf-preview.zsh/config
+/home/nicholas/.zinit/plugins/yuki-yano---fzf-preview.zsh/src/completion/util
+/home/nicholas/.zinit/plugins/yuki-yano---fzf-preview.zsh/src/completion/widget
+/home/nicholas/.zinit/plugins/yuki-yano---fzf-preview.zsh/src/snippet/util
+/home/nicholas/.zinit/plugins/yuki-yano---fzf-preview.zsh/src/snippet/widget
+/home/nicholas/.zinit/plugins/yuki-yano---fzf-preview.zsh/src/widget
+
+[38;5;81mVariables added or redefined:[0m
+f                                    [38;5;82m[ scalar -> ""     ][0m
+FZF_PREVIEW_CONFIG_DIR               [38;5;82m[     "" -> scalar ][0m
+FZF_PREVIEW_SNIPPET_EDITOR           [38;5;82m[     "" -> scalar ][0m
+FZF_PREVIEW_BIN_PATH                 [38;5;82m[     "" -> scalar ][0m
+FZF_PREVIEW_USER_CONFIG_DIR          [38;5;82m[     "" -> scalar ][0m
+FZF_PREVIEW_DISABLE_DEFAULT_BINDKEY  [38;5;82m[     "" -> scalar ][0m
+FZF_PREVIEW_DEFAULT_SETTING          [38;5;82m[     "" -> scalar ][0m
+FZF_PREVIEW_SNIPPET_CONFIG_DIR       [38;5;82m[     "" -> scalar ][0m
+FZF_PREVIEW_ENABLE_TMUX              [38;5;82m[     "" -> scalar ][0m
+FZF_PREVIEW_DEFAULT_BIND             [38;5;82m[     "" -> scalar ][0m
+FZF_PREVIEW_DISABLE_DEFAULT_SETTING  [38;5;82m[     "" -> scalar ][0m
+FZF_PREVIEW_SNIPPET_FILE             [38;5;82m[     "" -> scalar ][0m
+
+Report for[0m [1;4m[38;5;207mRobSis[0m/[1;4m[38;5;39mzsh-completion-generator[0m plugin
+[38;5;82m-------------------------------------------------[0m
+[32mSource[0m zsh-completion-generator.plugin.zsh [38;5;227m(reporting enabled)[0m
+[32mZstyle[0m -a :plugin:zsh-completion-generator programs programs
+
+[38;5;81mFunctions created:[0m
+gencomp 
+
+[38;5;81mFPATH elements added:[0m
+/home/nicholas/.zinit/plugins/RobSis---zsh-completion-generator/completions
+
+[38;5;81mVariables added or redefined:[0m
+ZSH_COMPLETION_GENERATOR_SRCDIR  [38;5;82m[ "" -> scalar ][0m
+ZSH_COMPLETION_GENERATOR_DIR     [38;5;82m[ "" -> scalar ][0m
+
+[38;5;81mCompletions:[0m
+_groff [38;5;118m[not installed][0m
+_nl [38;5;118m[not installed][0m
+
+Report for[0m [1;4m[38;5;207mAloxaf[0m/[1;4m[38;5;39mfzf-tab[0m plugin
+[38;5;82m--------------------------------[0m
+[32mSource[0m fzf-tab.plugin.zsh [38;5;227m(reporting enabled)[0m
+[32mZle[0m -N fzf-tab-debug
+[38;5;148mNote:[0m a new widget created via zle -N: `fzf-tab-debug'
+[32mZle[0m -N fzf-tab-complete
+[38;5;148mNote:[0m a new widget created via zle -N: `fzf-tab-complete'
+[32mZle[0m -N fzf-tab-dummy
+[38;5;148mNote:[0m a new widget created via zle -N: `fzf-tab-dummy'
+[32mAutoload[0m -ftb-colorize with options -U -z
+[32mAutoload[0m -ftb-fzf with options -U -z
+[32mAutoload[0m -ftb-generate-complist with options -U -z
+[32mAutoload[0m -ftb-generate-header with options -U -z
+[32mAutoload[0m -ftb-generate-query with options -U -z
+[32mAutoload[0m ftb-switch-group with options -U -z
+[32mAutoload[0m ftb-tmux-popup with options -U -z
+[32mZstyle[0m -m :fzf-tab:* command *
+[32mZstyle[0m -m :fzf-tab:* extra-opts *
+[32mZle[0m -A __fz_zsh_completion .fzf-tab-orig-__fz_zsh_completion
+[32mZstyle[0m -t :completion:* list-grouped false
+[32mZstyle[0m :completion:* list-grouped false
+[32mBindkey[0m '^I' fzf-tab-complete
+[32mBindkey[0m '^X.' fzf-tab-debug
+[32mAutoload[0m +X -U -z _main_complete _approximate
+[32mZle[0m -N toggle-fzf-tab
+[38;5;148mNote:[0m a new widget created via zle -N: `toggle-fzf-tab'
+
+[38;5;81mFunctions created:[0m
+build-fzf-tab-module        compadd
+disable-fzf-tab             enable-fzf-tab
+_ftb__approximate           -ftb-colorize
+-ftb-compadd                -ftb-complete
+-ftb-fzf                    -ftb-generate-complist
+-ftb-generate-header        -ftb-generate-query
+_ftb__main_complete         -ftb-remove-space
+ftb-switch-group            ftb-tmux-popup
+-ftb-zstyle                 fzf-tab-complete
+fzf-tab-debug               fzf-tab-dummy
+fzf-tab-lscolors::from-mode fzf-tab-lscolors::from-name
+fzf-tab-lscolors::init      fzf-tab-lscolors::match-by
+toggle-fzf-tab              
+
+[38;5;81mFPATH elements added:[0m
+/home/nicholas/.zinit/plugins/Aloxaf---fzf-tab/lib
+
+[38;5;81mVariables added or redefined:[0m
+FZF_TAB_HOME            [38;5;82m[ "" -> scalar                           ][0m
+_ftb_orig_list_grouped  [38;5;82m[ "" -> scalar                           ][0m
+_ftb_orig_widget        [38;5;82m[ "" -> scalar                           ][0m
+mapfile                 [38;5;82m[ "" -> association-hide-hideval-special ][0m
+_ftb_group_colors       [38;5;82m[ "" -> array                            ][0m
+
+Report for[0m [1;4m[38;5;207mMichaelAquilina[0m/[1;4m[38;5;39mzsh-you-should-use[0m plugin
+[38;5;82m----------------------------------------------------[0m
+[32mSource[0m you-should-use.plugin.zsh [38;5;227m(reporting enabled)[0m
+[32mAutoload[0m add-zsh-hook with options -U -z
+[32mAutoload[0m _check_aliases
+[32mAutoload[0m _check_global_aliases
+[32mAutoload[0m _check_git_aliases
+[32mAutoload[0m _flush_ysu_buffer
+
+[38;5;81mFunctions created:[0m
+_check_aliases        check_alias_usage
+_check_git_aliases    _check_global_aliases
+_check_ysu_hardcore   disable_you_should_use
+enable_you_should_use _flush_ysu_buffer
+_write_ysu_buffer     ysu_message
+
+[38;5;81mVariables added or redefined:[0m
+BOLD    [38;5;82m[ "" -> scalar ][0m
+YELLOW  [38;5;82m[ "" -> scalar ][0m
+NONE    [38;5;82m[ "" -> scalar ][0m
+RED     [38;5;82m[ "" -> scalar ][0m
+PURPLE  [38;5;82m[ "" -> scalar ][0m
+
+Report for[0m [1;4m[38;5;207msoftmoth[0m/[1;4m[38;5;39mzsh-vim-mode[0m plugin
+[38;5;82m---------------------------------------[0m
+[32mSource[0m zsh-vim-mode.plugin.zsh [38;5;227m(reporting enabled)[0m
+[32mBindkey[0m -v
+[1m[38;5;204mWarning:[0m last bindkey used non-typical options: -v 
+[32mAutoload[0m add-zsh-hook with options -U -z
+[32mAutoload[0m add-zle-hook-widget with options -U -z
+[32mAutoload[0m vim-mode-precmd
+[32mZstyle[0m zle-hook types isearch-exit isearch-update line-pre-redraw line-init line-finish history-line-set keymap-select
+[32mZstyle[0m -a zle-hook types hooktypes
+[32mZstyle[0m -g extant_hooks zle-isearch-exit widgets
+[32mZle[0m -N zle-isearch-exit azhw:zle-isearch-exit
+[32mZstyle[0m -- zle-isearch-exit widgets 1:vim-mode-isearch-exit
+[32mAutoload[0m vim-mode-isearch-exit
+[32mZle[0m -N -- vim-mode-isearch-exit
+[38;5;148mNote:[0m a new widget created via zle -N: `vim-mode-isearch-exit'
+[32mZstyle[0m -a zle-hook types hooktypes
+[32mZstyle[0m -g extant_hooks zle-isearch-update widgets
+[32mZle[0m -N zle-isearch-update azhw:zle-isearch-update
+[32mZstyle[0m -- zle-isearch-update widgets 1:vim-mode-isearch-update
+[32mAutoload[0m vim-mode-isearch-update
+[32mZle[0m -N -- vim-mode-isearch-update
+[38;5;148mNote:[0m a new widget created via zle -N: `vim-mode-isearch-update'
+[32mZstyle[0m -a zle-hook types hooktypes
+[32mZstyle[0m -g extant_hooks zle-line-pre-redraw widgets
+[32mZle[0m -A zle-line-pre-redraw user:_p9k_widget_zle-line-pre-redraw
+[32mZle[0m -N zle-line-pre-redraw azhw:zle-line-pre-redraw
+[32mZstyle[0m -- zle-line-pre-redraw widgets 0:user:_p9k_widget_zle-line-pre-redraw 1:vim-mode-line-pre-redraw
+[32mAutoload[0m vim-mode-line-pre-redraw
+[32mZle[0m -N -- vim-mode-line-pre-redraw
+[38;5;148mNote:[0m a new widget created via zle -N: `vim-mode-line-pre-redraw'
+[32mZstyle[0m -a zle-hook types hooktypes
+[32mZstyle[0m -g extant_hooks zle-line-init widgets
+[32mZle[0m -A zle-line-init user:zle-line-init
+[32mZle[0m -N zle-line-init azhw:zle-line-init
+[32mZstyle[0m -- zle-line-init widgets 0:user:zle-line-init 1:vim-mode-line-init
+[32mAutoload[0m vim-mode-line-init
+[32mZle[0m -N -- vim-mode-line-init
+[38;5;148mNote:[0m a new widget created via zle -N: `vim-mode-line-init'
+[32mAutoload[0m vim-mode-cursor-init-hook
+[32mZstyle[0m -a zle-hook types hooktypes
+[32mZstyle[0m -g extant_hooks zle-line-finish widgets
+[32mZle[0m -A zle-line-finish user:zle-line-finish
+[32mZle[0m -N zle-line-finish azhw:zle-line-finish
+[32mZstyle[0m -- zle-line-finish widgets 0:user:zle-line-finish 1:vim-mode-cursor-finish-hook
+[32mAutoload[0m vim-mode-cursor-finish-hook
+[32mZle[0m -N -- vim-mode-cursor-finish-hook
+[38;5;148mNote:[0m a new widget created via zle -N: `vim-mode-cursor-finish-hook'
+
+[38;5;81mFunctions created:[0m
+add-zle-hook-widget       azhw:zle-history-line-set
+azhw:zle-isearch-exit     azhw:zle-isearch-update
+azhw:zle-keymap-select    azhw:zle-line-finish
+azhw:zle-line-init        azhw:zle-line-pre-redraw
+send-terminal-sequence    set-terminal-cursor-style
+vim-mode-bindkey          vim-mode-cursor-finish-hook
+vim-mode-cursor-init-hook vim-mode-define-special-key
+vim-mode-handle-event     vim-mode-initial-keymap
+vim-mode-isearch-exit     vim-mode-isearch-update
+vim-mode-line-init        vim-mode-line-pre-redraw
+vim-mode-precmd           vim-mode-set-cursor-style
+vim_mode_set_keymap       vim-mode-set-up-indicators
+vim-mode-update-prompt    
+
+[38;5;81mVariables added or redefined:[0m
+vim_mode_indicator_pfx  [38;5;82m[ "" -> scalar         ][0m
+MODE_CURSOR_DEFAULT     [38;5;82m[ "" -> scalar         ][0m
+seq                     [38;5;82m[ "" -> scalar         ][0m
+MODE_INDICATOR_VICMD    [38;5;82m[ "" -> scalar         ][0m
+MODE_INDICATOR_VISUAL   [38;5;82m[ "" -> scalar         ][0m
+vim_mode_keymap_funcs   [38;5;82m[ "" -> array          ][0m
+MODE_INDICATOR_VLINE    [38;5;82m[ "" -> scalar         ][0m
+MODE_INDICATOR_PROMPT   [38;5;82m[ "" -> scalar         ][0m
+vim_mode_keymap_state   [38;5;82m[ "" -> scalar         ][0m
+RPS1                    [38;5;82m[ "" -> scalar-special ][0m
+
+Report for[0m [1;4m[38;5;207mknu[0m/[1;4m[38;5;39mzsh-manydots-magic[0m plugin
+[38;5;82m----------------------------------------[0m
+[32mSource[0m manydots-magic [38;5;227m(reporting enabled)[0m
+[32mZle[0m -N manydots-magic.self-insert
+[38;5;148mNote:[0m a new widget created via zle -N: `manydots-magic.self-insert'
+[32mZle[0m -N manydots-magic.backward-delete-char
+[38;5;148mNote:[0m a new widget created via zle -N: `manydots-magic.backward-delete-char'
+[32mZle[0m -N manydots-magic.on
+[38;5;148mNote:[0m a new widget created via zle -N: `manydots-magic.on'
+[32mZle[0m -N manydots-magic.off
+[38;5;148mNote:[0m a new widget created via zle -N: `manydots-magic.off'
+[32mZle[0m -la _zsh_highlight_widget_self-insert
+[32mZle[0m -N _zsh_highlight_widget_self-insert
+[38;5;148mNote:[0m a new widget created via zle -N: `_zsh_highlight_widget_self-insert'
+[32mZstyle[0m :manydots-magic self-insert-function _zsh_highlight_widget_self-insert
+[32mZle[0m -A manydots-magic.self-insert self-insert
+[32mZle[0m -la _zsh_highlight_widget_backward-delete-char
+[32mZle[0m -N _zsh_highlight_widget_backward-delete-char
+[38;5;148mNote:[0m a new widget created via zle -N: `_zsh_highlight_widget_backward-delete-char'
+[32mZstyle[0m :manydots-magic backward-delete-char-function _zsh_highlight_widget_backward-delete-char
+[32mZle[0m -A manydots-magic.backward-delete-char backward-delete-char
+[32mZstyle[0m :manydots-magic magic-count 0
+
+[38;5;81mFunctions created:[0m
+manydots-magic             manydots-magic.backward-delete-char
+manydots-magic.off         manydots-magic.on
+manydots-magic.self-insert 
+
+Report for[0m [1;4m[38;5;207mzdharma-continuum[0m/[1;4m[38;5;39mfast-syntax-highlighting[0m plugin
+[38;5;82m------------------------------------------------------------[0m
+[32mSource[0m fast-syntax-highlighting.plugin.zsh (no reporting)
+[32mAutoload[0m add-zsh-hook with options -U -z
+[32mAutoload[0m _zsh_highlight_preexec_hook
+[32mAutoload[0m is-at-least with options -U -z
+[32mAutoload[0m fast-theme with options -U -z
+[32mAutoload[0m .fast-read-ini-file with options -U -z
+[32mAutoload[0m .fast-run-git-command with options -U -z
+[32mAutoload[0m .fast-make-targets with options -U -z
+[32mAutoload[0m .fast-run-command with options -U -z
+[32mAutoload[0m .fast-zts-read-all with options -U -z
+[32mAutoload[0m →chroma/-git.ch with options -U -z
+[32mAutoload[0m →chroma/-hub.ch with options -U -z
+[32mAutoload[0m →chroma/-lab.ch with options -U -z
+[32mAutoload[0m →chroma/-example.ch with options -U -z
+[32mAutoload[0m →chroma/-grep.ch with options -U -z
+[32mAutoload[0m →chroma/-perl.ch with options -U -z
+[32mAutoload[0m →chroma/-make.ch with options -U -z
+[32mAutoload[0m →chroma/-awk.ch with options -U -z
+[32mAutoload[0m →chroma/-vim.ch with options -U -z
+[32mAutoload[0m →chroma/-source.ch with options -U -z
+[32mAutoload[0m →chroma/-sh.ch with options -U -z
+[32mAutoload[0m →chroma/-docker.ch with options -U -z
+[32mAutoload[0m →chroma/-autoload.ch with options -U -z
+[32mAutoload[0m →chroma/-ssh.ch with options -U -z
+[32mAutoload[0m →chroma/-scp.ch with options -U -z
+[32mAutoload[0m →chroma/-which.ch with options -U -z
+[32mAutoload[0m →chroma/-printf.ch with options -U -z
+[32mAutoload[0m →chroma/-ruby.ch with options -U -z
+[32mAutoload[0m →chroma/-whatis.ch with options -U -z
+[32mAutoload[0m →chroma/-alias.ch with options -U -z
+[32mAutoload[0m →chroma/-subcommand.ch with options -U -z
+[32mAutoload[0m →chroma/-autorandr.ch with options -U -z
+[32mAutoload[0m →chroma/-nmcli.ch with options -U -z
+[32mAutoload[0m →chroma/-fast-theme.ch with options -U -z
+[32mAutoload[0m →chroma/-node.ch with options -U -z
+[32mAutoload[0m →chroma/-fpath_peq.ch with options -U -z
+[32mAutoload[0m →chroma/-precommand.ch with options -U -z
+[32mAutoload[0m →chroma/-subversion.ch with options -U -z
+[32mAutoload[0m →chroma/-ionice.ch with options -U -z
+[32mAutoload[0m →chroma/-nice.ch with options -U -z
+[32mAutoload[0m →chroma/main-chroma.ch with options -U -z
+[32mAutoload[0m →chroma/-ogit.ch with options -U -z
+[32mAutoload[0m →chroma/-zinit.ch with options -U -z
+
+[38;5;81mCompletions:[0m
+_fast-theme [38;5;82m[enabled][0m
+_output [38;5;118m[not installed][0m
+_support [38;5;118m[not installed][0m
+
+Report for[0m [1;4m[38;5;207mzsh-users[0m/[1;4m[38;5;39mzsh-autosuggestions[0m plugin
+[38;5;82m-----------------------------------------------[0m
+[32mSource[0m zsh-autosuggestions.plugin.zsh (no reporting)
+[32mAutoload[0m add-zsh-hook with options -U -z
+[32mAutoload[0m is-at-least with options -U -z
+[32mAutoload[0m _zsh_autosuggest_start
+[38;5;148mNote:[0m Starting to track the atload'!…' ice…
+
+Report for[0m [1;4m[38;5;207m%[0m[1;4m[38;5;39m/home/nicholas/.config/zsh/zshrc-loader[0m plugin
+[38;5;82m----------------------------------------------------------[0m
+[32mSource[0m zshrc-loader.zsh [38;5;227m(reporting enabled)[0m
+[32mAlias[0m refresh_aliases=source /home/nicholas/.config/zsh/aliases.sh
+[32mAlias[0m ralias=refresh_aliases
+[32mAlias[0m fixterm=reset; stty sane; tput rs1; clear; echo -e "\033c"; printf "\033]2;\007"
+[32mAlias[0m ytdl=grc -es --colour=on -c conf.ps youtube-dl -4 -x --audio-format mp3
+[32mAlias[0m ytfzf=ytfzf -t -L --preview-side=right
+[32mAlias[0m ytfzfplay=ytfzf -t --preview-side=right
+[32mAlias[0m ytfzfdl=grc -es --colour=on -c conf.ps youtube-dl -4 -x --audio-format mp3 $(ytfzf -t -L --preview-side=right) | ccze -A
+[32mAlias[0m paauth=pacmd load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;192.168.0.0/24
+[32mAlias[0m netreset=sudo ifconfig wlp2s0 down && sleep 2 && sudo ifconfig wlp2s0 up
+[32mAlias[0m mysudo=sudo -E env "PATH=$PATH"
+[32mAlias[0m _=sudo 
+[32mAlias[0m sudo=sudo 
+[32mAlias[0m cargo=CARGO_NET_GIT_FETCH_WITH_CLI=true cargo
+[32mAlias[0m cargo-install-update=CARGO_NET_GIT_FETCH_WITH_CLI=true cargo-install-update install-update -a
+[32mAlias[0m nix-install=curl -L https://nixos.org/nix/install | sh
+[32mAlias[0m nixls=grc -c conf.docker-machinels -es --colour=on nix-env --query --status -P --description
+[32mAlias[0m nixcomp=grc -c conf.docker-machinels -es --colour=on nix-env --available --query --status -P --description --compare
+[32mAlias[0m dozzle-docker=docker start dozzle || docker run --rm -d --name=dozzle --volume=/var/run/docker.sock:/var/run/docker.sock -p 8081:8080 amir20/dozzle:latest
+[32mAlias[0m dozzle-swarm=docker service create
+  --name=dozzle   --publish=8081:8080   --constraint=node.role==manager   --mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock   amir20/dozzle:latest
+[32mAlias[0m dozzle=dozzle-docker
+[32mAlias[0m ctop-install=sudo wget https://github.com/bcicen/ctop/releases/download/0.7.6/ctop-0.7.6-linux-amd64 -O /usr/local/bin/ctop && sudo chmod +x /usr/local/bin/ctop
+[32mAlias[0m ctop-docker=docker start ctop || docker run --rm -ti --name=ctop -v /var/run/docker.sock:/var/run/docker.sock quay.io/vektorlab/ctop:latest
+[32mAlias[0m dry-docker=docker start dry || docker run --rm -it --name=dry -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST= moncho/dry
+[32mAlias[0m dry-install=curl -sSf https://moncho.github.io/dry/dryup.sh | sudo sh && sudo chmod 755 /usr/local/bin/dry
+[32mAlias[0m docui-docker=docker run --rm -itv /var/run/docker.sock:/var/run/docker.sock skanehira/docui
+[32mAlias[0m docui-install=go get -d github.com/skanehira/docui && cd /home/nicholas/go/src/github.com/skanehira/docui && GO111MODULE=on go install
+[32mAlias[0m sen-docker=docker run -v /var/run/docker.sock:/run/docker.sock -ti -e TERM tomastomecek/sen
+[32mAlias[0m sen-install=pip3 install git+https://github.com/pazz/urwidtrees.git@9142c59d3e41421ff6230708d08b6a134e0a8eed#egg=urwidtrees-1.0.3.dev &&  pip3 install sen
+[32mAlias[0m dive-install=wget https://github.com/wagoodman/dive/releases/download/v0.9.2/dive_0.9.2_linux_amd64.deb -O ~/Downloads/dive.deb && sudo apt install ~/Downloads/dive.deb
+[32mAlias[0m dive-docker=docker start dive || docker run --rm -it --name=dive   -v /var/run/docker.sock:/var/run/docker.sock   wagoodman/dive:latest
+[32mAlias[0m logspoutd=docker run -d --name='logspout' -e VIRTUAL_HOST=logs.local --volume=/var/run/docker.sock:/var/run/docker.sock --publish=127.0.0.1:8000:80 gliderlabs/logspout
+[32mAlias[0m logspout=curl localhost:8000/logs
+[32mAlias[0m lazy-docker=docker start lazydocker || docker run --rm -it --name=lazydocker -v /var/run/docker.sock:/var/run/docker.sock -v /home/nicholas/.config/lazydocker/config:/.config/jesseduffield/lazydocker lazyteam/lazydocker
+[32mAlias[0m lzdocker=lazy-docker
+[32mAlias[0m dockviz=docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz
+[32mAlias[0m docker-compose=COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose
+[32mAlias[0m docker-compose-update=sudo curl -L 'https://github.com/docker/compose/releases/download/1.25.5/docker-compose-Linux-x86_64' -o /usr/local/bin/docker-compose
+[32mAlias[0m dc=docker-compose
+[32mAlias[0m docker-rm-stopped=docker rm $(docker ps -qa)
+[32mAlias[0m docker-prune=docker system prune --all
+[32mAlias[0m docker-build=DOCKER_BUILDKIT=1 docker-build
+[32mAlias[0m db=docker-build
+[32mAlias[0m docker-tree=dockviz images -t -l
+[32mAlias[0m docker-tree-all=dockviz images -t
+[32mAlias[0m docker-vis=dockviz containers -d | dot -Tpng -o containers.png
+[32mAlias[0m docker-vis-containers=dockviz containers -d | dot  -Tpng -o containers.png 2>/dev/null && feh containers.png && rm containers.png
+[32mAlias[0m docker-vis-networking=docker run --rm -v /var/run/docker.sock:/var/run/docker.sock leoverto/docker-network-graph | dot  -Tpng -o networking.png && feh networking.png && rm networking.png
+[32mAlias[0m docker-vis-compose=docker run --rm -it --name dcv -v /tmp:/input pmsipilot/docker-compose-viz render -m image docker-compose.yml
+[32mAlias[0m neuron=LC_ALL=C neuron -d ~/zettelkasten
+[32mAlias[0m asynctask=~/bin/asynctask.py
+[32mAlias[0m at=~/bin/asynctask.py
+[32mAlias[0m at-fzf=~/bin/asynctask.py -f
+[32mAlias[0m atf=~/bin/asynctask.py -f
+[32mAlias[0m at-list=~/bin/asynctask.py -l
+[32mAlias[0m at-list-all=~/bin/asynctask.py -L
+[32mAlias[0m db=dotbare
+[1m[38;5;204mWarning:[0m redefining alias `db', previous value: docker-build
+[32mAlias[0m dots=dotbare
+[32mAlias[0m gh-search=ghs repo --sort=stars
+[32mAlias[0m bats=_bats
+[32mAlias[0m pup=pup --color
+[32mAlias[0m pup-links=pup --color 'body a attr{href}'
+[32mAlias[0m pup-headers=pup --color 'h1,h2,h3,h4,h5,h6 {text}'
+[32mAlias[0m pup-links-json=pup --color 'body a json{}' | bat -p -l json
+[32mAlias[0m ls=LC_COLLATE=C ls --color=always
+[32mAlias[0m l=LC_COLLATE=C colorls --group-directories-first --almost-all --git-status
+[32mAlias[0m ll=LC_COLLATE=C colorls --group-directories-first --almost-all --long
+[32mAlias[0m lt=LC_COLLATE=C colorls --group-directories-first --almost-all --tree
+[32mAlias[0m tree=LC_COLLATE=C colorls --tree
+[32mAlias[0m grep=grep --color
+[32mAlias[0m egrep=egrep --color
+[32mAlias[0m lp_docker=loop "dockerps -a"
+[32mAlias[0m lp_containers=loop "dockerps -a"
+[32mAlias[0m lp_images=loop "dockerimages"
+[32mAlias[0m lp_images_all=loop "dockerimages -a"
+[32mAlias[0m lp_netstat=loop "grc -es --colour=on -c conf.netstat netstat -4 -tlnp | sort"
+[32mAlias[0m lp_netstat_all=loop "grc -es --colour=on -c conf.netstat sudo netstat -4 -tulnp | sort"
+[32mAlias[0m lp_ps=loop " ps u | xcols ps"
+[32mAlias[0m lp_psx=loop " ps ux | xcols ps"
+[32mAlias[0m lp_psa=loop " ps aux | xcols ps"
+[32mAlias[0m sysl=sudo systemctl list-unit-files
+[32mAlias[0m sysr=sudo systemctl restart
+[32mAlias[0m syss=sudo systemctl status
+[32mAlias[0m scale=scale_func
+[32mAlias[0m backlight=sudo chmod g=rw,o=rw /sys/class/backlight/intel_backlight/brightness
+[32mAlias[0m cd2=cd ../../
+[32mAlias[0m cd3=cd ../../../
+[32mAlias[0m cd4=cd ../../../../
+[32mAlias[0m cd5=cd ../../../../../
+[32mAlias[0m ..2=cd ../..
+[32mAlias[0m ..3=cd ../../..
+[32mAlias[0m ..4=cd ../../../..
+[32mAlias[0m ..5=cd ../../../../..
+[32mAlias[0m ...=cd ../../../
+[32mAlias[0m ....=cd ../../../../
+[32mAlias[0m .....=cd ../../../../
+[32mAlias[0m .4=cd ../../../../
+[32mAlias[0m .5=cd ../../../../..
+[32mAlias[0m path=echo -e ${PATH//:/\\n}
+[32mAlias[0m now=date +"%T"
+[32mAlias[0m nowtime=now
+[32mAlias[0m nowdate=date +"%d-%m-%Y"
+[32mAlias[0m ipt=sudo /sbin/iptables
+[32mAlias[0m iptlist=sudo /sbin/iptables -L -n -v --line-numbers
+[32mAlias[0m iptlistin=sudo /sbin/iptables -L INPUT -n -v --line-numbers
+[32mAlias[0m iptlistout=sudo /sbin/iptables -L OUTPUT -n -v --line-numbers
+[32mAlias[0m iptlistfw=sudo /sbin/iptables -L FORWARD -n -v --line-numbers
+[32mAlias[0m firewall=iptlist
+[32mAlias[0m ln=ln -i
+[32mAlias[0m chown=chown --preserve-root
+[32mAlias[0m chmod=chmod --preserve-root
+[32mAlias[0m chgrp=chgrp --preserve-root
+[32mAlias[0m mm=node ~/projects/movieman/lib/index.js
+[32mAlias[0m wikiscan=/home/nicholas/projects/wikiscan/bin/wikiscan.sh
+[32mAlias[0m ws=/home/nicholas/projects/wikiscan/bin/wikiscan.sh
+[32mAlias[0m mr=node ~/ghq/github.com/njhoffman/musicman/cli/lib/cli.js
+[32mAlias[0m mre=node ~/ghq/github.com/njhoffman/musicman/cli/lib/cli.js edit
+[32mAlias[0m mrp=mpc clear && node ~/ghq/github.com/njhoffman/musicman/cli/lib/cli.js playlist  ./ && mpc load current && mpc play
+[32mAlias[0m mrprated=mpc clear && node ~/ghq/github.com/njhoffman/musicman/cli/lib/cli.js playlist rating:4.5 ./ && mpc load current && mpc play
+[32mAlias[0m mrpunrated=mpc clear && node ~/ghq/github.com/njhoffman/musicman/cli/lib/cli.js playlist rating: ./ && mpc load current && mpc play
+[32mAlias[0m mn=mpc n && node ~/ghq/github.com/njhoffman/musicman/cli/lib/cli.js
+[32mAlias[0m open_command=xdg-open
+[32mAlias[0m googler=googler --colors GKmgxy
+[32mAlias[0m gs=googler --lucky
+[32mAlias[0m gss=googler
+[32mAlias[0m nnn=nnn -P -o 
+[32mAlias[0m nnn-plugin-update=curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+[32mAlias[0m dfree=duf --all
+[32mAlias[0m fbt=fb --test
+[32mAlias[0m fd=fd --hidden -L
+[32mAlias[0m fdi=fd --hidden --no-ignore-vcs --no-ignore -L
+[32mAlias[0m rg=rg --line-number --hidden --no-heading --color=always --smart-case --max-columns 500 --max-columns-preview
+[32mAlias[0m rgi=rg --no-ignore
+[32mAlias[0m ag=ag --width 500
+[32mAlias[0m agi=ag --unrestricted --hidden
+[32mAlias[0m nodes=ultra --monitor
+[32mAlias[0m gv=ghq_cd
+[32mAlias[0m od=od -An -t xC
+[32mAlias[0m hexyl=hexyl --border none
+[32mAlias[0m hexdump=hexyl --border none
+[32mAlias[0m flac2mp3=for file in *.flac; do ffmpeg -i $file -q:a 0 ${file:r}.mp3; done
+[32mAlias[0m glava=glava --audio=fifo
+[32mAlias[0m xclipb=xclip -selection clipboard
+[32mAlias[0m xclipboard=xclip -selection clipboard
+[32mAlias[0m jqr=jq -R -r '. as $line | try fromjson catch $line'
+[32mAlias[0m yqr=yq -C eval
+[32mAlias[0m helm-lint=helm lint . && helm template . | kubeval --force-color --strict
+[32mAlias[0m helm-score=helm template . | kube-score score -
+[32mAlias[0m kube-score-existing=kubectl api-resources --verbs=list --namespaced -o name \
+    | xargs -n1 -I{} bash -c "kubectl get {} --all-namespaces -oyaml && echo ---" \
+    | kube-score score -
+[32mAlias[0m cache_builder=KUBECTL_FZF_CACHE="/home/nicholas/.cache/kubectl_fzf_cache" KUBECONFIG="/home/nicholas/.kube/spadash-dev0-eks" /home/nicholas/.local/bin/cache_builder
+[32mAlias[0m cache_builder_prod=KUBECONFIG="/home/nicholas/.kube/spadash-prod0-eks" cache_builder
+[32mAlias[0m cache_builder_minikube=KUBECONFIG="/home/nicholas/.kube/minikube" cache_builder
+[32mAlias[0m helm-deploy-kubectlfzf=helm template --namespace myns --set image.cache_builder.tag=1.0.11 --set toleration=aToleration . | kubectl apply -f -
+[32mAlias[0m tldr=tldr --theme ocean
+[32mAlias[0m yaegi=rlwrap yaegi
+[32mAlias[0m bc=bc -l
+[32mAlias[0m nmr=rm -r node_modules && npm install
+[32mAlias[0m viewsploit=vimcat /opt/metasploit-framework/modules/.rb
+[32mAlias[0m tmuxmain=export POWERLINE_CONFIG_OVERRIDES='ext.tmux.theme=main' && tmux -L main
+[32mAlias[0m tmuxmin=export POWERLINE_CONFIG_OVERRIDES='ext.tmux.theme=min' && tmux -L min
+[32mAlias[0m ta=tmux-attach
+[32mAlias[0m tn=tmux-session --next
+[32mAlias[0m tp=tmux-session --prev
+[32mAlias[0m config=/usr/bin/git --git-dir=/home/nicholas/.cfg --work-tree=/home/nicholas
+[32mAlias[0m gitv=GIT_CURL_VERBOSE=1 GIT_TRACE=1 git
+[32mAlias[0m gitvv=GIT_TRACE=2 GIT_CURL_VERBOSE=2 GIT_TRACE_PERFORMANCE=2 GIT_TRACE_PACK_ACCESS=2 GIT_TRACE_PACKET=2 GIT_TRACE_PACKFILE=2 GIT_TRACE_SETUP=2 GIT_TRACE_SHALLOW=2 git
+[32mAlias[0m colortest=/home/nicholas/bin/colors/colortest
+[32mAlias[0m ttyclock=tty-clock -c -C 4 -b -B -f "%A %B %e, %G"
+[32mAlias[0m cb=tee /dev/tty | xsel
+[32mAlias[0m lineavg=awk 'END{FNUM=ARGC-1; print (NR-FNUM)/FNUM}'
+[32mAlias[0m dnstop=dnstop -l 5  eth1
+[32mAlias[0m vnstat=vnstat -i eth1
+[32mAlias[0m iftop=iftop -i eth1
+[32mAlias[0m tcpdump=tcpdump -i eth1
+[32mAlias[0m ethtool=ethtool eth1
+[32mAlias[0m myps=ps -fHu $USER
+[32mAlias[0m myports=netstat -lntp 2>/dev/null | grep -v ' - *$'
+[32mAlias[0m sdmigrate=migrate up -path=migrations -database=postgres://spadash:spadash@localhost:5432/
+[32mAlias[0m tshow=stdbuf -i0 -o0 -e0 terraform show -no-color | vimcat -c "set syn=terraform"
+[32mAlias[0m cz=ccze -A
+[32mAlias[0m clear=clear && print ${(pl:$LINES::\n:):-}
+[32mAlias[0m reset=reset && print ${(pl:$LINES::\n:):-}
+[32mAlias[0m atask=asynctask -f
+[32mAlias[0m twst=timew start
+[32mAlias[0m twstop=timew stop
+[32mAlias[0m tws=timew summary :week
+[32mAlias[0m twlw=timew summary :lastweek
+[32mAlias[0m twd=timew summary :day
+[32mAlias[0m format-strace=grep --line-buffered -o '".\+[^"]"' | grep --line-buffered -o '[^"]*[^"]' | while read -r line; do printf "%b" $line; done | tr "\r\n" "\275\276" | tr -d "[:cntrl:]" | tr "\275\276" "\r\n"
+[32mAlias[0m reset_completion=rm ~/.zcompdump && autoload -U compinit && compinit && autoload -U bashcompinit && bashcompinit
+[32mAlias[0m pip-outdated=pip-review && apt-get list --upgradable
+[32mAlias[0m pip-upgrade-all=pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+[32mAlias[0m mdless=TERM=screen-256color mdless --theme nick --no-pager
+[32mAlias[0m go=richgo
+[32mAlias[0m fzf.apt=/home/nicholas/git/fzfmenu/widgets/packages/apt.zsh
+[32mAlias[0m fzf.colors=/home/nicholas/git/fzfmenu/widgets/development/colors.zsh
+[32mAlias[0m fzf.docker=/home/nicholas/git/fzfmenu/widgets/docker/docker.zsh
+[32mAlias[0m fzf.lsof=/home/nicholas/git/fzfmenu/widgets/system/top.zsh
+[32mAlias[0m fzf.menu=/home/nicholas/git/fzfmenu/menu.zsh
+[32mAlias[0m fzf.top=/home/nicholas/git/fzfmenu/widgets/system/top.zsh
+[32mAlias[0m findpid=grc --colour=on -es -c conf.ps ps axww -o pid,user,%cpu,%mem,time,fname,command | fzf --ansi --header-lines=1 --preview='S_COLORS=always pidstat -du --human -p {1}' | sed 's/^ *//' | cut -f1 -d' '
+[32mAlias[0m findmarks=~/bin/fzf/fzf-bookmarks.rb
+[32mAlias[0m findrg=~/bin/fzf/rgsearch.sh
+[32mAlias[0m gset-touchpad=gsettings set org.gnome.settings-daemon.peripherals.input-devices hotplug-command '"'/home/nicholas'/.config/scroll-touchpad"'
+[32mAlias[0m navs=navi --print --query
+[32mAlias[0m navtldr=navi --print --tldr
+[32mAlias[0m navcht=navi --print --cheatsh
+[32mAlias[0m onefetch=onefetch --true-color always --text-colors 9 10 11 12 13 14 --ascii-colors 8
+[32mAlias[0m rsync=rsync -r --info=progress2 --info=name0
+[32mAlias[0m pass=PASSWORD_STORE_ENABLE_EXTENSIONS=true pass
+[32mAlias[0m fzp=fzf-tmux -p 80%
+[32mAlias[0m adoc-list=grc -es -c conf.dockersearch --colour=auto ansible-doc -l | grep '^\w\+\s'
+[32mAlias[0m adoc-list-all=grc -es -c conf.dockersearch --colour=auto ansible-doc -l
+[32mAlias[0m adoc=grc -es -c conf.log --colour=auto ansible-doc
+[32mAlias[0m chr=chr --colorize --no-paging
+[32mAlias[0m gita=python3 -m gita
+[32mAlias[0m sherlock=python /home/nicholas/.local/src/sherlock
+[32mAlias[0m scc=scc -w -M package-lock.json -M .svg  -M tailwind.config.js
+[32mAlias[0m loc=scc | cz -A
+[32mAlias[0m weather=curl -s http://wttr.in/
+[32mAlias[0m sqlformat=sqlformat --reindent_aligned --keywords upper --identifiers lower
+[32mAlias[0m lsof=grc -es --colour=on -c conf.lsof lsof
+[32mAlias[0m make=grc -es --colour=on -c conf.make make
+[32mAlias[0m mount=grc -es --colour=on -c conf.mount mount
+[32mAlias[0m kubectl=grc -es --colour=on -c conf.kubectl kubectl
+[32mAlias[0m netstat=grc -es --colour=on -c conf.netstat netstat
+[32mAlias[0m sysctl=grc -es --colour=on -c conf.sysctl sysctl
+[32mAlias[0m tcpdump=grc -es --colour=on -c conf.tcpdump tcpdump
+[1m[38;5;204mWarning:[0m redefining alias `tcpdump', previous value: tcpdump -i eth1
+[32mAlias[0m gmake=grc -es --colour=on -c conf.gcc gmake 
+[32mAlias[0m make=grc -es --colour=on -c conf.gcc make 
+[1m[38;5;204mWarning:[0m redefining alias `make', previous value: grc -es --colour=on -c conf.make make
+[32mAlias[0m gem=grc -es --colour=on -c conf.dockernetwork gem 
+[32mAlias[0m journalctl=grc -es --colour=on -c conf.log journalctl -x
+[32mAlias[0m journalusr=grc -es --colour=on -c conf.log journalctl -x --user
+[32mAlias[0m journalker=grc -es --colour=on -c conf.log journalctl -x -k
+[32mAlias[0m configure=grc ./configure 
+[32mAlias[0m hostess=grc -es --colour=on -c conf.docker-machinels hostess
+[32mAlias[0m cp=grc -s --colour=on -c conf.docker-machinels cp -i -v
+[32mAlias[0m rm=grc -s --colour=on -c conf.docker-machinels rm -I --preserve-root -v
+[32mAlias[0m mv=grc -s --colour=on -c conf.docker-machinels mv -i -v
+[32mAlias[0m keys=bindkey | grcat conf.log
+[32mAlias[0m nmap=_nmap
+[32mAlias[0m asdf=_asdf
+[32mAlias[0m apt-get=_apt-get
+[32mAlias[0m progressc=ccze -A < <(progress)
+[32mAlias[0m glNoGraph=gl_no_graph
+[32mAlias[0m ergo=ergo_custom
+[32mSaving[0m `compdef man2comp=man' for replay
+[32mAlias[0m hist=/home/nicholas/.loki-shell/bin/logcli --addr=http://127.0.0.1:4100 --quiet
+[32mAlias[0m nvm-upgrade=nvm_upgrade
+[32mAlias[0m dockerpro=docker_profile
+[32mAlias[0m take=mkcdir
+[32mAutoload[0m add-zsh-hook with options -U -z
+[32mAutoload[0m _fasd_preexec
+[32mZle[0m -C fasd-complete complete-word _generic
+[38;5;148mNote:[0m a new widget created via zle -N: `fasd-complete'
+[32mZstyle[0m :completion:fasd-complete:* completer _fasd_zsh_word_complete
+[32mZstyle[0m :completion:fasd-complete:* menu-select
+[32mZle[0m -C fasd-complete-f complete-word _generic
+[38;5;148mNote:[0m a new widget created via zle -N: `fasd-complete-f'
+[32mZstyle[0m :completion:fasd-complete-f:* completer _fasd_zsh_word_complete_f
+[32mZstyle[0m :completion:fasd-complete-f:* menu-select
+[32mZle[0m -C fasd-complete-d complete-word _generic
+[38;5;148mNote:[0m a new widget created via zle -N: `fasd-complete-d'
+[32mZstyle[0m :completion:fasd-complete-d:* completer _fasd_zsh_word_complete_d
+[32mZstyle[0m :completion:fasd-complete-d:* menu-select
+[32mZstyle[0m :completion:* completer _complete _list _match _approximate _fasd_zsh_word_complete_trigger
+[32mAlias[0m a=fasd -a
+[32mAlias[0m s=fasd -si
+[32mAlias[0m sd=fasd -sid
+[32mAlias[0m sf=fasd -sif
+[32mAlias[0m d=fasd -d
+[32mAlias[0m f=fasd -f
+[32mAlias[0m z=fasd_cd -d
+[1m[38;5;204mWarning:[0m redefining alias `z', previous value: _zlua
+[32mAlias[0m zz=fasd_cd -d -i
+[1m[38;5;204mWarning:[0m redefining alias `zz', previous value: z -i
+[32mAutoload[0m add-zsh-hook with options -U -z
+[32mAutoload[0m _fasd_preexec
+[32mZle[0m -C fasd-complete complete-word _generic
+[32mZstyle[0m :completion:fasd-complete:* completer _fasd_zsh_word_complete
+[32mZstyle[0m :completion:fasd-complete:* menu-select
+[32mZle[0m -C fasd-complete-f complete-word _generic
+[32mZstyle[0m :completion:fasd-complete-f:* completer _fasd_zsh_word_complete_f
+[32mZstyle[0m :completion:fasd-complete-f:* menu-select
+[32mZle[0m -C fasd-complete-d complete-word _generic
+[32mZstyle[0m :completion:fasd-complete-d:* completer _fasd_zsh_word_complete_d
+[32mZstyle[0m :completion:fasd-complete-d:* menu-select
+[32mAlias[0m vd
+[32mAlias[0m a=fasd -a
+[1m[38;5;204mWarning:[0m redefining alias `a', previous value: fasd -a
+[32mAlias[0m s=fasd -si
+[1m[38;5;204mWarning:[0m redefining alias `s', previous value: fasd -si
+[32mAlias[0m sd=fasd -sid
+[1m[38;5;204mWarning:[0m redefining alias `sd', previous value: fasd -sid
+[32mAlias[0m sf=fasd -sif
+[1m[38;5;204mWarning:[0m redefining alias `sf', previous value: fasd -sif
+[32mAlias[0m d=fasd -d
+[1m[38;5;204mWarning:[0m redefining alias `d', previous value: fasd -d
+[32mAlias[0m f=fasd -f
+[1m[38;5;204mWarning:[0m redefining alias `f', previous value: fasd -f
+[32mAlias[0m z=fasd_cd -d
+[1m[38;5;204mWarning:[0m redefining alias `z', previous value: fasd_cd -d
+[32mAlias[0m zz=fasd_cd -d -i
+[1m[38;5;204mWarning:[0m redefining alias `zz', previous value: fasd_cd -d -i
+[32mAutoload[0m add-zsh-hook with options -U -z
+[32mAutoload[0m _fasd_preexec
+[32mZle[0m -C fasd-complete complete-word _generic
+[32mZstyle[0m :completion:fasd-complete:* completer _fasd_zsh_word_complete
+[32mZstyle[0m :completion:fasd-complete:* menu-select
+[32mZle[0m -C fasd-complete-f complete-word _generic
+[32mZstyle[0m :completion:fasd-complete-f:* completer _fasd_zsh_word_complete_f
+[32mZstyle[0m :completion:fasd-complete-f:* menu-select
+[32mZle[0m -C fasd-complete-d complete-word _generic
+[32mZstyle[0m :completion:fasd-complete-d:* completer _fasd_zsh_word_complete_d
+[32mZstyle[0m :completion:fasd-complete-d:* menu-select
+[32mAlias[0m d=fasd -d
+[1m[38;5;204mWarning:[0m redefining alias `d', previous value: fasd -d
+[32mAlias[0m f=fasd -f
+[1m[38;5;204mWarning:[0m redefining alias `f', previous value: fasd -f
+[32mAlias[0m dd=fasd -sid
+[32mAlias[0m ff=fasd -sif
+[32mAlias[0m zz=fasd_cd -d -i
+[1m[38;5;204mWarning:[0m redefining alias `zz', previous value: fasd_cd -d -i
+[32mZle[0m -N .fasd-file
+[38;5;148mNote:[0m a new widget created via zle -N: `.fasd-file'
+[32mZle[0m -N .fasd-complete
+[38;5;148mNote:[0m a new widget created via zle -N: `.fasd-complete'
+[32mAlias[0m g
+[32mAlias[0m gg
+[32mAlias[0m v
+[32mAlias[0m nvr=_nvr_wrapper
+[32mAlias[0m nvim
+[32mAlias[0m vim
+[32mAlias[0m nvim=_nvim_main
+[32mAlias[0m vim=_nvim_main
+[32mAlias[0m vimdiff=nvim -d
+[32mAlias[0m nvimrename=nvim -c 'Renamer'
+[32mAlias[0m lvim=nvim -c "normal '0"
+[32mAlias[0m vimcat=_nvimpager_custom -c
+[32mAlias[0m vcat=_nvimpager_custom -c
+[32mAlias[0m vc=_nvimpager_custom -c
+[32mAlias[0m nvimpager=_nvimpager_custom
+[32mAlias[0m zoxq=zoxide query --all -l -s
+[32mAlias[0m fzf-pretty=prettyfile | fzf  --with-nth=2.. --delimiter='\|'
+[32mAlias[0m fzf-score=prettyfile --score | fzf  --with-nth=2.. --delimiter='\|' | cut -d"|" -f1
+[32mAlias[0m fzf-s-fasd=fasd -fs | sort -nr | prettyfile --score | fzf  --with-nth=2.. --delimiter='\|' --prompt=" fasd❯ " | cut -d"|" -f1
+[32mAlias[0m fzf-s-zoxide=zoxide query --list --all --score  | sort -nr | prettyfile --score | fzf  --with-nth=2.. --delimiter='\|' --prompt=" zoxide❯ " | cut -d"|" -f1
+[32mAlias[0m fzf-s-zlua=_zlua -l | sort -nr | prettyfile --score | fzf  --with-nth=2.. --delimiter='\|' --prompt=" zlua❯ " | cut -d"|" -f1
+[32mBindkey[0m -v
+[1m[38;5;204mWarning:[0m last bindkey used non-typical options: -v 
+[32mBindkey[0m -Mvicmd gk history-substring-search-up
+[32mBindkey[0m -Mvicmd gj history-substring-search-down
+[32mBindkey[0m -Mvicmd zk history-search-backward
+[32mBindkey[0m -Mvicmd zj history-search-forward
+[32mBindkey[0m -M vicmd k history-substring-search-up
+[32mBindkey[0m -M vicmd j history-substring-search-down
+[32mBindkey[0m -M viins -s '^\' 'll\n'
+[32mBindkey[0m '^D' kill-whole-line
+[32mBindkey[0m -M vicmd '^D' kill-whole-line
+[32mBindkey[0m '^R' histdb-fzf-widget
+[32mBindkey[0m '^[r' histdb-fzf-widget
+[32mBindkey[0m -M viins '^u' backward-kill-line
+[32mBindkey[0m -M vicmd '^u' backward-kill-line
+[32mBindkey[0m '^[U' histdb-fzf-widget
+[32mZle[0m -N fancy-ctrl-z
+[38;5;148mNote:[0m a new widget created via zle -N: `fancy-ctrl-z'
+[32mBindkey[0m '^Z' fancy-ctrl-z
+
+[38;5;81mFunctions created:[0m
+_apt-get                                           as
+_asdf                                              _assign_xcolors
+batdiff                                            _bats
+blkid                                              bookimport
+_bufcmd                                            cat
+cc                                                 clip
+colored                                            cp_chrome_sqlite
+curl                                               cwatch
+_cz                                                dcd
+dd                                                 debman
+df                                                 diff
+dig                                                dman
+docker                                             docker-compose
+docker-machine                                     docker_profile
+du                                                 env
+ergo_custom                                        fancy-ctrl-z
+fasd_cd                                            .fasd-complete
+.fasd-file                                         _fasd_preexec
+_fasd_zsh_cmd_complete                             _fasd_zsh_word_complete
+_fasd_zsh_word_complete_d                          _fasd_zsh_word_complete_f
+_fasd_zsh_word_complete_trigger                    fdisk
+findmnt                                            _frecency_log
+_frecency_stats                                    free
+_fzf_fasd_generate_matches                         _fzf_fasd_zsh_completion
+fzf-history-widget                                 g
+g++                                                gcc
+_gen_fzf_default_opts                              geoiplookup
+get_bash_w                                         getfacl
+get_monitor                                        gg
+ghq_cd                                             gl_no_graph
+gls                                                gmake
+id                                                 ifconfig
+iostat                                             ip
+iptables                                           iwconfig
+kubectl                                            last
+ld                                                 list_completions
+loop                                               ls
+lsattr                                             lsblk
+lsmod                                              lspci
+man                                                man2comp
+mkcdir                                             mpcf
+mtr                                                npm-versions
+_nvim_create_socket                                _nvim_existing_socket
+_nvim_get_reload_session                           _nvim_get_saved_session
+_nvim_get_socket_prefix                            _nvim_get_tmux_pane
+_nvim_log                                          _nvim_main
+_nvimpager_custom                                  _nvim_unique
+nvm_upgrade                                        _nvr_wrapper
+php                                                ping
+ping6                                              pipver
+precmd                                             proxy_off
+proxy_on                                           ps
+_random_god                                        refresh
+sar                                                scale_func
+sdk                                                __sdk_broadcast
+__sdk_current                                      __sdk_default
+__sdk_env                                          __sdk_flush
+__sdk_help                                         __sdk_home
+__sdk_install                                      __sdk_list
+__sdkman_add_to_path                               __sdkman_auto_update
+__sdkman_build_version_csv                         __sdkman_check_candidate_present
+___sdkman_check_candidates_cache                   ___sdkman_check_version_cache
+__sdkman_check_version_present                     __sdkman_cleanup_folder
+__sdkman_determine_broadcast_id                    __sdkman_determine_candidate_bin_dir
+__sdkman_determine_current_version                 __sdkman_determine_upgradable_version
+__sdkman_determine_version                         __sdkman_display_offline_warning
+__sdkman_display_proxy_warning                     __sdkman_download
+__sdkman_echo                                      __sdkman_echo_confirm
+__sdkman_echo_cyan                                 __sdkman_echo_debug
+__sdkman_echo_green                                __sdkman_echo_no_colour
+__sdkman_echo_red                                  __sdkman_echo_yellow
+__sdkman_export_candidate_home                     __sdkman_generate_sdkmanrc
+__sdkman_install_candidate_version                 __sdkman_install_local_version
+__sdkman_is_blank_line                             __sdkman_link_candidate_version
+__sdkman_list_candidates                           __sdkman_list_versions
+__sdkman_matches_candidate_format                  __sdkman_normalise
+__sdkman_offline_list                              __sdkman_page
+__sdkman_path_contains                             __sdkman_prepend_candidate_to_path
+__sdkman_secure_curl                               __sdkman_secure_curl_download
+__sdkman_secure_curl_with_timeouts                 __sdkman_set_availability
+__sdkman_set_candidate_home                        __sdkman_update_broadcast
+__sdkman_update_broadcast_and_service_availability __sdkman_validate_zip
+__sdk_offline                                      __sdk_selfupdate
+__sdk_uninstall                                    __sdk_update
+__sdk_upgrade                                      __sdk_use
+__sdk_version                                      _send_to_loki
+sensors                                            shellwatch
+showmount                                          sockstat
+split_pwd                                          ss
+stat                                               traceroute
+traceroute6                                        tune2fs
+uptime                                             v
+vd                                                 vman
+vmstat                                             wdiff
+whois                                              xcol
+xcolorize256                                       xcols
+zox                                                zoxi
+__zoxide_cd                                        __zoxide_hook
+__zoxide_pwd                                       __zoxide_unset
+__zoxide_z                                         __zoxide_zi
+
+[38;5;81mOptions changed:[0m
+completealiases was set
+
+[38;5;81mVariables added or redefined:[0m
+SOCK                          [38;5;82m[     "" -> scalar              ][0m
+_NVIM_TEMP_DIR                [38;5;82m[     "" -> scalar              ][0m
+dir                           [38;5;82m[     "" -> scalar              ][0m
+NNN_PLUG_PERSONAL             [38;5;82m[     "" -> scalar              ][0m
+sdkman_insecure_ssl           [38;5;82m[     "" -> scalar              ][0m
+ORPHAN                        [38;5;82m[     "" -> scalar              ][0m
+cygwin                        [38;5;82m[     "" -> scalar              ][0m
+prettyfile_opts               [38;5;82m[     "" -> scalar              ][0m
+USER_BASE_PATH                [38;5;82m[     "" -> scalar              ][0m
+_XCOLORS                      [38;5;82m[     "" -> array               ][0m
+_XPATTERNSPATH                [38;5;82m[     "" -> scalar              ][0m
+CHR                           [38;5;82m[     "" -> scalar              ][0m
+_NVIM_HANDLER_SYSLOG          [38;5;82m[     "" -> scalar              ][0m
+sdkman_auto_selfupdate        [38;5;82m[     "" -> scalar              ][0m
+_FRECENCY_HANDLER             [38;5;82m[     "" -> scalar              ][0m
+FIFO                          [38;5;82m[     "" -> scalar              ][0m
+filepath                      [38;5;82m[     "" -> scalar              ][0m
+__zoxide_hooked               [38;5;82m[     "" -> scalar              ][0m
+NNN_PLUG                      [38;5;82m[     "" -> scalar              ][0m
+NNN_THEME_ONE_DARK            [38;5;82m[     "" -> scalar              ][0m
+sdkman_debug_mode             [38;5;82m[     "" -> scalar              ][0m
+_FRECENCY_STATS               [38;5;82m[     "" -> scalar              ][0m
+HARDLINK                      [38;5;82m[     "" -> scalar              ][0m
+_FRECENCY_SYSLOG              [38;5;82m[     "" -> scalar              ][0m
+SYMLINK                       [38;5;82m[     "" -> scalar              ][0m
+freebsd                       [38;5;82m[     "" -> scalar              ][0m
+_viewGitLogLineUnfancy        [38;5;82m[     "" -> scalar              ][0m
+_FRECENCY_LAST_QUERY          [38;5;82m[     "" -> scalar              ][0m
+NNN_PLUG_WORK                 [38;5;82m[     "" -> scalar              ][0m
+_script                       [38;5;82m[     "" -> scalar              ][0m
+sdkman_curl_retry             [38;5;82m[     "" -> scalar              ][0m
+SDKMAN_CANDIDATES             [38;5;82m[     "" -> array               ][0m
+NNN_PLUG_DEFAULT              [38;5;82m[     "" -> scalar              ][0m
+shell_dir                     [38;5;82m[     "" -> scalar              ][0m
+_XCOLORSPATH                  [38;5;82m[     "" -> scalar              ][0m
+sdkman_curl_connect_timeout   [38;5;82m[     "" -> scalar              ][0m
+MISSING                       [38;5;82m[     "" -> scalar              ][0m
+_gitLogLineToHash             [38;5;82m[     "" -> scalar              ][0m
+_viewGitLogLine               [38;5;82m[     "" -> scalar              ][0m
+_FRECENCY_LOG_FILE            [38;5;82m[     "" -> scalar              ][0m
+bat_preview                   [38;5;82m[ scalar -> ""                  ][0m
+sdkman_colour_enable          [38;5;82m[     "" -> scalar              ][0m
+NVIM_UNIQUE_TYPE              [38;5;82m[     "" -> scalar              ][0m
+bash_shell                    [38;5;82m[     "" -> scalar              ][0m
+darwin                        [38;5;82m[     "" -> scalar              ][0m
+_XPALLETESPATH                [38;5;82m[     "" -> scalar              ][0m
+DIR                           [38;5;82m[     "" -> scalar              ][0m
+zsh_shell                     [38;5;82m[     "" -> scalar              ][0m
+OTHER                         [38;5;82m[     "" -> scalar              ][0m
+NNN_PLUG_INLINE               [38;5;82m[     "" -> scalar              ][0m
+_NVIM_SESSIONS_DIR            [38;5;82m[     "" -> scalar              ][0m
+REG                           [38;5;82m[     "" -> scalar              ][0m
+EXE                           [38;5;82m[     "" -> scalar              ][0m
+pastebinix                    [38;5;82m[     "" -> scalar              ][0m
+SDKMAN_CANDIDATES_CACHE       [38;5;82m[     "" -> scalar              ][0m
+solaris                       [38;5;82m[     "" -> scalar              ][0m
+sdkman_auto_answer            [38;5;82m[     "" -> scalar              ][0m
+pastebin                      [38;5;82m[     "" -> scalar              ][0m
+sdkman_auto_env               [38;5;82m[     "" -> scalar              ][0m
+sdkman_curl_max_time          [38;5;82m[     "" -> scalar              ][0m
+sdkman_curl_retry_max_time    [38;5;82m[     "" -> scalar              ][0m
+_fzf_fasd_default_completion  [38;5;82m[     "" -> scalar              ][0m
+grc_alias_cmds                [38;5;82m[     "" -> array               ][0m
+sdkman_beta_channel           [38;5;82m[     "" -> scalar              ][0m
+NVIM_LISTEN_ADDRESS           [38;5;82m[     "" -> scalar              ][0m
+NNN_THEME_NORD                [38;5;82m[     "" -> scalar              ][0m
+sdkman_curl_continue          [38;5;82m[     "" -> scalar              ][0m
+MYSQL_PAGER                   [38;5;82m[     "" -> scalar-export       ][0m
+SDKMAN_CANDIDATES_CSV         [38;5;82m[     "" -> scalar              ][0m
+BLK                           [38;5;82m[     "" -> scalar              ][0m
+PSQL_PAGER                    [38;5;82m[     "" -> scalar-export       ][0m
+less_termcap                  [38;5;82m[     "" -> association-hideval ][0m
+

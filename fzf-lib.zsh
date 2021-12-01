@@ -36,12 +36,13 @@ FZF_DEFAULT_ACTION_DESCRIPTIONS=(
 )
 
 # combine default actions with any provided from module
-FZF_ACTION_DESCRIPTIONS=("${FZF_DEFAULT_ACTION_DESCRIPTIONS[@]}")
 if [[ -n "$FZF_ACTIONS" ]]; then
   FZF_ACTIONS=("${FZF_ACTIONS[@]}" "${FZF_DEFAULT_ACTIONS[@]}")
-  FZF_ACTION_DESCRIPTIONS=("${FZF_ACTION_DESCRIPTIONS[@]} "${FZF_DEFAULT_ACTION_DESCRIPTIONS[@]}" ")
+  FZF_ACTION_DESCRIPTIONS=("${FZF_ACTION_DESCRIPTIONS[@]}" "${FZF_DEFAULT_ACTION_DESCRIPTIONS[@]}")
 else
+  FZF_ACTION_DESCRIPTIONS=("${FZF_DEFAULT_ACTION_DESCRIPTIONS[@]}")
   FZF_ACTIONS=("${FZF_DEFAULT_ACTIONS[@]}")
+
 fi
 
 declare -A _clr
@@ -84,7 +85,7 @@ _fzf-assign-default-vars() {
   _fzf_keys[mode_next]="alt-0"
   # _fzf_keys[actions_menu]="ctrl-\\"
   # _fzf_keys[actions_menu]="ctrl-space"
-  _fzf_keys[actions_menu]="ctrl-/"
+  _fzf_keys[actions_menu]='ctrl-\'
   _fzf_keys[help_menu]=""
   _fzf_keys[exit]="esc"
 }
@@ -351,13 +352,13 @@ ${_clr[divider]}${FZF_DIVIDER_LINE}${_clr[rst]}"
       IFS=$'\n' result=($(_fzf-source $mode | $fzf_cmd $fzf_cmd_args | sed 's/^ *//' ))
 
       # determine if query was submitted by identifying line exit key is on
-      if [[ ${#result[@]} -gt 2 && $expected_keys =~ ${result[2]} ]]; then
+      if [[ ${#result[@]} -gt 2 && $expected_keys == *${result[2]}* ]]; then
         query="$(echo ${result[1]} | xargs)"
-        exitkey="$(echo ${result[2]} | xargs)"
+        exitkey="$(echo ${result[2]})" # xargs on exitkey removes "ctrl-\"
         selected=(${result[@]:2})
       else
         query=""
-        exitkey="$(echo ${result[1]} | xargs)"
+        exitkey="$(echo ${result[1]})"
         selected=(${result[@]:1})
       fi
 
@@ -377,7 +378,7 @@ ${_clr[divider]}${FZF_DIVIDER_LINE}${_clr[rst]}"
         _fzf-handle-result "echo" "$selected"
       fi
 
-      if [[ $exitkey == $_fzf_keys[actions_menu] ]]; then
+      if [[ "$exitkey" == "${_fzf_keys[actions_menu]}" ]]; then
         action_menu=("${selected[@]}")
       else
         action_menu=()
