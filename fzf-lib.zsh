@@ -107,7 +107,7 @@ _fzf-default-actions-source() {
 
 
 # default action menu handlers (can be overridden or silenced by modules)
-_fzf-handle-result() {
+_fzf-handle-result-default() {
   # _fzf-log "handle result lines: $* \n--"
   action="$1" && shift
   items=($@)
@@ -264,7 +264,7 @@ _fzf-display() {
 
       # perform action (selected) on item(s) (action_menu) if enter or back to previous menu
       if [[ "$exitkey" == "enter" ]]; then
-        _fzf-handle-result "$selected_action" "${action_menu[@]}"
+        _fzf-handle-result-default "$selected_action" "${action_menu[@]}"
         _fzf-log "_fzf-handle-result - $selected_action (${#action_menu[@]} items)"
       else
         action_menu=""
@@ -375,7 +375,11 @@ ${_clr[divider]}${FZF_DIVIDER_LINE}${_clr[rst]}"
       _fzf-log "main menu top 5: $has_query\n${lines[@]}\n--\n${log_lines[@]}"
 
       if [[ "$exitkey" == "enter" ]]; then
-        _fzf-handle-result "echo" "$selected"
+        if [[ "$(command -V _fzf-handle-result)" =~ "function" ]]; then
+          _fzf-handle-result "echo" "$selected"
+        else
+          _fzf-handle-result-default "echo" "$selected"
+        fi
       fi
 
       if [[ "$exitkey" == "${_fzf_keys[actions_menu]}" ]]; then

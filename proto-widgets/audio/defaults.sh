@@ -17,7 +17,6 @@ readonly DEFAULT_SEEK_STEP='00:00:10'
 # https://github.com/karlstav/cava
 # https://github.com/dpayne/cli-visualizer
 readonly DEFAULT_VISUALIZER='cava || vis'
-readonly DEFAULT_MOD='ctrl'
 readonly DEFAULT_FILL_QUEUE=true
 readonly DEFAULT_CLEAR_QUEUE=false
 readonly DEFAULT_COVER_MAX_WIDTH=500
