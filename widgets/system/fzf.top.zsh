@@ -33,8 +33,11 @@ _fzf-assign-vars() {
 }
 
 _fzf-source() {
+  # nlwp: thread count, comm: shor t command name
+  local fields="pid,ppid,user,%cpu,%mem,rss,etime,stat,tty,args"
+  local sort="%cpu"
   grc --colour=on -es -c conf.ps \
-    ps axf -o pid,ppid,user,%cpu,%mem,rss,etime,stat,tty,args \
+    ps axf --sort ${sort} -o ${fields} \
     | sed "s,$HOME,~,g"
     # grc --colour=on -es -c conf.ps \
     #   | ps af -o pid,ppid,user,%cpu,%mem,rss,time,tty,args \
@@ -46,6 +49,7 @@ _fzf-source() {
 _fzf-extra-opts() {
   opts="--query=\"!fzf $*\""
   # opts="${opts} --nth=1,2,3,-1"
+  opts="${opts} --tac"
   opts="${opts} --header-lines=1"
   # [ $RELOAD_ON_CHANGE -eq 1 ] && \
   #   opts="${opts},change:reload:'$source_command'"
