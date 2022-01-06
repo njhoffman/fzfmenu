@@ -83,8 +83,7 @@ _fzf-assign-default-vars() {
   _fzf_keys[reload]="ctrl-r"
   _fzf_keys[mode_prev]="alt-9"
   _fzf_keys[mode_next]="alt-0"
-  # _fzf_keys[actions_menu]="ctrl-\\"
-  # _fzf_keys[actions_menu]="ctrl-space"
+  _fzf_keys[nop]="ctrl-]"
   _fzf_keys[actions_menu]='ctrl-\'
   _fzf_keys[help_menu]=""
   _fzf_keys[exit]="esc"
@@ -144,6 +143,44 @@ _fzf-mode-hints() {
   echo "${hints}"
 }
 
+_fzf_tabularize() {
+  if [[ $# = 0 ]]; then
+    cat
+    return
+  fi
+
+  awk \
+    -v FS=${FS:- } \
+    -v colors_args=${(pj: :)@} \
+    -v reset=$reset_color '
+      BEGIN {
+      split(colors_args, colors, " ")
+    }
+  {
+    str = $0
+    for (i = 1; i <= length(colors); ++i) {
+      field_max[i] = length($i) > field_max[i] ? length($i) : field_max[i]
+      fields[NR, i] = $i
+      pos = index(str, FS)
+      str = substr(str, pos + 1)
+    }
+  if (pos != 0) {
+    fields[NR, i] = str
+  }
+}
+END {
+  for (i = 1; i <= NR; ++i) {
+    for (j = 1; j <= length(colors); ++j) {
+      printf "%s%s%-" field_max[j] "s%s", (j > 1 ? "  " : ""), colors[j], fields[i, j], reset
+    }
+  if ((i, j) in fields) {
+    printf "  %s", fields[i, j]
+  }
+  printf "\n"
+  }
+}
+'
+}
 
 # output usage information with switches based on FZF_ACTIONS, FZF_MODES, FZF_TOGGLES
 _fzf-usage() {
@@ -284,7 +321,8 @@ _fzf-display() {
           else
             mode=$((($mode-1 % $#FZF_MODES)))
           fi
-        elif [[ "$exitkey" == $_fzf_keys[mode_next] ]]; then
+        elif [[ "$exitkey" == $_fzf_keys[mode_next] \
+          || "$exitkey" == $_fzf_keys[nop] ]]; then
           mode=$((($mode % $#FZF_MODES) + 1))
         fi
 
@@ -325,7 +363,7 @@ ${_clr[divider]}${FZF_DIVIDER_LINE}${_clr[rst]}"
       # keys that can exit
       # expected_keys="enter,esc,ctrl-r,ctrl-^,alt-9,alt-0,ctrl-space"
       expected_keys="enter,${_fzf_keys[exit]},${_fzf_keys[reload]},${_fzf_keys[toggle_popout]}"
-      expected_keys="${expected_keys},${_fzf_keys[mode_prev]},${_fzf_keys[mode_next]}"
+      expected_keys="${expected_keys},${_fzf_keys[mode_prev]},${_fzf_keys[mode_next]},${_fzf_keys[nop]}"
       expected_keys="${expected_keys},${_fzf_keys[actions_menu]}"
 
       # TODO: only for count of fzf_modes

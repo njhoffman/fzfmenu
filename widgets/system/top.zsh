@@ -8,6 +8,7 @@
 #   - live summary
 #   - filter (can select from master list or active strace)
 
+sudo ""
 
 RELOAD_ON_CHANGE=0
 SOURCE="${(%):-%N}"
@@ -59,32 +60,32 @@ _fzf-result() {
   for item in "$items[@]"; do
     item_id=$(echo "$item" | cut -d' ' -f1)
     item_user=$(echo "$item" | sed -E 's/\S+\s+\S+\s+//' | cut -d' ' -f1)
-    is_root=$([[ "$item_user" == "root" ]] && echo 1 || echo 0)
-
+    # is_root=$([[ "$item_user" == "root" ]] && echo 1 || echo 0)
+    is_root=true
     case "$action" in
       'kill')
         echo "kill $item_id $is_root"
-        [ $is_root -eq 1 ] \
-          && sudo kill $item_id  \
+        [[ $is_root -eq 1 ]] \
+          && sudo -E env PATH="$PATH" kill $item_id  \
           || kill $item_id
         ;;
       'kill:9')
         echo "kill:9 $item_id $is_root"
-        [ $is_root -eq 1 ] \
-          && sudo kill -9 $item_id  \
+        [[ $is_root -eq 1 ]] \
+          && sudo -E env PATH="$PATH" kill -9 $item_id  \
           || kill -9 $item_id
         ;;
       'ctrace')
         echo "ctrace $item_id $is_root"
-        [ $is_root -eq 1 ] \
-          && sudo ctrace -p $item_id  \
+        [[ $is_root -eq 1 ]] \
+          && sudo -E env PATH="$PATH" ctrace -p $item_id  \
           || ctrace -p $item_id
         # ctrace -f "lstat,open"
         ;;
       'ctrace:verbose')
         echo "ctrace:verbose $item_id $is_root"
-        [ $is_root -eq 1 ] \
-          && sudo ctrace -v -p $item_id  \
+        [[ $is_root -eq 1 ]] \
+          && sudo -E env PATH="$PATH" ctrace -v -p $item_id  \
           || ctrace -v -p $item_id
         ;;
       'ltrace')
@@ -108,8 +109,8 @@ _fzf-result() {
         # ltrace -S neuron 2>&1 > /dev/null | vim -c ':set syntax=strace' 
         # ltrace -c "nvim" > tracing.log 
         echo "ltrace $item_id $is_root"
-        [ $is_root -eq 1 ] \
-          && sudo ltrace -p $item_id  \
+        [[ $is_root -eq 1 ]] \
+          && sudo -E env PATH="$PATH" ltrace -p $item_id  \
           || ltrace -p $item_id
         ;;
       # 'ltrace:summary'|'ltrace:verbose')
@@ -119,8 +120,8 @@ _fzf-result() {
       # strace git 2>&1 > /dev/null | vim -c ':set syntax=strace' 
       'iotrace')
         echo "iotrace $item_id"
-        [ $is_root -eq 1 ] \
-          && sudo iotrace -p $item_id | bat -lstrace -p \
+        [[ $is_root -eq 1 ]] \
+          && sudo -E env PATH="$PATH" iotrace -p $item_id | bat -lstrace -p \
           || iotrace -p $item_id | bat -lstrace -p
         ;;
       # 'iotrace:forked')

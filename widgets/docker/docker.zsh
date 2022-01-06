@@ -4,7 +4,7 @@ SOURCE="${(%):-%N}"
 CWD="$(cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd)"
 FZF_LIB="$CWD/../../fzf-lib.zsh"
 
-FZF_MODES=('containers' 'images' 'networks' 'volumes')
+FZF_MODES=('containers' 'repos' 'images' 'networks' 'volumes')
 
 _fzf-assign-vars() {
   local lc=$'\e[' rc=m
@@ -15,6 +15,8 @@ _fzf-assign-vars() {
   _clr[selected]="${lc}${CLR_MODE_SELECTED:-38;5;8;3}${rc}"
   # _clr[number]="${lc}${CLR_DESC_NUMBER:-1;34}${rc}"
   _clr[number]="${lc}${CLR_DESC_NUMBER:-38;5;81}${rc}"
+	_clr[header]="${lc}${CLR_HEADER:-38;5;3}${rc}"
+
 }
 
 _fzf-menu-description() {
@@ -71,39 +73,80 @@ function _docker_volume_sizes() {
     done
 }
 
+_fzf-prompt() {
+	mode="$1" && shift
+	mode_name="${FZF_MODES[$mode]}"
+	case "$mode_name" in
+	'containers')
+		echo " ps❯ "
+		;;
+  'repos')
+    echo " repo❯ "
+    ;;
+	'images')
+		echo " ls❯ "
+		;;
+	'networks')
+		echo " netp "
+		;;
+	'volumes')
+		echo " vol❯ "
+		;;
+	esac
+}
+
+_fzf-extra-opts() {
+	opts=""
+	opts="${opts} --header-lines=1"
+	# opts="${opts} --header-first"
+	echo "$opts"
+}
+
 function _fzf-source() {
-  # TODO: apt list --verbose
   # mode="$1" && shift
-  mode="volumes"
   selection="$*"
-  case "$mode" in
+	mode="$1" && shift
+	mode_name="${FZF_MODES[$mode]}"
+  case "$mode_name" in
     'containers')
-      containers=$(command docker ps -a -s --format='{{json .}}')
+      # containers=$(command docker ps -a -s --format='{{json .}}')
+      docker container list --all \
+        --format 'table {{.ID}};{{.Image}};{{.Command}};{{.RunningFor}};{{.Status}};{{.Ports}};{{.Names}}' 2> /dev/null \
+        | FS=';' _fzf_tabularize $_clr[header] $_clr[rst]{,,,,,,}
+      ;;
+    'repos')
+      docker images --filter 'dangling=false' --format 'table {{.Repository}};{{.ID}};{{.Tag}};{{if .CreatedSince}}{{.CreatedSince}}{{else}}N/A{{end}};{{.Size}}' 2> /dev/null \
+        | FS=';' _fzf_tabularize $_clr[header] $_clr[rst]{,,}
       ;;
     'images')
-      images=$(command docker images --all --digests --format='{{json .}}')
+			docker images --format 'table {{.ID}};{{.Repository}};{{.Tag}};{{if .CreatedSince}}{{.CreatedSince}}{{else}}N/A{{end}};{{.Size}}' 2> /dev/null \
+				| FS=';' _fzf_tabularize $_clr[header] $_clr[rst]{,,}
+      # images=$(command docker images --all --digests --format='{{json .}}')
       # Containers, CreatedAt,  CreatedSince,  Digest,  ID,  Repository,  SharedSize,  Size,  Tag,  UniqueSize,  VirtualSize
       ;;
     'networks')
-      networks=$(command docker network ls --format='{{json .}}')
+			docker network list --format 'table {{.ID}};{{.Name}};{{.Driver}};{{.Scope}}' 2> /dev/null \
+				| FS=';' _fzf_tabularize $_clr[header] $_clr[rst]{,}
+      # networks=$(command docker network ls --format='{{json .}}')
       # CreatedAt, Driver, ID, IPv6, Internal, Labels, Name, Scope
       ;;
     'volumes')
-      volumes=$(command docker volume ls --format='{{json .}}')
-      while read -r line; do
-        fields=".Driver, .Labels, .Links, .Mountpoint, .Name, .Scope, .Size"
-        # "Labels": "com.docker.compose.project=test,com.docker.compose.version=1.27.4,com.docker.compose.volume=my-app-data",
+			docker volume list --format 'table {{.Name}};{{.Driver}};{{.Scope}}' 2> /dev/null \
+				| FS=';' _fzf_tabularize $_clr[header] $_clr[rst]{,}
+      # volumes=$(command docker volume ls --format='{{json .}}')
+      # while read -r line; do
+      #   fields=".Driver, .Labels, .Links, .Mountpoint, .Name, .Scope, .Size"
+      #   # "Labels": "com.docker.compose.project=test,com.docker.compose.version=1.27.4,com.docker.compose.volume=my-app-data",
 
-        IFS=$'\n' read -r -d '' driver labels links mountpoint name scope size \
-          <<< "$(echo $line | jq -r $fields)"
+      #   IFS=$'\n' read -r -d '' driver labels links mountpoint name scope size \
+      #     <<< "$(echo $line | jq -r $fields)"
 
-        printf "%s\t%s\t%s\t%s\t%s\n" \
-          $driver $name $scope $size $mountpoint
+      #   printf "%s\t%s\t%s\t%s\t%s\n" \
+      #     $driver $name $scope $size $mountpoint
 
-      done <<< "$(echo "$volumes" | jq -c '.')"
+      # done <<< "$(echo "$volumes" | jq -c '.')"
       ;;
   esac
 }
 
 source "$FZF_LIB"
-_fzf-menu-description

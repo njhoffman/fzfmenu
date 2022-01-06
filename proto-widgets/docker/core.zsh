@@ -88,34 +88,34 @@ _fzf_complete_colorize() {
   awk \
     -v colors_args=${(pj: :)@} \
     -v reset=$reset_color '
-      BEGIN {
-      split(colors_args, colors, " ")
-      header = 1
-    }
-  header {
-  delete fields
-  fields[1] = 1
-  header = 0
+	BEGIN {
+		split(colors_args, colors, " ")
+		header = 1
+	}
+	header {
+		delete fields
+		fields[1] = 1
+		header = 0
 
-  for (i = 2; i <= length($0); ++i) {
-    if (substr($0, i - 1, 1) == " " && substr($0, i, 1) != " ") {
-      fields[length(fields) + 1] = i
-    }
-}
-}
-{
-  total = 0
-  for (i = 1; i<= length(colors); ++i) {
-    width = fields[i + 1] - fields[i] < 0 ? length($0) : fields[i + 1] - fields[i]
-    total += width
-    printf "%s%s%s", colors[i], substr($0, fields[i], width), reset
-  }
+		for (i = 2; i <= length($0); ++i) {
+			if (substr($0, i - 1, 1) == " " && substr($0, i, 1) != " ") {
+				fields[length(fields) + 1] = i
+			}
+		}
+	}
+	{
+		total = 0
+		for (i = 1; i<= length(colors); ++i) {
+			width = fields[i + 1] - fields[i] < 0 ? length($0) : fields[i + 1] - fields[i]
+			total += width
+			printf "%s%s%s", colors[i], substr($0, fields[i], width), reset
+		}
 
-printf "%s\n", substr($0, total + 1)
-}
-/^$/ {
-header = 1
-}
+		printf "%s\n", substr($0, total + 1)
+	}
+	/^$/ {
+		header = 1
+	}
 '
 }
 
