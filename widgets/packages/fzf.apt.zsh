@@ -2,12 +2,13 @@
 
 SOURCE="${(%):-%N}"
 CWD="$(cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd)"
-FZF_LIB="$CWD/../../fzf-lib.zsh"
+FZF_LIB="$CWD/../../fzf-lib"
 
 FZF_DIVIDER_SHOW=1
-FZF_DIVIDER_LINE="―――――――――――――――――――――――――――――――――――――――――――――"
+# FZF_DIVIDER_LINE="―――――――――――――――――――――――――――――――――――――――――――――"
+FZF_DIVIDER_LINE="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 FZF_MODES=('available' 'installed' 'upgradeable')
-
+FZF_DEFAULT_MODE="${FZF_DEFAULT_MODE:-1}"
 
 _fzf-assign-vars() {
   local lc=$'\e[' rc=m
@@ -15,6 +16,7 @@ _fzf-assign-vars() {
   _clr[menu_desc]="${lc}${CLR_DESC:-38;5;8;3}${rc}"
   _clr[header]="${lc}${CLR_HEADER:-38;5;8;3}${rc}"
   _clr[key_name]="${lc}${CLR_HEADER_KEY:-38;5;252;1}${rc}"
+  _clr[key_div]="${lc}${CLR_HEADER_KEY_DIV:-38;5;237;1}${rc}"
   _clr[key_desc]="${lc}${CLR_HEADER_KEY_DESC:-38;5;8;1}${rc}"
   _clr[number]="${lc}${CLR_DESC_NUMBER:-38;5;81}${rc}"
 }
@@ -47,25 +49,35 @@ _fzf-assign-mode() {
   esac
 }
 
-_fzf-source() {
+_fzf-command() {
   # TODO: apt list --verbose
   mode="$1" && shift
   mode_name="${FZF_MODES[$mode]}"
   case "$mode_name" in
     'installed')
-      apt list --installed 2>/dev/null \
+      cmd="apt list --installed 2>/dev/null \
         | sort  | sed -u -r \
-          "s/^([^ ]+)(.*)/${_clr[menu_id]}\1${_clr[menu_desc]}\2${_clr[rst]}/"
+        \"s/^([^ ]+)(.*)/${_clr[menu_id]}\1${_clr[menu_desc]}\2${_clr[rst]}/\""
+
+      # apt list --installed 2>/dev/null \
+      #   | sort  | sed -u -r \
+      #     "s/^([^ ]+)(.*)/${_clr[menu_id]}\1${_clr[menu_desc]}\2${_clr[rst]}/"
       ;;
     *)
-      apt-cache search '.*' \
+      cmd="apt-cache search '.*' \
         | sort  | sed -u -r \
-          "s/^([^ ]+)(.*)/${_clr[menu_id]}\1${_clr[menu_desc]}\2${_clr[rst]}/"
+        \"s/^([^ ]+)(.*)/${_clr[menu_id]}\1${_clr[menu_desc]}\2${_clr[rst]}/\""
+
+      # apt-cache search '.*' \
+      #   | sort  | sed -u -r \
+      #     "s/^([^ ]+)(.*)/${_clr[menu_id]}\1${_clr[menu_desc]}\2${_clr[rst]}/"
       ;;
   esac
+  echo "$cmd"
 }
 
 _fzf-prompt() {
+  # echo " ${_clr[key_desc]}echo:preview${_clr[key_name]}❯ ${_clr[rst]}"
   echo " apt❯ "
 }
 
@@ -75,20 +87,19 @@ _fzf-header() {
   header="${_clr[header]}"
   case "$mode_name" in
     'available')
-      header="${header}Available apt packages to install ("
+      header="${header}Available apt packages to install"
+      header="${header}${_clr[key_div]} | "
       header="${header}${_clr[key_name]}enter: ${_clr[key_desc]}install"
-      header="${header})"
       ;;
     'installed')
-      header="${header}Installed apt packages ("
-      header="${header}${_clr[key_name]}enter: ${_clr[key_desc]}echo_name"
-      header="${header}, ${_clr[key_name]}ctrl-d: ${_clr[key_desc]}delete"
-      header="${header})"
+      header="${header}Installed apt packages"
+      header="${header}${_clr[key_div]} | "
+      header="${header}${_clr[key_name]}enter ${_clr[key_desc]}echo:id"
+      header="${header}  ${_clr[key_name]}c-d ${_clr[key_desc]}delete"
       ;;
     'upgradeable'|*)
-      header="${header}Upgradeable apt packages ("
+      header="${header}Upgradeable apt packages "
       header="${header}${_clr[key_name]}enter: ${_clr[key_desc]}echo_name"
-      header="${header})"
       ;;
   esac
   header="${header}${_clr[rst]}"
@@ -179,4 +190,4 @@ _fzf-result() {
   esac
 }
 
-source "$FZF_LIB"
+source "${FZF_LIB}.zsh"

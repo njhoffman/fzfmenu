@@ -2,7 +2,7 @@
 
 SOURCE="${(%):-%N}"
 CWD="$(cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd)"
-FZF_LIB="$CWD/../../fzf-lib.zsh"
+FZF_LIB="$CWD/../../fzf-lib"
 
 COLORS_JSON="$CWD/colors-255.json"
 COLORS_TXT="$CWD/colors-255.txt"
@@ -29,14 +29,26 @@ _fzf-source-json() {
   done < <(cat $COLORS_JSON | jq -c '.[]')
 }
 
-_fzf-source() {
+_fzf-command() {
+  read -r -d '' cmd <<'EOF'
   while read -r line; do
-    printf "%s\n" "$line" | \
+    printf "%s\\n" "$line" | \\
       awk '{
-        printf "\033[38;5;%sm  \033[0m \t%s \t", $1, $1, $1
-        printf "\033[38;5;%sm%s\033[0m \t%s \t%s \t%s\n", $1, $2, $3, $4, $5
+        printf "\\033[38;5;%sm  \\033[0m \\t%s \\t", $1, $1, $1
+        printf "\\033[38;5;%sm%s\\033[0m \\t%s \\t%s \\t%s\\n", $1, $2, $3, $4, $5
       }'
-  done < <(cat $COLORS_TXT) | column -t -s $'\t'
+  done < <(cat ~/git/fzfmenu/widgets/development/colors-255.txt) | column -t -s $'\\t'
+EOF
+
+  echo "${cmd}"
+
+  # while read -r line; do
+  #   printf "%s\n" "$line" | \
+  #     awk '{
+  #       printf "\033[38;5;%sm  \033[0m \t%s \t", $1, $1, $1
+  #       printf "\033[38;5;%sm%s\033[0m \t%s \t%s \t%s\n", $1, $2, $3, $4, $5
+  #     }'
+  # done < <(cat $COLORS_TXT) | column -t -s $'\t'
 }
 
 _fzf-extra-opts() {
@@ -55,5 +67,5 @@ _fzf-preview() {
   echo "These are my colors: $1"
 }
 
-# _fzf-source
-source "$FZF_LIB"
+# _fzf-command
+source "$FZF_LIB.zsh"

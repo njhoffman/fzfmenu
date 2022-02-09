@@ -8,12 +8,14 @@
 #   - live summary
 #   - filter (can select from master list or active strace)
 
-sudo ""
+sudo "" 2>/dev/null
 
 RELOAD_ON_CHANGE=0
+FZF_DEFAULT_ACTION="${FZF_DEFAULT_ACTION:-ctrace}"
+
 SOURCE="${(%):-%N}"
 CWD="$(cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd)"
-FZF_LIB="$CWD/../../fzf-lib.zsh"
+FZF_LIB="$CWD/../../fzf-lib"
 
 # TODO: ctrace:summary
 FZF_ACTIONS=("kill" "kill:9" "ctrace" "ctrace:verbose" "ltrace" "iotrace" "lsof" )
@@ -30,15 +32,26 @@ FZF_ACTION_DESCRIPTIONS=(
 _fzf-assign-vars() {
   local lc=$'\e[' rc=m
   _clr[id]="${lc}${CLR_ID:-38;5;30}${rc}"
+
+  if [[ -n "$TMUX" ]]; then
+    tmux_width=$(tmux display-message -p "#{window_width}")
+    tmux_padding="-p60%"
+    [[ tmux_width -lt 400 ]] && tmux_padding="-p75%"
+    [[ tmux_width -lt 200 ]] && tmux_padding="-p90%"
+    export FZF_TMUX_OPTS="${FZF_TMUX_OPTS:-${tmux_padding}}"
+  fi
 }
 
-_fzf-source() {
+_fzf-command() {
   # nlwp: thread count, comm: shor t command name
   local fields="pid,ppid,user,%cpu,%mem,rss,etime,stat,tty,args"
   local sort="%cpu"
-  grc --colour=on -es -c conf.ps \
+  local cmd="
+    grc --colour=on -es -c conf.ps \
     ps axf --sort ${sort} -o ${fields} \
-    | sed "s,$HOME,~,g"
+    | sed \"s,$HOME,~,g\""
+
+  echo "${cmd}"
     # grc --colour=on -es -c conf.ps \
     #   | ps af -o pid,ppid,user,%cpu,%mem,rss,time,tty,args \
     #   | sed 's|/home/nicholas|~|g' \
@@ -64,33 +77,25 @@ _fzf-result() {
   for item in "$items[@]"; do
     item_id=$(echo "$item" | cut -d' ' -f1)
     item_user=$(echo "$item" | sed -E 's/\S+\s+\S+\s+//' | cut -d' ' -f1)
-    # is_root=$([[ "$item_user" == "root" ]] && echo 1 || echo 0)
-    is_root=true
+    is_root=$([[ "$item_user" == "root" ]] && echo 1 || echo 0)
+
     case "$action" in
       'kill')
-        echo "kill $item_id $is_root"
-        [[ $is_root -eq 1 ]] \
-          && sudo -E env PATH="$PATH" kill $item_id  \
-          || kill $item_id
+        echo "kill - id:$item_id, root:$is_root"
+        sudo -E env PATH="$PATH" kill $item_id
         ;;
       'kill:9')
-        echo "kill:9 $item_id $is_root"
-        [[ $is_root -eq 1 ]] \
-          && sudo -E env PATH="$PATH" kill -9 $item_id  \
-          || kill -9 $item_id
+        echo "kill:9 - id:$item_id, root:$is_root"
+        sudo -E env PATH="$PATH" kill -9 $item_id
         ;;
       'ctrace')
-        echo "ctrace $item_id $is_root"
-        [[ $is_root -eq 1 ]] \
-          && sudo -E env PATH="$PATH" ctrace -p $item_id  \
-          || ctrace -p $item_id
+        echo "ctrace - id:$item_id, root:$is_root"
+        sudo -E env PATH="$PATH" ctrace -p $item_id  \
         # ctrace -f "lstat,open"
         ;;
       'ctrace:verbose')
-        echo "ctrace:verbose $item_id $is_root"
-        [[ $is_root -eq 1 ]] \
-          && sudo -E env PATH="$PATH" ctrace -v -p $item_id  \
-          || ctrace -v -p $item_id
+        echo "ctrace:verbose - id:$item_id, root:$is_root"
+        sudo -E env PATH="$PATH" ctrace -v -p $item_id  \
         ;;
       'ltrace')
 
@@ -146,8 +151,7 @@ _fzf-preview() {
   echo "These are my preview pids: $1"
 }
 
-# _fzf-source
-source "$FZF_LIB"
+source "${FZF_LIB}.zsh"
 
 
 # %cpu         %CPU     cpu utilization of the process in "##.#" format.  Currently, it is the CPU time used divided by the time the process has been running (cputime/realtime ratio), expressed as a percentage.  It will not add up to 100% unless you are lucky.  (alias pcpu).
