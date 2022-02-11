@@ -18,6 +18,7 @@
 CWD="$(cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd)"
 
 FZF_LOGFILE=${FZF_LOGFILE:-"/tmp/fzf.log"}
+
 setopt localoptions noglobsubst noposixbuiltins pipefail 2>> ${FZF_LOGFILE:-/dev/null}
 
 FZF_CLEAR=1
