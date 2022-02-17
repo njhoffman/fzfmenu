@@ -4,6 +4,7 @@ SOURCE="${(%):-%N}"
 CWD="$(cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd)"
 FZF_LIB="$CWD/../../fzf-lib"
 RAW=0
+TARGET_DIR="${1:-$HOME/git}"
 
 function usage() {
   echo "Usage ..."
@@ -20,7 +21,7 @@ fi
 # output list of directory names with special handling
 # for sessions existing or defined in TMUXP_DIR
 function _fzf-command() {
-  cmd="tmux-list-sessions"
+  cmd="tmux-list-sessions $TARGET_DIR"
   echo "${cmd}"
 }
 
@@ -38,12 +39,14 @@ _fzf-extra-opts() {
 _fzf-result() {
   action="$1" && shift
   items=($@)
-  item_ids=($(printf "%s\n" ${items[@]} | sed 's/ \+/\t/g' | cut -f2))
 
   if [[ "$action" == "echo:id" ]]; then
-    printf "%s\n" ${item_ids[@]}
+    # need full line for directory info
+    # printf "%s\n" ${item_ids[@]}
+    printf "%s\n" "${items[@]}"
     exit 0
   elif [[ "$action" == "yank:id" ]]; then
+    item_ids=($(printf "%s\n" ${items[@]} | sed 's/ \+/\t/g' | cut -f2))
     printf "%s\n" ${items_ids[@]} | xsel --clipboard
     echo "Copied ${#items[@]} item names to clipboard"
     exit 0

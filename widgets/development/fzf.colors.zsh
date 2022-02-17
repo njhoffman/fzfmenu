@@ -39,7 +39,6 @@ _fzf-command() {
       }'
   done < <(cat ~/git/fzfmenu/widgets/development/colors-255.txt) | column -t -s $'\\t'
 EOF
-
   echo "${cmd}"
 
   # while read -r line; do

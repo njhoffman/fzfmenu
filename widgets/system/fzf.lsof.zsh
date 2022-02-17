@@ -2,7 +2,7 @@
 
 SOURCE="${(%):-%N}"
 CWD="$(cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd)"
-FZF_LIB="$CWD/../../fzf-lib.zsh"
+FZF_LIB="$CWD/../../fzf-lib"
 
 
 # modes=("files" "grouped")
@@ -108,24 +108,24 @@ _fzf-result() {
 }
 
 _fzf-prompt() {
-  echo " lsof❯ "
+  echo " lsof ❯ "
 }
 
 _fzf-preview() {
   echo "These are my preview files: $1"
 }
 
-_fzf-source() {
-  grc --colour=on -es -c conf.lsof  \
-    lsof -w -u $USER  \
-    | sed "s,$HOME,~,g"
+_fzf-command() {
+  cmd="grc --colour=on -es -c conf.lsof  \
+    lsof -w -u $USER | sed "s,$HOME,~,g""
+  echo "${cmd}"
     # | fzf --ansi --header-lines=1 \
     # | sed 's/^ *//' | cut -f1 -d' '
 }
 
 
 # _fzf-source
-source "$FZF_LIB"
+source "$FZF_LIB.zsh"
 
 # mimetype path/to/file            # Print the MIME type of a given file:
 # mimetype --brief path/to/file    # Display only the MIME type, and not the filename:

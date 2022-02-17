@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 # TODO:
+# https://github.com/junegunn/fzf/wiki/Related-projects
 #   - figure out fifo pipes for multiple inputs
 #   - separate _fzf-main or integrate fzf-menu description better
 #   - unset variables
