@@ -2,7 +2,7 @@
 
 SOURCE="${(%):-%N}"
 CWD="$(cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd)"
-FZF_LIB="$CWD/../../fzf-lib.zsh"
+FZF_LIB="$CWD/../../fzf-lib"
 
 FZF_MODES=('containers' 'repos' 'images' 'networks' 'volumes')
 
@@ -10,11 +10,12 @@ _fzf-assign-vars() {
   local lc=$'\e[' rc=m
   _clr[menu_id]="${lc}${CLR_ID:-38;5;30}${rc}"
   _clr[menu_desc]="${lc}${CLR_DESC:-38;5;8;3}${rc}"
+  _clr[menu_number]="${lc}${CLR_DESC_NUMBER:-38;5;81}${rc}"
   # _clr[desc]="${lc}${CLR_DESC:-1;3;30}${rc}"
   # _clr[desc]="${lc}${CLR_DESC:-0}${rc}"
   _clr[selected]="${lc}${CLR_MODE_SELECTED:-38;5;8;3}${rc}"
+  _clr[field_id]="${lc}${CLR_FIELD_ID:-38;5;30}${rc}"
   # _clr[number]="${lc}${CLR_DESC_NUMBER:-1;34}${rc}"
-  _clr[number]="${lc}${CLR_DESC_NUMBER:-38;5;81}${rc}"
 	_clr[header]="${lc}${CLR_HEADER:-38;5;3}${rc}"
 
 }
@@ -27,7 +28,7 @@ _fzf-menu-description() {
   [[ $id =~ networks$ ]] && mode="networks"
   [[ $id =~ volumes$ ]] && mode="volumes"
 
-  msg="${_clr[rst]}${_clr[number]}"
+  msg="${_clr[rst]}${_clr[menu_number]}"
   case "$mode" in
     containers)
       # container=$(command docker container ls --format='{{json .}}')
@@ -102,7 +103,7 @@ _fzf-extra-opts() {
 	echo "$opts"
 }
 
-function _fzf-source() {
+_fzf-source() {
   # mode="$1" && shift
   selection="$*"
 	mode="$1" && shift
@@ -110,29 +111,32 @@ function _fzf-source() {
   case "$mode_name" in
     'containers')
       # containers=$(command docker ps -a -s --format='{{json .}}')
+      lc=$'\e['
+      header=$'\e[31;1;4m' reset=$'\e[0m'
       docker container list --all \
         --format 'table {{.ID}};{{.Image}};{{.Command}};{{.RunningFor}};{{.Status}};{{.Ports}};{{.Names}}' 2> /dev/null \
-        | FS=';' _fzf_tabularize $_clr[header] $_clr[rst]{,,,,,,}
+        |  FS=';' _fzf_tabularize_header $_clr[header] $_clr[field_id] $_clr[rst]{,,,,,,}
       ;;
     'repos')
-      docker images --filter 'dangling=false' --format 'table {{.Repository}};{{.ID}};{{.Tag}};{{if .CreatedSince}}{{.CreatedSince}}{{else}}N/A{{end}};{{.Size}}' 2> /dev/null \
-        | FS=';' _fzf_tabularize $_clr[header] $_clr[rst]{,,}
+      docker images  --filter 'dangling=false' \
+        --format 'table {{.Repository}};{{.ID}};{{.Tag}};{{if .CreatedSince}}{{.CreatedSince}}{{else}}N/A{{end}};{{.Size}}' 2> /dev/null \
+        | FS=';' _fzf_tabularize_header $_clr[header] $_clr[rst]{,,}
       ;;
     'images')
 			docker images --format 'table {{.ID}};{{.Repository}};{{.Tag}};{{if .CreatedSince}}{{.CreatedSince}}{{else}}N/A{{end}};{{.Size}}' 2> /dev/null \
-				| FS=';' _fzf_tabularize $_clr[header] $_clr[rst]{,,}
+				| FS=';' _fzf_tabularize $_clr[field_id] $_clr[rst]{,,}
       # images=$(command docker images --all --digests --format='{{json .}}')
       # Containers, CreatedAt,  CreatedSince,  Digest,  ID,  Repository,  SharedSize,  Size,  Tag,  UniqueSize,  VirtualSize
       ;;
     'networks')
 			docker network list --format 'table {{.ID}};{{.Name}};{{.Driver}};{{.Scope}}' 2> /dev/null \
-				| FS=';' _fzf_tabularize $_clr[header] $_clr[rst]{,}
+				| FS=';' _fzf_tabularize_header $_clr[header] $_clr[rst]{,}
       # networks=$(command docker network ls --format='{{json .}}')
       # CreatedAt, Driver, ID, IPv6, Internal, Labels, Name, Scope
       ;;
     'volumes')
 			docker volume list --format 'table {{.Name}};{{.Driver}};{{.Scope}}' 2> /dev/null \
-				| FS=';' _fzf_tabularize $_clr[header] $_clr[rst]{,}
+				| FS=';' _fzf_tabularize_header $_clr[header]  $_clr[rst]{,}
       # volumes=$(command docker volume ls --format='{{json .}}')
       # while read -r line; do
       #   fields=".Driver, .Labels, .Links, .Mountpoint, .Name, .Scope, .Size"
@@ -149,4 +153,6 @@ function _fzf-source() {
   esac
 }
 
-source "$FZF_LIB"
+
+source "$FZF_LIB.zsh"
+_fzf-source 1

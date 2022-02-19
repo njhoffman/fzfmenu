@@ -11,7 +11,7 @@ CWD="$(cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd)"
 FZF_LIB="$CWD/../../fzf-lib"
 
 RELOAD_ON_CHANGE=0
-FZF_DEFAULT_ACTION="${FZF_DEFAULT_ACTION:-ctrace}"
+# FZF_DEFAULT_ACTION="${FZF_DEFAULT_ACTION:-ctrace}"
 FZF_ACTIONS=("kill" "kill:9" "ctrace" "ctrace:verbose" "ltrace" "iotrace" "lsof" )
 FZF_ACTION_DESCRIPTIONS=(
   "kill process (SIGTERM)"
@@ -40,26 +40,17 @@ _fzf-command() {
   # nlwp: thread count, comm: shor t command name
   local fields="pid,ppid,user,%cpu,%mem,rss,etime,stat,tty,args"
   local sort="%cpu"
-  local cmd="
-    grc --colour=on -es -c conf.ps \
-    ps axf --sort ${sort} -o ${fields} \
-    | sed \"s,$HOME,~,g\""
+  local cmd="ps axf --sort ${sort} -o ${fields} \
+    | sed \"s,$HOME,~,g\" \
+    | grcat conf.ps"
 
   echo "${cmd}"
-    # grc --colour=on -es -c conf.ps \
-    #   | ps af -o pid,ppid,user,%cpu,%mem,rss,time,tty,args \
-    #   | sed 's|/home/nicholas|~|g' \
-    #   | fzf --ansi --header-lines=1 --preview='S_COLORS=always pidstat -du --human -p {1}' \
-    #   | sed 's/^ *//' | cut -f1 -d' '
 }
 
 _fzf-extra-opts() {
   opts="--query=\"!fzf $*\""
   opts="${opts} --tac"
   opts="${opts} --header-lines=1"
-  # opts="${opts} --nth=1,2,3,-1"
-  # [ $RELOAD_ON_CHANGE -eq 1 ] && \
-  #   opts="${opts},change:reload:'$source_command'"
   echo "$opts"
 }
 

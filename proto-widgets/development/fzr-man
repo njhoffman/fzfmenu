@@ -25,14 +25,14 @@ list_env() {
 }
 
 list_man() {
-	awk_recipe='BEGIN {FS=OFS="- "} /\([1|4]\)/ {gsub(/\([0-9]\)/, "", $1); if (!seen[$0]++) { print }}'
-	manlist=$(man -k . 2>/dev/null | awk $awk_recipe | fzf) \
-		&& man "$(echo "$manlist" | awk -F' |,' '{print $1}')" \
-		&& unset manlist
+  awk_recipe='BEGIN {FS=OFS="- "} /\([1|4]\)/ {gsub(/\([0-9]\)/, "", $1); if (!seen[$0]++) { print }}'
+  manlist=$(man -k . 2> /dev/null | awk $awk_recipe | fzf) \
+    && man "$(echo "$manlist" | awk -F' |,' '{print $1}')" \
+    && unset manlist
 }
 
 fman() {
-	man -k . | fzf -q "$1" --prompt='man> '  --preview $'echo {} | tr -d \'()\' | awk \'{printf "%s ", $2} {print $1}\' | xargs -r man | col -bx | bat -l man -p --color always' | tr -d '()' | awk '{printf "%s ", $2} {print $1}' | xargs -r man
+  man -k . | fzf -q "$1" --prompt='man> ' --preview $'echo {} | tr -d \'()\' | awk \'{printf "%s ", $2} {print $1}\' | xargs -r man | col -bx | bat -l man -p --color always' | tr -d '()' | awk '{printf "%s ", $2} {print $1}' | xargs -r man
 }
 
 # I just wrote an Apropos command for Vim which I'm pretty happy with. It uses man -k to search the title and description of man pages (equivalent to the apropos command),
@@ -41,7 +41,6 @@ fman() {
 # Requirements:- fzf.vim- man.vim for the :Man command (built into recent versions of vim, sourced by default in Neovim, and you can just add runtime ftplugin/man.vim to your vimrc to have it in Vim too)
 # EDIT: better version of the command respecting g:fzf_layout, and featuring a preview of the man pages:
 # command! -nargs=? Apropos call fzf#run(fzf#wrap({'source': 'man -k -s 1 '.shellescape(<q-args>).' | cut -d " " -f 1', 'sink': 'tab Man', 'options': ['--preview', 'MANPAGER=cat MANWIDTH='.(&columns/2-4).' man {}']}))
-
 
 #alternative version
 # man-find() {

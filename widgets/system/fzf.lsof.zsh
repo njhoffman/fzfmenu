@@ -108,7 +108,7 @@ _fzf-result() {
 }
 
 _fzf-prompt() {
-  echo " lsof ❯ "
+  echo " lsof❯ "
 }
 
 _fzf-preview() {
@@ -116,11 +116,8 @@ _fzf-preview() {
 }
 
 _fzf-command() {
-  cmd="grc --colour=on -es -c conf.lsof  \
-    lsof -w -u $USER | sed "s,$HOME,~,g""
+  cmd="lsof -w -u $USER | sed "s,$HOME,~,g" | grcat conf.lsof"
   echo "${cmd}"
-    # | fzf --ansi --header-lines=1 \
-    # | sed 's/^ *//' | cut -f1 -d' '
 }
 
 

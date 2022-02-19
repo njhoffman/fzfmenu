@@ -27,7 +27,7 @@ FZF_DIVIDER_SHOW=${FZF_DIVIDER_SHOW:-0}
 FZF_DIVIDER_LINE="${FZF_DIVIDER_LINE:-―――――――――――――――――――――――――――}"
 FZF_RAW_OUT=0
 
-FZF_DEFAULT_ACTION=${FZF_DEFAULT_ACTION:-"echo:id"}
+FZF_DEFAULT_ACTION=${FZF_DEFAULT_ACTION:-""}
 
 ## action menu options: holds ids of items to perform action against
 # echo:name:csv or echo/echo:csv
@@ -50,6 +50,7 @@ else
 fi
 
 source "${FZF_LIB}.log.sh"
+source "${FZF_LIB}.sh"
 
 _fzf-verify() {
   # ensure functions exist: _fzf-source, _fzf-result
@@ -147,44 +148,6 @@ _fzf-mode-hints() {
   echo "${hints}"
 }
 
-_fzf_tabularize() {
-  if [[ $# = 0 ]]; then
-    cat
-    return
-  fi
-
-  awk \
-    -v FS=${FS:- } \
-    -v colors_args=${(pj: :)@} \
-    -v reset=$reset_color '
-      BEGIN {
-      split(colors_args, colors, " ")
-    }
-  {
-    str = $0
-    for (i = 1; i <= length(colors); ++i) {
-      field_max[i] = length($i) > field_max[i] ? length($i) : field_max[i]
-      fields[NR, i] = $i
-      pos = index(str, FS)
-      str = substr(str, pos + 1)
-    }
-  if (pos != 0) {
-    fields[NR, i] = str
-  }
-}
-END {
-  for (i = 1; i <= NR; ++i) {
-    for (j = 1; j <= length(colors); ++j) {
-      printf "%s%s%-" field_max[j] "s%s", (j > 1 ? "  " : ""), colors[j], fields[i, j], reset
-    }
-  if ((i, j) in fields) {
-    printf "  %s", fields[i, j]
-  }
-  printf "\n"
-  }
-}
-'
-}
 
 # output usage information with switches based on FZF_ACTIONS, FZF_MODES, FZF_TOGGLES
 _fzf-usage() {
@@ -214,6 +177,7 @@ _fzf-display() {
 
   local fzf_cmd="fzf"
   local fzf_cmd_args=""
+
   # use fzf-tmux if inside TMUX and FZF_TMUX is set
   if [ -n "$TMUX_PANE" ] && [ "${FZF_TMUX:-0}" != 0 ]; then
     fzf_cmd="fzf-tmux"
@@ -227,9 +191,7 @@ _fzf-display() {
 
   local key=$_fzf_keys[reload]
   # TODO: turn mode into FZF_MODE, try to break this up
-  while [[ -n "$key" \
-    && "$key" != ${_fzf_keys[exit]} \
-    && "$key" != "enter" ]]
+  while [[ -n "$key" && "$key" != ${_fzf_keys[exit]} ]]
     do
       query=""
       _fzf_log_first=0
@@ -241,7 +203,7 @@ _fzf-display() {
           fzf_cmd_args=""
         else
           fzf_cmd="fzf-tmux"
-          fzf_cmd_args="${FZF_TMUX_OPTS:--p95%}"
+          fzf_cmd_args="${FZF_TMUX_OPTS:--p80%}"
         fi
       fi
 
@@ -275,6 +237,10 @@ _fzf-display() {
           exit 0
         fi
 
+        if [[ "$fzf_cmd" == "fzf-tmux" ]]; then
+          fzf_cmd_args="-w50% -h30%"
+        fi
+
         # actually perform fzf command here
         IFS=$'\n' result=($(_fzf-actions-source-default $mode | $fzf_cmd $fzf_cmd_args ))
 
@@ -300,6 +266,7 @@ _fzf-display() {
         if [[ "$key" == "enter" ]]; then
           _fzf-log "_fzf-result - $selected_action (${#action_menu[@]} items)"
           _fzf-result-default "$selected_action" "${action_menu[@]}"
+          key="${_fzf_keys[exit]}"
         else
           action_menu=""
           key="${_fzf_keys[reload]}"
@@ -307,6 +274,10 @@ _fzf-display() {
 
       # show main list menu
       else
+
+        if [[ "$fzf_cmd" == "fzf-tmux" ]]; then
+          fzf_cmd_args="-p80%"
+        fi
 
         # if modes defined and key pressed was a function key or a mode-left / mode-right key
         if [[ ${#FZF_MODES[@]} -gt 0 ]]; then
@@ -417,14 +388,18 @@ ${_clr[divider]}${FZF_DIVIDER_LINE}${_clr[rst]}"
         # log_lines+=("\noptions: $fzf_opts")
         _fzf-log "main menu top 5: $has_query\n${lines[@]}\n--\n${log_lines[@]}"
 
-        if [[ "$key" == "enter" ]]; then
-          _fzf-result-default "$FZF_DEFAULT_ACTION" "$selected"
-        fi
-
         if [[ "$key" == "${_fzf_keys[actions_menu]}" ]]; then
           action_menu=("${selected[@]}")
         else
           action_menu=()
+        fi
+
+        if [[ "$key" == "enter" ]]; then
+          if [[ -n "$FZF_DEFAULT_ACTION" ]]; then
+            _fzf-result-default "$FZF_DEFAULT_ACTION" "$selected"
+          else
+            action_menu=("${selected[@]}")
+          fi
         fi
       fi
     done
