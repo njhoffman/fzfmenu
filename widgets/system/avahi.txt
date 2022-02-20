@@ -1,0 +1,134 @@
++;docker0;IPv4;DEIMOS;Microsoft Windows Network;local
++;virbr0;IPv4;DEIMOS;Microsoft Windows Network;local
++;wlx00c0ca35dbc6;IPv6;THANATOS;Microsoft Windows Network;local
++;wlx00c0ca35dbc6;IPv6;DEIMOS;Microsoft Windows Network;local
++;wlx00c0ca35dbc6;IPv4;THANATOS;Microsoft Windows Network;local
++;wlx00c0ca35dbc6;IPv4;DEIMOS;Microsoft Windows Network;local
++;lo;IPv4;DEIMOS;Microsoft Windows Network;local
++;docker0;IPv4;DEIMOS;Device Info;local
++;virbr0;IPv4;DEIMOS;Device Info;local
++;wlx00c0ca35dbc6;IPv6;THANATOS;Device Info;local
++;wlx00c0ca35dbc6;IPv6;DEIMOS;Device Info;local
++;wlx00c0ca35dbc6;IPv4;THANATOS;Device Info;local
++;wlx00c0ca35dbc6;IPv4;DEIMOS;Device Info;local
++;lo;IPv4;DEIMOS;Device Info;local
++;wlx00c0ca35dbc6;IPv6;KD-55X750F;_androidtvremote._tcp;local
++;wlx00c0ca35dbc6;IPv4;KD-55X750F;_androidtvremote._tcp;local
++;wlx00c0ca35dbc6;IPv6;LyricStat2E107F;_iri._tcp;local
++;wlx00c0ca35dbc6;IPv4;LyricStat2E107F;_iri._tcp;local
++;wlx00c0ca35dbc6;IPv6;LyricStat2E107F;_hap._tcp;local
++;wlx00c0ca35dbc6;IPv4;LyricStat2E107F;_hap._tcp;local
++;wlx00c0ca35dbc6;IPv6;Philips\032Hue\032-\03247531C;_hue._tcp;local
++;wlx00c0ca35dbc6;IPv4;Philips\032Hue\032-\03247531C;_hue._tcp;local
++;wlx00c0ca35dbc6;IPv4;SpZc-822DC2;_spotify-connect._tcp;local
+=;wlx00c0ca35dbc6;IPv6;LyricStat2E107F;_iri._tcp;local;LyricStat2E107F.local;192.168.1.67;80;"CRC=45324" "lstsetupstep=1" "setupcomplete=YES" "modelname=LyricStat2E107F" "MAC=B82CA02E107F"
+=;wlx00c0ca35dbc6;IPv4;LyricStat2E107F;_iri._tcp;local;LyricStat2E107F.local;192.168.1.67;80;"CRC=45324" "lstsetupstep=1" "setupcomplete=YES" "modelname=LyricStat2E107F" "MAC=B82CA02E107F"
+=;wlx00c0ca35dbc6;IPv6;LyricStat2E107F;_hap._tcp;local;LyricStat2E107F.local;192.168.1.67;80;"ci=9" "ff=1" "sf=1" "c#=20" "s#=1" "pv=1.0" "md=LyricStat2E107F" "id=B8:2C:A0:2E:10:7F"
+=;wlx00c0ca35dbc6;IPv4;LyricStat2E107F;_hap._tcp;local;LyricStat2E107F.local;192.168.1.67;80;"ci=9" "ff=1" "sf=1" "c#=20" "s#=1" "pv=1.0" "md=LyricStat2E107F" "id=B8:2C:A0:2E:10:7F"
+=;wlx00c0ca35dbc6;IPv6;DEIMOS;Microsoft Windows Network;local;deimos.local;2600:1700:190:a290:c355:283d:5f12:6e4b;445;
+=;wlx00c0ca35dbc6;IPv6;DEIMOS;Device Info;local;deimos.local;2600:1700:190:a290:c355:283d:5f12:6e4b;0;"model=MacSamba"
+=;docker0;IPv4;DEIMOS;Microsoft Windows Network;local;deimos.local;172.17.0.1;445;
+=;docker0;IPv4;DEIMOS;Device Info;local;deimos.local;172.17.0.1;0;"model=MacSamba"
+=;virbr0;IPv4;DEIMOS;Microsoft Windows Network;local;deimos.local;192.168.122.1;445;
+=;virbr0;IPv4;DEIMOS;Device Info;local;deimos.local;192.168.122.1;0;"model=MacSamba"
+=;wlx00c0ca35dbc6;IPv4;DEIMOS;Microsoft Windows Network;local;deimos.local;192.168.1.170;445;
+=;wlx00c0ca35dbc6;IPv4;DEIMOS;Device Info;local;deimos.local;192.168.1.170;0;"model=MacSamba"
+=;lo;IPv4;DEIMOS;Microsoft Windows Network;local;deimos.local;127.0.0.1;445;
+=;lo;IPv4;DEIMOS;Device Info;local;deimos.local;127.0.0.1;0;"model=MacSamba"
+=;wlx00c0ca35dbc6;IPv4;KD-55X750F;_androidtvremote._tcp;local;Android.local;192.168.1.202;6466;"bt=DC:A2:66:28:F7:EC"
+=;wlx00c0ca35dbc6;IPv6;KD-55X750F;_androidtvremote._tcp;local;Android.local;192.168.1.202;6466;"bt=DC:A2:66:28:F7:EC"
+=;wlx00c0ca35dbc6;IPv6;THANATOS;Microsoft Windows Network;local;thanatos.local;2600:1700:190:a290:28d8:5f09:3374:42c9;445;
+=;wlx00c0ca35dbc6;IPv6;THANATOS;Device Info;local;thanatos.local;2600:1700:190:a290:28d8:5f09:3374:42c9;0;"model=MacSamba"
+=;wlx00c0ca35dbc6;IPv4;THANATOS;Microsoft Windows Network;local;thanatos.local;192.168.1.149;445;
+=;wlx00c0ca35dbc6;IPv4;THANATOS;Device Info;local;thanatos.local;192.168.1.149;0;"model=MacSamba"
++;wlx00c0ca35dbc6;IPv4;BRAVIA-4K-GB-ATV3-7251b4c238925dd1e82e174e5a960e6e;_googlecast._tcp;local
+=;wlx00c0ca35dbc6;IPv4;BRAVIA-4K-GB-ATV3-7251b4c238925dd1e82e174e5a960e6e;_googlecast._tcp;local;7251b4c2-3892-5dd1-e82e-174e5a960e6e.local;192.168.1.202;8009;"rs=" "nf=1" "bs=FA8F30567840" "st=0" "ca=198661" "fn=KD-55X750F" "ic=/setup/icon.png" "md=BRAVIA 4K GB ATV3" "ve=05" "rm=" "cd=6FABDC0C078046AA5D0D5D1070FC93B4" "id=7251b4c238925dd1e82e174e5a960e6e"
++;docker0;IPv4;DEIMOS;Microsoft Windows Network;local
++;virbr0;IPv4;DEIMOS;Microsoft Windows Network;local
++;wlx00c0ca35dbc6;IPv6;THANATOS;Microsoft Windows Network;local
++;wlx00c0ca35dbc6;IPv6;DEIMOS;Microsoft Windows Network;local
++;wlx00c0ca35dbc6;IPv4;THANATOS;Microsoft Windows Network;local
++;wlx00c0ca35dbc6;IPv4;DEIMOS;Microsoft Windows Network;local
++;lo;IPv4;DEIMOS;Microsoft Windows Network;local
++;docker0;IPv4;DEIMOS;Device Info;local
++;virbr0;IPv4;DEIMOS;Device Info;local
++;wlx00c0ca35dbc6;IPv6;THANATOS;Device Info;local
++;wlx00c0ca35dbc6;IPv6;DEIMOS;Device Info;local
++;wlx00c0ca35dbc6;IPv4;THANATOS;Device Info;local
++;wlx00c0ca35dbc6;IPv4;DEIMOS;Device Info;local
++;lo;IPv4;DEIMOS;Device Info;local
++;wlx00c0ca35dbc6;IPv6;KD-55X750F;_androidtvremote._tcp;local
++;wlx00c0ca35dbc6;IPv4;KD-55X750F;_androidtvremote._tcp;local
++;wlx00c0ca35dbc6;IPv6;LyricStat2E107F;_iri._tcp;local
++;wlx00c0ca35dbc6;IPv4;LyricStat2E107F;_iri._tcp;local
++;wlx00c0ca35dbc6;IPv6;LyricStat2E107F;_hap._tcp;local
++;wlx00c0ca35dbc6;IPv4;LyricStat2E107F;_hap._tcp;local
++;wlx00c0ca35dbc6;IPv6;Philips\032Hue\032-\03247531C;_hue._tcp;local
++;wlx00c0ca35dbc6;IPv4;Philips\032Hue\032-\03247531C;_hue._tcp;local
++;wlx00c0ca35dbc6;IPv4;SpZc-822DC2;_spotify-connect._tcp;local
+=;wlx00c0ca35dbc6;IPv6;DEIMOS;Microsoft Windows Network;local;deimos.local;2600:1700:190:a290:c355:283d:5f12:6e4b;445;
+=;wlx00c0ca35dbc6;IPv4;DEIMOS;Microsoft Windows Network;local;deimos.local;192.168.1.170;445;
+=;wlx00c0ca35dbc6;IPv6;LyricStat2E107F;_iri._tcp;local;LyricStat2E107F.local;192.168.1.67;80;"CRC=45324" "lstsetupstep=1" "setupcomplete=YES" "modelname=LyricStat2E107F" "MAC=B82CA02E107F"
+=;wlx00c0ca35dbc6;IPv4;LyricStat2E107F;_iri._tcp;local;LyricStat2E107F.local;192.168.1.67;80;"CRC=45324" "lstsetupstep=1" "setupcomplete=YES" "modelname=LyricStat2E107F" "MAC=B82CA02E107F"
+=;wlx00c0ca35dbc6;IPv6;LyricStat2E107F;_hap._tcp;local;LyricStat2E107F.local;192.168.1.67;80;"ci=9" "ff=1" "sf=1" "c#=20" "s#=1" "pv=1.0" "md=LyricStat2E107F" "id=B8:2C:A0:2E:10:7F"
+=;wlx00c0ca35dbc6;IPv4;LyricStat2E107F;_hap._tcp;local;LyricStat2E107F.local;192.168.1.67;80;"ci=9" "ff=1" "sf=1" "c#=20" "s#=1" "pv=1.0" "md=LyricStat2E107F" "id=B8:2C:A0:2E:10:7F"
+=;wlx00c0ca35dbc6;IPv4;SpZc-822DC2;_spotify-connect._tcp;local;PS4-822DC2.local;192.168.1.177;41800;"CPath=/spConn"
+=;wlx00c0ca35dbc6;IPv6;DEIMOS;Device Info;local;deimos.local;2600:1700:190:a290:c355:283d:5f12:6e4b;0;"model=MacSamba"
+=;docker0;IPv4;DEIMOS;Microsoft Windows Network;local;deimos.local;172.17.0.1;445;
+=;docker0;IPv4;DEIMOS;Device Info;local;deimos.local;172.17.0.1;0;"model=MacSamba"
+=;virbr0;IPv4;DEIMOS;Microsoft Windows Network;local;deimos.local;192.168.122.1;445;
+=;virbr0;IPv4;DEIMOS;Device Info;local;deimos.local;192.168.122.1;0;"model=MacSamba"
+=;wlx00c0ca35dbc6;IPv4;DEIMOS;Device Info;local;deimos.local;192.168.1.170;0;"model=MacSamba"
+=;lo;IPv4;DEIMOS;Microsoft Windows Network;local;deimos.local;127.0.0.1;445;
+=;lo;IPv4;DEIMOS;Device Info;local;deimos.local;127.0.0.1;0;"model=MacSamba"
+=;wlx00c0ca35dbc6;IPv4;Philips\032Hue\032-\03247531C;_hue._tcp;local;00178847531c.local;192.168.1.174;443;"modelid=BSB002" "bridgeid=001788fffe47531c"
+=;wlx00c0ca35dbc6;IPv6;Philips\032Hue\032-\03247531C;_hue._tcp;local;00178847531c.local;192.168.1.174;443;"modelid=BSB002" "bridgeid=001788fffe47531c"
+=;wlx00c0ca35dbc6;IPv6;THANATOS;Microsoft Windows Network;local;thanatos.local;2600:1700:190:a290:28d8:5f09:3374:42c9;445;
+=;wlx00c0ca35dbc6;IPv6;THANATOS;Device Info;local;thanatos.local;2600:1700:190:a290:28d8:5f09:3374:42c9;0;"model=MacSamba"
+=;wlx00c0ca35dbc6;IPv4;THANATOS;Microsoft Windows Network;local;thanatos.local;192.168.1.149;445;
+=;wlx00c0ca35dbc6;IPv4;THANATOS;Device Info;local;thanatos.local;192.168.1.149;0;"model=MacSamba"
+=;wlx00c0ca35dbc6;IPv4;KD-55X750F;_androidtvremote._tcp;local;Android.local;192.168.1.202;6466;"bt=DC:A2:66:28:F7:EC"
+=;wlx00c0ca35dbc6;IPv6;KD-55X750F;_androidtvremote._tcp;local;Android.local;192.168.1.202;6466;"bt=DC:A2:66:28:F7:EC"
++;wlx00c0ca35dbc6;IPv4;BRAVIA-4K-GB-ATV3-7251b4c238925dd1e82e174e5a960e6e;_googlecast._tcp;local
+=;wlx00c0ca35dbc6;IPv4;BRAVIA-4K-GB-ATV3-7251b4c238925dd1e82e174e5a960e6e;_googlecast._tcp;local;7251b4c2-3892-5dd1-e82e-174e5a960e6e.local;192.168.1.202;8009;"rs=" "nf=1" "bs=FA8F30567840" "st=0" "ca=198661" "fn=KD-55X750F" "ic=/setup/icon.png" "md=BRAVIA 4K GB ATV3" "ve=05" "rm=" "cd=6FABDC0C078046AA5D0D5D1070FC93B4" "id=7251b4c238925dd1e82e174e5a960e6e"
++;docker0;IPv4;DEIMOS;Microsoft Windows Network;local
++;virbr0;IPv4;DEIMOS;Microsoft Windows Network;local
++;wlx00c0ca35dbc6;IPv6;THANATOS;Microsoft Windows Network;local
++;wlx00c0ca35dbc6;IPv6;DEIMOS;Microsoft Windows Network;local
++;wlx00c0ca35dbc6;IPv4;THANATOS;Microsoft Windows Network;local
++;wlx00c0ca35dbc6;IPv4;DEIMOS;Microsoft Windows Network;local
++;lo;IPv4;DEIMOS;Microsoft Windows Network;local
++;docker0;IPv4;DEIMOS;Device Info;local
++;virbr0;IPv4;DEIMOS;Device Info;local
++;wlx00c0ca35dbc6;IPv6;THANATOS;Device Info;local
++;wlx00c0ca35dbc6;IPv6;DEIMOS;Device Info;local
++;wlx00c0ca35dbc6;IPv4;THANATOS;Device Info;local
++;wlx00c0ca35dbc6;IPv4;DEIMOS;Device Info;local
++;lo;IPv4;DEIMOS;Device Info;local
++;wlx00c0ca35dbc6;IPv6;KD-55X750F;_androidtvremote._tcp;local
++;wlx00c0ca35dbc6;IPv4;KD-55X750F;_androidtvremote._tcp;local
++;wlx00c0ca35dbc6;IPv6;LyricStat2E107F;_iri._tcp;local
++;wlx00c0ca35dbc6;IPv4;LyricStat2E107F;_iri._tcp;local
++;wlx00c0ca35dbc6;IPv6;LyricStat2E107F;_hap._tcp;local
++;wlx00c0ca35dbc6;IPv4;LyricStat2E107F;_hap._tcp;local
++;wlx00c0ca35dbc6;IPv6;Philips\032Hue\032-\03247531C;_hue._tcp;local
++;wlx00c0ca35dbc6;IPv4;Philips\032Hue\032-\03247531C;_hue._tcp;local
++;wlx00c0ca35dbc6;IPv4;BRAVIA-4K-GB-ATV3-7251b4c238925dd1e82e174e5a960e6e;_googlecast._tcp;local
++;wlx00c0ca35dbc6;IPv4;SpZc-822DC2;_spotify-connect._tcp;local
+=;wlx00c0ca35dbc6;IPv6;LyricStat2E107F;_iri._tcp;local;LyricStat2E107F.local;192.168.1.67;80;"CRC=45324" "lstsetupstep=1" "setupcomplete=YES" "modelname=LyricStat2E107F" "MAC=B82CA02E107F"
+=;wlx00c0ca35dbc6;IPv4;LyricStat2E107F;_iri._tcp;local;LyricStat2E107F.local;192.168.1.67;80;"CRC=45324" "lstsetupstep=1" "setupcomplete=YES" "modelname=LyricStat2E107F" "MAC=B82CA02E107F"
+=;wlx00c0ca35dbc6;IPv6;LyricStat2E107F;_hap._tcp;local;LyricStat2E107F.local;192.168.1.67;80;"ci=9" "ff=1" "sf=1" "c#=20" "s#=1" "pv=1.0" "md=LyricStat2E107F" "id=B8:2C:A0:2E:10:7F"
+=;wlx00c0ca35dbc6;IPv4;LyricStat2E107F;_hap._tcp;local;LyricStat2E107F.local;192.168.1.67;80;"ci=9" "ff=1" "sf=1" "c#=20" "s#=1" "pv=1.0" "md=LyricStat2E107F" "id=B8:2C:A0:2E:10:7F"
+=;wlx00c0ca35dbc6;IPv6;Philips\032Hue\032-\03247531C;_hue._tcp;local;00178847531c.local;192.168.1.174;443;"modelid=BSB002" "bridgeid=001788fffe47531c"
+=;wlx00c0ca35dbc6;IPv4;Philips\032Hue\032-\03247531C;_hue._tcp;local;00178847531c.local;192.168.1.174;443;"modelid=BSB002" "bridgeid=001788fffe47531c"
+=;wlx00c0ca35dbc6;IPv4;BRAVIA-4K-GB-ATV3-7251b4c238925dd1e82e174e5a960e6e;_googlecast._tcp;local;7251b4c2-3892-5dd1-e82e-174e5a960e6e.local;192.168.1.202;8009;"rs=" "nf=1" "bs=FA8F30567840" "st=0" "ca=198661" "fn=KD-55X750F" "ic=/setup/icon.png" "md=BRAVIA 4K GB ATV3" "ve=05" "rm=" "cd=6FABDC0C078046AA5D0D5D1070FC93B4" "id=7251b4c238925dd1e82e174e5a960e6e"
+=;docker0;IPv4;DEIMOS;Device Info;local;deimos.local;172.17.0.1;0;"model=MacSamba"
+=;docker0;IPv4;DEIMOS;Microsoft Windows Network;local;deimos.local;172.17.0.1;445;
+=;virbr0;IPv4;DEIMOS;Device Info;local;deimos.local;192.168.122.1;0;"model=MacSamba"
+=;virbr0;IPv4;DEIMOS;Microsoft Windows Network;local;deimos.local;192.168.122.1;445;
+=;wlx00c0ca35dbc6;IPv4;DEIMOS;Microsoft Windows Network;local;deimos.local;192.168.1.170;445;
+=;wlx00c0ca35dbc6;IPv4;DEIMOS;Device Info;local;deimos.local;192.168.1.170;0;"model=MacSamba"
+=;lo;IPv4;DEIMOS;Device Info;local;deimos.local;127.0.0.1;0;"model=MacSamba"
+=;lo;IPv4;DEIMOS;Microsoft Windows Network;local;deimos.local;127.0.0.1;445;
+=;wlx00c0ca35dbc6;IPv6;DEIMOS;Microsoft Windows Network;local;deimos.local;2600:1700:190:a290:c355:283d:5f12:6e4b;445;
+=;wlx00c0ca35dbc6;IPv6;DEIMOS;Device Info;local;deimos.local;2600:1700:190:a290:c355:283d:5f12:6e4b;0;"model=MacSamba"
