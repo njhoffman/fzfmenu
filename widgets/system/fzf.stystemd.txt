@@ -1,0 +1,535 @@
+sys-devices-pci0000:00-0000:00:01.3-0000:03:00.1-ata2-host1-target1:0:0-1:0:0:0-block-sda-sda1.device                          loaded active plugged   SAMSUNG_SSD_830_Series 1
+sys-devices-pci0000:00-0000:00:01.3-0000:03:00.1-ata2-host1-target1:0:0-1:0:0:0-block-sda.device                               loaded active plugged   SAMSUNG_SSD_830_Series
+accounts-daemon.service                                                                                                        loaded active running   Accounts Service
+acpid.service                                                                                                                  loaded active running   ACPI event daemon
+alsa-restore.service                                                                                                           loaded active exited    Save/Restore Sound Card State
+apparmor.service                                                                                                               loaded active exited    Load AppArmor profiles
+apport.service                                                                                                                 loaded active exited    LSB: automatic crash report generation
+atop.service                                                                                                                   loaded active running   Atop advanced performance monitor
+atopacct.service                                                                                                               loaded active running   Atop process accounting daemon
+avahi-daemon.service                                                                                                           loaded active running   Avahi mDNS/DNS-SD Stack
+binfmt-support.service                                                                                                         loaded active exited    Enable support for additional executable binary formats
+blk-availability.service                                                                                                       loaded active exited    Availability of block devices
+clipmenud.service                                                                                                              loaded failed failed    Clipmenu daemon
+colord.service                                                                                                                 loaded active running   Manage, Install and Generate Color Profiles
+console-setup.service                                                                                                          loaded active exited    Set console font and keymap
+containerd.service                                                                                                             loaded active running   containerd container runtime
+cron.service                                                                                                                   loaded active running   Regular background program processing daemon
+cups-browsed.service                                                                                                           loaded active running   Make remote CUPS printers available locally
+cups.service                                                                                                                   loaded active running   CUPS Scheduler
+dbus.service                                                                                                                   loaded active running   D-Bus System Message Bus
+docker.service                                                                                                                 loaded active running   Docker Application Container Engine
+expressvpn.service                                                                                                             loaded active running   ExpressVPN Daemon
+gdm.service                                                                                                                    loaded active running   GNOME Display Manager
+glances.service                                                                                                                loaded active running   Glances
+grafana-server.service                                                                                                         loaded active running   Grafana instance
+hddtemp.service                                                                                                                loaded active exited    LSB: disk temperature monitoring daemon
+irqbalance.service                                                                                                             loaded active running   irqbalance daemon
+kerneloops.service                                                                                                             loaded active running   Tool to automatically collect and submit kernel crash signatures
+keyboard-setup.service                                                                                                         loaded active exited    Set the console keyboard layout
+kmod-static-nodes.service                                                                                                      loaded active exited    Create list of static device nodes for the current kernel
+libvirt-guests.service                                                                                                         loaded active exited    Suspend/Resume Running libvirt Guests
+libvirtd.service                                                                                                               loaded active running   Virtualization daemon
+lm-sensors.service                                                                                                             loaded active exited    Initialize hardware monitoring sensors
+lvm2-monitor.service                                                                                                           loaded active exited    Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling
+ModemManager.service                                                                                                           loaded active running   Modem Manager
+mpd.service                                                                                                                    loaded active running   Music Player Daemon
+networkd-dispatcher.service                                                                                                    loaded active running   Dispatcher daemon for systemd-networkd
+NetworkManager-wait-online.service                                                                                             loaded active exited    Network Manager Wait Online
+NetworkManager.service                                                                                                         loaded active running   Network Manager
+nmbd.service                                                                                                                   loaded active running   Samba NMB Daemon
+nvidia-persistenced.service                                                                                                    loaded active running   NVIDIA Persistence Daemon
+openvpn.service                                                                                                                loaded active exited    OpenVPN service
+packagekit.service                                                                                                             loaded active running   PackageKit Daemon
+plymouth-quit-wait.service                                                                                                     loaded active exited    Hold until boot process finishes up
+plymouth-read-write.service                                                                                                    loaded active exited    Tell Plymouth To Write Out Runtime Data
+polkit.service                                                                                                                 loaded active running   Authorization Manager
+postfix.service                                                                                                                loaded active exited    Postfix Mail Transport Agent
+postfix@-.service                                                                                                              loaded active running   Postfix Mail Transport Agent (instance -)
+postgresql.service                                                                                                             loaded active exited    PostgreSQL RDBMS
+postgresql@12-main.service                                                                                                     loaded active running   PostgreSQL Cluster 12-main
+postgresql@13-main.service                                                                                                     loaded active running   PostgreSQL Cluster 13-main
+power-profiles-daemon.service                                                                                                  loaded active running   Power Profiles daemon
+qemu-kvm.service                                                                                                               loaded active exited    QEMU KVM preparation - module, ksm, hugepages
+rsyslog.service                                                                                                                loaded active running   System Logging Service
+rtkit-daemon.service                                                                                                           loaded active running   RealtimeKit Scheduling Policy Service
+setvtrgb.service                                                                                                               loaded active exited    Set console scheme
+smbd.service                                                                                                                   loaded active running   Samba SMB Daemon
+snapd.apparmor.service                                                                                                         loaded active exited    Load AppArmor profiles managed internally by snapd
+snapd.seeded.service                                                                                                           loaded active exited    Wait until snapd is fully seeded
+snapd.service                                                                                                                  loaded active running   Snap Daemon
+ssh.service                                                                                                                    loaded active running   OpenBSD Secure Shell server
+switcheroo-control.service                                                                                                     loaded active running   Switcheroo Control Proxy service
+systemd-journal-flush.service                                                                                                  loaded active exited    Flush Journal to Persistent Storage
+systemd-journald.service                                                                                                       loaded active running   Journal Service
+systemd-logind.service                                                                                                         loaded active running   User Login Management
+systemd-machined.service                                                                                                       loaded active running   Virtual Machine and Container Registration Service
+systemd-modules-load.service                                                                                                   loaded active exited    Load Kernel Modules
+systemd-random-seed.service                                                                                                    loaded active exited    Load/Save Random Seed
+systemd-remount-fs.service                                                                                                     loaded active exited    Remount Root and Kernel File Systems
+systemd-resolved.service                                                                                                       loaded active running   Network Name Resolution
+systemd-sysctl.service                                                                                                         loaded active exited    Apply Kernel Variables
+systemd-sysusers.service                                                                                                       loaded active exited    Create System Users
+systemd-timesyncd.service                                                                                                      loaded active running   Network Time Synchronization
+systemd-tmpfiles-setup-dev.service                                                                                             loaded active exited    Create Static Device Nodes in /dev
+systemd-tmpfiles-setup.service                                                                                                 loaded active exited    Create Volatile Files and Directories
+systemd-udev-trigger.service                                                                                                   loaded active exited    Coldplug All udev Devices
+systemd-udevd.service                                                                                                          loaded active running   Rule-based Manager for Device Events and Files
+systemd-update-utmp.service                                                                                                    loaded active exited    Update UTMP about System Boot/Shutdown
+systemd-user-sessions.service                                                                                                  loaded active exited    Permit User Sessions
+udisks2.service                                                                                                                loaded active running   Disk Manager
+ufw.service                                                                                                                    loaded active exited    Uncomplicated firewall
+unattended-upgrades.service                                                                                                    loaded active running   Unattended Upgrades Shutdown
+upower.service                                                                                                                 loaded active running   Daemon for power management
+user-runtime-dir@1000.service                                                                                                  loaded active exited    User Runtime Directory /run/user/1000
+user@1000.service                                                                                                              loaded active running   User Manager for UID 1000
+virtualbox.service                                                                                                             loaded active exited    LSB: VirtualBox Linux kernel module
+whoopsie.service                                                                                                               loaded active running   crash report submission daemon
+wpa_supplicant.service                                                                                                         loaded active running   WPA supplicant
+acpid.socket                                                                                                                   loaded active running   ACPID Listen Socket
+avahi-daemon.socket                                                                                                            loaded active running   Avahi mDNS/DNS-SD Stack Activation Socket
+cups.socket                                                                                                                    loaded active running   CUPS Scheduler
+dbus.socket                                                                                                                    loaded active running   D-Bus System Message Bus Socket
+dm-event.socket                                                                                                                loaded active listening Device-mapper event daemon FIFOs
+docker.socket                                                                                                                  loaded active running   Docker Socket for the API
+libvirtd-admin.socket                                                                                                          loaded active running   Libvirt admin socket
+libvirtd-ro.socket                                                                                                             loaded active running   Libvirt local read-only socket
+libvirtd.socket                                                                                                                loaded active running   Libvirt local socket
+lvm2-lvmpolld.socket                                                                                                           loaded active listening LVM2 poll daemon socket
+mpd.socket                                                                                                                     loaded active running   mpd.socket
+snapd.socket                                                                                                                   loaded active running   Socket activation for snappy daemon
+syslog.socket                                                                                                                  loaded active running   Syslog Socket
+systemd-fsckd.socket                                                                                                           loaded active listening fsck to fsckd communication Socket
+systemd-initctl.socket                                                                                                         loaded active listening initctl Compatibility Named Pipe
+systemd-journald-audit.socket                                                                                                  loaded active running   Journal Audit Socket
+systemd-journald-dev-log.socket                                                                                                loaded active running   Journal Socket (/dev/log)
+systemd-journald.socket                                                                                                        loaded active running   Journal Socket
+systemd-rfkill.socket                                                                                                          loaded active listening Load/Save RF Kill Switch Status /dev/rfkill Watch
+systemd-udevd-control.socket                                                                                                   loaded active running   udev Control Socket
+systemd-udevd-kernel.socket                                                                                                    loaded active running   udev Kernel Socket
+uuidd.socket                                                                                                                   loaded active listening UUID daemon activation socket
+virtlockd-admin.socket                                                                                                         loaded active listening Virtual machine lock manager admin socket
+virtlockd.socket                                                                                                               loaded active listening Virtual machine lock manager socket
+virtlogd-admin.socket                                                                                                          loaded active listening Virtual machine log manager socket
+virtlogd.socket                                                                                                                loaded active listening Virtual machine log manager socket
+basic.target                                                                                                                   loaded active active    Basic System
+cryptsetup.target                                                                                                              loaded active active    Local Encrypted Volumes
+getty.target                                                                                                                   loaded active active    Login Prompts
+graphical.target                                                                                                               loaded active active    Graphical Interface
+local-fs-pre.target                                                                                                            loaded active active    Local File Systems (Pre)
+local-fs.target                                                                                                                loaded active active    Local File Systems
+machines.target                                                                                                                loaded active active    Containers
+multi-user.target                                                                                                              loaded active active    Multi-User System
+network-online.target                                                                                                          loaded active active    Network is Online
+network.target                                                                                                                 loaded active active    Network
+nss-lookup.target                                                                                                              loaded active active    Host and Network Name Lookups
+nss-user-lookup.target                                                                                                         loaded active active    User and Group Name Lookups
+paths.target                                                                                                                   loaded active active    Paths
+printer.target                                                                                                                 loaded active active    Printer
+remote-fs.target                                                                                                               loaded active active    Remote File Systems
+slices.target                                                                                                                  loaded active active    Slices
+sockets.target                                                                                                                 loaded active active    Sockets
+sound.target                                                                                                                   loaded active active    Sound Card
+swap.target                                                                                                                    loaded active active    Swap
+sysinit.target                                                                                                                 loaded active active    System Initialization
+time-set.target                                                                                                                loaded active active    System Time Set
+timers.target                                                                                                                  loaded active active    Timers
+veritysetup.target                                                                                                             loaded active active    Local Verity Integrity Protected Volumes
+virt-guest-shutdown.target                                                                                                     loaded active active    Libvirt guests shutdown
+accounts-daemon.service                    enabled         enabled
+acpid.service                              disabled        enabled
+alsa-restore.service                       static          -
+alsa-state.service                         static          -
+alsa-utils.service                         masked          enabled
+anacron.service                            enabled         enabled
+apparmor.service                           enabled         enabled
+apport-autoreport.service                  static          -
+apport-forward@.service                    static          -
+apport.service                             generated       -
+apt-daily-upgrade.service                  static          -
+apt-daily.service                          static          -
+atop-rotate.service                        static          -
+atop.service                               enabled         enabled
+atopacct.service                           enabled         enabled
+autorandr.service                          masked          enabled
+autovt@.service                            alias           -
+avahi-daemon.service                       enabled         enabled
+binfmt-support.service                     enabled         enabled
+blk-availability.service                   enabled         enabled
+bluetooth.service                          enabled         enabled
+bolt.service                               static          -
+brltty-udev.service                        static          -
+brltty.service                             disabled        enabled
+clipmenud.service                          enabled         enabled
+colord.service                             static          -
+configure-printer@.service                 static          -
+console-getty.service                      disabled        disabled
+console-setup.service                      enabled         enabled
+container-getty@.service                   static          -
+containerd.service                         enabled         enabled
+cron.service                               enabled         enabled
+cryptdisks-early.service                   masked          enabled
+cryptdisks.service                         masked          enabled
+cups-browsed.service                       enabled         enabled
+cups.service                               enabled         enabled
+dbus-fi.w1.wpa_supplicant1.service         alias           -
+dbus-org.bluez.service                     alias           -
+dbus-org.freedesktop.Avahi.service         alias           -
+dbus-org.freedesktop.hostname1.service     alias           -
+dbus-org.freedesktop.import1.service       alias           -
+dbus-org.freedesktop.locale1.service       alias           -
+dbus-org.freedesktop.login1.service        alias           -
+dbus-org.freedesktop.machine1.service      alias           -
+dbus-org.freedesktop.ModemManager1.service alias           -
+dbus-org.freedesktop.nm-dispatcher.service alias           -
+dbus-org.freedesktop.portable1.service     alias           -
+dbus-org.freedesktop.resolve1.service      alias           -
+dbus-org.freedesktop.thermald.service      alias           -
+dbus-org.freedesktop.timedate1.service     alias           -
+dbus-org.freedesktop.timesync1.service     alias           -
+dbus.service                               static          -
+debug-shell.service                        disabled        disabled
+display-manager.service                    alias           -
+dm-event.service                           static          -
+dmesg.service                              enabled         enabled
+docker.service                             enabled         enabled
+e2scrub@.service                           static          -
+e2scrub_all.service                        static          -
+e2scrub_fail@.service                      static          -
+e2scrub_reap.service                       enabled         enabled
+elasticsearch.service                      generated       -
+emergency.service                          static          -
+expressvpn.service                         enabled         enabled
+fprintd.service                            static          -
+friendly-recovery.service                  static          -
+fstrim.service                             static          -
+fwupd-offline-update.service               static          -
+fwupd-refresh.service                      static          -
+fwupd.service                              static          -
+gdm.service                                static          -
+gdm3.service                               alias           -
+geoclue.service                            static          -
+getty-static.service                       static          -
+getty@.service                             enabled         enabled
+glances.service                            enabled         enabled
+gpu-manager.service                        enabled         enabled
+grafana-server.service                     enabled         enabled
+grub-common.service                        enabled         enabled
+grub-initrd-fallback.service               enabled         enabled
+hddtemp.service                            generated       -
+hwclock.service                            masked          enabled
+iio-sensor-proxy.service                   static          -
+influxdb.service                           masked          enabled
+initrd-cleanup.service                     static          -
+initrd-parse-etc.service                   static          -
+initrd-switch-root.service                 static          -
+initrd-udevadm-cleanup-db.service          static          -
+ipp-usb.service                            static          -
+irqbalance.service                         enabled         enabled
+kerneloops.service                         enabled         enabled
+keyboard-setup.service                     enabled         enabled
+kmod-static-nodes.service                  static          -
+kmod.service                               alias           -
+libvirt-guests.service                     enabled         enabled
+libvirtd.service                           enabled         enabled
+lm-sensors.service                         enabled         enabled
+logrotate.service                          static          -
+lvm2-lvmpolld.service                      static          -
+lvm2-monitor.service                       enabled         enabled
+lvm2-pvscan@.service                       static          -
+lvm2.service                               masked          enabled
+man-db.service                             static          -
+mlocate.service                            static          -
+ModemManager.service                       enabled         enabled
+modprobe@.service                          static          -
+motd-news.service                          static          -
+mpd.service                                enabled         enabled
+netplan-ovs-cleanup.service                enabled-runtime enabled
+networkd-dispatcher.service                enabled         enabled
+NetworkManager-dispatcher.service          enabled         enabled
+NetworkManager-wait-online.service         enabled         enabled
+NetworkManager.service                     enabled         enabled
+nmbd.service                               enabled         enabled
+nvidia-hibernate.service                   enabled         enabled
+nvidia-persistenced.service                static          -
+nvidia-resume.service                      enabled         enabled
+nvidia-suspend.service                     enabled         enabled
+openvpn-client@.service                    disabled        enabled
+openvpn-server@.service                    disabled        enabled
+openvpn.service                            enabled         enabled
+openvpn@.service                           disabled        enabled
+packagekit-offline-update.service          static          -
+packagekit.service                         static          -
+pg_basebackup@.service                     static          -
+pg_compresswal@.service                    static          -
+pg_dump@.service                           static          -
+pg_receivewal@.service                     disabled        enabled
+plymouth-halt.service                      static          -
+plymouth-kexec.service                     static          -
+plymouth-log.service                       alias           -
+plymouth-poweroff.service                  static          -
+plymouth-quit-wait.service                 static          -
+plymouth-quit.service                      static          -
+plymouth-read-write.service                static          -
+plymouth-reboot.service                    static          -
+plymouth-start.service                     static          -
+plymouth-switch-root-initramfs.service     static          -
+plymouth-switch-root.service               static          -
+plymouth.service                           alias           -
+polkit.service                             static          -
+postfix.service                            enabled         enabled
+postfix@.service                           indirect        enabled
+postgresql.service                         enabled         enabled
+postgresql@.service                        indirect        enabled
+power-profiles-daemon.service              enabled         enabled
+procps.service                             alias           -
+pulseaudio-enable-autospawn.service        masked          enabled
+qemu-kvm.service                           enabled         enabled
+quotaon.service                            static          -
+rc-local.service                           static          -
+rc.service                                 masked          enabled
+rcS.service                                masked          enabled
+rescue.service                             static          -
+rsync.service                              enabled         enabled
+rsyslog.service                            enabled         enabled
+rtkit-daemon.service                       disabled        enabled
+samba-ad-dc.service                        masked          enabled
+saned.service                              masked          enabled
+saned@.service                             indirect        enabled
+secureboot-db.service                      enabled         enabled
+serial-getty@.service                      disabled        enabled
+setvtrgb.service                           enabled         enabled
+slim.service                               static          -
+smbd.service                               enabled         enabled
+snapd.apparmor.service                     enabled         enabled
+snapd.autoimport.service                   enabled         enabled
+snapd.core-fixup.service                   enabled         enabled
+snapd.failure.service                      static          -
+snapd.recovery-chooser-trigger.service     enabled         enabled
+snapd.seeded.service                       enabled         enabled
+snapd.service                              enabled         enabled
+snapd.snap-repair.service                  static          -
+snapd.system-shutdown.service              enabled         enabled
+speech-dispatcher.service                  alias           -
+speech-dispatcherd.service                 disabled        enabled
+spice-vdagent.service                      alias           -
+spice-vdagentd.service                     indirect        enabled
+ssh.service                                enabled         enabled
+ssh@.service                               static          -
+sshd.service                               alias           -
+sssd-autofs.service                        indirect        enabled
+sssd-nss.service                           indirect        enabled
+sssd-pac.service                           indirect        enabled
+sssd-pam.service                           indirect        enabled
+sssd-ssh.service                           indirect        enabled
+sssd-sudo.service                          indirect        enabled
+sssd.service                               enabled         enabled
+sudo.service                               masked          enabled
+switcheroo-control.service                 enabled         enabled
+syslog.service                             alias           -
+sysstat-collect.service                    static          -
+sysstat-summary.service                    static          -
+sysstat.service                            disabled        enabled
+system-update-cleanup.service              static          -
+systemd-ask-password-console.service       static          -
+systemd-ask-password-plymouth.service      static          -
+systemd-ask-password-wall.service          static          -
+systemd-backlight@.service                 static          -
+systemd-binfmt.service                     static          -
+systemd-bless-boot.service                 static          -
+systemd-boot-check-no-failures.service     disabled        disabled
+systemd-boot-system-token.service          static          -
+systemd-exit.service                       static          -
+systemd-fsck-root.service                  enabled-runtime enabled
+systemd-fsck@.service                      static          -
+systemd-fsckd.service                      static          -
+systemd-halt.service                       static          -
+systemd-hibernate-resume@.service          static          -
+systemd-hibernate.service                  static          -
+systemd-hostnamed.service                  static          -
+systemd-hwdb-update.service                static          -
+systemd-hybrid-sleep.service               static          -
+systemd-importd.service                    static          -
+systemd-initctl.service                    static          -
+systemd-journal-flush.service              static          -
+systemd-journald.service                   static          -
+systemd-journald@.service                  static          -
+systemd-kexec.service                      static          -
+systemd-localed.service                    static          -
+systemd-logind.service                     static          -
+systemd-machine-id-commit.service          static          -
+systemd-machined.service                   static          -
+systemd-modules-load.service               static          -
+systemd-network-generator.service          disabled        disabled
+systemd-networkd-wait-online.service       disabled        disabled
+systemd-networkd.service                   disabled        enabled
+systemd-nspawn@.service                    disabled        enabled
+systemd-portabled.service                  static          -
+systemd-poweroff.service                   static          -
+systemd-pstore.service                     enabled         enabled
+systemd-quotacheck.service                 static          -
+systemd-random-seed.service                static          -
+systemd-reboot.service                     static          -
+systemd-remount-fs.service                 enabled-runtime enabled
+systemd-resolved.service                   enabled         enabled
+systemd-rfkill.service                     static          -
+systemd-suspend-then-hibernate.service     static          -
+systemd-suspend.service                    static          -
+systemd-sysctl.service                     static          -
+systemd-sysext.service                     disabled        enabled
+systemd-sysusers.service                   static          -
+systemd-time-wait-sync.service             disabled        disabled
+systemd-timedated.service                  static          -
+systemd-timesyncd.service                  enabled         enabled
+systemd-tmpfiles-clean.service             static          -
+systemd-tmpfiles-setup-dev.service         static          -
+systemd-tmpfiles-setup.service             static          -
+systemd-udev-settle.service                static          -
+systemd-udev-trigger.service               static          -
+systemd-udevd.service                      static          -
+systemd-update-utmp-runlevel.service       static          -
+systemd-update-utmp.service                static          -
+systemd-user-sessions.service              static          -
+systemd-volatile-root.service              static          -
+thermald.service                           enabled         enabled
+tlp.service                                masked          enabled
+ua-license-check.service                   static          -
+ua-reboot-cmds.service                     enabled         enabled
+ua-timer.service                           static          -
+udev.service                               alias           -
+udisks2.service                            enabled         enabled
+ufw.service                                enabled         enabled
+unattended-upgrades.service                enabled         enabled
+update-notifier-download.service           static          -
+update-notifier-motd.service               static          -
+upower.service                             disabled        enabled
+usb_modeswitch@.service                    static          -
+usbmuxd.service                            static          -
+user-runtime-dir@.service                  static          -
+user@.service                              static          -
+uuidd.service                              indirect        enabled
+virtlockd.service                          indirect        enabled
+virtlogd.service                           indirect        enabled
+virtualbox.service                         generated       -
+wacom-inputattach@.service                 static          -
+whoopsie.service                           enabled         enabled
+wpa_supplicant-nl80211@.service            disabled        enabled
+wpa_supplicant-wired@.service              disabled        enabled
+wpa_supplicant.service                     enabled         enabled
+wpa_supplicant@.service                    disabled        enabled
+x11-common.service                         masked          enabled
+acpid.socket                               enabled         enabled
+apport-forward.socket                      enabled         enabled
+avahi-daemon.socket                        enabled         enabled
+cups.socket                                enabled         enabled
+dbus.socket                                static          -
+dm-event.socket                            enabled         enabled
+docker.socket                              enabled         enabled
+libvirtd-admin.socket                      enabled         enabled
+libvirtd-ro.socket                         enabled         enabled
+libvirtd-tcp.socket                        disabled        enabled
+libvirtd-tls.socket                        disabled        enabled
+libvirtd.socket                            enabled         enabled
+lvm2-lvmpolld.socket                       enabled         enabled
+mpd.socket                                 enabled         enabled
+saned.socket                               disabled        enabled
+snapd.socket                               enabled         enabled
+spice-vdagentd.socket                      static          -
+ssh.socket                                 disabled        enabled
+sssd-autofs.socket                         enabled         enabled
+sssd-nss.socket                            enabled         enabled
+sssd-pac.socket                            enabled         enabled
+sssd-pam-priv.socket                       enabled         enabled
+sssd-pam.socket                            enabled         enabled
+sssd-ssh.socket                            enabled         enabled
+sssd-sudo.socket                           enabled         enabled
+syslog.socket                              static          -
+systemd-fsckd.socket                       static          -
+systemd-initctl.socket                     static          -
+systemd-journald-audit.socket              static          -
+systemd-journald-dev-log.socket            static          -
+systemd-journald-varlink@.socket           static          -
+systemd-journald.socket                    static          -
+systemd-journald@.socket                   static          -
+systemd-networkd.socket                    disabled        enabled
+systemd-rfkill.socket                      static          -
+systemd-udevd-control.socket               static          -
+systemd-udevd-kernel.socket                static          -
+uuidd.socket                               enabled         enabled
+virtlockd-admin.socket                     enabled         enabled
+virtlockd.socket                           enabled         enabled
+virtlogd-admin.socket                      enabled         enabled
+virtlogd.socket                            enabled         enabled
+basic.target                               static          -
+blockdev@.target                           static          -
+bluetooth.target                           static          -
+boot-complete.target                       static          -
+cryptsetup-pre.target                      static          -
+cryptsetup.target                          static          -
+ctrl-alt-del.target                        alias           -
+default.target                             alias           -
+emergency.target                           static          -
+exit.target                                disabled        disabled
+final.target                               static          -
+first-boot-complete.target                 static          -
+friendly-recovery.target                   static          -
+getty-pre.target                           static          -
+getty.target                               static          -
+graphical.target                           static          -
+halt.target                                disabled        disabled
+hibernate.target                           static          -
+hybrid-sleep.target                        static          -
+initrd-fs.target                           static          -
+initrd-root-device.target                  static          -
+initrd-root-fs.target                      static          -
+initrd-switch-root.target                  static          -
+initrd.target                              static          -
+kexec.target                               disabled        disabled
+local-fs-pre.target                        static          -
+local-fs.target                            static          -
+machines.target                            enabled         enabled
+multi-user.target                          static          -
+network-online.target                      static          -
+network-pre.target                         static          -
+network.target                             static          -
+nss-lookup.target                          static          -
+nss-user-lookup.target                     static          -
+paths.target                               static          -
+poweroff.target                            disabled        disabled
+printer.target                             static          -
+reboot.target                              disabled        enabled
+remote-cryptsetup.target                   disabled        enabled
+remote-fs-pre.target                       static          -
+remote-fs.target                           enabled         enabled
+remote-veritysetup.target                  disabled        enabled
+rescue-ssh.target                          static          -
+rescue.target                              static          -
+rpcbind.target                             static          -
+runlevel0.target                           alias           -
+runlevel1.target                           alias           -
+runlevel2.target                           alias           -
+runlevel3.target                           alias           -
+runlevel4.target                           alias           -
+runlevel5.target                           alias           -
+runlevel6.target                           alias           -
+shutdown.target                            static          -
+sigpwr.target                              static          -
+sleep.target                               static          -
+slices.target                              static          -
+smartcard.target                           static          -
+sockets.target                             static          -
+sound.target                               static          -
+suspend-then-hibernate.target              static          -
+suspend.target                             static          -
+swap.target                                static          -
+sysinit.target                             static          -
+system-update-pre.target                   static          -
+system-update.target                       static          -
+time-set.target                            static          -
+time-sync.target                           static          -
+timers.target                              static          -
+umount.target                              static          -
+usb-gadget.target                          static          -
+veritysetup-pre.target                     static          -
+veritysetup.target                         static          -
+virt-guest-shutdown.target                 static          -
