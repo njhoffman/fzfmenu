@@ -50,21 +50,20 @@ _fzf_tabularize_header() {
     -v header="$header" \
     -v colors_args="$*" \
     -v reset="\033[0m" '
-  BEGIN { split(colors_args, colors, " ") }
-  {
-      str = $0
-      for (i = 1; i <= length(colors); ++i) {
-        field_max[i] = length($i) > field_max[i] ? length($i) : field_max[i]
-        fields[NR, i] = $i
-        pos = index(str, FS)
-        str = substr(str, pos + 1)
+    BEGIN { split(colors_args, colors, " ") }
+      {
+        str = $0
+        for (i = 1; i <= length(colors); ++i) {
+          field_max[i] = length($i) > field_max[i] ? length($i) : field_max[i]
+          fields[NR, i] = $i
+          pos = index(str, FS)
+          str = substr(str, pos + 1)
+        }
+        if (pos != 0) {
+          fields[NR, i] = str
+        }
       }
-      if (pos != 0) {
-        fields[NR, i] = str
-      }
-  }
-  END
-  {
+    END {
       for (i = 1; i <= NR; ++i) {
         for (j = 1; j <= length(colors); ++j) {
           if (i == 1) {
@@ -76,5 +75,5 @@ _fzf_tabularize_header() {
       printf "\n"
     }
   }
-'
+  '
 }

@@ -103,28 +103,30 @@ _fzf-extra-opts() {
 	echo "$opts"
 }
 
-_fzf-source() {
+_fzf-command() {
   # mode="$1" && shift
   selection="$*"
 	mode="$1" && shift
 	mode_name="${FZF_MODES[$mode]}"
+  header=$'\e[31;1;4m'
+  reset=$'\e[0m'
+
   case "$mode_name" in
     'containers')
       # containers=$(command docker ps -a -s --format='{{json .}}')
-      lc=$'\e['
-      header=$'\e[31;1;4m' reset=$'\e[0m'
-      docker container list --all \
+      cmd="docker container list --all \
         --format 'table {{.ID}};{{.Image}};{{.Command}};{{.RunningFor}};{{.Status}};{{.Ports}};{{.Names}}' 2> /dev/null \
-        |  FS=';' _fzf_tabularize_header $_clr[header] $_clr[field_id] $_clr[rst]{,,,,,,}
+        | _fzf_tabularize \"$header\" \"$reset\"{,,}"
+      printf "%s" "$cmd"
       ;;
     'repos')
       docker images  --filter 'dangling=false' \
         --format 'table {{.Repository}};{{.ID}};{{.Tag}};{{if .CreatedSince}}{{.CreatedSince}}{{else}}N/A{{end}};{{.Size}}' 2> /dev/null \
-        | FS=';' _fzf_tabularize_header $_clr[header] $_clr[rst]{,,}
+        | FS=';' _fzf_tabularize_header $_clr[header] $_clr[field_id] $_clr[rst]{,,}
       ;;
     'images')
 			docker images --format 'table {{.ID}};{{.Repository}};{{.Tag}};{{if .CreatedSince}}{{.CreatedSince}}{{else}}N/A{{end}};{{.Size}}' 2> /dev/null \
-				| FS=';' _fzf_tabularize $_clr[field_id] $_clr[rst]{,,}
+				| FS=';' _fzf_tabularize_header $_clr[header] $_clr[field_id] $_clr[rst]{,,}
       # images=$(command docker images --all --digests --format='{{json .}}')
       # Containers, CreatedAt,  CreatedSince,  Digest,  ID,  Repository,  SharedSize,  Size,  Tag,  UniqueSize,  VirtualSize
       ;;
@@ -155,4 +157,4 @@ _fzf-source() {
 
 
 source "$FZF_LIB.zsh"
-_fzf-source 1
+# _fzf-source 2

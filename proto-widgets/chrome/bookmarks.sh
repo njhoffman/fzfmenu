@@ -7,7 +7,7 @@
 # C-d, C-e, *move*, enter opens
 
 function chrome_bookmarks() {
-  bookmarks_path="$HOME/.config/chrome/Profiles/Nick/Default/Bookmarks"
+  bookmarks_path="$HOME/.config/google-chrome/Default/Bookmarks"
 
   jq_script='
   def ancestors: while(. | length >= 2; del(.[-1,-2]));

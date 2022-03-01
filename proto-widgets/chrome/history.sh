@@ -6,7 +6,7 @@ function chrome_history() {
   cols=$((COLUMNS / 3))
   sep='{::}'
 
-  google_history="$HOME/.config/chrome/Profiles/Nick/Default/History"
+  google_history="$HOME/.config/google-chrome/Default/History"
   open=xdg-open
 
   cp -f "$google_history" /tmp/h

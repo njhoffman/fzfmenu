@@ -176,18 +176,23 @@ _fzf-menu-description() {
 
 _fzf-result() {
   action="$1" && shift
-  selection="$(echo $* | cut -d' ' -f1)"
-  _fzf-log "${SOURCE} result $action: $selection"
-  case "$action" in
-    'install')
-      sudo apt-get install "$selection"
-      ;;
-    # 'upgrade'|'remove')
-    #   ;;
-    *)
-      echo "result $mode: $selection"
-      ;;
-  esac
+
+  items=($@)
+  _fzf-log "apt.zsh result $action (${#items[@]}): \n${items[@]}"
+
+  for item in "$items[@]"; do
+    item_id=$(echo "$item" | cut -d' ' -f1)
+    case "$action" in
+      'install')
+        sudo apt-get install "$item_id"
+        ;;
+      # 'upgrade'|'remove')
+      #   ;;
+      *)
+        echo "result $mode: $selection"
+        ;;
+    esac
+  done
 }
 
 source "${FZF_LIB}.zsh"

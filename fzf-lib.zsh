@@ -25,7 +25,7 @@ setopt localoptions noglobsubst noposixbuiltins pipefail 2>> ${FZF_LOGFILE:-/dev
 FZF_CLEAR=1
 FZF_DIVIDER_SHOW=${FZF_DIVIDER_SHOW:-0}
 FZF_DIVIDER_LINE="${FZF_DIVIDER_LINE:-―――――――――――――――――――――――――――}"
-FZF_RAW_OUT=0
+FZF_RAW_OUT=${FZF_RAW_OUT:-0}
 
 FZF_DEFAULT_ACTION=${FZF_DEFAULT_ACTION:-""}
 
@@ -62,6 +62,7 @@ declare -A _fzf_keys
 # assigns default colors keys that can be overridden by each module
 _fzf-assign-vars-default() {
   local lc=$'\e[' rc=m
+  _clr[rst]="${lc}0${rc}"
   _clr[mode_active]="${lc}${CLR_MODE_ACTIVE:-38;5;117}${rc}"
   _clr[mode_inactive]="${lc}${CLR_MODE_INACTIVE:-38;5;68}${rc}"
   _clr[divider]="${lc}${CLR_DIVIDER:-38;5;59}${rc}"
@@ -140,9 +141,9 @@ _fzf-mode-hints() {
   # calculate what the selected mode is
   for ((i=1; i<=${#FZF_MODES}; i++)); do
     if [[ "${FZF_MODES[i]}" == "${FZF_MODES[mode]}" ]]; then
-      hints="${hints}${_clr[mode_active]}F${i}: ${FZF_MODES[i]}  ${_clr[rst]}"
+      hints="${hints}${_clr[mode_active]}F${i}:${FZF_MODES[i]}  ${_clr[rst]}"
     else
-      hints="${hints}${_clr[mode_inactive]}F${i}: ${FZF_MODES[i]}  ${_clr[rst]}"
+      hints="${hints}${_clr[mode_inactive]}F${i}:${FZF_MODES[i]}  ${_clr[rst]}"
     fi
   done
   echo "${hints}"
@@ -346,23 +347,26 @@ ${_clr[divider]}${FZF_DIVIDER_LINE}${_clr[rst]}"
 
         FZF_DEFAULT_OPTS="${ORIG_FZF_DEFAULT_OPTS} ${fzf_opts}"
 
-        [[ "$(command -V _fzf-command)" =~ "function" ]] && \
-          FZF_DEFAULT_COMMAND="$(_fzf-command $mode)"
-
         [[ "$(command -V _fzf-action)" =~ "function" ]] && \
           FZF_DEFAULT_ACTION="$(_fzf-action $mode)"
 
-        # only output the text without piping to fzf
-        if [[ $FZF_RAW_OUT -eq 1 ]]; then
-          IFS=$'\n' result=($(eval "$FZF_DEFAULT_COMMAND $mode"))
-          printf "%s\n" "${result[@]}" | column -t
-          key=""
-          exit 0
-        fi
 
-        # actually perform fzf command here
-        # IFS=$'\n' result=($(_fzf-source $mode | $fzf_cmd $fzf_cmd_args | sed 's/^ *//' ))
-        IFS=$'\n' result=($($fzf_cmd $fzf_cmd_args | sed 's/^ *//' ))
+        if [[ "$(command -V _fzf-source)" =~ "function" ]]; then
+          # only output the text without piping to fzf
+          if [[ $FZF_RAW_OUT -eq 1 ]]; then
+            IFS=$'\n' result=($(_fzf-source $mode))
+            printf "%s\n" "${result[@]}" | column -t && key="" && exit 0
+          fi
+          IFS=$'\n' result=($(_fzf-source $mode | $fzf_cmd $fzf_cmd_args | sed 's/^ *//' ))
+        elif [[ "$(command -V _fzf-command)" =~ "function" ]]; then
+          FZF_DEFAULT_COMMAND="$(_fzf-command $mode)"
+          # only output the text without piping to fzf
+          if [[ $FZF_RAW_OUT -eq 1 ]]; then
+            IFS=$'\n' result=($(eval "$FZF_DEFAULT_COMMAND $mode"))
+            printf "%s\n" "${result[@]}" | column -t && key="" && exit 0
+          fi
+          IFS=$'\n' result=($($fzf_cmd $fzf_cmd_args | sed 's/^ *//' ))
+        fi
 
         # determine if query was submitted by identifying line exit key is on
         if [[ ${#result[@]} -gt 2 && $expected_keys == *${result[2]}* ]]; then

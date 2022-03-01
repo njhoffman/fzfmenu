@@ -54,13 +54,33 @@ _fzf-preview() {
     # | awk '{printf "%s ", $2} {print $1}'
 }
 
-_fzf-command() {
-avahi-browse \
-  --parsable \
-  --all   \
-  --resolve
-  echo "${cmd}"
+_fzf-source() {
+# avahi-browse \
+#   --all \
+#   --parsable \
+#   --resolve 2>/dev/null
+  # headers="_;Interface;Protocol;Name;Type;Domain;Address;IP;Port;Attr"
+  # fields="active iface prot name type domain host ip port attr"
+  # while read -r line; do
+  #   IFS=';' read -r  active iface prot name net_type domain host ip attrs \
+  #     <<< $(echo $line | tr -cd '\11\12\15\40-\176')
+  #   printf "%s|%s|%s|%s|%s\n" $active $iface $net_type $name $ip
+  # done <<< $(printf "%s\n" $headers && cat ./avahi.txt) \
+  #   | column -s'\|' -t
+  # cmd="cat $(pwd)/avahi.txt | column -s';' -t"
+
+  # cmd=$(cat <<EOF
+  headers="_;Interface;Protocol;Name;Type;Domain;Address;IP;Port;Attr"
+  fields="active iface prot name type domain host ip port attr"
+  (echo "$headers" && avahi-browse --parsable --all --resolve 2>/dev/null) \
+    | while read -r line; do
+        IFS=';' read -r  active iface prot name net_type domain host ip attrs
+          <<< $(echo $line | tr -cd '\11\12\15\40-\176')
+        printf "%s|%s|%s|%s|%s\n" $active $iface $net_type $name $ip
+      done \
+    | column -s'\|' -t
+  # printf "%s\n" $cmd
 }
 
-# _fzf-source
+# _fzf-command
 source "$FZF_LIB.zsh"
