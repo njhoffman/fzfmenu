@@ -162,7 +162,7 @@ tmpfile="${BUTLERTMPDIR:-/tmp}/quetty-tmp-file"
 cleanup() {
   rm -f $inpfile $tmpfile
 }
-[[ -z $BUTLERDEBUG ]] && trap 'cleanup' EXIT
+# [[ -z $BUTLERDEBUG ]] && trap 'cleanup' EXIT
 
 rm -f $tmpfile
 touch $tmpfile

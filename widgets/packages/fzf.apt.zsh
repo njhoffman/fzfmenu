@@ -125,7 +125,7 @@ _fzf-preview() {
 
 # remove warning message so it doesn't interfere with count
 _apt-count() {
-  # warn_msg="WARNING: apt does not have a stable CLI interface. Use with caution in scripts."
+  # warn_msg="WARNIN: apt does not have a stable CLI interface. Use with caution in scripts."
   warn_msg="apt does not have a stable CLI interface"
   sed "/${warn_msg}/id" | sed "/^Listing...$/d" | sed "/^$/d" | tee -a $FZF_LOGFILE | wc -l
 }

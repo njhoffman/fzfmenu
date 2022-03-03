@@ -27,12 +27,11 @@ function _fzf-command() {
 
 
 _fzf-extra-opts() {
-  # opts="--query=\"!fzf $*\""
-  # opts="${opts} --nth=1,2,3,-1"
-  # opts="${opts} --tac"
-  # opts="${opts} --header-lines=1"
-  # [ $RELOAD_ON_CHANGE -eq 1 ] && \
-  #   opts="${opts},change:reload:'$source_command'"
+  if [ -n "$TMUX_PANE" ] && [ "${FZF_TMUX:-0}" != 0 ]; then
+    opts=""
+  else
+    opts="--height 70%"
+  fi
   echo "$opts"
 }
 

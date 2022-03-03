@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Match single and double quote strings
-grep -Eo '("[^"]*")'"|('[^']*')|(‘[^’]*’)"

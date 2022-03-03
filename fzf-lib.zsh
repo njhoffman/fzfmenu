@@ -1,53 +1,10 @@
 #!/bin/zsh
 
-# TODO:
-# https://github.com/junegunn/fzf/wiki/Related-projects
-#   - figure out fifo pipes for multiple inputs
-#   - separate _fzf-main or integrate fzf-menu description better
-#   - unset variables
-#   - verify functions and assignments
-#   - make generic usage function that can be overridden
-#   - if modes defined, assign with --mode name or --mode=name
-#   - make shell clearing optional (transition screen in between fzf-menu switches)
-#   - implement FZF_DEFAULT_ACTION instead of hardcoding copy_name
-#   - determine if toggle_popout should stay on submenu
-#   -  look into push to top instead of clear to preserve history
-#
-#   If fzf was started in full screen mode, it will not switch back to the original screen,
-#   so you'll have to manually run tput rmcup to return
-
 CWD="$(cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd)"
 
 FZF_LOGFILE=${FZF_LOGFILE:-"/tmp/fzf.log"}
 
 setopt localoptions noglobsubst noposixbuiltins pipefail 2>> ${FZF_LOGFILE:-/dev/null}
-
-FZF_CLEAR=1
-FZF_DIVIDER_SHOW=${FZF_DIVIDER_SHOW:-0}
-FZF_DIVIDER_LINE="${FZF_DIVIDER_LINE:-―――――――――――――――――――――――――――}"
-FZF_RAW_OUT=${FZF_RAW_OUT:-0}
-
-FZF_DEFAULT_ACTION=${FZF_DEFAULT_ACTION:-""}
-
-## action menu options: holds ids of items to perform action against
-# echo:name:csv or echo/echo:csv
-FZF_DEFAULT_ACTIONS=("echo:id" "echo:preview" "yank:id" "yank:preview")
-FZF_DEFAULT_ACTION_DESCRIPTIONS=(
-  "echo the item(s) first column"
-  "echo what is displayed in preview pane for item(s)"
-  "yank the item(s) first column to the clipboard"
-  "yank the preview pane content for item(s) to the clipboard"
-)
-
-# combine default actions with any provided from module
-if [[ -n "$FZF_ACTIONS" ]]; then
-  FZF_ACTIONS=("${FZF_ACTIONS[@]}" "${FZF_DEFAULT_ACTIONS[@]}")
-  FZF_ACTION_DESCRIPTIONS=("${FZF_ACTION_DESCRIPTIONS[@]}" "${FZF_DEFAULT_ACTION_DESCRIPTIONS[@]}")
-else
-  FZF_ACTION_DESCRIPTIONS=("${FZF_DEFAULT_ACTION_DESCRIPTIONS[@]}")
-  FZF_ACTIONS=("${FZF_DEFAULT_ACTIONS[@]}")
-
-fi
 
 source "${FZF_LIB}.log.sh"
 source "${FZF_LIB}.sh"
@@ -63,8 +20,12 @@ declare -A _fzf_keys
 _fzf-assign-vars-default() {
   local lc=$'\e[' rc=m
   _clr[rst]="${lc}0${rc}"
-  _clr[mode_active]="${lc}${CLR_MODE_ACTIVE:-38;5;117}${rc}"
-  _clr[mode_inactive]="${lc}${CLR_MODE_INACTIVE:-38;5;68}${rc}"
+  # _clr[mode_active]="${lc}${CLR_MODE_ACTIVE:-38;5;117}${rc}"
+  # _clr[mode_inactive]="${lc}${CLR_MODE_INACTIVE:-38;5;68}${rc}"
+  _clr[mode_active]="${lc}${CLR_MODE_ACTIVE:-38;5;45;1}${rc}"
+  _clr[mode_inactive]="${lc}${CLR_MODE_INACTIVE:-38;5;240}${rc}"
+  _clr[toggle_active]="${lc}${CLR_TOGGLE_ACTIVE:-38;5;49}${rc}"
+  _clr[toggle_inactive]="${lc}${CLR_TOGGLE_INACTIVE:-38;5;240}${rc}"
   _clr[divider]="${lc}${CLR_DIVIDER:-38;5;59}${rc}"
   _clr[action_id]="${lc}${CLR_ID:-38;5;30}${rc}"
   _clr[action_desc]="${lc}${CLR_DESC:-38;5;8;3}${rc}"
@@ -93,6 +54,8 @@ _fzf-assign-vars-default() {
     [[ tmux_width -lt 400 ]] && tmux_padding="-p50%"
     [[ tmux_width -lt 200 ]] && tmux_padding="-p60%"
     export FZF_TMUX_OPTS="${FZF_TMUX_OPTS:-${tmux_padding}}"
+    _fzf-log "TMUX OPTS 1: $FZF_TMUX_OPTS"
+
   fi
 }
 
@@ -134,42 +97,6 @@ _fzf-result-default() {
   fi
 }
 
-# FZF_MODES: output of keys with highlighting to reflect active mode
-_fzf-mode-hints() {
-  local hints=""
-  local mode="$1"
-  # calculate what the selected mode is
-  for ((i=1; i<=${#FZF_MODES}; i++)); do
-    if [[ "${FZF_MODES[i]}" == "${FZF_MODES[mode]}" ]]; then
-      hints="${hints}${_clr[mode_active]}F${i}:${FZF_MODES[i]}  ${_clr[rst]}"
-    else
-      hints="${hints}${_clr[mode_inactive]}F${i}:${FZF_MODES[i]}  ${_clr[rst]}"
-    fi
-  done
-  echo "${hints}"
-}
-
-
-# output usage information with switches based on FZF_ACTIONS, FZF_MODES, FZF_TOGGLES
-_fzf-usage() {
-  # Usage: tr [OPTION]... SET1 [SET2]
-  # Translate, squeeze, and/or delete characters from standard input,
-  # writing to standard output.
-
-  # With no FILE, or when FILE is -, read standard input.
-  #       --mode=MODE         launch with assigned mode
-  #                           MODE can be <as-needed|consistent|preserve>
-  #   -b, --bytes=LIST        select only these bytes
-  #   -c, -C, --complement    use the complement of SET1
-  #   -d, --delete            delete characters in SET1, do not translate
-  #   -s, --squeeze-repeats   replace each sequence of a repeated character
-  #                           that is listed in the last specified SET,
-  #                           with a single occurrence of that character
-  #   -t, --truncate-set1     first truncate SET1 to length of SET2
-  #       --help              display this help and exit
-  #       --version           output version information and exit
-}
-
 # main display loop for fzf until exit key is pressed or action is finished
 _fzf-display() {
   local query="$*"
@@ -187,6 +114,7 @@ _fzf-display() {
 
   # TODO: add get_mode_id function
   local mode=${FZF_DEFAULT_MODE:-1}
+  local toggle_vals=${FZF_TOGGLES_DEFAULT:-}
 
   ORIG_FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS
 
@@ -276,8 +204,19 @@ _fzf-display() {
       # show main list menu
       else
 
-        if [[ "$fzf_cmd" == "fzf-tmux" ]]; then
-          fzf_cmd_args="-p80%"
+        if [[ ${#FZF_TOGGLES[@]} -gt 0 ]]; then
+          if [[ $key =~ "alt-." ]]; then
+            toggle_idx=${key[$(($MBEGIN+4)),$MEND]}
+            toggle_val=$(echo "$toggle_vals" | cut -f${toggle_idx} -d' ')
+            if [[ $toggle_val -eq 0 ]]; then
+              toggle_val=1
+            else
+              toggle_val=0
+            fi
+            _fzf-log "toggle $toggle_idx $toggle_val: $toggle_vals"
+            toggle_vals=$(echo "$toggle_vals" \
+              | sed "s/[0-9]\+/$toggle_val/$toggle_idx")
+          fi
         fi
 
         # if modes defined and key pressed was a function key or a mode-left / mode-right key
@@ -305,6 +244,12 @@ _fzf-display() {
            header="$(_fzf-header $mode)"
         else
           hints=$(_fzf-mode-hints $mode)
+          toggle_hints=$(_fzf-toggle-hints $toggle_vals)
+          if [[ -n "$toggle_hints" && -n "$hints" ]]; then
+            hints="$hints|  $toggle_hints"
+          elif [[ -n "$toggle_hints" ]]; then
+            hints="$toggle_hints"
+          fi
           [[ -n "$hints" ]] && _fzf-log "hints:\t${hints}"
           header="${hints:-}"
         fi
@@ -339,6 +284,9 @@ ${_clr[divider]}${FZF_DIVIDER_LINE}${_clr[rst]}"
         [[ -n "$FZF_MODES" ]] && expected_keys="${expected_keys},f1,f2,f3,f4,f5"
         fzf_opts="${fzf_opts} --expect='$expected_keys'"
 
+        [[ -n "$FZF_TOGGLES" ]] && expected_keys="${expected_keys},alt-1,alt-2,alt-3,alt-4,alt-5"
+        fzf_opts="${fzf_opts} --expect='$expected_keys'"
+
         if [ $FZF_CLEAR -eq 1 ]; then
           fzf_opts="${fzf_opts} --clear"
         else
@@ -349,7 +297,6 @@ ${_clr[divider]}${FZF_DIVIDER_LINE}${_clr[rst]}"
 
         [[ "$(command -V _fzf-action)" =~ "function" ]] && \
           FZF_DEFAULT_ACTION="$(_fzf-action $mode)"
-
 
         if [[ "$(command -V _fzf-source)" =~ "function" ]]; then
           # only output the text without piping to fzf
@@ -409,12 +356,6 @@ ${_clr[divider]}${FZF_DIVIDER_LINE}${_clr[rst]}"
     done
 }
 
-_fzf-unset() {
-  unset -f _fzf-result _fzf-source _fzf-preview _fzf-header _fzf-prompt
-  unset -f _fzf-display _fzf-assign-vars-default _fzf-verify _fzf-log _fzf-main
-  unset $FZF_LOGFILE $FZF_MODES $FZF_TRIGGERS $FZF_DEFAULT_MODE
-  unset _clr cwd SOURCE lib _fzf_log_first
-}
 
 # main arguments handler to parse argument settings and invoke different outputs
 _fzf-main() {
@@ -446,13 +387,10 @@ _fzf-main() {
   # launch main fzf display loop, remaining arguments should be lookup query
   else
     # clear && echo -e "\nLoading $SOURCE..."
-
     [[ "$1" == "--action" || "$1" == "-a" ]] && \
       shift && FZF_DEFAULT_ACTION="$1" && shift
-
     [[ "$1" == "--popup" || "$1" == "-p" ]] && \
       shift && FZF_TMUX="1"
-
     _fzf-display $@
   fi
 

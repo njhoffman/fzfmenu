@@ -113,6 +113,8 @@ _fzf-source() {
       txt=$(echo ${txt} | tr '\n' ' ' | tr "'" " ")
       txt="${txt[1,100]}"
 
+      (( ${#__lparam} <= 25 )) && __pdiff=$(( 25 - ${#__lparam} )) || __lparam="${__lparam[1,23]}...";
+
       if [[ "$__tpe" = *export* ]]; then
         __lparam="${_clr[export]}${__lparam}${_clr[rst]}"
         txt="${_clr[export_val]}${txt}${_clr[rst]}"
@@ -127,10 +129,9 @@ _fzf-source() {
       __tpe="${__tpe/unique/}"
       __tpe="${__tpe#-}"
 
-      (( ${#__lparam} <= 25 )) && __pdiff=$(( 25 - ${#__lparam} )) || __lparam="${__lparam[1,22]}...";
       # reply+=( "${__aparam[1]}${(r:__pdiff+1:: :)__space} ${__atype[1]}${(r:__tdiff+1:: :)__space} ${__avalue[1]}" )
-
       echo -e "${icon}|${__lparam}|${__tpe}|${txt}|"
+      # echo -e "${icon}|${__lparam}|${txt}|"
 
   done | column -s'|' -t
 }
@@ -153,18 +154,4 @@ _fzf-preview() {
 
 source "$FZF_LIB.zsh"
 
-unset -f _fzf-actions-source-default
-unset -f _fzf-assign-vars
-unset -f _fzf-assign-vars-default
-unset -f _fzf-display
-unset -f _fzf-log
-unset -f _fzf-main
-unset -f _fzf-mode-hints
-unset -f _fzf-preview
-unset -f _fzf-prompt
-unset -f _fzf-result-default
-unset -f _fzf-source
-unset -f _fzf-verify
-unset $FZF_MODES
-unset $FZF_ACTIONS
-unset $FZF_DESCRIPIONS
+_fzf_unset
