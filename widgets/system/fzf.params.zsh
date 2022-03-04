@@ -154,4 +154,4 @@ _fzf-preview() {
 
 source "$FZF_LIB.zsh"
 
-_fzf_unset
+_fzf-unset

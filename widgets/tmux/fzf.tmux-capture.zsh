@@ -33,7 +33,6 @@ _fzf-assign-vars() {
 _fzf-extra-opts() {
   opts="--header-first --no-preview --delimiter=' ' --with-nth=2.. --nth=4.. "
   # opts="${opts} --header-lines=1"
-
   echo "$opts"
 }
 
@@ -105,7 +104,7 @@ _fzf-source() {
 
 #             i      
 
-source "$CWD/butler.lib.sh"
+source "$CWD/fzf.tmux-capture.lib.sh"
 
 source "${FZF_LIB}.zsh"
 
