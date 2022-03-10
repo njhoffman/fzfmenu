@@ -9,6 +9,7 @@ HISTDB_SRC="$HOME/.zinit/plugins/larkery---zsh-histdb/sqlite-history.zsh"
 FZF_LIB="$CWD/../../fzf-lib"
 FZF_MODES=('session' 'location' 'host' 'global')
 FZF_MODES_HIDE_KEYS=1
+FZF_DEFAULT_MODE=3
 
 datecmd='date'
 

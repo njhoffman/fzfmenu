@@ -1,4 +1,6 @@
 #!/bin/bash
 
 export FZF_DEFAULT_COMMAND=echo
-fzf -q "$*" --preview-window=up:99% --preview="eval {q}"
+fzf -q "$*" \
+  --preview-window=down:99%:nohidden \
+  --preview="eval {q}"
