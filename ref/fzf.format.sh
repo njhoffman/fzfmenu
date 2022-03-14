@@ -37,6 +37,37 @@ fzf_tabularize() {
 '
 }
 
+function rel_fmt() {
+  local SEC_PER_MINUTE=$((60))
+  local SEC_PER_HOUR=$((60 * 60))
+  local SEC_PER_DAY=$((60 * 60 * 24))
+  local SEC_PER_MONTH=$((60 * 60 * 24 * 30))
+  local SEC_PER_YEAR=$((60 * 60 * 24 * 365))
+  local last_unix="$(date --date="$1" +%s)" # convert date to unix timestamp
+  local now_unix="$(date +'%s')"
+  local delta_s=$((now_unix - last_unix))
+  if ((delta_s < SEC_PER_MINUTE * 2)); then
+    echo ""$((delta_s))"s ago"
+    return
+  elif ((delta_s < SEC_PER_HOUR * 2)); then
+    echo ""$((delta_s / SEC_PER_MINUTE))"m ago"
+    return
+  elif ((delta_s < SEC_PER_DAY * 2)); then
+    echo ""$((delta_s / SEC_PER_HOUR))"h ago"
+    return
+  elif ((delta_s < SEC_PER_MONTH * 2)); then
+    echo ""$((delta_s / SEC_PER_DAY))"d ago"
+    return
+  elif ((delta_s < SEC_PER_YEAR * 2)); then
+    echo ""$((delta_s / SEC_PER_MONTH))"M ago"
+    return
+  else
+    echo ""$((delta_s / SEC_PER_YEAR))"Y ago"
+    return
+  fi
+}
+
+
 fzf_tabularize_header() {
   if [[ $# = 0 ]]; then
     cat

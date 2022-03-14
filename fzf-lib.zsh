@@ -281,10 +281,10 @@ ${_clr[divider]}${FZF_DIVIDER_LINE}${_clr[rst]}"
         expected_keys="${expected_keys},${_fzf_keys[actions_menu]}"
 
         # TODO: only for count of fzf_modes
-        [[ -n "$FZF_MODES" ]] && expected_keys="${expected_keys},f1,f2,f3,f4,f5"
+        [[ -n "{$FZF_MODES[@]}" ]] && expected_keys="${expected_keys},f1,f2,f3,f4,f5"
         fzf_opts="${fzf_opts} --expect='$expected_keys'"
 
-        [[ -n "$FZF_TOGGLES" ]] && expected_keys="${expected_keys},alt-1,alt-2,alt-3,alt-4,alt-5"
+        [[ -n "${FZF_TOGGLES[@]}" ]] && expected_keys="${expected_keys},alt-1,alt-2,alt-3,alt-4,alt-5"
         fzf_opts="${fzf_opts} --expect='$expected_keys'"
 
         if [ $FZF_CLEAR -eq 1 ]; then

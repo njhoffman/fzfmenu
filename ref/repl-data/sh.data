@@ -1,0 +1,6 @@
+cat ./repl-data/other/errors.csv
+netstat -tulnp
+curl --silent https://www.rust-lang.org/ | htmlq '#get-help'
+curl --silent https://www.rust-lang.org/ | htmlq --attribute href a
+curl --silent https://mgdm.net | htmlq --pretty '#posts'
+curl --silent https://mgdm.net | htmlq --pretty '#posts' | vimcat -l html

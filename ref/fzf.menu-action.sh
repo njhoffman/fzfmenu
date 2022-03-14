@@ -16,7 +16,7 @@ declare -A FZF_ACTIONS
 for action in "${!FZF_DEFAULT_ACTIONS[@]}"; do
   is_set=${FZF_ACTIONS[$action]:-}
   if [[ -z $is_set ]]; then
-    FZF_ACTIONS[$action]=${FZF_DEFAULT_ACTIONS[$action]}
+    FZF_ACTIONS[$action]="${FZF_DEFAULT_ACTIONS[$action]}"
   fi
 done
 
@@ -38,7 +38,7 @@ function action_menu_display {
       action_menu_display_line "$action"
     done
   fi
-  printf "%s\n" "${lines[@]}" |  column -t -s'|'
+  printf "%s\n" "${lines[@]}" | column -t -s'|'
 }
 
 function fzf_result_default {
@@ -59,16 +59,14 @@ function fzf_result_default {
 
 function fzf_results_default {
   action="${1:-}" && shift
-  items=($@)
-  for item in "${items[@]}"; do
+  selected_items=($@)
+  for item in "${selected_items[@]}"; do
     item_id=$(echo "$item" | cut -d' ' -f1)
-    debug "action default result: $action -> $item_id"
     fzf_result_default "$action" "$item_id"
   done
 }
 
 function action_menu {
-
   selected_items=($@)
   if [[ $FZF_RAW_OUT -eq 1 ]]; then
     action_menu_display
@@ -81,9 +79,9 @@ function action_menu {
   fi
 
   fzf_opts="--header-lines=0 --no-multi --header=\"$header\""
-  fzf_opts="${fzf_opts} --preview-window=hidden"
-
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS $fzf_opts"
+  fzf_opts="${fzf_opts} --preview-window=hidden --delimiter='\|' --with-nth=1.."
+  FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS $fzf_opts"
+  # export FZF_DEFAULT_OPTS
 
   if [[ $FZF_TMUX -eq 1 ]]; then
     FZF_TMUX_OPTS="-w50% -h30%"

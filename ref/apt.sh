@@ -1,6 +1,5 @@
 #!/bin/bash
-set -euo pipefail
-IFS=$'\n\t'
+
 SRC="${BASH_SOURCE[0]}"
 
 declare -A clr
@@ -17,7 +16,6 @@ FZF_ACTIONS[install]="install package"
 FZF_ACTIONS[upgrade]="upgrade package"
 FZF_ACTIONS[remove]="remove package"
 FZF_ACTIONS_SORT=("install" "upgrade" "remove" "cat:id" "cat:preview" "yank:id" "yank:preview")
-
 
 function apt_search {
   apt-cache search '.*' \
@@ -36,29 +34,20 @@ function apt_list {
 function fzf_results {
   action="$1" && shift
   items=($@)
-  debug "results: $action ${#items[@]}"
-  # for item in "${items[@]}"; do
-  # item_id=$(echo "$item" | cut -d' ' -f1)
-  # debug "$action - $items"
-  # 2ping 0ad-data 0ad-data-common
   case "$action" in
     'install')
-      debug "install --- ${items[*]}"
-      sudo apt install -qqq "${items[@]}"
+      sudo apt install -qqq "${items[*]}"
       ;;
-    'upgrade'|'remove')
-      debug "upgrade or remove ${items[*]}"
+    'upgrade' | 'remove')
+      echo "echo 'removing or upgrading ${items[*]}'"
       ;;
-    *)
-      debug "doing default: $action - $item_id"
-      fzf_result_default "$action" "${item_id}"
-      ;;
+    *) fzf_result_default "$action" "${item_id}" ;;
   esac
   # done
 }
 
 function fzf_command {
-  display-mode-hints
+  mode-display-hints
   if [[ $FZF_MODE -eq 1 ]]; then
     apt_search
   else
@@ -68,25 +57,28 @@ function fzf_command {
 
 function fzf_preview() {
   # mode="$1" && shift
-  mode=${FZF_MODE:-$FZF_DEFAULT_MODE}
-  mode_name="${FZF_MODES[$(( mode - 1 ))]}"
-  selection="$*"
+  echo "finally here: $#"
+  mode="$1" && shift
+  mode_name="${FZF_MODES[$mode]}"
+  selection="$1"
   case "$mode_name" in
-    available)
+    available | installed | upgradeable)
       yq eval '.Description-en' <(apt-cache show "$selection") 2>/dev/null \
         | bat --color always --plain
       apt-cache show $selection \
         | bat --language yaml --color always --plain
       ;;
-    installed)
-      echo "installed $selection"
-      ;;
-    upgradeable)
-      echo "upgradeable $selection"
-      ;;
   esac
 }
 
+function fzf_options {
+  fzf_opts="--header-lines=1"
+  echo "${fzf_opts}"
+}
+
+source "fzf.init.sh"
+FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS $(fzf_options)"
 FZF_DEFAULT_COMMAND="$SRC --command"
+# shellcheck source=SCRIPTDIR/fzf.sh
 
 source "fzf.sh"
