@@ -1,6 +1,4 @@
 #!/bin/bash
-set -euo pipefail
-IFS=$'\n\t'
 
 FZF_LOGFILE=${FZF_LOGFILE:-"/tmp/fzf.log"}
 # SRC="${SRC:-${BASH_SOURCE[0]}}"
@@ -28,7 +26,7 @@ log_colors=(
   '\033[38;5;70m'
   '\033[38;5;80m'
 )
-_log_idx=${_log_idx:-0}
+_log_idx=0
 _start_time=$(date "+%M%S%3N")
 
 function log {
@@ -42,17 +40,14 @@ function log {
   div="\n${div}${clr_rst}"
   div="${div}\n${clr_head}${SRC} $$ $PPID${clr_rst}\n"
 
-  curr_time=$(date "+%M%S%3N") 2>/dev/null
-  prefix=$((${curr_time#0} - ${_start_time#0})) 2>/dev/null
-  prefix="${clr_time}${prefix}:${clr_rst} "
-
   if [[ -n ${FZF_LOGFILE} && ${FZF_LOGFILE} != 0 ]]; then
-    [[ $_log_idx -eq 0 ]] \
-      && printf "$div\n" >>${FZF_LOGFILE}
-    echo -en "\n${prefix} $*" >>${FZF_LOGFILE}
-    _log_idx=$((_log_idx + 1))
+    if [[ $_log_idx -eq 0 ]]; then
+      printf "$div\n" >>${FZF_LOGFILE}
+    fi
+    echo -en "\n$*" >>${FZF_LOGFILE}
   fi
   _start_time=$(date "+%M%S%3N")
+  _log_idx=$((_log_idx + 1))
 }
 
 function log_args {

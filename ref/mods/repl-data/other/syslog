@@ -1,0 +1,78 @@
+Mar 14 17:34:30 thanatos systemd[1]: pgcluu_collectd.service: Control process exited, code=exited, status=2/INVALIDARGUMENT
+Mar 14 17:34:30 thanatos systemd[1]: pgcluu_collectd.service: Failed with result 'exit-code'.
+Mar 14 17:35:01 thanatos CRON[3504510]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Mar 14 17:35:26 thanatos /usr/libexec/gdm-x-session[440552]: [440588:440601:0314/173526.654893:ERROR:ssl_client_socket_impl.cc(995)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 14 17:35:26 thanatos /usr/libexec/gdm-x-session[440552]: [440588:440601:0314/173526.673678:ERROR:ssl_client_socket_impl.cc(995)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 14 17:35:30 thanatos systemd[1]: pgcluu_collectd.service: Scheduled restart job, restart counter is at 1464.
+Mar 14 17:35:30 thanatos systemd[1]: Stopped Postgresql performance and auditing statistics collecting.
+Mar 14 17:35:30 thanatos systemd[1]: Starting Postgresql performance and auditing statistics collecting...
+Mar 14 17:35:30 thanatos pgcluu_collectd[3506009]: LOG: Detach from terminal with pid: 3506009
+Mar 14 17:35:30 thanatos systemd[1]: Started Postgresql performance and auditing statistics collecting.
+Mar 14 17:35:30 thanatos pgcluu_collectd[3506023]: ERROR: can't find /run/postgresql/pgcluu_collectd.pid, is pgcluu_collectd running?
+Mar 14 17:35:30 thanatos systemd[1]: pgcluu_collectd.service: Control process exited, code=exited, status=2/INVALIDARGUMENT
+Mar 14 17:35:30 thanatos systemd[1]: pgcluu_collectd.service: Failed with result 'exit-code'.
+Mar 14 17:35:37 thanatos /usr/libexec/gdm-x-session[440552]: [440588:440601:0314/173537.668437:ERROR:ssl_client_socket_impl.cc(995)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 14 17:35:48 thanatos /usr/libexec/gdm-x-session[440552]: [440588:440601:0314/173548.382797:ERROR:ssl_client_socket_impl.cc(995)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 14 17:36:30 thanatos systemd[1]: pgcluu_collectd.service: Scheduled restart job, restart counter is at 1465.
+Mar 14 17:36:30 thanatos systemd[1]: Stopped Postgresql performance and auditing statistics collecting.
+Mar 14 17:36:30 thanatos systemd[1]: Starting Postgresql performance and auditing statistics collecting...
+Mar 14 17:36:30 thanatos pgcluu_collectd[3509121]: LOG: Detach from terminal with pid: 3509121
+Mar 14 17:36:30 thanatos systemd[1]: Started Postgresql performance and auditing statistics collecting.
+Mar 14 17:36:30 thanatos pgcluu_collectd[3509135]: ERROR: can't find /run/postgresql/pgcluu_collectd.pid, is pgcluu_collectd running?
+Mar 14 17:36:30 thanatos systemd[1]: pgcluu_collectd.service: Control process exited, code=exited, status=2/INVALIDARGUMENT
+Mar 14 17:36:30 thanatos systemd[1]: pgcluu_collectd.service: Failed with result 'exit-code'.
+Mar 14 17:37:11 thanatos /usr/libexec/gdm-x-session[440552]: [440588:440601:0314/173711.068928:ERROR:ssl_client_socket_impl.cc(995)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 14 17:37:11 thanatos /usr/libexec/gdm-x-session[440552]: [440588:440601:0314/173711.083658:ERROR:ssl_client_socket_impl.cc(995)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 14 17:37:25 thanatos /usr/libexec/gdm-x-session[440552]: [440588:440601:0314/173725.803586:ERROR:ssl_client_socket_impl.cc(995)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 14 17:37:30 thanatos systemd[1]: pgcluu_collectd.service: Scheduled restart job, restart counter is at 1466.
+Mar 14 17:37:30 thanatos systemd[1]: Stopped Postgresql performance and auditing statistics collecting.
+Mar 14 17:37:30 thanatos systemd[1]: Starting Postgresql performance and auditing statistics collecting...
+Mar 14 17:37:30 thanatos pgcluu_collectd[3512225]: LOG: Detach from terminal with pid: 3512225
+Mar 14 17:37:30 thanatos systemd[1]: Started Postgresql performance and auditing statistics collecting.
+Mar 14 17:37:30 thanatos pgcluu_collectd[3512243]: ERROR: can't find /run/postgresql/pgcluu_collectd.pid, is pgcluu_collectd running?
+Mar 14 17:37:30 thanatos systemd[1]: pgcluu_collectd.service: Control process exited, code=exited, status=2/INVALIDARGUMENT
+Mar 14 17:37:30 thanatos systemd[1]: pgcluu_collectd.service: Failed with result 'exit-code'.
+Mar 14 17:37:38 thanatos /usr/libexec/gdm-x-session[440552]: [440588:440601:0314/173738.642788:ERROR:ssl_client_socket_impl.cc(995)] handshake failed; returned -1, SSL error code 1, net_error -101
+Mar 14 17:38:30 thanatos systemd[1]: pgcluu_collectd.service: Scheduled restart job, restart counter is at 1467.
+Mar 14 17:38:30 thanatos systemd[1]: Stopped Postgresql performance and auditing statistics collecting.
+Mar 14 17:38:30 thanatos systemd[1]: Starting Postgresql performance and auditing statistics collecting...
+Mar 14 17:38:30 thanatos pgcluu_collectd[3515367]: LOG: Detach from terminal with pid: 3515367
+Mar 14 17:38:30 thanatos systemd[1]: Started Postgresql performance and auditing statistics collecting.
+Mar 14 17:38:31 thanatos pgcluu_collectd[3515381]: ERROR: can't find /run/postgresql/pgcluu_collectd.pid, is pgcluu_collectd running?
+Mar 14 17:38:31 thanatos systemd[1]: pgcluu_collectd.service: Control process exited, code=exited, status=2/INVALIDARGUMENT
+Mar 14 17:38:31 thanatos systemd[1]: pgcluu_collectd.service: Failed with result 'exit-code'.
+Mar 14 17:39:00 thanatos systemd[1]: Starting Clean php session files...
+Mar 14 17:39:00 thanatos systemd[1]: phpsessionclean.service: Deactivated successfully.
+Mar 14 17:39:00 thanatos systemd[1]: Finished Clean php session files.
+Mar 14 17:39:01 thanatos CRON[3516872]: (root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)
+Mar 14 17:39:31 thanatos systemd[1]: pgcluu_collectd.service: Scheduled restart job, restart counter is at 1468.
+Mar 14 17:39:31 thanatos systemd[1]: Stopped Postgresql performance and auditing statistics collecting.
+Mar 14 17:39:31 thanatos systemd[1]: Starting Postgresql performance and auditing statistics collecting...
+Mar 14 17:39:31 thanatos pgcluu_collectd[3518410]: LOG: Detach from terminal with pid: 3518410
+Mar 14 17:39:31 thanatos systemd[1]: Started Postgresql performance and auditing statistics collecting.
+Mar 14 17:39:31 thanatos pgcluu_collectd[3518435]: ERROR: can't find /run/postgresql/pgcluu_collectd.pid, is pgcluu_collectd running?
+Mar 14 17:39:31 thanatos systemd[1]: pgcluu_collectd.service: Control process exited, code=exited, status=2/INVALIDARGUMENT
+Mar 14 17:39:31 thanatos systemd[1]: pgcluu_collectd.service: Failed with result 'exit-code'.
+Mar 14 17:39:47 thanatos NetworkManager[667]: <info>  [1647297587.7713] dhcp6 (wlp2s0): state changed bound -> bound, address=2600:1700:190:a290::38
+Mar 14 17:39:47 thanatos dbus-daemon[665]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.13' (uid=0 pid=667 comm="/usr/sbin/NetworkManager --no-daemon " label="unconfined")
+Mar 14 17:39:47 thanatos systemd[1]: Starting Network Manager Script Dispatcher Service...
+Mar 14 17:39:47 thanatos dbus-daemon[665]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Mar 14 17:39:47 thanatos systemd[1]: Started Network Manager Script Dispatcher Service.
+Mar 14 17:39:57 thanatos systemd[1]: NetworkManager-dispatcher.service: Deactivated successfully.
+Mar 14 17:40:31 thanatos systemd[1]: pgcluu_collectd.service: Scheduled restart job, restart counter is at 1469.
+Mar 14 17:40:31 thanatos systemd[1]: Stopped Postgresql performance and auditing statistics collecting.
+Mar 14 17:40:31 thanatos systemd[1]: Starting Postgresql performance and auditing statistics collecting...
+Mar 14 17:40:31 thanatos pgcluu_collectd[3521557]: LOG: Detach from terminal with pid: 3521557
+Mar 14 17:40:31 thanatos systemd[1]: Started Postgresql performance and auditing statistics collecting.
+Mar 14 17:40:31 thanatos pgcluu_collectd[3521571]: ERROR: can't find /run/postgresql/pgcluu_collectd.pid, is pgcluu_collectd running?
+Mar 14 17:40:31 thanatos systemd[1]: pgcluu_collectd.service: Control process exited, code=exited, status=2/INVALIDARGUMENT
+Mar 14 17:40:31 thanatos systemd[1]: pgcluu_collectd.service: Failed with result 'exit-code'.
+Mar 14 17:41:31 thanatos systemd[1]: pgcluu_collectd.service: Scheduled restart job, restart counter is at 1470.
+Mar 14 17:41:31 thanatos systemd[1]: Stopped Postgresql performance and auditing statistics collecting.
+Mar 14 17:41:31 thanatos systemd[1]: Starting Postgresql performance and auditing statistics collecting...
+Mar 14 17:41:32 thanatos pgcluu_collectd[3524671]: LOG: Detach from terminal with pid: 3524671
+Mar 14 17:41:32 thanatos systemd[1]: Started Postgresql performance and auditing statistics collecting.
+Mar 14 17:41:32 thanatos pgcluu_collectd[3524685]: ERROR: can't find /run/postgresql/pgcluu_collectd.pid, is pgcluu_collectd running?
+Mar 14 17:41:32 thanatos systemd[1]: pgcluu_collectd.service: Control process exited, code=exited, status=2/INVALIDARGUMENT
+Mar 14 17:41:32 thanatos systemd[1]: pgcluu_collectd.service: Failed with result 'exit-code'.
+Mar 14 17:42:32 thanatos systemd[1]: pgcluu_collectd.service: Scheduled restart job, restart counter is at 1471.

@@ -1,5 +1,6 @@
 #!/bin/bash
-
+set -euo pipefail
+IFS=$'\n\t'
 SRC="${BASH_SOURCE[0]}"
 
 declare -A clr
@@ -47,6 +48,7 @@ function fzf_results {
 }
 
 function fzf_command {
+  FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS $(fzf_options)"
   mode-display-hints
   if [[ $FZF_MODE -eq 1 ]]; then
     apt_search
@@ -56,10 +58,7 @@ function fzf_command {
 }
 
 function fzf_preview() {
-  # mode="$1" && shift
-  echo "finally here: $#"
-  mode="$1" && shift
-  mode_name="${FZF_MODES[$mode]}"
+  mode_name="${FZF_MODES[$((FZF_MODE - 1))]}"
   selection="$1"
   case "$mode_name" in
     available | installed | upgradeable)
@@ -76,9 +75,6 @@ function fzf_options {
   echo "${fzf_opts}"
 }
 
-source "fzf.init.sh"
-FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS $(fzf_options)"
 FZF_DEFAULT_COMMAND="$SRC --command"
-# shellcheck source=SCRIPTDIR/fzf.sh
 
-source "fzf.sh"
+source "../fzf.sh"

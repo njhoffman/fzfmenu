@@ -20,6 +20,14 @@ for action in "${!FZF_DEFAULT_ACTIONS[@]}"; do
   fi
 done
 
+FZF_ACTIONS_DEFAULT_SORT=(
+  "cat:id"
+  "cat:preview"
+  "yank:id"
+  "yank:preview"
+)
+FZF_ACTIONS_SORT=${FZF_ACTIONS_SORT:-FZF_ACTIONS_DEFAULT_SORT}
+
 function action_menu_display {
   lines=()
   function action_menu_display_line {
@@ -31,10 +39,12 @@ function action_menu_display {
   }
   if [[ -n $FZF_ACTIONS_SORT ]]; then
     for action in "${FZF_ACTIONS_SORT[@]}"; do
+      debug "action1: $action"
       action_menu_display_line "$action"
     done
   else
     for action in "${!FZF_ACTIONS[@]}"; do
+      debug "action2: $action"
       action_menu_display_line "$action"
     done
   fi
@@ -78,10 +88,16 @@ function action_menu {
     header="Perform action on: $(cut -d' ' -f1 <<<${selected_items[*]})"
   fi
 
-  fzf_opts="--header-lines=0 --no-multi --header=\"$header\""
-  fzf_opts="${fzf_opts} --preview-window=hidden --delimiter='\|' --with-nth=1.."
-  FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS $fzf_opts"
-  # export FZF_DEFAULT_OPTS
+  opts="\
+    --header-lines=0
+    --preview-window=hidden
+    --delimiter='\|'
+    --with-nth=1..
+    --no-multi
+    --header='$header'"
+
+  ORIG_FZF_OPTS="$FZF_DEFAULT_OPTS"
+  FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS $opts"
 
   if [[ $FZF_TMUX -eq 1 ]]; then
     FZF_TMUX_OPTS="-w50% -h30%"
@@ -117,5 +133,6 @@ function action_menu {
     menus+=(main_menu)
   fi
 
+  FZF_DEFAULT_OPTS="$ORIG_FZF_OPTS"
 
 }

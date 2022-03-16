@@ -1,7 +1,8 @@
 #!/bin/bash
-SRC="${BASH_SOURCE[0]}"
+set -euo pipefail
+IFS=$'\n\t'
 
-source "fzf.init.sh"
+SRC="${BASH_SOURCE[0]}"
 
 declare -A clr
 lc=$'\e[' rc=m
@@ -94,18 +95,19 @@ function fzf_command_stash {
 function fzf_command_examples {
   mode_name="${FZF_MODES[$(($FZF_MODE - 1))]}"
   case "$mode_name" in
-    sh) cat "$HOME/git/fzfmenu/ref/repl-data/sh.data";;
+    sh) cat "$HOME/git/fzfmenu/ref/mods/repl-data/sh.examples";;
+    grep) cat "$HOME/git/fzfmenu/ref/mods/repl-data/grep.examples";;
     # jq) fzf_command_jq "$mode_name" ;;
     # sed) fzf_command_sed "$mode_name" ;;
     # awk) fzf_command_awk "$mode_name" ;;
-    # grep) fzf_command_awk "$mode_name" ;;
     *) echo -e "example one\nexample two" ;;
   esac
 }
 
 function fzf_command {
+  FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS $(fzf_options)"
   # mode-display-hints
-  fzf_command_stash
+  # fzf_command_stash
   fzf_command_examples
 }
 
@@ -120,8 +122,7 @@ function fzf_jq_preview() {
     --delimiter=" " \
     --preview-window="down:80%:nohidden" \
     --height="95%" \
-    --query="." \
-    --bind "tab:replace-query,return:print-query"
+    --bind "tab:replace-query"
       # --bind "ctrl-n:down+replace-query"
 }
 
@@ -140,8 +141,15 @@ function fzf_preview() {
   case "$mode_name" in
     # sh) FZF_PREVIEW_CMD="<$input bash -c {q}" ;;
     sh) /bin/bash -c "${query}" | grcat conf.docker-machinels;;
+    grep)
+      debug "query: $query"
+      export GREP_COLORS="ms=01;32"
+      eval "$HOME/bin/cgrep ${query} ${input}"
+      # # grep) FZF_PREVIEW_CMD="<$input grep {q}" ;;
+      # # export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36"
+
+      ;;
     awk) FZF_PREVIEW_CMD="<$input awk {q}" ;;
-    grep) FZF_PREVIEW_CMD="<$input echo 'hey dogs : {q}'" ;;
     sed) FZF_PREVIEW_CMD="<$input sed {q}" ;;
     ruby) FZF_PREVIEW_CMD="ruby -e {q}";;
     python) FZF_PREVIEW_CMD="python -c {q}";;
@@ -158,22 +166,23 @@ function fzf_options {
   [[ -n  "$mode_name" ]] \
     && prompt=" ${prompt} "
 
-  opts="--print-query --ansi"
+  [[ "$mode_name" == "grep" ]] \
+    && query='-E -i "\b\w{4}\b"'
 
-  opts="${opts} --bind 'tab:replace-query'"
-  opts="${opts} --prompt='$prompt' "
-  opts="${opts} --header-lines=1"
+  opts="\
+    --query='${query:-}'
+    --bind 'tab:replace-query'
+    --prompt='$prompt'
+    --preview-window='nowrap:down,80%'
+    --header-lines=1"
 
-  # if [[ ${FZF_PREVIEW_NOWRAP} -eq 1 ]]; then
-  #   opts="${opts} --preview-window='nowrap'"
-  # fi
   echo "${opts}"
 }
 
-FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS $(fzf_options)"
 # shellcheck source=SCRIPTDIR/fzf.sh
 FZF_DEFAULT_COMMAND="$SRC --command"
-source "fzf.sh"
+
+source "../fzf.sh"
 
 # input_arg="${1:-}"
 # if [[ -z "$input_arg" || "$input_arg" == "-" ]]; then

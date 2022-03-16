@@ -1,0 +1,473 @@
+{
+  "items": [
+    {
+      "tags": [
+        "path",
+        "autocomplete",
+        "zsh"
+      ],
+      "owner": {
+        "account_id": 153628,
+        "reputation": 8787,
+        "user_id": 369009,
+        "user_type": "registered",
+        "accept_rate": 95,
+        "profile_image": "https://www.gravatar.com/avatar/001cc37902a582ddb930a1ab817517bc?s=256&d=identicon&r=PG",
+        "display_name": "Jan R&#252;egg",
+        "link": "https://stackoverflow.com/users/369009/jan-r%c3%bcegg"
+      },
+      "is_answered": false,
+      "view_count": 34,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1646054258,
+      "creation_date": 1646054258,
+      "question_id": 71295612,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/71295612/zsh-completion-of-paths-with-a-prefix",
+      "title": "zsh completion of paths with a prefix"
+    },
+    {
+      "tags": [
+        "sorting",
+        "zsh",
+        "iterm2",
+        "zshrc",
+        "zsh-completion"
+      ],
+      "owner": {
+        "account_id": 7015566,
+        "reputation": 5144,
+        "user_id": 5377037,
+        "user_type": "registered",
+        "accept_rate": 81,
+        "profile_image": "https://www.gravatar.com/avatar/4e0c20b401183f5646ae297c943f5da4?s=256&d=identicon&r=PG&f=1",
+        "display_name": "stefan",
+        "link": "https://stackoverflow.com/users/5377037/stefan"
+      },
+      "is_answered": false,
+      "view_count": 507,
+      "answer_count": 0,
+      "score": 9,
+      "last_activity_date": 1645827574,
+      "creation_date": 1637358312,
+      "last_edit_date": 1645827574,
+      "question_id": 70041237,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/70041237/zsh-completion-have-the-most-recents-files-and-directories-near-to-the-prompt-a",
+      "title": "zsh completion: have the most recents files and directories near to the prompt and suggested most recent files or directories"
+    },
+    {
+      "tags": [
+        "bash",
+        "zsh",
+        "oh-my-zsh",
+        "bash-completion"
+      ],
+      "owner": {
+        "account_id": 5068096,
+        "reputation": 175,
+        "user_id": 4067669,
+        "user_type": "registered",
+        "profile_image": "https://lh4.googleusercontent.com/-87HENms3DPo/AAAAAAAAAAI/AAAAAAAACqE/IF1MnRFUzCE/photo.jpg?sz=256",
+        "display_name": "Nicolas",
+        "link": "https://stackoverflow.com/users/4067669/nicolas"
+      },
+      "is_answered": true,
+      "view_count": 266,
+      "accepted_answer_id": 70893451,
+      "answer_count": 1,
+      "score": 2,
+      "last_activity_date": 1643371288,
+      "creation_date": 1634897917,
+      "question_id": 69675174,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/69675174/bash-completion-does-not-work-in-zsh-oh-my-zsh-because-comp-words-is-not-an-arra",
+      "title": "Bash completion does not work in ZSH/Oh-My-ZSH because COMP_WORDS is not an array"
+    },
+    {
+      "tags": [
+        "zsh",
+        "zsh-completion"
+      ],
+      "owner": {
+        "account_id": 2399358,
+        "reputation": 325,
+        "user_id": 2097442,
+        "user_type": "registered",
+        "accept_rate": 27,
+        "profile_image": "https://www.gravatar.com/avatar/ca18f475ee1495a02604517d7cd829cc?s=256&d=identicon&r=PG",
+        "display_name": "Neo Mosaid",
+        "link": "https://stackoverflow.com/users/2097442/neo-mosaid"
+      },
+      "is_answered": false,
+      "view_count": 12,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1643143206,
+      "creation_date": 1643142922,
+      "last_edit_date": 1643143206,
+      "question_id": 70855330,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/70855330/how-to-remove-forward-slaches-from-custom-zsh-completion",
+      "title": "how to remove forward slaches from custom zsh completion"
+    },
+    {
+      "tags": [
+        "autocomplete",
+        "zsh",
+        "oh-my-zsh",
+        "bash-completion"
+      ],
+      "owner": {
+        "account_id": 2770173,
+        "reputation": 29,
+        "user_id": 2384927,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/89a7f06f758e7dde3acfa5d6abc82f3a?s=256&d=identicon&r=PG",
+        "display_name": "Brice.S",
+        "link": "https://stackoverflow.com/users/2384927/brice-s"
+      },
+      "is_answered": false,
+      "view_count": 33,
+      "answer_count": 1,
+      "score": -1,
+      "last_activity_date": 1643106982,
+      "creation_date": 1643089242,
+      "question_id": 70843900,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/70843900/zsh-completion-caching-policy-explained",
+      "title": "Zsh completion caching policy explained"
+    },
+    {
+      "tags": [
+        "zsh",
+        "zsh-completion"
+      ],
+      "owner": {
+        "account_id": 91222,
+        "reputation": 2894,
+        "user_id": 250610,
+        "user_type": "registered",
+        "accept_rate": 81,
+        "profile_image": "https://www.gravatar.com/avatar/aee2bb3e08e94a3770ef192d7df06f65?s=256&d=identicon&r=PG",
+        "display_name": "MikeTheTall",
+        "link": "https://stackoverflow.com/users/250610/mikethetall"
+      },
+      "is_answered": false,
+      "view_count": 29,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1643098164,
+      "creation_date": 1642984701,
+      "question_id": 70827840,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/70827840/zsh-tab-completion-for-files-not-in-the-current-directory",
+      "title": "Zsh: tab completion for files not in the current directory?"
+    },
+    {
+      "tags": [
+        "zsh",
+        "zshrc",
+        "zsh-completion"
+      ],
+      "owner": {
+        "account_id": 262835,
+        "reputation": 557,
+        "user_id": 547990,
+        "user_type": "registered",
+        "accept_rate": 50,
+        "profile_image": "https://www.gravatar.com/avatar/c6db9b237e8ed88c12f31057058fd62b?s=256&d=identicon&r=PG",
+        "display_name": "shahn",
+        "link": "https://stackoverflow.com/users/547990/shahn"
+      },
+      "is_answered": true,
+      "view_count": 304,
+      "accepted_answer_id": 68794830,
+      "answer_count": 1,
+      "score": 1,
+      "last_activity_date": 1642421489,
+      "creation_date": 1628971334,
+      "question_id": 68786631,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/68786631/how-do-i-configure-zsh-for-completion-of-partial-words-but-case-insensitive",
+      "title": "How do I configure zsh for completion of partial words, but case-insensitive?"
+    },
+    {
+      "tags": [
+        "shell",
+        "zsh",
+        "fzf"
+      ],
+      "owner": {
+        "account_id": 359317,
+        "reputation": 248,
+        "user_id": 700659,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/abc506487129ccdf5c46ec29798b817c?s=256&d=identicon&r=PG&f=1",
+        "display_name": "agronskiy",
+        "link": "https://stackoverflow.com/users/700659/agronskiy"
+      },
+      "is_answered": false,
+      "view_count": 137,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1638961008,
+      "creation_date": 1638915821,
+      "question_id": 70267661,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/70267661/make-fzf-tab-completion-only-return-files-for-specific-command-caveat-ins",
+      "title": "Make fzf `**&lt;TAB&gt;` completion only return files for specific command (caveat inside!)"
+    },
+    {
+      "tags": [
+        "zsh",
+        "iterm2",
+        "zshrc",
+        "tab-completion",
+        "zsh-completion"
+      ],
+      "owner": {
+        "account_id": 7015566,
+        "reputation": 5144,
+        "user_id": 5377037,
+        "user_type": "registered",
+        "accept_rate": 81,
+        "profile_image": "https://www.gravatar.com/avatar/4e0c20b401183f5646ae297c943f5da4?s=256&d=identicon&r=PG&f=1",
+        "display_name": "stefan",
+        "link": "https://stackoverflow.com/users/5377037/stefan"
+      },
+      "is_answered": false,
+      "view_count": 146,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1638648111,
+      "creation_date": 1638643653,
+      "last_edit_date": 1638648111,
+      "question_id": 70228522,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/70228522/zsh-completion-option-zstyle-completion-menu-yes-long-select-to-show-the",
+      "title": "zsh completion : option zstyle &#39;:completion:*&#39; menu yes=long select to show the menu but bad foreground/background colors displayed for suggestions"
+    },
+    {
+      "tags": [
+        "shell",
+        "zsh",
+        "zsh-completion"
+      ],
+      "owner": {
+        "account_id": 2101065,
+        "reputation": 2833,
+        "user_id": 1868674,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/Pc6f8.jpg?s=256&g=1",
+        "display_name": "Lord Bo",
+        "link": "https://stackoverflow.com/users/1868674/lord-bo"
+      },
+      "is_answered": true,
+      "view_count": 44,
+      "answer_count": 1,
+      "score": 1,
+      "last_activity_date": 1636896231,
+      "creation_date": 1636805011,
+      "question_id": 69954068,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/69954068/zsh-completion-script-with-globbing",
+      "title": "zsh completion script with globbing"
+    },
+    {
+      "tags": [
+        "zsh",
+        "oh-my-zsh",
+        "zsh-completion"
+      ],
+      "owner": {
+        "account_id": 950826,
+        "reputation": 6084,
+        "user_id": 977017,
+        "user_type": "registered",
+        "accept_rate": 65,
+        "profile_image": "https://www.gravatar.com/avatar/c04102dbd0a4eabc24fad98983399cf3?s=256&d=identicon&r=PG",
+        "display_name": "Jan",
+        "link": "https://stackoverflow.com/users/977017/jan"
+      },
+      "is_answered": false,
+      "view_count": 62,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1636367964,
+      "creation_date": 1636367964,
+      "question_id": 69882143,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/69882143/why-my-zsh-completion-is-not-sourcing-it",
+      "title": "Why my zsh completion is not sourcing it?"
+    },
+    {
+      "tags": [
+        "tabs",
+        "zsh",
+        "windows-subsystem-for-linux",
+        "auto",
+        "completion"
+      ],
+      "owner": {
+        "account_id": 6265208,
+        "reputation": 11,
+        "user_id": 6766052,
+        "user_type": "registered",
+        "profile_image": "https://lh4.googleusercontent.com/-UbWjnhadIeo/AAAAAAAAAAI/AAAAAAAAAG8/iOrdtbqlHeo/photo.jpg?sz=256",
+        "display_name": "Eunchong C. Kim",
+        "link": "https://stackoverflow.com/users/6766052/eunchong-c-kim"
+      },
+      "is_answered": false,
+      "view_count": 37,
+      "answer_count": 1,
+      "score": -1,
+      "last_activity_date": 1632052320,
+      "creation_date": 1632041618,
+      "question_id": 69241758,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/69241758/zsh-auto-completion-shows-too-many-and-its-annoying",
+      "title": "zsh auto-completion shows too many and it&#39;s annoying"
+    },
+    {
+      "tags": [
+        "shell",
+        "autocomplete",
+        "zsh",
+        "customization"
+      ],
+      "owner": {
+        "account_id": 17021114,
+        "reputation": 1,
+        "user_id": 12313677,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/a-/AAuE7mD6kmEG3JQyy4NaUoDX-oSszriRxz93dgtFb3jjLQ=k-s256",
+        "display_name": "leslie",
+        "link": "https://stackoverflow.com/users/12313677/leslie"
+      },
+      "is_answered": false,
+      "view_count": 37,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1631781575,
+      "creation_date": 1631477503,
+      "question_id": 69154873,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/69154873/zsh-custom-theme-command-completion-bug",
+      "title": "zsh custom theme, command completion bug"
+    },
+    {
+      "tags": [
+        "zsh",
+        "scons"
+      ],
+      "owner": {
+        "account_id": 2816444,
+        "reputation": 586,
+        "user_id": 2421370,
+        "user_type": "registered",
+        "accept_rate": 50,
+        "profile_image": "https://www.gravatar.com/avatar/211c4a04d50da09172b1402c82d14197?s=256&d=identicon&r=PG",
+        "display_name": "rho",
+        "link": "https://stackoverflow.com/users/2421370/rho"
+      },
+      "is_answered": true,
+      "view_count": 38,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1630994602,
+      "creation_date": 1630808037,
+      "last_edit_date": 1630994602,
+      "question_id": 69060144,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/69060144/scons-run-target-completion-for-zsh",
+      "title": "`scons run` target completion for zsh"
+    },
+    {
+      "tags": [
+        "autocomplete",
+        "zsh"
+      ],
+      "owner": {
+        "account_id": 1803381,
+        "reputation": 3699,
+        "user_id": 1641112,
+        "user_type": "registered",
+        "accept_rate": 46,
+        "profile_image": "https://www.gravatar.com/avatar/00bee18fb974a0057fb61a56faf66052?s=256&d=identicon&r=PG",
+        "display_name": "StevieD",
+        "link": "https://stackoverflow.com/users/1641112/stevied"
+      },
+      "is_answered": false,
+      "view_count": 11,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1630854401,
+      "creation_date": 1630853558,
+      "question_id": 69064481,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/69064481/how-might-i-fix-this-bug-in-the-cheat-commands-tab-completion-zsh-script",
+      "title": "How might I fix this bug in the cheat command&#39;s tab completion zsh script?"
+    },
+    {
+      "tags": [
+        "shell",
+        "scripting",
+        "zsh",
+        "tab-completion",
+        "zsh-completion"
+      ],
+      "owner": {
+        "account_id": 20181033,
+        "reputation": 11,
+        "user_id": 15025655,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/20aaae37d3b7c3f1d96c2a69614331f8?s=256&d=identicon&r=PG&f=1",
+        "display_name": "ismxy",
+        "link": "https://stackoverflow.com/users/15025655/ismxy"
+      },
+      "is_answered": false,
+      "view_count": 42,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1629623420,
+      "creation_date": 1629488769,
+      "last_edit_date": 1629575079,
+      "question_id": 68867412,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/68867412/how-should-a-function-passed-to-arguments-for-zsh-shell-completion-look-like",
+      "title": "How should a function passed to _arguments for zsh shell completion look like?"
+    },
+    {
+      "tags": [
+        "zsh",
+        "tab-completion",
+        "completion"
+      ],
+      "owner": {
+        "account_id": 10452287,
+        "reputation": 201,
+        "user_id": 12008379,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/p7m7p.jpg?s=256&g=1",
+        "display_name": "MannyC",
+        "link": "https://stackoverflow.com/users/12008379/mannyc"
+      },
+      "is_answered": true,
+      "view_count": 59,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1628096279,
+      "creation_date": 1628034815,
+      "last_edit_date": 1628096149,
+      "question_id": 68643931,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/68643931/zsh-s-tab-completion-overwrites-whats-next",
+      "title": "zsh’s tab completion overwrites what&#39;s next"
+    }
+  ],
+  "has_more": false,
+  "quota_max": 300,
+  "quota_remaining": 284
+}

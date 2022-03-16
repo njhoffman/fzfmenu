@@ -1,15 +1,19 @@
 #!/bin/bash
 
-source "fzf.format.sh"
-source "fzf.modes.sh"
+CWD="$(dirname ${BASH_SOURCE[0]})"
+source "$CWD/fzf.init.sh"
+source "$CWD/fzf.format.sh"
+source "$CWD/fzf.modes.sh"
+source "$CWD/fzf.menu-action.sh"
+source "$CWD/fzf.menu-main.sh"
+
 function main-display {
-  menus=(main_menu)
+  menus=('main_menu')
   menu_idx=1
 
   while [[ $menu_idx -gt 0 ]]; do
     menu_cnt="${#menus[@]}"
     eval ${menus[menu_idx - 1]}
-    # eval "${menus[menu_idx - 1]}"
     if [[ $menu_cnt -lt ${#menus[@]} ]]; then
       menu_idx=$((menu_idx + 1))
     elif [[ ${#menus[@]} -eq 0 ]]; then
@@ -17,12 +21,12 @@ function main-display {
     else
       menu_idx=$((menu_idx - 1))
     fi
-
   done
 }
 
 function tmpfile_cleanup {
-  debug "cleaning up... $FZF_PID $FZF_TMPDIR/$FZF_PID.tmp"
+  pfx="\033[38;5;34mroot:\033[0m"
+  debug "$pfx cleaning up... $FZF_PID $FZF_TMPDIR/$FZF_PID.tmp"
   rm -f "$FZF_TMPDIR/$FZF_PID.tmp"
 }
 
@@ -53,14 +57,13 @@ function main {
   fi
 }
 
+pfx="\033[38;5;34mroot:\033[0m"
 ARGV=($@)
 for i in $(seq ${#ARGV[@]}); do
   j=$((i - 1))
-  debug "arg${i}: ${ARGV[$j]}"
+  debug "$pfx arg${i}: ${ARGV[$j]}"
 done
 
 tmpfile_read
-source "fzf.menu-action.sh"
-source "fzf.menu-main.sh"
 
 main "$@"
