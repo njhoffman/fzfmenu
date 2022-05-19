@@ -20,6 +20,14 @@ _fzf-assign-vars() {
   _clr[local]="${lc}${CLR_LOCAL:-38;5;239}${rc}"
   _clr[icon]="${lc}${CLR_ICON:-38;5;249}${rc}"
 
+  if [[ -n "$TMUX" ]]; then
+    tmux_width=$(tmux display-message -p "#{window_width}")
+    tmux_padding="-p60%"
+    [[ tmux_width -lt 400 ]] && tmux_padding="-p70%"
+    [[ tmux_width -lt 200 ]] && tmux_padding="-p80%"
+    export FZF_TMUX_OPTS="${FZF_TMUX_OPTS:-${tmux_padding}}"
+  fi
+
 }
 
 _fzf-extra-opts() {

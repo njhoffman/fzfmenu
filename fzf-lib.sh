@@ -122,13 +122,13 @@ _fzf_tabularize_header() {
 }
 
 # FZF_MODES: output of keys with highlighting to reflect active mode
-_fzf-mode-hints() {
+_fzf-hints-modes() {
   local hide_keys=${FZF_MODES_HIDE_KEYS:-0}
   local hints=""
   local mode="$1"
   # calculate what the selected mode is
   for ((i = 1; i <= ${#FZF_MODES}; i++)); do
-    label="${FZF_MODES[i]}"
+    label="${FZF_MODES[$i]}"
     [[ $hide_keys -eq 0 ]] && label="f${i}:${label}"
     if [[ "${FZF_MODES[i]}" == "${FZF_MODES[mode]}" ]]; then
       hints="${hints}${_clr[mode_active]}${label}  ${_clr[rst]}"
@@ -139,7 +139,8 @@ _fzf-mode-hints() {
   echo "${hints}"
 }
 
-_fzf-toggle-hints() {
+# FZF_TOGGLES: output of keys with highlighting to reflect active toggles
+_fzf-hints-toggles() {
   local hide_keys=${FZF_TOGGLES_HIDE_KEYS:-0}
   local hints=""
   toggle_vals="$1"
@@ -153,6 +154,25 @@ _fzf-toggle-hints() {
     [[ $hide_keys -eq 0 ]] && label="a${i}:${label}"
     hints="${hints}${clr_toggle}${label}  ${_clr[rst]}"
     # hints="${hints}${_clr[toggle_inactive]}${label}  ${_clr[rst]}"
+  done
+  echo "${hints}"
+}
+
+# FZF_SORT: output of active sort key with highlighting
+_fzf-hints-sort() {
+# 
+  local hide_keys=${FZF_SORT_HIDE_KEYS:-0}
+  local hints=""
+  local sort_idx="$1"
+  # calculate what the selected sort is
+  for ((i = 1; i <= ${#FZF_SORT}; i++)); do
+    label="${FZF_SORT[i]}"
+    [[ $hide_keys -eq 0 ]] && label="f${i}:${label}"
+    if [[ "${FZF_SORT[i]}" == "${FZF_SORT[sort_idx]}" ]]; then
+      hints="${hints}${_clr[sort_active]}${label}  ${_clr[rst]}"
+    else
+      hints="${hints}${_clr[sort_inactive]}${label}  ${_clr[rst]}"
+    fi
   done
   echo "${hints}"
 }

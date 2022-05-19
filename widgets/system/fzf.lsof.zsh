@@ -38,6 +38,14 @@ FZF_ACTION_DESCRIPTIONS=(
 _fzf-assign-vars() {
   local lc=$'\e[' rc=m
   _clr[id]="${lc}${CLR_ID:-38;5;30}${rc}"
+
+  if [[ -n "$TMUX" ]]; then
+    tmux_width=$(tmux display-message -p "#{window_width}")
+    tmux_padding="-p60%"
+    [[ tmux_width -lt 400 ]] && tmux_padding="-p75%"
+    [[ tmux_width -lt 200 ]] && tmux_padding="-p90%"
+    export FZF_TMUX_OPTS="${FZF_TMUX_OPTS:-${tmux_padding}}"
+  fi
 }
 
 _fzf-extra-opts() {
@@ -46,6 +54,7 @@ _fzf-extra-opts() {
   opts="${opts} --header-lines=1"
   # [ $RELOAD_ON_CHANGE -eq 1 ] && \
   #   opts="${opts},change:reload:'$source_command'"
+
   echo "$opts"
 }
 
@@ -108,7 +117,7 @@ _fzf-result() {
 }
 
 _fzf-prompt() {
-  echo " lsof❯ "
+  echo " ❯ "
 }
 
 _fzf-preview() {

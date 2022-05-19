@@ -30,8 +30,8 @@ _fzf-assign-vars() {
   if [[ -n "$TMUX" ]]; then
     tmux_width=$(tmux display-message -p "#{window_width}")
     tmux_padding="-p60%"
-    [[ tmux_width -lt 400 ]] && tmux_padding="-p75%"
-    [[ tmux_width -lt 200 ]] && tmux_padding="-p90%"
+    [[ $tmux_width -lt 400 ]] && tmux_padding="-p75%"
+    [[ $tmux_width -lt 200 ]] && tmux_padding="-p90%"
     export FZF_TMUX_OPTS="${FZF_TMUX_OPTS:-${tmux_padding}}"
   fi
 }
@@ -128,7 +128,7 @@ _fzf-result() {
 }
 
 _fzf-prompt() {
-  echo " ps❯ "
+  echo " ❯ "
 }
 
 _fzf-preview() {

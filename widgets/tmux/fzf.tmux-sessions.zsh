@@ -10,14 +10,6 @@ function usage() {
   echo "Usage ..."
 }
 
-if [[ $# -gt 0 ]]; then
-  if [[ ! -d "$1" ]]; then
-    echo "Directory not found: $1 - using default $TARGET_DIR"
-  else
-    TARGET_DIR="$1"
-  fi
-fi
-
 # output list of directory names with special handling
 # for sessions existing or defined in TMUXP_DIR
 function _fzf-command() {
@@ -69,5 +61,13 @@ _fzf-preview() {
 # fzf_cmd="fzf"
 
 # fzf_opts="${fzf_opts} --query='${query}'"
+
+if [[ $# -gt 0 ]]; then
+  if [[ ! -d "$1" ]]; then
+    echo "Directory not found: $1 - using default $TARGET_DIR"
+  else
+    TARGET_DIR="$1"
+  fi
+fi
 
 source "${FZF_LIB}.zsh"

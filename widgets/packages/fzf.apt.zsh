@@ -103,7 +103,7 @@ _fzf-header() {
       ;;
   esac
   header="${header}${_clr[rst]}"
-  hints=$(_fzf-mode-hints $mode)
+  hints=$(_fzf-hints-modes $mode)
   header="$header
 $hints"
   echo "$header"

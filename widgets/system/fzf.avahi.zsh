@@ -58,29 +58,33 @@ _fzf-source() {
 # avahi-browse \
 #   --all \
 #   --parsable \
+#   --terminate \
 #   --resolve 2>/dev/null
-  # headers="_;Interface;Protocol;Name;Type;Domain;Address;IP;Port;Attr"
-  # fields="active iface prot name type domain host ip port attr"
-  # while read -r line; do
-  #   IFS=';' read -r  active iface prot name net_type domain host ip attrs \
-  #     <<< $(echo $line | tr -cd '\11\12\15\40-\176')
-  #   printf "%s|%s|%s|%s|%s\n" $active $iface $net_type $name $ip
-  # done <<< $(printf "%s\n" $headers && cat ./avahi.txt) \
-  #   | column -s'\|' -t
+#   headers="_;Interface;Protocol;Name;Type;Domain;Address;IP;Port;Attr"
+#   fields="active iface prot name type domain host ip port attr"
+#   while read -r line; do
+#     IFS=';' read -r  active iface prot name net_type domain host ip attrs \
+#       <<< $(echo $line | tr -cd '\11\12\15\40-\176')
+#     printf "%s|%s|%s|%s|%s\n" $active $iface $net_type $name $ip
+#   done <<< $(printf "%s\n" $headers && cat ./avahi.txt) \
+#     | column -s'\|' -t
   # cmd="cat $(pwd)/avahi.txt | column -s';' -t"
 
-  # cmd=$(cat <<EOF
   headers="_;Interface;Protocol;Name;Type;Domain;Address;IP;Port;Attr"
   fields="active iface prot name type domain host ip port attr"
-  (echo "$headers" && avahi-browse --parsable --all --resolve 2>/dev/null) \
+  # (echo "$headers" && avahi-browse --all --parsable --resolve --terminate 2>/dev/null) \
+  avahi-browse --all --parsable --resolve --terminate 2>/dev/null \
     | while read -r line; do
-        IFS=';' read -r  active iface prot name net_type domain host ip attrs
-          <<< $(echo $line | tr -cd '\11\12\15\40-\176')
+      # IFS=';' read -r active iface prot name net_type domain host ip attrs
+        IFS=';' read -r active iface prot name net_type domain host ip
+        <<< $(echo "$line" | tr -cd '\11\12\15\40-\176')
         printf "%s|%s|%s|%s|%s\n" $active $iface $net_type $name $ip
       done \
-    | column -s'\|' -t
+    | column -s'|' -t
+
+      # printf "%-2s %-10s %-20s %-15s %s\n" $active $iface $net_type $name $ip
   # printf "%s\n" $cmd
 }
 
 # _fzf-command
-source "$FZF_LIB.zsh"
+source "${FZF_LIB}.zsh"

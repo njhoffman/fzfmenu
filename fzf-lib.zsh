@@ -26,6 +26,8 @@ _fzf-assign-vars-default() {
   _clr[mode_inactive]="${lc}${CLR_MODE_INACTIVE:-38;5;240}${rc}"
   _clr[toggle_active]="${lc}${CLR_TOGGLE_ACTIVE:-38;5;49}${rc}"
   _clr[toggle_inactive]="${lc}${CLR_TOGGLE_INACTIVE:-38;5;240}${rc}"
+  _clr[sort_icon]="${lc}${CLR_SORT_ICON:-38;5;45;1}${rc}"
+  _clr[sort_label]="${lc}${CLR_SORT_LABEL:-38;5;240}${rc}"
   _clr[divider]="${lc}${CLR_DIVIDER:-38;5;59}${rc}"
   _clr[action_id]="${lc}${CLR_ID:-38;5;30}${rc}"
   _clr[action_desc]="${lc}${CLR_DESC:-38;5;8;3}${rc}"
@@ -38,25 +40,24 @@ _fzf-assign-vars-default() {
   _fzf_keys[reload]="ctrl-r"
   _fzf_keys[mode_prev]="alt-9"
   _fzf_keys[mode_next]="alt-0"
+  _fzf_keys[sort_prev]="f11"
+  _fzf_keys[sort_next]="f12"
   _fzf_keys[nop]="ctrl-]"
   _fzf_keys[actions_menu]='ctrl-\'
   _fzf_keys[help_menu]=""
   _fzf_keys[exit]="esc"
 
-
-  [[ "$(command -V _fzf-assign-vars)" =~ "function" ]] && \
-    _fzf-assign-vars
-
   # assign tmux padding based on width
   if [[ -n "$TMUX" ]]; then
     tmux_width=$(tmux display-message -p "#{window_width}")
     tmux_padding="-p40%"
-    [[ tmux_width -lt 400 ]] && tmux_padding="-p50%"
-    [[ tmux_width -lt 200 ]] && tmux_padding="-p60%"
+    [[ $tmux_width -lt 400 ]] && tmux_padding="-p50%"
+    [[ $tmux_width -lt 200 ]] && tmux_padding="-p60%"
     export FZF_TMUX_OPTS="${FZF_TMUX_OPTS:-${tmux_padding}}"
-    _fzf-log "TMUX OPTS 1: $FZF_TMUX_OPTS"
-
   fi
+
+  [[ "$(command -V _fzf-assign-vars)" =~ "function" ]] && \
+    _fzf-assign-vars
 }
 
 # FZF_ACTIONS: output the "action menu" if defined by if _fzf_kekys[action_menu] pressed
@@ -114,6 +115,7 @@ _fzf-display() {
 
   # TODO: add get_mode_id function
   local mode=${FZF_DEFAULT_MODE:-1}
+  local sort_idx=${FZF_DEFAULT_SORT:-1}
   local toggle_vals=${FZF_TOGGLES_DEFAULT:-}
 
   ORIG_FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS
@@ -141,7 +143,7 @@ _fzf-display() {
       # show actions submenu
       if [ ${#action_menu[@]} -gt 0 ]; then
         # fzf_opts="--header-first"
-        fzf_opts="--no-multi --print-query --preview-window=:hidden"
+        fzf_opts="--no-multi --print-query --preview-window=:nowrap,hidden"
         if [ ${#action_menu[@]} -gt 1 ]; then
           header="Perform action on ${#action_menu[@]} items"
         else
@@ -155,6 +157,7 @@ _fzf-display() {
 
         expected_keys="enter,${_fzf_keys[exit]},${_fzf_keys[reload]},${_fzf_keys[toggle_popout]}"
         expected_keys="${expected_keys},${_fzf_keys[actions_menu]}"
+
         fzf_opts="${fzf_opts} --expect='$expected_keys'"
 
         FZF_DEFAULT_OPTS="${ORIG_FZF_DEFAULT_OPTS} ${fzf_opts}"
@@ -204,6 +207,15 @@ _fzf-display() {
       # show main list menu
       else
 
+        # if sort defined and sort key pressed
+        if [[ ${#FZF_SORT[@]} -gt 0 ]]; then
+          if [[ $key == "f12" ]]; then
+            sort_idx=$((($sort % $#FZF_SORT) + 1))
+            _fzf-log "sort: $sort_idx"
+          fi
+        fi
+
+        # if toggles defined and toggle key pressed
         if [[ ${#FZF_TOGGLES[@]} -gt 0 ]]; then
           if [[ $key =~ "alt-." ]]; then
             toggle_idx=${key[$(($MBEGIN+4)),$MEND]}
@@ -243,10 +255,10 @@ _fzf-display() {
         if [[ "$(command -V _fzf-header)" =~ "function" ]]; then
            header="$(_fzf-header $mode)"
         else
-          hints=$(_fzf-mode-hints $mode)
-          toggle_hints=$(_fzf-toggle-hints $toggle_vals)
-          if [[ -n "$toggle_hints" && -n "$hints" ]]; then
-            hints="$hints|  $toggle_hints"
+          mode_hints=$(_fzf-hints-modes $mode)
+          toggle_hints=$(_fzf-hints-toggles $toggle_vals)
+          if [[ -n "$toggle_hints" && -n "$mode_hints" ]]; then
+            hints="$mode_hints|  $toggle_hints"
           elif [[ -n "$toggle_hints" ]]; then
             hints="$toggle_hints"
           fi
@@ -271,7 +283,6 @@ ${_clr[divider]}${FZF_DIVIDER_LINE}${_clr[rst]}"
           fzf_opts="${fzf_opts} $(_fzf-extra-opts $mode)"
 
         fzf_opts="${fzf_opts} --ansi --print-query"
-        fzf_opts="${fzf_opts} --preview-window='right:50%:wrap'"
         fzf_opts="${fzf_opts} --tiebreak=index --no-hscroll --query='${query}'"
 
         # keys that can exit
@@ -284,7 +295,11 @@ ${_clr[divider]}${FZF_DIVIDER_LINE}${_clr[rst]}"
         [[ -n "{$FZF_MODES[@]}" ]] && expected_keys="${expected_keys},f1,f2,f3,f4,f5"
         fzf_opts="${fzf_opts} --expect='$expected_keys'"
 
+        # TODO: only for count of fzf_toggles
         [[ -n "${FZF_TOGGLES[@]}" ]] && expected_keys="${expected_keys},alt-1,alt-2,alt-3,alt-4,alt-5"
+        fzf_opts="${fzf_opts} --expect='$expected_keys'"
+
+        [[ -n "${FZF_SORT[@]}" ]] && expected_keys="${expected_keys},f11,f12"
         fzf_opts="${fzf_opts} --expect='$expected_keys'"
 
         if [ $FZF_CLEAR -eq 1 ]; then

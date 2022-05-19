@@ -43,21 +43,111 @@ systest() {
                     if (unitname != "" && status != "") {
                       if (status == "active" ) {
                         if (status_detail == "running") {
-                          indicator = green " " reset
+                          indicator = green "" reset
                         } else if (status == "exited") {
-                          indicator = green " " reset
+                          indicator = green "" reset
                         } else {
-                          indicator = green " " reset
+                          indicator = green "" reset
                         }
                       } else if (status == "failed") {
-                          indicator = red " " reset
+                          indicator = red "" reset
                       } else {
-                          indicator = " "
+                          indicator = ""
                       }
-                      print " "indicator " ["manager"] ", unitname
+                      print " "indicator" ["manager"] ", unitname
                   }
                 }')
               done
 }
 
 systest
+
+
+# ├──────────────────┼──────────────────────────┼───────────┤
+# │"enabled"         │ Enabled via .wants/,     │           │
+# ├──────────────────┤ .requires/ or Alias=     │           │
+# │"enabled-runtime" │ symlinks (permanently in │ 0         │
+# │                  │ /etc/systemd/system/, or │           │
+# │                  │ transiently in           │           │
+# │                  │ /run/systemd/system/).   │           │
+# ├──────────────────┼──────────────────────────┼───────────┤
+# │"linked"          │ Made available through   │           │
+# ├──────────────────┤ one or more symlinks to  │           │
+# │"linked-runtime"  │ the unit file            │           │
+# │                  │ (permanently in          │           │
+# │                  │ /etc/systemd/system/ or  │           │
+# │                  │ transiently in           │ > 0       │
+# │                  │ /run/systemd/system/),   │           │
+# │                  │ even though the unit     │           │
+# │                  │ file might reside        │           │
+# │                  │ outside of the unit file │           │
+# │                  │ search path.             │           │
+# ├──────────────────┼──────────────────────────┼───────────┤
+# │"alias"           │ The name is an alias     │ 0         │
+# │                  │ (symlink to another unit │           │
+# │                  │ file).                   │           │
+# ├──────────────────┼──────────────────────────┼───────────┤
+# │"masked"          │ Completely disabled, so  │           │
+# ├──────────────────┤ that any start operation │           │
+# │"masked-runtime"  │ on it fails (permanently │ > 0       │
+# │                  │ in /etc/systemd/system/  │           │
+# │                  │ or transiently in        │           │
+# │                  │ /run/systemd/systemd/).  │           │
+# ├──────────────────┼──────────────────────────┼───────────┤
+# │"static"          │ The unit file is not     │ 0         │
+# │                  │ enabled, and has no      │           │
+# │                  │ provisions for enabling  │           │
+# │                  │ in the [Install] unit    │           │
+# │                  │ file section.            │           │
+# ├──────────────────┼──────────────────────────┼───────────┤
+# │"indirect"        │ The unit file itself is  │ 0         │
+# │                  │ not enabled, but it has  │           │
+# │                  │ a non-empty Also=        │           │
+# │                  │ setting in the [Install] │           │
+# │                  │ unit file section,       │           │
+# │                  │ listing other unit files │           │
+# │                  │ that might be enabled,   │           │
+# │                  │ or it has an alias under │           │
+# │                  │ a different name through │           │
+# │                  │ a symlink that is not    │           │
+# │                  │ specified in Also=. For  │           │
+# │                  │ template unit files, an  │           │
+# │                  │ instance different than  │           │
+# │                  │ the one specified in     │           │
+# │                  │ DefaultInstance= is      │           │
+# │                  │ enabled.                 │           │
+# ├──────────────────┼──────────────────────────┼───────────┤
+# │"disabled"        │ The unit file is not     │ > 0       │
+# │                  │ enabled, but contains an │           │
+# │                  │ [Install] section with   │           │
+# │                  │ installation             │           │
+# │                  │ instructions.            │           │
+# ├──────────────────┼──────────────────────────┼───────────┤
+# │"generated"       │ The unit file was        │ 0         │
+# │                  │ generated dynamically    │           │
+# │                  │ via a generator tool.    │           │
+# │                  │ See                      │           │
+# │                  │ systemd.generator(7).    │           │
+# │                  │ Generated unit files may │           │
+# │                  │ not be enabled, they are │           │
+# │                  │ enabled implicitly by    │           │
+# │                  │ their generator.         │           │
+# ├──────────────────┼──────────────────────────┼───────────┤
+# │"transient"       │ The unit file has been   │ 0         │
+# │                  │ created dynamically with │           │
+# │                  │ the runtime API.         │           │
+# │                  │ Transient units may not  │           │
+# │                  │ be enabled.              │           │
+# ├──────────────────┼──────────────────────────┼───────────┤
+# │"bad"             │ The unit file is invalid │ > 0       │
+# │                  │ or another error         │           │
+# │                  │ occurred. Note that      │           │
+# │                  │ is-enabled will not      │           │
+# │                  │ actually return this     │           │
+# │                  │ state, but print an      │           │
+# │                  │ error message instead.   │           │
+# │                  │ However the unit file    │           │
+# │                  │ listing printed by       │           │
+# │                  │ list-unit-files might    │           │
+# │                  │ show it.                 │           │
+# └──────────────────┴──────────────────────────┴───────────┘
