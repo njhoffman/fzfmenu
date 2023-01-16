@@ -10,10 +10,10 @@ if ! command -v fzf > /dev/null; then
 fi
 
 ##Not currently enable
-  # link
-  # revert
-  # add-wants
-  # add-requires
+# link
+# revert
+# add-wants
+# add-requires
 
 systemd_svc_opts="
 cat
@@ -85,36 +85,36 @@ suspend-then-hibernate
 switch-root
 unset-environment"
 
-_list_cmd_opts_sc()  {
+_list_cmd_opts_sc() {
   local cur selctd_svc selctd_svc_opt
   cur=${COMP_WORDS[COMP_CWORD]}
   case $COMP_CWORD in
     1) # Gets list of systemctl commands from $systemd_cmd_opts
-      COMPREPLY=($(compgen -W "$(echo "$systemd_cmd_opts")" "$cur"))
+      COMPREPLY=("$(compgen -W "$(echo "$systemd_cmd_opts")" "$cur")")
       ;;
     2)
-      if [[ "${COMP_WORDS[1]}" == "service" ]]; then
-        if [[ ! "${COMP_WORDS[2]}" ]]; then
+      if [[ ${COMP_WORDS[1]} == "service" ]]; then
+        if [[ ! ${COMP_WORDS[2]} ]]; then
           selctd_svc=$({
-                         systemctl --system list-unit-files --type=service --no-legend | awk '{print $0 "\t" "system"}'
+            systemctl --system list-unit-files --type=service --no-legend | awk '{print $0 "\t" "system"}'
             systemctl --user list-unit-files --type=service --no-legend | awk '{print $0 "\t" "user"}'
-          } \
-            | fzf -e --reverse --tiebreak=index)
+          } |
+            fzf -e --reverse --tiebreak=index)
         elif [[ "${COMP_WORDS[2]}" ]]; then
           selctd_svc=$({
-                         systemctl --system list-unit-files --type=service --no-legend | awk '{print $0 "\t" "system"}'
+            systemctl --system list-unit-files --type=service --no-legend | awk '{print $0 "\t" "system"}'
             systemctl --user list-unit-files --type=service --no-legend | awk '{print $0 "\t" "user"}'
-          } \
-            | fzf -q "${COMP_WORDS[2]}" -e --reverse --tiebreak=index)
+          } |
+            fzf -q "${COMP_WORDS[2]}" -e --reverse --tiebreak=index)
         fi
-        selctd_svc=$(echo $selctd_svc | awk '{print $1 , $NF}')
+        selctd_svc=$(echo "$selctd_svc" | awk '{print $1 , $NF}')
         selctd_svc_opt=$(echo "$systemd_svc_opts" | fzf -e --reverse --tiebreak=index)
       fi
       COMPREPLY="$selctd_svc $selctd_svc_opt"
       ;;
     4)
-      if [[ "${COMP_WORDS[1]}" == "service" ]]; then
-        if [[ ! "${COMP_WORDS[4]}" ]]; then
+      if [[ ${COMP_WORDS[1]} == "service" ]]; then
+        if [[ ! ${COMP_WORDS[4]} ]]; then
           selctd_svc_opt=$(echo "$systemd_svc_opts" | fzf -e --reverse --tiebreak=index)
         elif [[ "${COMP_WORDS[4]}" ]]; then
           selctd_svc_opt=$(echo "$systemd_svc_opts" | fzf -q "${COMP_WORDS[4]}" -e --reverse --tiebreak=index)
@@ -156,27 +156,27 @@ examples:
           ;;
       esac
 
-      if [[ "$5" == "now" ]]; then
+      if [[ $5 == "now" ]]; then
         cmd_arg="--now"
       fi
 
-      if [[ "$4" == "status"  ]]; then
-        $cmd $4 $cmd_arg $2 --no-pager
+      if [[ $4 == "status" ]]; then
+        "$cmd" "$4" "$cmd_arg" "$2" --no-pager
       else
-        $cmd $4 $cmd_arg $2
+        "$cmd" "$4" "$cmd_arg" "$2"
       fi
 
       if [[ $4 =~ $elevated_cmds ]]; then
         echo getting status
         sleep .5
-        $cmd status $2 --no-pager
+        "$cmd" status "$2" --no-pager
       fi
       ;;
     -h)
       echo -e "$usage"
       ;;
     *)
-      systemctl $*
+      systemctl "$@"
       ;;
   esac
 }

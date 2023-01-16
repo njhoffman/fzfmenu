@@ -4,9 +4,8 @@ SOURCE="${(%):-%N}"
 CWD="$(cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd)"
 FZF_LIB="$CWD/../../fzf-lib"
 
-FZF_DIVIDER_SHOW=1
+# FZF_DIVIDER_SHOW=1
 # FZF_DIVIDER_LINE="―――――――――――――――――――――――――――――――――――――――――――――"
-FZF_DIVIDER_LINE="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 FZF_MODES=('available' 'installed' 'upgradeable')
 FZF_DEFAULT_MODE="${FZF_DEFAULT_MODE:-1}"
 

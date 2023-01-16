@@ -1,4 +1,5 @@
 #!/bin/zsh
+
 forgit::log() {
     forgit::inside_work_tree || return 1
     local cmd opts graph files
