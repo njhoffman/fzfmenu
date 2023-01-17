@@ -27,7 +27,6 @@ _fzf-assign-vars() {
 
     # export FZF_TMUX_OPTS="-w 80 -h 15 -x $xpos -y 0" # -y 0 -x $xpos -y 0"
   fi
-
 }
 
 _fzf-extra-opts() {
