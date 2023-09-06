@@ -153,7 +153,7 @@ _fzf-source() {
     systemctl_options+=("--$MANAGER")
     cat < \
       <({
-        systemctl list-units ${(Q)${(Z+n+)systemctl_options}} "$prefix*"
+       systemctl list-units ${(Q)${(Z+n+)systemctl_options}} "$prefix*"
         systemctl list-unit-files ${(Q)${(Z+n+)systemctl_options}} "$prefix*"
       } | LC_ALL=C sort -b -f -k 1,1 -k 3,3r \
         | _fzf-awk)

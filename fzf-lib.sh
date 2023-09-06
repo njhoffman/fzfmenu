@@ -34,7 +34,7 @@ FZF_DEFAULT_ACTION_DESCRIPTIONS=(
 )
 
 # combine default actions with any provided from module
-if [[ -n "$FZF_ACTIONS" ]]; then
+if [[ -n $FZF_ACTIONS ]]; then
   FZF_ACTIONS=("${FZF_ACTIONS[@]}" "${FZF_DEFAULT_ACTIONS[@]}")
   FZF_ACTION_DESCRIPTIONS=("${FZF_ACTION_DESCRIPTIONS[@]}" "${FZF_DEFAULT_ACTION_DESCRIPTIONS[@]}")
 else
@@ -44,13 +44,13 @@ else
 fi
 
 _fzf_tabularize() {
-  if [[ $# = 0 ]]; then
+  if [[ $# == 0 ]]; then
     cat
     return
   fi
 
   awk \
-    -v FS=${FS:- } \
+    -v FS="${FS:- }" \
     -v colors_args="$*" \
     -v reset="\033[0m" '
   BEGIN { split(colors_args, colors, " ") }
@@ -81,7 +81,7 @@ _fzf_tabularize() {
 }
 
 _fzf_tabularize_header() {
-  if [[ $# = 0 ]]; then
+  if [[ $# == 0 ]]; then
     cat
     return
   fi
@@ -89,7 +89,7 @@ _fzf_tabularize_header() {
   shift
 
   awk \
-    -v FS=${FS:- } \
+    -v FS="${FS:- }" \
     -v header="$header" \
     -v colors_args="$*" \
     -v reset="\033[0m" '
@@ -130,13 +130,13 @@ _fzf-hints-modes() {
   for ((i = 1; i <= ${#FZF_MODES}; i++)); do
     label="${FZF_MODES[$i]}"
     [[ $hide_keys -eq 0 ]] && label="f${i}:${label}"
-    if [[ "${FZF_MODES[i]}" == "${FZF_MODES[mode]}" ]]; then
+    if [[ ${FZF_MODES[i]} == "${FZF_MODES[mode]}" ]]; then
       hints="${hints}${_clr[mode_active]}${label}  ${_clr[rst]}"
     else
       hints="${hints}${_clr[mode_inactive]}${label}  ${_clr[rst]}"
     fi
   done
-  echo "${hints}"
+  echo "$hints"
 }
 
 # FZF_TOGGLES: output of keys with highlighting to reflect active toggles
@@ -148,19 +148,19 @@ _fzf-hints-toggles() {
   for ((i = 1; i <= ${#FZF_TOGGLES}; i++)); do
     label="${FZF_TOGGLES[i]}"
     clr_toggle="${_clr[toggle_active]}"
-    toggle_val="$(echo ${toggle_vals} | cut -f$i -d' ')"
+    toggle_val="$(echo "$toggle_vals" | cut -f"$i" -d' ')"
     _fzf-log "$i: $toggle_val"
     [[ $toggle_val -eq 0 ]] && clr_toggle="${_clr[toggle_inactive]}"
     [[ $hide_keys -eq 0 ]] && label="a${i}:${label}"
     hints="${hints}${clr_toggle}${label}  ${_clr[rst]}"
     # hints="${hints}${_clr[toggle_inactive]}${label}  ${_clr[rst]}"
   done
-  echo "${hints}"
+  echo "$hints"
 }
 
 # FZF_SORT: output of active sort key with highlighting
 _fzf-hints-sort() {
-# 
+  # 
   local hide_keys=${FZF_SORT_HIDE_KEYS:-0}
   local hints=""
   local sort_idx="$1"
@@ -168,13 +168,13 @@ _fzf-hints-sort() {
   for ((i = 1; i <= ${#FZF_SORT}; i++)); do
     label="${FZF_SORT[i]}"
     [[ $hide_keys -eq 0 ]] && label="f${i}:${label}"
-    if [[ "${FZF_SORT[i]}" == "${FZF_SORT[sort_idx]}" ]]; then
+    if [[ ${FZF_SORT[i]} == "${FZF_SORT[sort_idx]}" ]]; then
       hints="${hints}${_clr[sort_active]}${label}  ${_clr[rst]}"
     else
       hints="${hints}${_clr[sort_inactive]}${label}  ${_clr[rst]}"
     fi
   done
-  echo "${hints}"
+  echo "$hints"
 }
 
 # output usage information with switches based on FZF_ACTIONS, FZF_MODES, FZF_TOGGLES
@@ -199,24 +199,24 @@ _fzf-usage() {
 }
 
 _fzf-unset() {
-  unset -f _fzf-actions-source-default 2> /dev/null \
-    && unset -f _fzf-assign-vars 2> /dev/null \
-    && unset -f _fzf-assign-vars-default 2> /dev/null \
-    && unset -f _fzf-display 2> /dev/null \
-    && unset -f _fzf-log 2> /dev/null \
-    && unset -f _fzf-header 2> /dev/null \
-    && unset -f _fzf-main 2> /dev/null \
-    && unset -f _fzf-mode-hints 2> /dev/null \
-    && unset -f _fzf-preview 2> /dev/null \
-    && unset -f _fzf-prompt 2> /dev/null \
-    && unset -f _fzf-result-default 2> /dev/null \
-    && unset -f _fzf-source 2> /dev/null \
-    && unset -f _fzf-verify 2> /dev/null \
-    && unset -v $FZF_MODES 2> /dev/null \
-    && unset -v $FZF_DEFAULT_MODE 2> /dev/null \
-    && unset -v $FZF_ACTIONS 2> /dev/null \
-    && unset -v $FZF_DESCRIPIONS 2> /dev/null \
-    && unset -v $FZF_LOGFILE 2> /dev/null \
-    && unset -v _clr 2> /dev/null \
-    && unset -v _fzf_log_first 2> /dev/null
+  unset -f _fzf-actions-source-default 2> /dev/null &&
+    unset -f _fzf-assign-vars 2> /dev/null &&
+    unset -f _fzf-assign-vars-default 2> /dev/null &&
+    unset -f _fzf-display 2> /dev/null &&
+    unset -f _fzf-log 2> /dev/null &&
+    unset -f _fzf-header 2> /dev/null &&
+    unset -f _fzf-main 2> /dev/null &&
+    unset -f _fzf-mode-hints 2> /dev/null &&
+    unset -f _fzf-preview 2> /dev/null &&
+    unset -f _fzf-prompt 2> /dev/null &&
+    unset -f _fzf-result-default 2> /dev/null &&
+    unset -f _fzf-source 2> /dev/null &&
+    unset -f _fzf-verify 2> /dev/null &&
+    unset -v "$FZF_MODES" 2> /dev/null &&
+    unset -v "$FZF_DEFAULT_MODE" 2> /dev/null &&
+    unset -v "$FZF_ACTIONS" 2> /dev/null &&
+    unset -v "$FZF_DESCRIPIONS" 2> /dev/null &&
+    unset -v "$FZF_LOGFILE" 2> /dev/null &&
+    unset -v _clr 2> /dev/null &&
+    unset -v _fzf_log_first 2> /dev/null
 }
