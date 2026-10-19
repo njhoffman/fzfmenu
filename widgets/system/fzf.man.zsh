@@ -105,8 +105,9 @@ _fzf-command() {
     | sort \
     | awk -v color_id='\033[1;34m' -v reset='\033[0m' '$awk_recipe' \
     | column -s'\|' -t"
-  echo "${cmd}"
+  eval "${cmd}"
 }
 
 # _fzf-source
-source "$FZF_LIB.zsh"
+_fzf-command
+# source "$FZF_LIB.zsh"

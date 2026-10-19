@@ -4,7 +4,7 @@
 #   - sorting modes (pid, cpu, mem, ellapsed time)
 #   - ctrace live summary
 
-sudo "" 2>/dev/null
+# sudo "" 2>/dev/null
 
 SOURCE="${(%):-%N}"
 CWD="$(cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd)"
@@ -40,7 +40,7 @@ _fzf-command() {
   # nlwp: thread count, comm: shor t command name
   local fields="pid,ppid,user,%cpu,%mem,rss,etime,stat,tty,args"
   local sort="%cpu"
-  local cmd="ps axf --sort ${sort} -o ${fields} \
+  local cmd="ps --user=$USER -o ${fields} --sort ${sort} \
     | sed \"s,$HOME,~,g\" \
     | grcat conf.ps"
 

@@ -36,7 +36,7 @@ _fzf-assign-vars-default() {
   # _clr[action_target]=""
   _clr[rst]="${lc}0${rc}"
 
-  _fzf_keys[toggle_popout]="ctrl-^"
+  _fzf_keys[toggle_popout]="ctrl-space"
   _fzf_keys[reload]="ctrl-r"
   _fzf_keys[mode_prev]="alt-9"
   _fzf_keys[mode_next]="alt-0"
@@ -50,9 +50,9 @@ _fzf-assign-vars-default() {
   # assign tmux padding based on width
   if [[ -n "$TMUX" ]]; then
     tmux_width=$(tmux display-message -p "#{window_width}")
-    tmux_padding="-p40%"
-    [[ $tmux_width -lt 400 ]] && tmux_padding="-p50%"
-    [[ $tmux_width -lt 200 ]] && tmux_padding="-p60%"
+    tmux_padding="-p60%"
+    [[ $tmux_width -lt 400 ]] && tmux_padding="-p70%"
+    [[ $tmux_width -lt 200 ]] && tmux_padding="-p80%"
     export FZF_TMUX_OPTS="${FZF_TMUX_OPTS:-${tmux_padding}}"
   fi
 
@@ -123,124 +123,124 @@ _fzf-display() {
   local key=$_fzf_keys[reload]
   # TODO: turn mode into FZF_MODE, try to break this up
   while [[ -n "$key" && "$key" != ${_fzf_keys[exit]} ]]
-    do
-      query=""
-      _fzf_log_first=0
+  do
+    query=""
+    _fzf_log_first=0
 
-      # if popout key pressed, toggle between fzf and fzf-tmux
-      if [[ $key == $_fzf_keys[toggle_popout] ]]; then
-        if [[ $fzf_cmd == "fzf-tmux" ]]; then
-          fzf_cmd="fzf"
-          fzf_cmd_args=""
-        else
-          fzf_cmd="fzf-tmux"
-          fzf_cmd_args="${FZF_TMUX_OPTS:--p80%}"
+    # if popout key pressed, toggle between fzf and fzf-tmux
+    if [[ $key == $_fzf_keys[toggle_popout] ]]; then
+      if [[ $fzf_cmd == "fzf-tmux" ]]; then
+        fzf_cmd="fzf"
+        fzf_cmd_args=""
+      else
+        fzf_cmd="fzf-tmux"
+        fzf_cmd_args="${FZF_TMUX_OPTS:--p80%}"
+      fi
+    fi
+
+    local header=""
+    local fzf_opts=""
+    # show actions submenu
+    if [ ${#action_menu[@]} -gt 0 ]; then
+      # fzf_opts="--header-first"
+      fzf_opts="--no-multi --print-query --preview-window=:nowrap,hidden"
+      if [ ${#action_menu[@]} -gt 1 ]; then
+        header="Perform action on ${#action_menu[@]} items"
+      else
+        header="Perform action on: $(cut -d' ' -f1 <<<${action_menu[1]})"
+      fi
+
+      [[ -n "$header" ]] && fzf_opts="${fzf_opts} --header='${header}'"
+
+      [[ "$(command -V _fzf-prompt)" =~ "function" ]] && \
+        fzf_opts="${fzf_opts} --prompt='$(_fzf-prompt $mode)'"
+
+      expected_keys="enter,${_fzf_keys[exit]},${_fzf_keys[reload]},${_fzf_keys[toggle_popout]}"
+      expected_keys="${expected_keys},${_fzf_keys[actions_menu]}"
+
+      fzf_opts="${fzf_opts} --expect='$expected_keys'"
+
+      FZF_DEFAULT_OPTS="${ORIG_FZF_DEFAULT_OPTS} ${fzf_opts}"
+
+      # only output the text without piping to fzf
+      if [[ $FZF_RAW_OUT -eq 1 ]]; then
+        IFS=$'\n' result=($(_fzf-actions-source-default $mode))
+        printf "%s\n" "${result[@]}" | column -t
+        exit 0
+      fi
+
+      if [[ "$fzf_cmd" == "fzf-tmux" ]]; then
+        fzf_cmd_args="-w50% -h30%"
+      fi
+
+      # actually perform fzf command here
+      IFS=$'\n' result=($(_fzf-actions-source-default $mode | $fzf_cmd $fzf_cmd_args ))
+
+      # determine if query was submitted by identifying line exit key is on
+      if [[ ${#result[@]} -gt 2 && $expected_keys =~ ${result[2]} ]]; then
+        query="$(echo ${result[1]} | xargs)"
+        key="$(echo ${result[2]} | xargs)"
+        selected_action="$(cut -d' ' -f1 <<<${result[@]:2})"
+      else
+        query=""
+        key="$(echo ${result[1]} | xargs)"
+        selected_action="$(cut -d' ' -f1 <<<${result[@]:1})"
+      fi
+
+      local log_lines=()
+      local lines=$(_fzf-actions-source-default $mode | head -n 5)
+      [[ -n "$query" ]] && log_lines+=("query:\t${query}")
+      [[ -n "$key" ]] && log_lines+=("exit-key:\t${key}")
+      [[ -n "$selected_action" ]] && log_lines+=("select-action:\t${selected_action}")
+      _fzf-log "actions menu top 5: \n${lines[@]}\n-\n${log_lines[@]}"
+
+      # perform action (selected) on item(s) (action_menu) if enter or back to previous menu
+      if [[ "$key" == "enter" ]]; then
+        _fzf-log "_fzf-result - $selected_action (${#action_menu[@]} items)"
+        _fzf-result-default "$selected_action" "${action_menu[@]}"
+        key="${_fzf_keys[exit]}"
+      else
+        action_menu=""
+        key="${_fzf_keys[reload]}"
+      fi
+
+      # show main list menu
+    else
+
+      # if sort defined and sort key pressed
+      if [[ ${#FZF_SORT[@]} -gt 0 ]]; then
+        if [[ $key == "f12" ]]; then
+          sort_idx=$((($sort % $#FZF_SORT) + 1))
+          _fzf-log "sort: $sort_idx"
         fi
       fi
 
-      local header=""
-      local fzf_opts=""
-      # show actions submenu
-      if [ ${#action_menu[@]} -gt 0 ]; then
-        # fzf_opts="--header-first"
-        fzf_opts="--no-multi --print-query --preview-window=:nowrap,hidden"
-        if [ ${#action_menu[@]} -gt 1 ]; then
-          header="Perform action on ${#action_menu[@]} items"
-        else
-          header="Perform action on: $(cut -d' ' -f1 <<<${action_menu[1]})"
-        fi
-
-        [[ -n "$header" ]] && fzf_opts="${fzf_opts} --header='${header}'"
-
-        [[ "$(command -V _fzf-prompt)" =~ "function" ]] && \
-          fzf_opts="${fzf_opts} --prompt='$(_fzf-prompt $mode)'"
-
-        expected_keys="enter,${_fzf_keys[exit]},${_fzf_keys[reload]},${_fzf_keys[toggle_popout]}"
-        expected_keys="${expected_keys},${_fzf_keys[actions_menu]}"
-
-        fzf_opts="${fzf_opts} --expect='$expected_keys'"
-
-        FZF_DEFAULT_OPTS="${ORIG_FZF_DEFAULT_OPTS} ${fzf_opts}"
-
-        # only output the text without piping to fzf
-        if [[ $FZF_RAW_OUT -eq 1 ]]; then
-          IFS=$'\n' result=($(_fzf-actions-source-default $mode))
-          printf "%s\n" "${result[@]}" | column -t
-          exit 0
-        fi
-
-        if [[ "$fzf_cmd" == "fzf-tmux" ]]; then
-          fzf_cmd_args="-w50% -h30%"
-        fi
-
-        # actually perform fzf command here
-        IFS=$'\n' result=($(_fzf-actions-source-default $mode | $fzf_cmd $fzf_cmd_args ))
-
-        # determine if query was submitted by identifying line exit key is on
-        if [[ ${#result[@]} -gt 2 && $expected_keys =~ ${result[2]} ]]; then
-          query="$(echo ${result[1]} | xargs)"
-          key="$(echo ${result[2]} | xargs)"
-          selected_action="$(cut -d' ' -f1 <<<${result[@]:2})"
-        else
-          query=""
-          key="$(echo ${result[1]} | xargs)"
-          selected_action="$(cut -d' ' -f1 <<<${result[@]:1})"
-        fi
-
-        local log_lines=()
-        local lines=$(_fzf-actions-source-default $mode | head -n 5)
-        [[ -n "$query" ]] && log_lines+=("query:\t${query}")
-        [[ -n "$key" ]] && log_lines+=("exit-key:\t${key}")
-        [[ -n "$selected_action" ]] && log_lines+=("select-action:\t${selected_action}")
-        _fzf-log "actions menu top 5: \n${lines[@]}\n-\n${log_lines[@]}"
-
-        # perform action (selected) on item(s) (action_menu) if enter or back to previous menu
-        if [[ "$key" == "enter" ]]; then
-          _fzf-log "_fzf-result - $selected_action (${#action_menu[@]} items)"
-          _fzf-result-default "$selected_action" "${action_menu[@]}"
-          key="${_fzf_keys[exit]}"
-        else
-          action_menu=""
-          key="${_fzf_keys[reload]}"
-        fi
-
-      # show main list menu
-      else
-
-        # if sort defined and sort key pressed
-        if [[ ${#FZF_SORT[@]} -gt 0 ]]; then
-          if [[ $key == "f12" ]]; then
-            sort_idx=$((($sort % $#FZF_SORT) + 1))
-            _fzf-log "sort: $sort_idx"
+      # if toggles defined and toggle key pressed
+      if [[ ${#FZF_TOGGLES[@]} -gt 0 ]]; then
+        if [[ $key =~ "alt-." ]]; then
+          toggle_idx=${key[$(($MBEGIN+4)),$MEND]}
+          toggle_val=$(echo "$toggle_vals" | cut -f${toggle_idx} -d' ')
+          if [[ $toggle_val -eq 0 ]]; then
+            toggle_val=1
+          else
+            toggle_val=0
           fi
+          _fzf-log "toggle $toggle_idx $toggle_val: $toggle_vals"
+          toggle_vals=$(echo "$toggle_vals" \
+            | sed "s/[0-9]\+/$toggle_val/$toggle_idx")
         fi
+      fi
 
-        # if toggles defined and toggle key pressed
-        if [[ ${#FZF_TOGGLES[@]} -gt 0 ]]; then
-          if [[ $key =~ "alt-." ]]; then
-            toggle_idx=${key[$(($MBEGIN+4)),$MEND]}
-            toggle_val=$(echo "$toggle_vals" | cut -f${toggle_idx} -d' ')
-            if [[ $toggle_val -eq 0 ]]; then
-              toggle_val=1
-            else
-              toggle_val=0
-            fi
-            _fzf-log "toggle $toggle_idx $toggle_val: $toggle_vals"
-            toggle_vals=$(echo "$toggle_vals" \
-              | sed "s/[0-9]\+/$toggle_val/$toggle_idx")
+      # if modes defined and key pressed was a function key or a mode-left / mode-right key
+      if [[ ${#FZF_MODES[@]} -gt 0 ]]; then
+        if [[ $key =~ "f." ]]; then
+          mode=${key[$(($MBEGIN+1)),$MEND]}
+        elif [[ "$key" == $_fzf_keys[mode_prev] ]]; then
+          if [[ $mode -eq 1 ]]; then
+            mode=$(($#FZF_MODES))
+          else
+            mode=$((($mode-1 % $#FZF_MODES)))
           fi
-        fi
-
-        # if modes defined and key pressed was a function key or a mode-left / mode-right key
-        if [[ ${#FZF_MODES[@]} -gt 0 ]]; then
-          if [[ $key =~ "f." ]]; then
-            mode=${key[$(($MBEGIN+1)),$MEND]}
-          elif [[ "$key" == $_fzf_keys[mode_prev] ]]; then
-            if [[ $mode -eq 1 ]]; then
-              mode=$(($#FZF_MODES))
-            else
-              mode=$((($mode-1 % $#FZF_MODES)))
-            fi
           elif [[ "$key" == $_fzf_keys[mode_next] \
             || "$key" == $_fzf_keys[nop] ]]; then
             mode=$((($mode % $#FZF_MODES) + 1))
@@ -253,7 +253,7 @@ _fzf-display() {
 
         # render header lines
         if [[ "$(command -V _fzf-header)" =~ "function" ]]; then
-           header="$(_fzf-header $mode)"
+          header="$(_fzf-header $mode)"
         else
           mode_hints=$(_fzf-hints-modes $mode)
           toggle_hints=$(_fzf-hints-toggles $toggle_vals)
@@ -268,7 +268,7 @@ _fzf-display() {
 
         # TODO: any other way to embed hard line break?
         [[ $FZF_DIVIDER_SHOW -eq 1 ]] && header="${header}
-${_clr[divider]}${FZF_DIVIDER_LINE}${_clr[rst]}"
+        ${_clr[divider]}${FZF_DIVIDER_LINE}${_clr[rst]}"
 
         [[ -n "$header" ]] && fzf_opts="${fzf_opts} --header='${header}'"
 
@@ -369,46 +369,46 @@ ${_clr[divider]}${FZF_DIVIDER_LINE}${_clr[rst]}"
         fi
       fi
     done
-}
+  }
 
 
-# main arguments handler to parse argument settings and invoke different outputs
-_fzf-main() {
+  # main arguments handler to parse argument settings and invoke different outputs
+  _fzf-main() {
 
-  # ensure correct functions are declared depending on options and assignments
-  _fzf-verify
+    # ensure correct functions are declared depending on options and assignments
+    _fzf-verify
 
-  # assign default keys and colors with optional override
-  _fzf-assign-vars-default
+    # assign default keys and colors with optional override
+    _fzf-assign-vars-default
 
-  # flag to pipe output (list or preview) to stdout instead of fzf
-  [[ "$1" == "--raw" ]] && \
-    shift && FZF_RAW_OUT=1
+    # flag to pipe output (list or preview) to stdout instead of fzf
+    [[ "$1" == "--raw" ]] && \
+      shift && FZF_RAW_OUT=1
 
-  # generate preview content
-  if [[ "$1" == "--preview" ]]; then
-    shift && [[ "$(command -V _fzf-preview)" =~ "function" ]] \
-      && eval "_fzf-preview $*"
-  # output dynamic menu description
-  elif [[ $1 == "--description" ]]; then
-    shift && [[ "$(command -V _fzf-menu-description)" =~ "function" ]] && \
-			eval "_fzf-menu-description $*"
-  # list module actions and settings
-  elif [[ $1 == "--list" || $1 == "-l" ]]; then
-    shift && echo "LIST"
-  # show usage information on the command line
-  elif [[ $1 == "--help" || $1 == "-h" ]]; then
-    shift && echo "HELP"
-  # launch main fzf display loop, remaining arguments should be lookup query
-  else
-    # clear && echo -e "\nLoading $SOURCE..."
-    [[ "$1" == "--action" || "$1" == "-a" ]] && \
-      shift && FZF_DEFAULT_ACTION="$1" && shift
-    [[ "$1" == "--popup" || "$1" == "-p" ]] && \
-      shift && FZF_TMUX="1"
-    _fzf-display $@
-  fi
+    # generate preview content
+    if [[ "$1" == "--preview" ]]; then
+      shift && [[ "$(command -V _fzf-preview)" =~ "function" ]] \
+        && eval "_fzf-preview $*"
+      # output dynamic menu description
+    elif [[ $1 == "--description" ]]; then
+      shift && [[ "$(command -V _fzf-menu-description)" =~ "function" ]] && \
+        eval "_fzf-menu-description $*"
+      # list module actions and settings
+    elif [[ $1 == "--list" || $1 == "-l" ]]; then
+      shift && echo "LIST"
+      # show usage information on the command line
+    elif [[ $1 == "--help" || $1 == "-h" ]]; then
+      shift && echo "HELP"
+      # launch main fzf display loop, remaining arguments should be lookup query
+    else
+      # clear && echo -e "\nLoading $SOURCE..."
+      [[ "$1" == "--action" || "$1" == "-a" ]] && \
+        shift && FZF_DEFAULT_ACTION="$1" && shift
+      [[ "$1" == "--popup" || "$1" == "-p" ]] && \
+        shift && FZF_TMUX="1"
+      _fzf-display $@
+    fi
 
-}
+  }
 
-_fzf-main $@
+  _fzf-main $@

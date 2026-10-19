@@ -64,8 +64,8 @@ _fzf-assign-vars() {
 _fzf-extra-opts() {
   opts="\
     --delimiter=' '
-    --with-nth=2..
-    --nth=2.."
+    --with-nth=3..
+    --nth=3.."
 
   echo "$opts"
 }
